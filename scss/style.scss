@@ -1,4 +1,6 @@
 @import "reset.scss";
+@import "fonts.scss";
+@import "cubank.scss";
 
 body{
     overflow-x: hidden;
@@ -30,8 +32,9 @@ header{
     //mix-blend-mode: difference;
 
     h1{
-        font-size: 3rem;
+        font-size: 1.5rem;
         font-weight: 700;
+        text-transform: uppercase;
     }
 
     nav{
@@ -40,7 +43,7 @@ header{
             li{
                 margin-left: 1rem;
                 a{
-                    font-size: 2rem;
+                    font-size: 1rem;
                 }
             }
         }
@@ -55,8 +58,11 @@ main{
         padding: 0 2rem;
         height: 100vh;
         h2{
+            font-family: "Montserrat", sans-serif;
             font-size: 9vw;
-            font-weight: 900;
+            font-weight: 800;
+            line-height: .9;
+            text-transform: uppercase;
         }
     }
     .project{
@@ -80,9 +86,11 @@ main{
                     margin-top: 10em;
                     max-width: 100%;
 
-                    h2{
-                        font-size: 4vw;
+                    h4{
+                        font-size: 3vw;
                         font-weight: 900;
+                    }
+                    .project1{
                     }
 
                     &:nth-of-type(2){
@@ -90,12 +98,11 @@ main{
                         margin-left: auto;
                     }
                     &:nth-of-type(3){
-                        flex-basis: 45em;
-                        margin-left: 10em;
+                        flex-basis: 40vw;
                     }
                     &:nth-of-type(4){
-                        flex-basis: 60em;
-                        margin-left: 10em;
+                        flex-basis: 30vw;
+                        margin-left: 2em;
                     }
                     &:nth-of-type(5){
                         flex-basis: 45em;

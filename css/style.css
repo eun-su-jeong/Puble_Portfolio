@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 html, body,
 h1, h2, h3, h4, h5, h6,
 input, select, textarea, button, option {
@@ -36,7 +37,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
   -ms-box-sizing: border-box;
 }
 
-/*h1, h2, h3, h4, h5, h6, input, select, textarea, button, option {font-size:14px;font-weight:normal;color:inherit;}*/
+/*h1, h2, h3, h4, h5, h6, input, select, textarea, button, option {fonts.scss-size:14px;fonts.scss-weight:normal;color:inherit;}*/
 pre, code, samp, kbd {
   font-family: inherit;
 }
@@ -121,6 +122,41 @@ button {
   background: none;
 }
 
+.project-header {
+  position: initial;
+}
+
+.project-main {
+  padding: 0 1rem;
+}
+.project-main .hero {
+  padding: 0 1rem;
+}
+.project-main .intro-box {
+  display: flex;
+  flex-direction: column;
+}
+.project-main .intro-box .description {
+  display: flex;
+}
+.project-main .intro-box .description .pages ul {
+  display: flex;
+  flex-direction: column;
+}
+.project-main .intro-box .description .pages .link a figure img {
+  width: 200px;
+}
+.project-main .content {
+  display: flex;
+}
+.project-main .content .images ul {
+  display: flex;
+  flex-direction: column;
+}
+.project-main .content .images ul li a img {
+  width: 200px;
+}
+
 body {
   overflow-x: hidden;
   background-color: #eae7e1;
@@ -150,8 +186,9 @@ header {
   z-index: 10;
 }
 header h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 header nav ul {
   display: flex;
@@ -160,7 +197,7 @@ header nav ul li {
   margin-left: 1rem;
 }
 header nav ul li a {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 main .hero {
@@ -171,8 +208,11 @@ main .hero {
   height: 100vh;
 }
 main .hero h2 {
+  font-family: "Montserrat", sans-serif;
   font-size: 9vw;
-  font-weight: 900;
+  font-weight: 800;
+  line-height: 0.9;
+  text-transform: uppercase;
 }
 main .project {
   padding: 0 2rem;
@@ -196,8 +236,8 @@ main .project .project-wrap .project-list .project-item {
   margin-top: 10em;
   max-width: 100%;
 }
-main .project .project-wrap .project-list .project-item h2 {
-  font-size: 4vw;
+main .project .project-wrap .project-list .project-item h4 {
+  font-size: 3vw;
   font-weight: 900;
 }
 main .project .project-wrap .project-list .project-item:nth-of-type(2) {
@@ -205,12 +245,11 @@ main .project .project-wrap .project-list .project-item:nth-of-type(2) {
   margin-left: auto;
 }
 main .project .project-wrap .project-list .project-item:nth-of-type(3) {
-  flex-basis: 45em;
-  margin-left: 10em;
+  flex-basis: 40vw;
 }
 main .project .project-wrap .project-list .project-item:nth-of-type(4) {
-  flex-basis: 60em;
-  margin-left: 10em;
+  flex-basis: 30vw;
+  margin-left: 2em;
 }
 main .project .project-wrap .project-list .project-item:nth-of-type(5) {
   flex-basis: 45em;

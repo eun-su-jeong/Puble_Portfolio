@@ -1,0 +1,57 @@
+.project-header{
+  position: initial;
+}
+
+.project-main{
+  padding: 0 1rem;
+  .hero{
+    padding: 0 1rem;
+  }
+  .intro-box{
+    display: flex;
+    flex-direction: column;
+    .title{
+      h3{}
+    }
+    .description{
+      display: flex;
+      .pages{
+        ul{
+          display: flex;
+          flex-direction: column;
+          li{}
+        }
+        .link{
+          a{
+            figure{
+              img{
+                width: 200px;
+              }
+            }
+          }
+          p{}
+        }
+      }
+      .overview{
+        .desc{}
+      }
+    }
+  }
+  .content{
+    display: flex;
+    .desc{}
+    .images{
+      ul{
+        display: flex;
+        flex-direction: column;
+        li{
+          a{
+            img{
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
