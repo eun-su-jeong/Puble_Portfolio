@@ -4,9 +4,9 @@
 
 body{
     overflow-x: hidden;
-    background-color: #eae7e1;
+    background-color: #F9F5EF;
     color: #222;
-    font-family: 'SpoqaHanSansNeo', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-family: "Montserrat", "Noto Sans KR", "sans-serif";
 
 }
 a{
@@ -22,13 +22,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1.2rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 60px;
     z-index: 10;
+    transition: all .5s ease;
     //mix-blend-mode: difference;
 
     h1{
@@ -42,8 +43,19 @@ header{
             display: flex;
             li{
                 margin-left: 1rem;
+
+                &:hover{
+                    a{
+                        color: #f9f5ef;
+                        background-color: #282828;
+                        border-radius: 5px;
+                    }
+                }
                 a{
-                    font-size: 1rem;
+                    display: inline-block;
+                    padding: 2px 5px;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
                 }
             }
         }
@@ -51,11 +63,13 @@ header{
 }
 
 main{
+    margin-left: auto;
+    margin-right: auto;
     .hero{
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        padding: 0 2rem;
+        padding: 0 1.2rem;
         height: 100vh;
         h2{
             font-family: "Montserrat", sans-serif;
@@ -66,7 +80,7 @@ main{
         }
     }
     .project{
-        padding: 0 2rem;
+        padding: 0 1.2rem;
         height: 100vh;
         .project-wrap{
             display: flex;
@@ -87,10 +101,38 @@ main{
                     max-width: 100%;
 
                     h4{
-                        font-size: 3vw;
+                        font-size: 1.375rem;
                         font-weight: 900;
+                        text-transform: uppercase;
                     }
                     .project1{
+                        h5{
+                            font-size: .875rem;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            margin-bottom: 1em;
+                        }
+                        ul{
+                            li{
+                                font-size: 1.25rem;
+                                margin-bottom: .5em;
+                            }
+                        }
+                    }
+
+                    .project2{
+                        h5{
+                            font-size: .875rem;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            margin-bottom: 1em;
+                        }
+                        ul{
+                            li{
+                                font-size: 1.25rem;
+                                margin-bottom: .5em;
+                            }
+                        }
                     }
 
                     &:nth-of-type(2){

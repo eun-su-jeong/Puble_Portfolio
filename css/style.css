@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 html, body,
 h1, h2, h3, h4, h5, h6,
 input, select, textarea, button, option {
@@ -159,9 +160,9 @@ button {
 
 body {
   overflow-x: hidden;
-  background-color: #eae7e1;
+  background-color: #F9F5EF;
   color: #222;
-  font-family: "SpoqaHanSansNeo", "맑은 고딕", "돋움", Dotum, sans-serif;
+  font-family: "Montserrat", "Noto Sans KR", "sans-serif";
 }
 
 a {
@@ -177,13 +178,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 1.2rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
   z-index: 10;
+  transition: all 0.5s ease;
 }
 header h1 {
   font-size: 1.5rem;
@@ -196,15 +198,27 @@ header nav ul {
 header nav ul li {
   margin-left: 1rem;
 }
+header nav ul li:hover a {
+  color: #f9f5ef;
+  background-color: #282828;
+  border-radius: 5px;
+}
 header nav ul li a {
-  font-size: 1rem;
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
 }
 
+main {
+  margin-left: auto;
+  margin-right: auto;
+}
 main .hero {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1.2rem;
   height: 100vh;
 }
 main .hero h2 {
@@ -215,7 +229,7 @@ main .hero h2 {
   text-transform: uppercase;
 }
 main .project {
-  padding: 0 2rem;
+  padding: 0 1.2rem;
   height: 100vh;
 }
 main .project .project-wrap {
@@ -237,8 +251,29 @@ main .project .project-wrap .project-list .project-item {
   max-width: 100%;
 }
 main .project .project-wrap .project-list .project-item h4 {
-  font-size: 3vw;
+  font-size: 1.375rem;
   font-weight: 900;
+  text-transform: uppercase;
+}
+main .project .project-wrap .project-list .project-item .project1 h5 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+main .project .project-wrap .project-list .project-item .project1 ul li {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+}
+main .project .project-wrap .project-list .project-item .project2 h5 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+main .project .project-wrap .project-list .project-item .project2 ul li {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
 }
 main .project .project-wrap .project-list .project-item:nth-of-type(2) {
   flex-basis: 60vw;
