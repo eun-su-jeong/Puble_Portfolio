@@ -221,10 +221,20 @@ main{
                         margin-left: 2em;
                     }
                     &:nth-of-type(5){
-                        flex-basis: 45em;
-                        margin-left: 10em;
+                        flex-basis: 40vw;
                     }
-
+                    &:nth-of-type(6){
+                        flex-basis: 40vw;
+                        margin-left: auto;
+                    }
+                    &:nth-of-type(7){
+                        flex-basis: 40vw;
+                        margin-left: auto;
+                    }
+                    &:nth-of-type(8){
+                        flex-basis: 40vw;
+                        margin-left: 2em;
+                    }
 
                     figure{
                         img{
