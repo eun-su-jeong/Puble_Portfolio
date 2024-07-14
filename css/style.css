@@ -1,10 +1,10 @@
-@charset "UTF-8";
+@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 html, body,
 h1, h2, h3, h4, h5, h6,
 input, select, textarea, button, option {
-  font-family: "SpoqaHanSansNeo", "맑은 고딕", "돋움", Dotum, sans-serif;
+  font-family: "SpoqaHanSansNeo", "Noto Sans KR", sans-serif;
 }
 
 html {
@@ -123,15 +123,13 @@ button {
   background: none;
 }
 
-.project-header {
-  position: initial;
-}
-
 .project-main {
   padding: 0 1rem;
 }
-.project-main .hero {
-  padding: 0 1rem;
+.project-main .hero article {
+  width: 100%;
+  height: 100vh;
+  background-color: lightcoral;
 }
 .project-main .intro-box {
   display: flex;
@@ -188,7 +186,7 @@ header {
   transition: all 0.5s ease;
 }
 header h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -243,6 +241,7 @@ main .project .project-wrap .project-list {
   flex-wrap: wrap;
   justify-content: flex-start;
   position: relative;
+  width: 100%;
 }
 main .project .project-wrap .project-list .project-item {
   flex-shrink: 0;
@@ -331,6 +330,28 @@ main .project .project-wrap .project-list .project-item .project2 ul li a .check
 main .project .project-wrap .project-list .project-item .project2 ul li:hover .check:after {
   transform: translate(-50%, -50%) scale(2);
 }
+main .project .project-wrap .project-list .project-item a .thumbnail figure img {
+  width: 100%;
+}
+main .project .project-wrap .project-list .project-item a .desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+main .project .project-wrap .project-list .project-item a .desc strong {
+  display: block;
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+main .project .project-wrap .project-list .project-item a .desc span {
+  font-size: 1.375rem;
+}
+main .project .project-wrap .project-list .project-item:nth-of-type(1) {
+  flex-basis: 30vw;
+}
 main .project .project-wrap .project-list .project-item:nth-of-type(2) {
   flex-basis: 60vw;
   margin-left: auto;
@@ -356,9 +377,6 @@ main .project .project-wrap .project-list .project-item:nth-of-type(7) {
 main .project .project-wrap .project-list .project-item:nth-of-type(8) {
   flex-basis: 40vw;
   margin-left: 2em;
-}
-main .project .project-wrap .project-list .project-item figure img {
-  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
