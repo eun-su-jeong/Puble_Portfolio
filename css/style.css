@@ -123,37 +123,301 @@ button {
   background: none;
 }
 
-.project-main {
-  padding: 0 1rem;
-}
-.project-main .hero article {
+.project-main .intro article {
+  position: relative;
   width: 100%;
   height: 100vh;
-  background-color: lightcoral;
+  background: url("../images/img.jpg") no-repeat center;
+  background-size: cover;
 }
-.project-main .intro-box {
+.project-main .intro article .title {
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  padding: 0 1.2rem;
+}
+.project-main .intro article .title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9vw;
+  font-weight: 800;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.project-main .overview {
+  padding: 1em 1.2rem;
+  margin-bottom: 5em;
+}
+.project-main .overview article {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.project-main .overview article .credit {
+  display: flex;
+  justify-content: space-between;
+  width: 35vw;
+  padding-bottom: 5em;
+  font-size: 0.8rem;
+}
+.project-main .overview article .title {
+  line-height: 1;
+}
+.project-main .overview article .title h3 {
+  font-size: 5vw;
+  font-weight: 400;
+}
+.project-main .overview article .content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  padding-top: 5em;
+}
+.project-main .overview article .content .link a figure {
+  width: 250px;
+  border: 8px solid #222;
+  border-radius: 4px;
+}
+.project-main .overview article .content .link a figure img {
+  width: 100%;
+}
+.project-main .overview article .content .link a p {
+  margin-top: 4px;
+  font-size: 1.375rem;
+  text-transform: uppercase;
+}
+.project-main .overview article .content .intention {
+  width: 70vw;
+}
+.project-main .overview article .content .intention .desc {
+  font-size: 1.1rem;
+}
+.project-main .showing01 article .content figure {
+  width: 100%;
+}
+.project-main .showing01 article .content figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-main .showing01 article .content .desc {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0 1.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.project-main .showing02 {
+  padding: 3em 0;
+}
+.project-main .showing02 article {
+  padding: 0 1.2rem;
+}
+.project-main .showing02 article .content {
+  display: flex;
+  justify-content: space-between;
+}
+.project-main .showing02 article .content .intention {
+  width: 50vw;
+}
+.project-main .showing02 article .content .intention .desc {
+  position: sticky;
+  top: 0;
+  padding: 2em 0;
+  font-size: 1.1rem;
+}
+.project-main .showing02 article .content .images {
+  width: 30vw;
+}
+.project-main .showing02 article .content .images ul {
   display: flex;
   flex-direction: column;
 }
-.project-main .intro-box .description {
-  display: flex;
+.project-main .showing02 article .content .images ul li {
+  width: 100%;
+  height: 500px;
+  padding: 1rem 0;
 }
-.project-main .intro-box .description .pages ul {
+.project-main .showing02 article .content .images ul li .image {
+  width: 100%;
+  height: 100%;
+}
+.project-main .showing02 article .content .images ul li .image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.project-main .showing02 article .content .images ul li .desc {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.project-main .showing03 article {
+  padding: 3em 1.2rem 10em;
+}
+.project-main .showing03 article .content .images ul {
+  display: flex;
+  gap: 1rem;
+}
+.project-main .showing03 article .content .images ul li {
   display: flex;
   flex-direction: column;
 }
-.project-main .intro-box .description .pages .link a figure img {
-  width: 200px;
+.project-main .showing03 article .content .images ul li .image {
+  width: 100%;
+  height: 100%;
 }
-.project-main .content {
+.project-main .showing03 article .content .images ul li .image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.project-main .showing03 article .content .images ul li .desc {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.project-main .showing04 {
+  padding: 1em 1.2rem;
+}
+.project-main .showing04 article {
+  position: relative;
+  width: 100%;
+  padding: 3em 0 10em;
+  border-top: 1px solid #222;
+}
+.project-main .showing04 article .credit {
   display: flex;
+  justify-content: space-between;
+  width: 35vw;
+  padding-bottom: 5em;
+  font-size: 0.8rem;
 }
-.project-main .content .images ul {
+.project-main .showing04 article .title {
+  margin-top: 1rem;
+  line-height: 1;
+}
+.project-main .showing04 article .title h3 {
+  font-size: 5vw;
+  font-weight: 400;
+}
+.project-main .showing04 article .content {
   display: flex;
   flex-direction: column;
+  padding-top: 1em;
 }
-.project-main .content .images ul li a img {
-  width: 200px;
+.project-main .showing04 article .content .intention {
+  width: 60vw;
+}
+.project-main .showing04 article .content .intention .desc {
+  font-size: 1.1rem;
+}
+.project-main .showing04 article .content .images-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+}
+.project-main .showing04 article .content .images-list .image-item {
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-top: 10em;
+  max-width: 100%;
+}
+.project-main .showing04 article .content .images-list .image-item figure img {
+  width: 100%;
+}
+.project-main .showing04 article .content .images-list .image-item .desc {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(1) {
+  flex-basis: 40vw;
+}
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(2) {
+  flex-basis: 30vw;
+  margin-left: 2em;
+}
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(3) {
+  flex-basis: 40vw;
+}
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(4) {
+  flex-basis: 40vw;
+  margin-left: auto;
+}
+.project-main .showing05 {
+  padding: 1em 1.2rem;
+}
+.project-main .showing05 article {
+  position: relative;
+  width: 100%;
+  padding: 3em 0 10em;
+  border-top: 1px solid #222;
+}
+.project-main .showing05 article .credit {
+  display: flex;
+  justify-content: space-between;
+  width: 35vw;
+  padding-bottom: 5em;
+  font-size: 0.8rem;
+}
+.project-main .showing05 article .title {
+  margin-top: 1rem;
+  line-height: 1;
+}
+.project-main .showing05 article .title h3 {
+  font-size: 5vw;
+  font-weight: 400;
+}
+.project-main .showing05 article .content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+}
+.project-main .showing05 article .content .intention {
+  width: 60vw;
+}
+.project-main .showing05 article .content .intention .desc {
+  font-size: 1.1rem;
+}
+.project-main .showing05 article .content .images {
+  margin-top: 5em;
+}
+.project-main .showing05 article .content .images figure {
+  width: 100%;
+}
+.project-main .showing05 article .content .images figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-main .showing05 article .content .images .desc {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.project-main .footer-credit {
+  padding: 1em 1.2rem;
+}
+.project-main .footer-credit article {
+  display: flex;
+  border-top: 1px solid #222;
+  padding-top: 2em;
+}
+.project-main .footer-credit article .credit {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 35vw;
+  padding-bottom: 5em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.project-main .footer-credit article .credit .name {
+  font-size: 1.25rem;
 }
 
 body {
