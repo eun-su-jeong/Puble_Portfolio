@@ -13,3 +13,48 @@ window.addEventListener('scroll', () => {
     }
     lastScrollY = window.scrollY;
 });
+
+/* project list select */
+document.addEventListener('DOMContentLoaded', function () {
+   const projectList = document.querySelectorAll('.project-list ul li');
+
+   projectList.forEach(item => {
+       item.addEventListener('click', function () {
+           projectList.forEach(item => {
+               item.classList.remove('active');
+           });
+           this.classList.add('active');
+       })
+   });
+});
+
+/* filtering */
+document.addEventListener('DOMContentLoaded', function () {
+    const projectList = document.querySelectorAll('.project-list ul li');
+    const selectedProjectContainer = document.getElementById('selected-project');
+
+    projectList.forEach(item => {
+        item.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // 선택된 프로젝트 ID 가져오기
+            const projectId = this.getAttribute('data-project');
+
+            // 해당 프로젝트 콘텐츠 찾기
+            const selectedContent = document.querySelector(`.project-content[data-project="${projectId}"]`);
+
+            if (selectedContent) {
+                // 선택된 콘텐츠의 내용 복사
+                const thumbnail = selectedContent.querySelector('.thumbnail img').src;
+                const title = selectedContent.querySelector('.desc strong').textContent;
+                const description = selectedContent.querySelector('.desc span').textContent;
+
+                // #selected-project 영역 업데이트
+                selectedProjectContainer.querySelector('.thumbnail img').src = thumbnail;
+                selectedProjectContainer.querySelector('.desc strong').textContent = title;
+                selectedProjectContainer.querySelector('.desc span').textContent = description;
+            }
+        });
+    });
+});
+

@@ -147,7 +147,7 @@ main{
                                     }
                                 }
 
-                                &:hover{
+                                &:hover, &.active{
                                     .check{
                                         &:after{
                                             transform: translate(-50%, -50%) scale(2);
@@ -199,7 +199,7 @@ main{
                                     }
                                 }
 
-                                &:hover{
+                                &:hover, &.active{
                                     .check{
                                         &:after{
                                             transform: translate(-50%, -50%) scale(2);
