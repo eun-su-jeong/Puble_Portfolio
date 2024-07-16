@@ -15,15 +15,15 @@ window.addEventListener('scroll', () => {
 });
 
 /* project list select */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
    const projectList = document.querySelectorAll('.project-list ul li');
 
    projectList.forEach(item => {
-       item.addEventListener('click', function () {
+       item.addEventListener('click', () => {
            projectList.forEach(item => {
                item.classList.remove('active');
            });
-           this.classList.add('active');
+           item.classList.add('active');
        })
    });
 });
@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 선택된 프로젝트 ID 가져오기
             const projectId = this.getAttribute('data-project');
+            console.log(projectId);
 
             // 해당 프로젝트 콘텐츠 찾기
             const selectedContent = document.querySelector(`.project-content[data-project="${projectId}"]`);
