@@ -220,229 +220,229 @@ button {
     left: 0;
   }
 }
-.project-main .overview article .content .link .intention {
+.project-main .overview article .content .intention {
   width: 70vw;
 }
-.project-main .overview article .content .link .intention .desc {
+.project-main .overview article .content .intention .desc {
   font-size: 1.1rem;
 }
-.project-main .overview .showing01 article .content figure {
+.project-main .showing01 article .content figure {
   width: 100%;
 }
-.project-main .overview .showing01 article .content figure img {
+.project-main .showing01 article .content figure img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-main .overview .showing01 article .content .desc {
+.project-main .showing01 article .content .desc {
   display: block;
   margin-top: 0.5rem;
   padding: 0 1.2rem;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.project-main .overview .showing02 {
+.project-main .showing02 {
   padding: 3em 0;
 }
-.project-main .overview .showing02 article {
+.project-main .showing02 article {
   padding: 0 1.2rem;
 }
-.project-main .overview .showing02 article .content {
+.project-main .showing02 article .content {
   display: flex;
   justify-content: space-between;
 }
-.project-main .overview .showing02 article .content .intention {
+.project-main .showing02 article .content .intention {
   width: 50vw;
 }
-.project-main .overview .showing02 article .content .intention .desc {
+.project-main .showing02 article .content .intention .desc {
   position: sticky;
   top: 0;
   padding: 2em 0;
   font-size: 1.1rem;
 }
-.project-main .overview .showing02 article .content .images {
+.project-main .showing02 article .content .images {
   width: 30vw;
 }
-.project-main .overview .showing02 article .content .images ul {
+.project-main .showing02 article .content .images ul {
   display: flex;
   flex-direction: column;
 }
-.project-main .overview .showing02 article .content .images ul li {
+.project-main .showing02 article .content .images ul li {
   width: 100%;
   height: 500px;
   padding: 1rem 0;
 }
-.project-main .overview .showing02 article .content .images ul li .image {
+.project-main .showing02 article .content .images ul li .image {
   width: 100%;
   height: 100%;
 }
-.project-main .overview .showing02 article .content .images ul li .image img {
+.project-main .showing02 article .content .images ul li .image img {
   display: block;
   width: 100%;
   height: 100%;
 }
-.project-main .overview .showing02 article .content .images ul li .desc {
+.project-main .showing02 article .content .images ul li .desc {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.project-main .overview .showing03 article {
+.project-main .showing03 article {
   padding: 3em 1.2rem 10em;
 }
-.project-main .overview .showing03 article .content .images ul {
+.project-main .showing03 article .content .images ul {
   display: flex;
   gap: 1rem;
 }
-.project-main .overview .showing03 article .content .images ul li {
+.project-main .showing03 article .content .images ul li {
   display: flex;
   flex-direction: column;
 }
-.project-main .overview .showing03 article .content .images ul li .image {
+.project-main .showing03 article .content .images ul li .image {
   width: 100%;
   height: 100%;
 }
-.project-main .overview .showing03 article .content .images ul li .image img {
+.project-main .showing03 article .content .images ul li .image img {
   display: block;
   width: 100%;
   height: 100%;
 }
-.project-main .overview .showing03 article .content .images ul li .desc {
+.project-main .showing03 article .content .images ul li .desc {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.project-main .overview .showing04 {
+.project-main .showing04 {
   padding: 1em 1.2rem;
 }
-.project-main .overview .showing04 article {
+.project-main .showing04 article {
   position: relative;
   width: 100%;
   padding: 3em 0 10em;
   border-top: 1px solid #222;
 }
-.project-main .overview .showing04 article .credit {
+.project-main .showing04 article .credit {
   display: flex;
   justify-content: space-between;
   width: 35vw;
   padding-bottom: 5em;
   font-size: 0.8rem;
 }
-.project-main .overview .showing04 article .title {
+.project-main .showing04 article .title {
   margin-top: 1rem;
   line-height: 1;
 }
-.project-main .overview .showing04 article .title h3 {
+.project-main .showing04 article .title h3 {
   font-size: 5vw;
   font-weight: 400;
 }
-.project-main .overview .showing04 article .content {
+.project-main .showing04 article .content {
   display: flex;
   flex-direction: column;
   padding-top: 1em;
 }
-.project-main .overview .showing04 article .content .intention {
+.project-main .showing04 article .content .intention {
   width: 60vw;
 }
-.project-main .overview .showing04 article .content .intention .desc {
+.project-main .showing04 article .content .intention .desc {
   font-size: 1.1rem;
 }
-.project-main .overview .showing04 article .content .images-list {
+.project-main .showing04 article .content .images-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   position: relative;
   width: 100%;
 }
-.project-main .overview .showing04 article .content .images-list .image-item {
+.project-main .showing04 article .content .images-list .image-item {
   flex-shrink: 0;
   flex-grow: 0;
   margin-top: 10em;
   max-width: 100%;
 }
-.project-main .overview .showing04 article .content .images-list .image-item figure img {
+.project-main .showing04 article .content .images-list .image-item figure img {
   width: 100%;
 }
-.project-main .overview .showing04 article .content .images-list .image-item .desc {
+.project-main .showing04 article .content .images-list .image-item .desc {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.project-main .overview .showing04 article .content .images-list .image-item:nth-of-type(1) {
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(1) {
   flex-basis: 40vw;
 }
-.project-main .overview .showing04 article .content .images-list .image-item:nth-of-type(2) {
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(2) {
   flex-basis: 30vw;
   margin-left: 2em;
 }
-.project-main .overview .showing04 article .content .images-list .image-item:nth-of-type(3) {
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(3) {
   flex-basis: 40vw;
 }
-.project-main .overview .showing04 article .content .images-list .image-item:nth-of-type(4) {
+.project-main .showing04 article .content .images-list .image-item:nth-of-type(4) {
   flex-basis: 40vw;
   margin-left: auto;
 }
-.project-main .overview .showing05 {
+.project-main .showing05 {
   padding: 1em 1.2rem;
 }
-.project-main .overview .showing05 article {
+.project-main .showing05 article {
   position: relative;
   width: 100%;
   padding: 3em 0 10em;
   border-top: 1px solid #222;
 }
-.project-main .overview .showing05 article .credit {
+.project-main .showing05 article .credit {
   display: flex;
   justify-content: space-between;
   width: 35vw;
   padding-bottom: 5em;
   font-size: 0.8rem;
 }
-.project-main .overview .showing05 article .title {
+.project-main .showing05 article .title {
   margin-top: 1rem;
   line-height: 1;
 }
-.project-main .overview .showing05 article .title h3 {
+.project-main .showing05 article .title h3 {
   font-size: 5vw;
   font-weight: 400;
 }
-.project-main .overview .showing05 article .content {
+.project-main .showing05 article .content {
   display: flex;
   flex-direction: column;
   padding-top: 1em;
 }
-.project-main .overview .showing05 article .content .intention {
+.project-main .showing05 article .content .intention {
   width: 60vw;
 }
-.project-main .overview .showing05 article .content .intention .desc {
+.project-main .showing05 article .content .intention .desc {
   font-size: 1.1rem;
 }
-.project-main .overview .showing05 article .content .images {
+.project-main .showing05 article .content .images {
   margin-top: 5em;
 }
-.project-main .overview .showing05 article .content .images figure {
+.project-main .showing05 article .content .images figure {
   width: 100%;
 }
-.project-main .overview .showing05 article .content .images figure img {
+.project-main .showing05 article .content .images figure img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-main .overview .showing05 article .content .images .desc {
+.project-main .showing05 article .content .images .desc {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.project-main .overview .footer-credit {
+.project-main .footer-credit {
   padding: 1em 1.2rem;
 }
-.project-main .overview .footer-credit article {
+.project-main .footer-credit article {
   display: flex;
   border-top: 1px solid #222;
   padding-top: 2em;
 }
-.project-main .overview .footer-credit article .credit {
+.project-main .footer-credit article .credit {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -451,7 +451,7 @@ button {
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.project-main .overview .footer-credit article .credit .name {
+.project-main .footer-credit article .credit .name {
   font-size: 1.25rem;
 }
 
