@@ -18,6 +18,10 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
    const projectList = document.querySelectorAll('.project-list ul li');
 
+    if (projectList.length > 0) {
+        projectList[0].classList.add('active');
+    }
+
    projectList.forEach(item => {
        item.addEventListener('click', () => {
            projectList.forEach(item => {
@@ -57,5 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    // 첫 번째 프로젝트로 초기값 설정
+    if (projectList.length > 0) {
+        projectList[0].click();
+    }
 });
 

@@ -485,7 +485,8 @@ header {
   transition: all 0.5s ease;
 }
 header h1 {
-  font-size: 1.25rem;
+  font-family: "Montserrat", "Noto Sans KR", "sans-serif";
+  font-size: 1.375rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -503,7 +504,7 @@ header nav ul li:hover a {
 header nav ul li a {
   display: inline-block;
   padding: 2px 5px;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
 }
 
@@ -549,7 +550,7 @@ main .project .project-wrap .project-list .project-item {
   max-width: 100%;
 }
 main .project .project-wrap .project-list .project-item h4 {
-  font-size: 1.375rem;
+  font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
   margin-bottom: 2em;
@@ -642,7 +643,6 @@ main .project .project-wrap .project-list .project-item a .desc strong {
   display: block;
   font-size: 1.375rem;
   font-weight: 400;
-  margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 main .project .project-wrap .project-list .project-item a .desc span {
