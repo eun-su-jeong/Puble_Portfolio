@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
     const projectList = document.querySelectorAll('.project-list ul li');
     const selectedProjectContainer = document.getElementById('selected-project');
+    const projectLink = document.getElementById('project-link');
 
     projectList.forEach(item => {
         item.addEventListener('click', function(event) {
@@ -53,11 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 const thumbnail = selectedContent.querySelector('.thumbnail img').src;
                 const title = selectedContent.querySelector('.desc strong').textContent;
                 const description = selectedContent.querySelector('.desc span').textContent;
+                const link = selectedContent.querySelector('.project-link').href;
 
                 // #selected-project 영역 업데이트
                 selectedProjectContainer.querySelector('.thumbnail img').src = thumbnail;
                 selectedProjectContainer.querySelector('.desc strong').textContent = title;
                 selectedProjectContainer.querySelector('.desc span').textContent = description;
+                projectLink.href = link;
             }
         });
     });
