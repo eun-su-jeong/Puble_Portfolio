@@ -325,6 +325,17 @@ main{
                     .project-item{
                         margin-left: 0;
 
+                        a{
+                            .desc{
+                                strong{
+                                    font-size: 1.125rem;
+                                }
+                                span{
+                                    font-size: 1.125rem;
+                                }
+                            }
+                    }
+
                         &:nth-of-type(n) {
                             flex-basis: 100%;
                             margin-left: 0;

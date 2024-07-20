@@ -800,6 +800,12 @@ main .project .project-wrap .project-list .project-item:nth-of-type(8) {
   main .project .project-wrap .project-list .project-item {
     margin-left: 0;
   }
+  main .project .project-wrap .project-list .project-item a .desc strong {
+    font-size: 1.125rem;
+  }
+  main .project .project-wrap .project-list .project-item a .desc span {
+    font-size: 1.125rem;
+  }
   main .project .project-wrap .project-list .project-item:nth-of-type(n) {
     flex-basis: 100%;
     margin-left: 0;
