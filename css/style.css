@@ -630,8 +630,24 @@ main .project .project-wrap .project-list .project-item .project2 ul li a .check
 main .project .project-wrap .project-list .project-item .project2 ul li:hover .check:after, main .project .project-wrap .project-list .project-item .project2 ul li.active .check:after {
   transform: translate(-50%, -50%) scale(2);
 }
+main .project .project-wrap .project-list .project-item a {
+  display: inline-block;
+  width: 100%;
+}
+main .project .project-wrap .project-list .project-item a .thumbnail {
+  width: 100%;
+  overflow: hidden;
+  z-index: 30;
+}
 main .project .project-wrap .project-list .project-item a .thumbnail figure img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .project .project-wrap .project-list .project-item a .thumbnail figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 main .project .project-wrap .project-list .project-item a .desc {
   display: flex;

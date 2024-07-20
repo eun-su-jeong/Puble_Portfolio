@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectList = document.querySelectorAll('.project-list ul li');
     const selectedProjectContainer = document.getElementById('selected-project');
     const projectLink = document.getElementById('project-link');
+    const viewFigure = selectedProjectContainer.querySelector('.thumbnail .view');
 
     projectList.forEach(item => {
         item.addEventListener('click', function(event) {
@@ -51,13 +52,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (selectedContent) {
                 // 선택된 콘텐츠의 내용 복사
-                const thumbnail = selectedContent.querySelector('.thumbnail img').src;
+                const img = selectedContent.querySelector('.thumbnail img');
+                const video = selectedContent.querySelector('.thumbnail video');
                 const title = selectedContent.querySelector('.desc strong').textContent;
                 const description = selectedContent.querySelector('.desc span').textContent;
                 const link = selectedContent.querySelector('.project-link').href;
 
                 // #selected-project 영역 업데이트
-                selectedProjectContainer.querySelector('.thumbnail img').src = thumbnail;
+                viewFigure.innerHTML = ''; // 기존 콘텐츠 삭제
+
+                if (video) {
+                    const videoClone = video.cloneNode(true);
+                    viewFigure.appendChild(videoClone);
+                } else if (img) {
+                    const imgClone = img.cloneNode(true);
+                    viewFigure.appendChild(imgClone);
+                }
+
+                // #selected-project 영역 업데이트
                 selectedProjectContainer.querySelector('.desc strong').textContent = title;
                 selectedProjectContainer.querySelector('.desc span').textContent = description;
                 projectLink.href = link;
