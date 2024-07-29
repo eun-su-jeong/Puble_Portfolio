@@ -641,14 +641,14 @@ button {
 }
 body {
   overflow-x: hidden;
-  background-color: #F9F5EF;
+  background-color: #000;
   color: #222;
   font-family: "Montserrat", "Noto Sans KR", "sans-serif";
 }
 
 a {
   text-decoration: none;
-  color: #222;
+  color: #fff;
 }
 
 ul, ol, li {
@@ -672,7 +672,7 @@ ul, ol, li {
   height: 60px;
   z-index: 10;
   transition: all 0.5s ease;
-  backdrop-filter: blur(10px);
+  background-color: #000;
 }
 .wrapper header h1 {
   font-family: "Montserrat", "Noto Sans KR", "sans-serif";
@@ -708,8 +708,9 @@ ul, ol, li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 1.2rem;
+  padding: 0 4rem;
   height: 100vh;
+  color: #fff;
 }
 .wrapper main .hero h2 {
   font-family: "Montserrat", sans-serif;
@@ -718,9 +719,21 @@ ul, ol, li {
   line-height: 0.9;
   text-transform: uppercase;
 }
+.wrapper main .projectAll {
+  display: block !important;
+}
+.wrapper main .projectAll .thumbnail {
+  height: 100%;
+}
+.wrapper main .projectAll figure video {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .wrapper main .project {
-  padding: 0 1.2rem;
+  padding: 0 4rem;
   height: auto;
+  display: none;
 }
 .wrapper main .project .project-wrap {
   display: flex;
@@ -746,12 +759,15 @@ ul, ol, li {
   font-weight: 900;
   text-transform: uppercase;
   margin-bottom: 1em;
+  line-height: 1;
+  color: #fff;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project1 h5 {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1em;
+  color: #fff;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project1 ul li {
   font-size: 2rem;
@@ -762,7 +778,7 @@ ul, ol, li {
   position: relative;
   width: 1rem;
   height: 1rem;
-  border: 1px solid #222;
+  border: 1px solid #fff;
   border-radius: 50%;
   transition: all 0.5s ease;
 }
@@ -776,7 +792,7 @@ ul, ol, li {
   width: 50%;
   height: 50%;
   margin: auto;
-  background-color: #222;
+  background-color: #fff;
   border-radius: 50%;
   transition: all 0.2s ease;
 }
@@ -791,6 +807,7 @@ ul, ol, li {
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1em;
+  color: #fff;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project2 ul li {
   font-size: 2rem;
@@ -801,7 +818,7 @@ ul, ol, li {
   position: relative;
   width: 1rem;
   height: 1rem;
-  border: 1px solid #222;
+  border: 1px solid #fff;
   border-radius: 50%;
   transition: all 0.5s ease;
 }
@@ -815,7 +832,7 @@ ul, ol, li {
   width: 50%;
   height: 50%;
   margin: auto;
-  background-color: #222;
+  background-color: #fff;
   border-radius: 50%;
   transition: all 0.2s ease;
 }
@@ -825,11 +842,13 @@ ul, ol, li {
 .wrapper main .project .project-wrap .project-list .project-item a {
   display: inline-block;
   width: 100%;
+  height: 100%;
 }
 .wrapper main .project .project-wrap .project-list .project-item a .thumbnail {
   width: 100%;
   overflow: hidden;
   z-index: 30;
+  position: relative;
 }
 .wrapper main .project .project-wrap .project-list .project-item a .thumbnail figure img {
   width: 100%;
@@ -862,6 +881,7 @@ ul, ol, li {
 .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(2) {
   flex-basis: 60vw;
   margin-left: auto;
+  height: calc(100vh - 10em);
 }
 .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(3) {
   flex-basis: 40vw;
@@ -889,7 +909,7 @@ ul, ol, li {
   background-color: #222;
   color: #fff;
   padding: 2rem 0;
-  margin-top: 5rem;
+  margin-top: 10rem;
   text-align: center;
   font-size: 0.9rem;
 }
