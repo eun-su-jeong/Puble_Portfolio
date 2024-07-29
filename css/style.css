@@ -742,10 +742,10 @@ ul, ol, li {
   max-width: 100%;
 }
 .wrapper main .project .project-wrap .project-list .project-item h4 {
-  font-size: 2rem;
+  font-size: 5rem;
   font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project1 h5 {
   font-size: 1rem;
@@ -787,13 +787,13 @@ ul, ol, li {
   margin-top: 2em;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project2 h5 {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1em;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project2 ul li {
-  font-size: 1.25rem;
+  font-size: 2rem;
   margin-bottom: 0.5em;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project2 ul li a .check {
