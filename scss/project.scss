@@ -55,6 +55,8 @@
               border-radius: 4px;
               img{
                 width: 100%;
+                height: 100%;
+                object-fit: cover;
               }
             }
             p{
@@ -108,7 +110,7 @@
         }
         .intention{
           .desc{
-            font-size: 1.1rem;
+            font-size: 2rem;
           }
         }
       }
@@ -151,7 +153,7 @@
             position: sticky;
             top: 0;
             padding: 2em 0;
-            font-size: 1.1rem;
+            font-size: 2rem;
           }
         }
         .images {
@@ -201,6 +203,27 @@
               }
 
 
+            }
+          }
+        }
+        &.desktop{
+          display: initial;
+          .images{
+            width: 100%;
+            ul{
+              align-items: center;
+              li{
+                width: 75vw;
+                .image-box{
+                  aspect-ratio: 1280 / 700;
+                }
+                &:nth-of-type(1){
+                  margin-right: auto;
+                }
+                &:nth-of-type(2){
+                  margin-left: auto;
+                }
+              }
             }
           }
         }
@@ -280,6 +303,7 @@
         h3{
           font-size: 4vw;
           font-weight: 400;
+          line-height: 1.3;
         }
       }
       .content{
@@ -290,7 +314,7 @@
         .intention{
           width: 60vw;
           .desc{
-            font-size: 1.1rem;
+            font-size: 2rem;
           }
         }
 
@@ -307,11 +331,29 @@
             margin-top: 10em;
             max-width: 100%;
 
-            figure{
-              img{
+            .image-box{
+              position: relative;
+              //max-width: 375px;
+              width: 100%;
+              //height: 650px;
+              aspect-ratio: 1280/700;
+              border-radius: 45px;
+              border: 10px solid #222;
+              overflow: hidden;
+
+              figure{
                 width: 100%;
+                height: 100%;
+                min-height: 100%;
+                img{
+                  width: 100%;
+                  min-height: 100%;
+                  object-fit: cover;
+                  height: auto;
+                }
               }
             }
+
             .desc{
               margin-top: .5rem;
               font-size: .8rem;
@@ -322,7 +364,7 @@
               flex-basis: 40vw;
             }
             &:nth-of-type(2){
-              flex-basis: 30vw;
+              flex-basis: 40vw;
               margin-left: 2em;
             }
             &:nth-of-type(3){
@@ -358,6 +400,7 @@
         h3{
           font-size: 4vw;
           font-weight: 400;
+          line-height: 1.3;
         }
       }
       .content{
@@ -368,7 +411,7 @@
         .intention{
           width: 60vw;
           .desc{
-            font-size: 1.1rem;
+            font-size: 2rem;
           }
         }
 
@@ -457,6 +500,7 @@
       article{
         height: initial;
         .credit{
+         width: 100%;
          padding-bottom: 1em;
         }
         .title{
@@ -472,6 +516,7 @@
             a{
               figure{
                 width: 200px;
+                border: 4px solid #222;
               }
               p{
                 font-size: 1rem;
@@ -492,6 +537,27 @@
             width: 100%;
             ul{
               display: initial;
+            }
+          }
+          &.desktop{
+            .images{
+              ul{
+                align-items: center;
+                li{
+                  width: 100%;
+                  .image-box{
+                    aspect-ratio: 1280 / 900;
+                    border: 5px solid #222;
+                    border-radius: 20px;
+                  }
+                  &:nth-of-type(1){
+                    margin-right: 0;
+                  }
+                  &:nth-of-type(2){
+                    margin-left: 0;
+                  }
+                }
+              }
             }
           }
         }
@@ -519,12 +585,20 @@
           }
         }
         .content{
+          .intention{
+            width: 100%;
+          }
           .images-list{
             display: initial;
             .image-item{
+              .image-box{
+                aspect-ratio: 1280 / 900;
+                border: 5px solid #222;
+                border-radius: 20px;
+              }
               margin-top: 5em;
-              &:nth-of-type(3) {
-                margin-right: 2em;
+              &:nth-of-type(2) {
+                margin-left: 0;
               }
             }
           }
@@ -541,6 +615,16 @@
             font-weight: 500;
           }
         }
+        .content{
+          .intention{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .footer-credit{
+      article{
+        justify-content: space-around;
       }
     }
 

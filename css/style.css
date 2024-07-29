@@ -178,6 +178,8 @@ button {
 }
 .project-main .overview article .content .link a figure img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .project-main .overview article .content .link a p {
   display: inline-flex;
@@ -220,7 +222,7 @@ button {
   }
 }
 .project-main .overview article .content .intention .desc {
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 .project-main .showing01 article .content figure {
   width: 100%;
@@ -256,7 +258,7 @@ button {
   position: sticky;
   top: 0;
   padding: 2em 0;
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 .project-main .showing02 article .content .images {
   width: 30vw;
@@ -297,6 +299,27 @@ button {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+.project-main .showing02 article .content.desktop {
+  display: initial;
+}
+.project-main .showing02 article .content.desktop .images {
+  width: 100%;
+}
+.project-main .showing02 article .content.desktop .images ul {
+  align-items: center;
+}
+.project-main .showing02 article .content.desktop .images ul li {
+  width: 75vw;
+}
+.project-main .showing02 article .content.desktop .images ul li .image-box {
+  aspect-ratio: 1280/700;
+}
+.project-main .showing02 article .content.desktop .images ul li:nth-of-type(1) {
+  margin-right: auto;
+}
+.project-main .showing02 article .content.desktop .images ul li:nth-of-type(2) {
+  margin-left: auto;
 }
 .project-main .showing03 article {
   padding: 3em 1.2rem 10em;
@@ -364,6 +387,7 @@ button {
 .project-main .showing04 article .title h3 {
   font-size: 4vw;
   font-weight: 400;
+  line-height: 1.3;
 }
 .project-main .showing04 article .content {
   display: flex;
@@ -374,7 +398,7 @@ button {
   width: 60vw;
 }
 .project-main .showing04 article .content .intention .desc {
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 .project-main .showing04 article .content .images-list {
   display: flex;
@@ -389,8 +413,24 @@ button {
   margin-top: 10em;
   max-width: 100%;
 }
-.project-main .showing04 article .content .images-list .image-item figure img {
+.project-main .showing04 article .content .images-list .image-item .image-box {
+  position: relative;
   width: 100%;
+  aspect-ratio: 1280/700;
+  border-radius: 45px;
+  border: 10px solid #222;
+  overflow: hidden;
+}
+.project-main .showing04 article .content .images-list .image-item .image-box figure {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+.project-main .showing04 article .content .images-list .image-item .image-box figure img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  height: auto;
 }
 .project-main .showing04 article .content .images-list .image-item .desc {
   margin-top: 0.5rem;
@@ -401,7 +441,7 @@ button {
   flex-basis: 40vw;
 }
 .project-main .showing04 article .content .images-list .image-item:nth-of-type(2) {
-  flex-basis: 30vw;
+  flex-basis: 40vw;
   margin-left: 2em;
 }
 .project-main .showing04 article .content .images-list .image-item:nth-of-type(3) {
@@ -434,6 +474,7 @@ button {
 .project-main .showing05 article .title h3 {
   font-size: 4vw;
   font-weight: 400;
+  line-height: 1.3;
 }
 .project-main .showing05 article .content {
   display: flex;
@@ -444,7 +485,7 @@ button {
   width: 60vw;
 }
 .project-main .showing05 article .content .intention .desc {
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 .project-main .showing05 article .content .images {
   margin-top: 5em;
@@ -510,6 +551,7 @@ button {
     height: initial;
   }
   .project-main .overview article .credit {
+    width: 100%;
     padding-bottom: 1em;
   }
   .project-main .overview article .title h3 {
@@ -522,6 +564,7 @@ button {
   }
   .project-main .overview article .content .link a figure {
     width: 200px;
+    border: 4px solid #222;
   }
   .project-main .overview article .content .link a p {
     font-size: 1rem;
@@ -538,6 +581,23 @@ button {
   .project-main .showing02 article .content .images ul {
     display: initial;
   }
+  .project-main .showing02 article .content.desktop .images ul {
+    align-items: center;
+  }
+  .project-main .showing02 article .content.desktop .images ul li {
+    width: 100%;
+  }
+  .project-main .showing02 article .content.desktop .images ul li .image-box {
+    aspect-ratio: 1280/900;
+    border: 5px solid #222;
+    border-radius: 20px;
+  }
+  .project-main .showing02 article .content.desktop .images ul li:nth-of-type(1) {
+    margin-right: 0;
+  }
+  .project-main .showing02 article .content.desktop .images ul li:nth-of-type(2) {
+    margin-left: 0;
+  }
   .project-main .showing03 article .content .images ul {
     display: initial;
   }
@@ -548,14 +608,22 @@ button {
     font-size: 6vw;
     font-weight: 500;
   }
+  .project-main .showing04 article .content .intention {
+    width: 100%;
+  }
   .project-main .showing04 article .content .images-list {
     display: initial;
   }
   .project-main .showing04 article .content .images-list .image-item {
     margin-top: 5em;
   }
-  .project-main .showing04 article .content .images-list .image-item:nth-of-type(3) {
-    margin-right: 2em;
+  .project-main .showing04 article .content .images-list .image-item .image-box {
+    aspect-ratio: 1280/900;
+    border: 5px solid #222;
+    border-radius: 20px;
+  }
+  .project-main .showing04 article .content .images-list .image-item:nth-of-type(2) {
+    margin-left: 0;
   }
   .project-main .showing05 article {
     padding: 3em 0 5em;
@@ -563,6 +631,12 @@ button {
   .project-main .showing05 article .title h3 {
     font-size: 6vw;
     font-weight: 500;
+  }
+  .project-main .showing05 article .content .intention {
+    width: 100%;
+  }
+  .project-main .footer-credit article {
+    justify-content: space-around;
   }
 }
 body {
@@ -602,7 +676,7 @@ ul, ol, li {
 }
 .wrapper header h1 {
   font-family: "Montserrat", "Noto Sans KR", "sans-serif";
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -623,7 +697,7 @@ ul, ol, li {
 .wrapper header nav ul li a {
   display: inline-block;
   padding: 2px 5px;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 .wrapper main {
@@ -646,7 +720,7 @@ ul, ol, li {
 }
 .wrapper main .project {
   padding: 0 1.2rem;
-  height: 100vh;
+  height: auto;
 }
 .wrapper main .project .project-wrap {
   display: flex;
@@ -674,13 +748,13 @@ ul, ol, li {
   margin-bottom: 2em;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project1 h5 {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1em;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project1 ul li {
-  font-size: 1.25rem;
+  font-size: 2rem;
   margin-bottom: 0.5em;
 }
 .wrapper main .project .project-wrap .project-list .project-item .project1 ul li a .check {
@@ -810,6 +884,34 @@ ul, ol, li {
 .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(8) {
   flex-basis: 40vw;
   margin-left: 2em;
+}
+.wrapper footer {
+  background-color: #222;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.wrapper footer .footer-content {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.wrapper footer .footer-content p,
+.wrapper footer .footer-content a {
+  margin: 0.5rem 0;
+}
+.wrapper footer .footer-content a {
+  color: #fff;
+}
+.wrapper footer .footer-content a:hover {
+  text-decoration: underline;
+}
+.wrapper footer .social-media {
+  margin: 1rem 0;
+}
+.wrapper footer .social-media a {
+  margin: 0 0.5rem;
 }
 
 @media screen and (max-width: 480px) {
