@@ -738,6 +738,7 @@ ul, ol, li {
 .wrapper main .project {
   padding: 0 4rem;
   height: auto;
+  margin-top: 10em;
 }
 .wrapper main .project .project-wrap {
   display: flex;
@@ -747,6 +748,7 @@ ul, ol, li {
 }
 .wrapper main .project .project-wrap .project-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   position: relative;
   width: 100%;
@@ -755,6 +757,7 @@ ul, ol, li {
   flex-shrink: 0;
   flex-grow: 0;
   max-width: 100%;
+  margin-top: 10em;
 }
 .wrapper main .project .project-wrap .project-list .project-item h4 {
   font-size: 5rem;
@@ -849,7 +852,7 @@ ul, ol, li {
 .wrapper main .project .project-wrap .project-list .project-item a .thumbnail {
   width: 100%;
   overflow: hidden;
-  z-index: 30;
+  z-index: 1;
   position: relative;
 }
 .wrapper main .project .project-wrap .project-list .project-item a .thumbnail figure img {
