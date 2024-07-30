@@ -4,7 +4,7 @@
 
 body {
   overflow-x: hidden;
-  background-color: #000;
+  background-color: #F9F5EF;
   color: #222;
   font-family: "Montserrat", "Noto Sans KR", "sans-serif";
 
@@ -99,6 +99,7 @@ ul, ol, li {
 
     .projectAll {
         display: block!important;
+        margin-top: 10em;
       .thumbnail {
         height: 100%;
       }
@@ -124,7 +125,7 @@ ul, ol, li {
 
         .project-list {
           display: flex;
-          flex-wrap: wrap;
+          //flex-wrap: wrap;
           justify-content: flex-start;
           position: relative;
           width: 100%;
@@ -132,7 +133,6 @@ ul, ol, li {
           .project-item {
             flex-shrink: 0;
             flex-grow: 0;
-            margin-top: 10em;
             max-width: 100%;
 
             h4 {
@@ -304,7 +304,7 @@ ul, ol, li {
             }
 
             &:nth-of-type(2) {
-              flex-basis: 60vw;
+              flex-basis: 60%;
               margin-left: auto;
               height: calc(100vh - 10em);
             }
