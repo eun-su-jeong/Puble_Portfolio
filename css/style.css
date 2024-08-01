@@ -410,27 +410,6 @@ button {
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-.showing02 article .content.desktop {
-  display: initial;
-}
-.showing02 article .content.desktop .images {
-  width: 100%;
-}
-.showing02 article .content.desktop .images ul {
-  align-items: center;
-}
-.showing02 article .content.desktop .images ul li {
-  width: 75vw;
-}
-.showing02 article .content.desktop .images ul li .image-box {
-  aspect-ratio: 1280/700;
-}
-.showing02 article .content.desktop .images ul li:nth-of-type(1) {
-  margin-right: auto;
-}
-.showing02 article .content.desktop .images ul li:nth-of-type(2) {
-  margin-left: auto;
-}
 
 .showing03 article {
   padding: 3em 2rem 10em;
@@ -555,6 +534,28 @@ button {
 }
 .showing04 article .content .images-list .image-item:nth-of-type(4) {
   flex-basis: 40vw;
+  margin-left: auto;
+}
+.showing04 article .content.desktop {
+  display: initial;
+}
+.showing04 article .content.desktop .images {
+  width: 100%;
+  margin-top: 5em;
+}
+.showing04 article .content.desktop .images ul {
+  align-items: center;
+}
+.showing04 article .content.desktop .images ul li {
+  width: 75vw;
+}
+.showing04 article .content.desktop .images ul li .image-box {
+  aspect-ratio: 1280/700;
+}
+.showing04 article .content.desktop .images ul li:nth-of-type(1) {
+  margin-right: auto;
+}
+.showing04 article .content.desktop .images ul li:nth-of-type(2) {
   margin-left: auto;
 }
 

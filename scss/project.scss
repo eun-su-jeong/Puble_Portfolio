@@ -333,27 +333,6 @@
             }
           }
         }
-        &.desktop{
-          display: initial;
-          .images{
-            width: 100%;
-            ul{
-              align-items: center;
-              li{
-                width: 75vw;
-                .image-box{
-                  aspect-ratio: 1280 / 700;
-                }
-                &:nth-of-type(1){
-                  margin-right: auto;
-                }
-                &:nth-of-type(2){
-                  margin-left: auto;
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
@@ -507,6 +486,28 @@
               margin-left: auto;
             }
 
+          }
+        }
+        &.desktop{
+          display: initial;
+          .images{
+            width: 100%;
+            margin-top: 5em;
+            ul{
+              align-items: center;
+              li{
+                width: 75vw;
+                .image-box{
+                  aspect-ratio: 1280 / 700;
+                }
+                &:nth-of-type(1){
+                  margin-right: auto;
+                }
+                &:nth-of-type(2){
+                  margin-left: auto;
+                }
+              }
+            }
           }
         }
       }
