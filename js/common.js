@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* filtering */
 document.addEventListener('DOMContentLoaded', function () {
-    const projectList = document.querySelectorAll('.project-list ul li');
+    const projectList = document.querySelectorAll('.project-view ul li');
     const selectedProjectContainer = document.getElementById('selected-project');
     const projectLink = document.getElementById('project-link');
     const viewFigure = selectedProjectContainer.querySelector('.thumbnail .view');
