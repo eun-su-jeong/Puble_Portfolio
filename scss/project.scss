@@ -679,6 +679,27 @@
           }
         }
       }
+      .showing04{
+        article{
+          .content{
+            &.desktop{
+              .images{
+                ul{
+                  li{
+                    .image-box{
+                      aspect-ratio: 1280 / 900;
+                      .image.sb{
+                        bottom: 700px;
+                        top: auto;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -824,6 +845,7 @@
               ul {
                 display: flex;
                 flex-direction: column;
+                gap: 5rem;
               }
             }
           }
@@ -860,6 +882,16 @@
 
                 &:nth-of-type(2) {
                   margin-left: 0;
+                }
+              }
+            }
+
+            &.desktop{
+              .images{
+                ul{
+                  li{
+                    width: 100%;
+                  }
                 }
               }
             }

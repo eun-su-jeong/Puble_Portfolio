@@ -566,15 +566,41 @@ ul, ol, li {
       }
 
       .projectAll{
-        padding: 0 2rem;
+        padding: 0 1rem;
 
         .project-wrap{
           .project-view{
             flex-direction: column;
 
             .project-item{
+              margin-top: 5em;
               h4{
-                font-size: 4rem;
+                font-size: 2.5rem;
+              }
+              .project1{
+                ul{
+                  li{
+                    font-size: 1.125rem;
+                  }
+                }
+              }
+              .project2{
+                ul{
+                  li{
+                    font-size: 1.125rem;
+                  }
+                }
+              }
+
+              a{
+                .desc{
+                  strong{
+                    font-size: 1.125rem;
+                  }
+                  span{
+                    font-size: 1.125rem;
+                  }
+                }
               }
             }
           }
@@ -582,7 +608,7 @@ ul, ol, li {
       }
 
       .project {
-        padding: 0 2rem;
+        padding: 0 1rem;
         .project-wrap {
           .project-list {
             display: initial;
@@ -605,6 +631,7 @@ ul, ol, li {
               &:nth-of-type(n) {
                 flex-basis: 100%;
                 margin-left: 0;
+                margin-top: 5em;
               }
 
               &:nth-of-type(2) {
