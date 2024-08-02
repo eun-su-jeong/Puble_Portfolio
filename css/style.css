@@ -142,7 +142,8 @@ button {
   text-transform: uppercase;
 }
 .project-main .intro.cubank article {
-  background: url("../images/mockup1.webp") no-repeat center;
+  background: url("../images/mockup_cu.png") no-repeat center;
+  background-size: cover;
 }
 .project-main .intro.sb article {
   background: url("../images/mockup2.webp") no-repeat center;
