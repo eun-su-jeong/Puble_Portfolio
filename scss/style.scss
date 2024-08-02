@@ -49,7 +49,6 @@ ul, ol, li {
         content: 'eunsujeong';
       }
     }
-
     nav {
       ul {
         display: flex;
@@ -498,8 +497,36 @@ ul, ol, li {
 
 }
 
+@media screen and (max-width: 950px){
+  .wrapper{
+    main{
+      .projectAll{
+        padding: 0 3rem;
+        .project-wrap{
+          .project-view{
+            flex-direction: column;
+          }
+        }
+      }
 
-@media screen and (max-width: 480px) {
+      .project{
+        .project-wrap{
+          .project-list{
+            .project-item{
+              height: 100%!important;
+              a{
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 650px) {
   .wrapper {
     width: 100%;
 
@@ -532,9 +559,30 @@ ul, ol, li {
       .hero {
         height: initial;
         padding: 10em 1.2rem;
+
+        h2{
+          font-size: 12vw;
+        }
+      }
+
+      .projectAll{
+        padding: 0 2rem;
+
+        .project-wrap{
+          .project-view{
+            flex-direction: column;
+
+            .project-item{
+              h4{
+                font-size: 4rem;
+              }
+            }
+          }
+        }
       }
 
       .project {
+        padding: 0 2rem;
         .project-wrap {
           .project-list {
             display: initial;
@@ -561,6 +609,7 @@ ul, ol, li {
 
               &:nth-of-type(2) {
                 margin-top: 2em;
+                height: auto;
               }
             }
           }

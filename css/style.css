@@ -1120,7 +1120,21 @@ ul, ol, li {
   margin: 0 0.5rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 950px) {
+  .wrapper main .projectAll {
+    padding: 0 3rem;
+  }
+  .wrapper main .projectAll .project-wrap .project-view {
+    flex-direction: column;
+  }
+  .wrapper main .project .project-wrap .project-list .project-item {
+    height: 100% !important;
+  }
+  .wrapper main .project .project-wrap .project-list .project-item a {
+    height: auto;
+  }
+}
+@media screen and (max-width: 650px) {
   .wrapper {
     width: 100%;
   }
@@ -1142,6 +1156,21 @@ ul, ol, li {
     height: initial;
     padding: 10em 1.2rem;
   }
+  .wrapper main .hero h2 {
+    font-size: 12vw;
+  }
+  .wrapper main .projectAll {
+    padding: 0 2rem;
+  }
+  .wrapper main .projectAll .project-wrap .project-view {
+    flex-direction: column;
+  }
+  .wrapper main .projectAll .project-wrap .project-view .project-item h4 {
+    font-size: 4rem;
+  }
+  .wrapper main .project {
+    padding: 0 2rem;
+  }
   .wrapper main .project .project-wrap .project-list {
     display: initial;
   }
@@ -1160,6 +1189,7 @@ ul, ol, li {
   }
   .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(2) {
     margin-top: 2em;
+    height: auto;
   }
 }
 
