@@ -284,6 +284,10 @@
             top: 0;
             padding: 2em 0;
             font-size: 2rem;
+
+            .tit{
+              font-weight: bold;
+            }
           }
         }
 
@@ -326,8 +330,9 @@
               }
 
               .desc {
-                margin-top: .5rem;
+                margin-top: 1rem;
                 font-size: 1.2rem;
+                font-weight: bold;
                 text-transform: uppercase;
               }
             }
@@ -343,19 +348,20 @@
         .images{
           ul{
             display: flex;
+            flex-wrap: nowrap;
             justify-content: space-around;
-            gap: 1rem;
+            gap: 10rem;
 
             li{
               display: flex;
               flex-direction: column;
-              width: 30%;
+              width: 100%;
 
               .image-box {
                 position: relative;
-                max-width: 375px;
+                //max-width: 375px;
                 width: 100%;
-                height: 650px;
+                //height: 650px;
                 aspect-ratio: 375/667;
                 border-radius: 45px;
                 border: 10px solid #222;
@@ -384,6 +390,10 @@
                 margin-top: .5rem;
                 font-size: 1.2rem;
                 text-transform: uppercase;
+
+                .tit{
+                  font-weight: bold;
+                }
               }
             }
           }
