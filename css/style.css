@@ -261,7 +261,7 @@ button {
   display: block;
   margin-top: 0.5rem;
   padding: 0 1.2rem;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
 }
 .showing article .content figure {
@@ -557,6 +557,9 @@ button {
 }
 .showing04 article .content.desktop .images ul li .image-box {
   aspect-ratio: 1280/700;
+}
+.showing04 article .content.desktop .images ul li .desc {
+  font-weight: bold;
 }
 .showing04 article .content.desktop .images ul li:nth-of-type(1) {
   margin-right: auto;
