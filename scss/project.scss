@@ -3,10 +3,11 @@
   .intro {
     article {
       position: relative;
-      width: 100%;
+      //width: 100%;
+      //height: 1000px;
       height: 100vh;
       //background: url("../images/img.jpg") no-repeat center;
-      background-size: cover;
+      //background-size: cover;
 
       .title {
         position: absolute;
@@ -32,31 +33,36 @@
 
     &.sb {
       article {
-        background: url("../images/mockup2.webp") no-repeat center;
+        background: url("../images/mockup_sb.png") no-repeat center;
+        background-size: cover;
       }
     }
 
     &.piino {
       article {
-        background: url("../images/mockup3.webp") no-repeat center;
+        background: url("../images/mockup_pn.png") no-repeat center;
+        background-size: cover;
       }
     }
 
     &.cookshare {
       article {
-        background: url("../images/mockup4.jpg") no-repeat center;
+        background: url("../images/mockup_cs.png") no-repeat center;
+        background-size: cover;
       }
     }
 
     &.farm {
       article {
-        background: url("../images/mockup5.webp") no-repeat center;
+        background: url("../images/mockup_wf.png") no-repeat center;
+        background-size: cover;
       }
     }
 
     &.keybank {
       article {
-        background: url("../images/mockup6.webp") no-repeat center;
+        background: url("../images/mockup_kb.png") no-repeat center;
+        background-size: cover;
       }
     }
   }
@@ -325,6 +331,7 @@
                 border-radius: 45px;
                 border: 10px solid #222;
                 overflow: hidden;
+                padding: 10px;
 
                 .image {
                   position: absolute;
@@ -384,6 +391,7 @@
                 border-radius: 45px;
                 border: 10px solid #222;
                 overflow: hidden;
+                padding: 10px;
 
                 .image {
                   position: absolute;
@@ -652,7 +660,7 @@
   }
 }
 
-  @media screen and (max-width: 950px) {
+  @media (min-width: 751px) and (max-width: 950px) {
     .project-main{
       .overview {
         article {
@@ -670,12 +678,33 @@
           }
         }
       }
+      .showing02{
+        article{
+          .content{
+            .images{
+              ul{
+                li{
+                  .image-box{
+                    border: 4px solid #222;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
       .showing03{
         article{
           .content{
             .images{
               ul{
                 gap: 2rem;
+
+                li{
+                  .image-box{
+                    border: 4px solid #222;
+                  }
+                }
               }
             }
           }
@@ -705,7 +734,7 @@
     }
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 750px) {
     header {
       h1 {
         font-size: 1.5rem;
@@ -807,6 +836,12 @@
 
               ul {
                 display: initial;
+
+                li{
+                  .image-box{
+                    border: 7px solid #222;
+                  }
+                }
               }
             }
 
@@ -848,6 +883,12 @@
                 display: flex;
                 flex-direction: column;
                 gap: 5rem;
+
+                li{
+                  .image-box{
+                    border: 7px solid #222;
+                  }
+                }
               }
             }
           }
