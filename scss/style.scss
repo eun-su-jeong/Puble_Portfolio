@@ -142,7 +142,7 @@ ul, ol, li {
 
               ul {
                 li {
-                  font-size: 2rem;
+                  font-size: 1.5rem;
                   margin-bottom: .5em;
 
                   a {
@@ -196,7 +196,7 @@ ul, ol, li {
 
               ul {
                 li {
-                  font-size: 2rem;
+                  font-size: 1.5rem;
                   margin-bottom: .5em;
 
                   a {
@@ -423,7 +423,7 @@ ul, ol, li {
             }
 
             &:nth-of-type(2) {
-              flex-basis: 60%;
+              flex-basis: 50vw;
               //margin-left: auto;
               //height: calc(100vh - 10em);
             }

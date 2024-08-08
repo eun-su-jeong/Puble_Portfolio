@@ -912,7 +912,7 @@ ul, ol, li {
   color: #222;
 }
 .wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5em;
 }
 .wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li a .check {
@@ -952,7 +952,7 @@ ul, ol, li {
   color: #222;
 }
 .wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5em;
 }
 .wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li a .check {
@@ -1118,7 +1118,7 @@ ul, ol, li {
   flex-basis: 30vw;
 }
 .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(2) {
-  flex-basis: 60%;
+  flex-basis: 50vw;
 }
 .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(3) {
   flex-basis: 40vw;
