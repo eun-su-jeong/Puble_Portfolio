@@ -166,8 +166,9 @@ button {
   background-size: cover;
 }
 .project-main .intro.keybank article {
-  background: url("../images/mockup_kb.png") no-repeat center;
+  background: url("../images/mockup_kb1.png") no-repeat center;
   background-size: cover;
+  color: #fff;
 }
 .project-main .overview {
   padding: 1em 2rem 5em 2rem;
