@@ -126,9 +126,12 @@ button {
 .project-main {
   padding-top: 60px;
 }
+.project-main .intro {
+  height: 550px;
+}
 .project-main .intro article {
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 .project-main .intro article .title {
   position: absolute;
