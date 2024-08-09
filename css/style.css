@@ -7,6 +7,12 @@ input, select, textarea, button, option {
   font-family: "SpoqaHanSansNeo", "Noto Sans KR", sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   position: relative;
 }
