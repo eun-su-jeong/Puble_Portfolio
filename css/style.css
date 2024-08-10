@@ -197,7 +197,7 @@ button {
 .project-main .overview article .title h3 {
   line-height: 1.2;
   font-size: 4vw;
-  font-weight: 400;
+  font-weight: 600;
 }
 .project-main .overview article .content {
   display: flex;
@@ -355,7 +355,7 @@ button {
 }
 .project-main .showing01 article .content .desc {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   padding: 0 1.2rem;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -615,7 +615,7 @@ button {
   object-fit: cover;
 }
 .project-main .showing05 article .content .images .desc {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
