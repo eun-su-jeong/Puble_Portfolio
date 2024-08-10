@@ -214,9 +214,14 @@ button {
   border-radius: 4px;
 }
 .project-main .overview article .content .link a figure img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.project-main .overview article .content .link a .piino {
+  display: flex;
+  flex-direction: column;
 }
 .project-main .overview article .content .link a p {
   display: inline-flex;
