@@ -578,6 +578,7 @@ button {
 }
 .project-main .showing04 article .content.desktop .images ul li .image-box {
   aspect-ratio: 1280/700;
+  border: 7px solid #222;
 }
 .project-main .showing04 article .content.desktop .images ul li .desc {
   font-weight: bold;
