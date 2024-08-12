@@ -119,8 +119,9 @@ ul, ol, li {
 
         .project-view {
           display: flex;
-          //flex-wrap: wrap;
-          //justify-content: center;
+          justify-content: center;
+          align-items: flex-start;
+          flex-wrap: wrap;
           position: relative;
           gap: 2rem;
           width: 100%;
@@ -516,6 +517,7 @@ ul, ol, li {
         .project-wrap{
           .project-view{
             flex-direction: column;
+            align-items: normal;
 
             .project-item{
               &:nth-of-type(1){
@@ -608,6 +610,7 @@ ul, ol, li {
         .project-wrap{
           .project-view{
             flex-direction: column;
+            align-items: normal;
 
             .project-item{
               margin-top: 5em;

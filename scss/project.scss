@@ -181,7 +181,7 @@
 
         .intention {
           .desc {
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
         }
       }
@@ -206,8 +206,8 @@
         .desc {
           display: block;
           margin-top: .5rem;
-          padding: 0 2rem;
-          font-size: 1.125rem;
+          padding: 0 1rem;
+          font-size: 1.5rem;
           text-transform: uppercase;
         }
 
@@ -314,13 +314,12 @@
             position: sticky;
             top: 0;
             padding: 2em 0;
-            //font-size: 2rem;
-            font-size: 1.125rem;
+            font-size: 1.5rem;
 
             .tit {
               font-weight: 600;
               padding-bottom: 10px;
-              font-size: 1.25rem;
+              font-size: 1.625rem;
             }
           }
         }
@@ -618,7 +617,7 @@
         padding-top: 1em;
 
         .intention {
-          width: 60vw;
+          //width: 60vw;
 
           .desc {
             //font-size: 2rem;
@@ -677,7 +676,7 @@
   }
 }
 
-  @media (min-width: 751px) and (max-width: 950px) {
+  @media (min-width: 751px) and (max-width: 1200px) {
     .wrapper{
       .project-main{
         .overview {
@@ -685,7 +684,7 @@
           article {
             .credit{
               width: 50vw;
-              font-size: 0.75rem;
+              font-size: 0.875rem;
             }
             .title{
               h3{
@@ -699,7 +698,7 @@
                 width: 50vw;
 
                 .desc{
-                  font-size: 1rem;
+                  font-size: 1.25rem;
                 }
               }
               .link{
@@ -725,7 +724,7 @@
             }
             .content{
               .desc{
-                font-size: 1rem;
+                font-size: 1.25rem;
                 padding: 0 2rem
               }
             }
@@ -735,7 +734,7 @@
           article{
             .content{
               .desc{
-                  font-size: 0.75rem;
+                  font-size: 0.875rem;
               }
             }
           }
@@ -746,10 +745,10 @@
             .content{
               .intention{
                 .desc{
-                    font-size: 1rem;
+                    font-size: 1.25rem;
                     padding: 0;
                   .tit{
-                    font-size: 1rem;
+                    font-size: 1.375rem;
                   }
                 }
               }
@@ -757,12 +756,12 @@
                 ul{
                   li{
                     .desc{
-                      font-size: 1rem;
+                      font-size: 1.125rem;
                       padding: 0 1rem;
                     }
                     .image-box{
                       border: 5px solid #222;
-                      border-radius: 25px;
+                      border-radius: 35px;
                     }
                   }
                 }
@@ -785,12 +784,12 @@
                       font-size: 1rem;
 
                       .tit{
-                        font-size: 1rem;
+                        font-size: 1.125rem;
                       }
                     }
                     .image-box{
-                      border: 5px solid #222;
-                      border-radius: 25px;
+                      border: 6px solid #222;
+                      border-radius: 35px;
                     }
                   }
                 }
@@ -907,7 +906,8 @@
 
             .credit {
               width: 100%;
-              padding-bottom: 1em;
+              padding-bottom: 2em;
+              font-size: 0.75rem;
             }
 
             .title {
@@ -937,9 +937,23 @@
                   }
 
                   p {
-                    font-size: 1rem;
+                    font-size: 0.75rem;
+
+                    .arrow{
+                      font-size: 0.75rem;
+                    }
                   }
                 }
+              }
+            }
+          }
+        }
+        .showing01{
+          article{
+            .content{
+              .desc{
+                padding: 0 1rem;
+                font-size: 0.75rem;
               }
             }
           }
@@ -956,6 +970,10 @@
 
                 .desc{
                   font-size: 1rem;
+
+                  .tit{
+                    font-size: 1.125rem;
+                  }
                 }
               }
 
@@ -963,16 +981,19 @@
                 width: 100%;
 
                 ul {
-                  display: initial;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
 
                   li{
+                    width: 90%;
                     .desc{
-                      font-size: 1rem;
+                      font-size: .875rem;
                       padding: 0 1rem;
                     }
                     .image-box{
-                      border: 7px solid #222;
-                      border-radius: 20px;
+                      border: 6px solid #222;
+                      border-radius: 35px;
                     }
                   }
                 }
@@ -988,7 +1009,7 @@
 
                       .image-box {
                         aspect-ratio: 1280 / 900;
-                        border: 5px solid #222;
+                        border: 6px solid #222;
                         border-radius: 20px;
                       }
 
@@ -1016,16 +1037,23 @@
                 ul {
                   display: flex;
                   flex-direction: column;
+                  align-items: center;
                   gap: 5rem;
 
                   li{
+                    width: 90%;
                     .desc{
-                      font-size: 1rem;
+                      font-size: 0.75rem;
+                      margin-top: 1rem;
                       padding: 0 1rem;
+
+                      .tit{
+                        font-size: 0.875rem;
+                      }
                     }
                     .image-box{
-                      border: 7px solid #222;
-                      border-radius: 20px;
+                      border: 6px solid #222;
+                      border-radius: 35px;
                     }
                   }
                 }
@@ -1129,6 +1157,7 @@
               .images{
                 .desc{
                   padding: 0 1rem;
+                  font-size: 0.75rem;
                 }
               }
             }
@@ -1137,7 +1166,7 @@
 
       .footer-credit {
           article {
-            justify-content: space-around;
+            justify-content: space-between;
 
             .credit {
               font-size: 0.75rem;
