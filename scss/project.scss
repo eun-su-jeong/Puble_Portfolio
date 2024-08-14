@@ -639,8 +639,6 @@
               object-fit: cover;
             }
             &.component{
-              display: flex;
-              gap: 5em;
               img{
                 width: 50vw;
               }
@@ -690,6 +688,7 @@
 
         ul{
           display: flex;
+          flex-wrap: wrap;
           gap: 1em;
 
           li{
@@ -811,6 +810,7 @@
             .title{
               h3{
                 font-size: 5vw;
+                padding: 0 2rem;
               }
             }
             .content{
@@ -923,8 +923,36 @@
             }
             .content{
               .images{
+                padding: 0 2rem;
                 .desc{
                   font-size: 0.75rem;
+                  padding: 0 1rem;
+                }
+              }
+              figure{
+                &.component{
+                  img{
+                    width: 70vw;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .showing06{
+          article{
+            .title{
+              h3{
+                padding:0 2rem;
+              }
+            }
+            .content{
+              .text-box{
+                padding: 0 2rem;
+
+                .desc{
+                  padding: 0 1rem;
                 }
               }
             }
@@ -1077,7 +1105,7 @@
                   align-items: center;
 
                   li{
-                    width: 90%;
+                    width: 80%;
                     .desc{
                       font-size: .875rem;
                       padding: 0 1rem;
@@ -1132,7 +1160,7 @@
                   gap: 5rem;
 
                   li{
-                    width: 90%;
+                    width: 80%;
                     .desc{
                       font-size: 0.75rem;
                       margin-top: 1rem;
@@ -1235,7 +1263,6 @@
               }
             }
           }
-
             .content {
               .intention {
                 width: 100%!important;
@@ -1246,6 +1273,15 @@
                 }
               }
               .images{
+                padding: 0 1rem;
+
+                figure{
+                  &.component{
+                    img{
+                      width: 100%;
+                    }
+                  }
+                }
                 .desc{
                   padding: 0 1rem;
                   font-size: 0.75rem;
@@ -1253,7 +1289,44 @@
               }
             }
           }
+
+        .showing06 {
+          article {
+            padding: 3em 0 5em;
+
+            .title {
+              h3 {
+                font-size: 6vw;
+                font-weight: 600;
+                word-break: keep-all;
+                padding: 0 1rem;
+              }
+            }
+          }
+          .content {
+            .intention {
+              width: 100%!important;
+
+              .desc{
+                font-size: 1rem;
+                padding: 0 1rem;
+              }
+            }
+            .text-box{
+              padding: 0 1rem;
+              ul{
+                flex-direction: column;
+                li{
+                  .cont{
+                    max-width: 100%;
+                    height: auto;
+                  }
+                }
+              }
+            }
+          }
         }
+      }
 
       .footer-credit {
           article {

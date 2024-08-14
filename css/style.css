@@ -616,10 +616,6 @@ button {
   height: 100%;
   object-fit: cover;
 }
-.project-main .showing05 article .content .images figure.component {
-  display: flex;
-  gap: 5em;
-}
 .project-main .showing05 article .content .images figure.component img {
   width: 50vw;
 }
@@ -651,6 +647,7 @@ button {
 }
 .project-main .showing06 article .text-box ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
 }
 .project-main .showing06 article .text-box ul li .cont {
@@ -743,6 +740,7 @@ button {
   }
   .wrapper .project-main .showing article .title h3 {
     font-size: 5vw;
+    padding: 0 2rem;
   }
   .wrapper .project-main .showing article .content .desc {
     font-size: 1.25rem;
@@ -798,8 +796,24 @@ button {
   .wrapper .project-main .showing05 article .title h3 {
     padding: 0 2rem;
   }
+  .wrapper .project-main .showing05 article .content .images {
+    padding: 0 2rem;
+  }
   .wrapper .project-main .showing05 article .content .images .desc {
     font-size: 0.75rem;
+    padding: 0 1rem;
+  }
+  .wrapper .project-main .showing05 article .content figure.component img {
+    width: 70vw;
+  }
+  .wrapper .project-main .showing06 article .title h3 {
+    padding: 0 2rem;
+  }
+  .wrapper .project-main .showing06 article .content .text-box {
+    padding: 0 2rem;
+  }
+  .wrapper .project-main .showing06 article .content .text-box .desc {
+    padding: 0 1rem;
   }
   .wrapper .project-main .footer-credit article .credit {
     font-size: 0.75rem;
@@ -901,7 +915,7 @@ button {
     align-items: center;
   }
   .wrapper .project-main .showing02 article .content .images ul li {
-    width: 90%;
+    width: 80%;
   }
   .wrapper .project-main .showing02 article .content .images ul li .desc {
     font-size: 0.875rem;
@@ -938,7 +952,7 @@ button {
     gap: 5rem;
   }
   .wrapper .project-main .showing03 article .content .images ul li {
-    width: 90%;
+    width: 80%;
   }
   .wrapper .project-main .showing03 article .content .images ul li .desc {
     font-size: 0.75rem;
@@ -1014,9 +1028,41 @@ button {
     font-size: 1rem;
     padding: 0 1rem;
   }
+  .wrapper .project-main .showing05 .content .images {
+    padding: 0 1rem;
+  }
+  .wrapper .project-main .showing05 .content .images figure.component img {
+    width: 100%;
+  }
   .wrapper .project-main .showing05 .content .images .desc {
     padding: 0 1rem;
     font-size: 0.75rem;
+  }
+  .wrapper .project-main .showing06 article {
+    padding: 3em 0 5em;
+  }
+  .wrapper .project-main .showing06 article .title h3 {
+    font-size: 6vw;
+    font-weight: 600;
+    word-break: keep-all;
+    padding: 0 1rem;
+  }
+  .wrapper .project-main .showing06 .content .intention {
+    width: 100% !important;
+  }
+  .wrapper .project-main .showing06 .content .intention .desc {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .wrapper .project-main .showing06 .content .text-box {
+    padding: 0 1rem;
+  }
+  .wrapper .project-main .showing06 .content .text-box ul {
+    flex-direction: column;
+  }
+  .wrapper .project-main .showing06 .content .text-box ul li .cont {
+    max-width: 100%;
+    height: auto;
   }
   .wrapper .footer-credit article {
     justify-content: space-between;
