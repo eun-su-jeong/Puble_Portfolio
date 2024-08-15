@@ -210,7 +210,7 @@
           display: block;
           margin-top: .5rem;
           padding: 0 1rem;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           text-transform: uppercase;
         }
 
@@ -653,6 +653,26 @@
             text-transform: uppercase;
 
             &.component{
+              padding: 0 4rem;
+            }
+          }
+
+          &.cookshare{
+            figure{
+            padding: 0 4rem;
+              img{
+                width: 50vw;
+              }
+
+              &.flex-box{
+                display: flex;
+                gap: 1em;
+                img{
+                  width: 20vw;
+                }
+              }
+            }
+            .desc{
               padding: 0 4rem;
             }
           }

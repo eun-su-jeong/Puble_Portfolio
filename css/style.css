@@ -284,7 +284,7 @@ button {
   display: block;
   margin-top: 0.5rem;
   padding: 0 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
 }
 .project-main .showing article .content figure {
@@ -627,6 +627,22 @@ button {
   text-transform: uppercase;
 }
 .project-main .showing05 article .content .images .desc.component {
+  padding: 0 4rem;
+}
+.project-main .showing05 article .content .images.cookshare figure {
+  padding: 0 4rem;
+}
+.project-main .showing05 article .content .images.cookshare figure img {
+  width: 50vw;
+}
+.project-main .showing05 article .content .images.cookshare figure.flex-box {
+  display: flex;
+  gap: 1em;
+}
+.project-main .showing05 article .content .images.cookshare figure.flex-box img {
+  width: 20vw;
+}
+.project-main .showing05 article .content .images.cookshare .desc {
   padding: 0 4rem;
 }
 .project-main .showing06 article {
