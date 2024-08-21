@@ -444,6 +444,7 @@
   }
 
   .showing04 {
+    padding-top: 3em;
     article {
       position: relative;
       width: 100%;
@@ -475,6 +476,7 @@
         padding-top: 1em;
 
         .intention {
+          display: initial;
           width: 60vw;
 
           .desc {
@@ -546,40 +548,31 @@
           }
         }
 
-        &.desktop {
-          display: initial;
+        .images {
+          width: 100%;
+          margin-top: 5em;
 
-          .images {
-            width: 100%;
-            margin-top: 5em;
+          ul {
+            align-items: center;
 
-            ul {
-              align-items: center;
+            li {
+              width: 75vw;
 
-              li {
-                width: 75vw;
+              .image-box {
+                aspect-ratio: 1280 / 700;
+                border : 7px solid #222;
+              }
 
-                .image-box {
-                  aspect-ratio: 1280 / 700;
-                  border : 7px solid #222;
+              .desc {
+                font-weight: bold;
+              }
 
-                  //.image.sb{
-                  //  bottom: 1916px;
-                  //  top: auto;
-                  //}
-                }
+              &:nth-of-type(1) {
+                margin-right: auto;
+              }
 
-                .desc {
-                  font-weight: bold;
-                }
-
-                &:nth-of-type(1) {
-                  margin-right: auto;
-                }
-
-                &:nth-of-type(2) {
-                  margin-left: auto;
-                }
+              &:nth-of-type(2) {
+                margin-left: auto;
               }
             }
           }
@@ -628,10 +621,13 @@
 
         .images {
           margin-top: 5em;
-          //padding: 0 4rem;
 
           figure {
             width: 100%;
+
+            video{
+              width: 80%;
+            }
 
             img {
               display: block;
@@ -916,23 +912,28 @@
         }
         .showing04{
           article{
+            .title{
+              h3{
+                padding: 0;
+              }
+            }
             .content{
-              &.desktop{
-                .images{
-                  ul{
-                    li{
-                      .desc{
-                        padding: 0 1rem;
-                      }
-                      .image-box{
-                        aspect-ratio: 1280 / 900;
-                        border: 5px solid #222;
-                        border-radius: 25px;
-                        //.image.sb{
-                        //  bottom: 700px;
-                        //  top: auto;
-                        //}
-                      }
+              .intention{
+                .desc{
+                  padding: 0;
+                }
+              }
+              .images{
+                ul{
+                  li{
+                    .desc{
+                      padding: 0 1rem;
+                    }
+                    .image-box{
+                      aspect-ratio: 1280 / 900;
+                      border: 5px solid #222;
+                      border-radius: 25px;
+
                     }
                   }
                 }
@@ -949,14 +950,45 @@
             }
             .content{
               .images{
+                display: flex;
+                flex-direction: column;
                 padding: 0 2rem;
                 .desc{
                   font-size: 0.75rem;
                   padding: 0 1rem;
                 }
+
+                &.cookshare{
+                  align-items: center;
+
+                  figure{
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
+                    img{
+                      width: 70vw;
+                    }
+
+                    &.flex-box{
+                      display: flex;
+                      gap: 1em;
+                      img{
+                        width: 35vw;
+                      }
+                    }
+                  }
+                  .desc{
+                    padding: 0;
+                  }
+                }
               }
               figure{
                 &.component{
+                  padding: 0;
+
+                  video{
+                    width: 100%;
+                  }
                   img{
                     width: 70vw;
                   }
@@ -979,6 +1011,7 @@
 
                 .desc{
                   padding: 0 1rem;
+                  font-size: 0.75rem;
                 }
               }
             }
@@ -1077,8 +1110,14 @@
               .link {
                 a {
                   figure {
+                    position: initial;
+                    padding-bottom: 0;
                     width: 250px;
                     border: 4px solid #222;
+
+                    img{
+                      position: initial;
+                    }
                   }
 
                   p {
@@ -1143,32 +1182,6 @@
                   }
                 }
               }
-
-              &.desktop {
-                .images {
-                  ul {
-                    align-items: center;
-
-                    li {
-                      width: 100%;
-
-                      .image-box {
-                        aspect-ratio: 1280 / 900;
-                        border: 6px solid #222;
-                        border-radius: 20px;
-                      }
-
-                      &:nth-of-type(1) {
-                        margin-right: 0;
-                      }
-
-                      &:nth-of-type(2) {
-                        margin-left: 0;
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
 
@@ -1209,7 +1222,7 @@
 
         .showing04 {
           article {
-            padding: 3em 0 5em;
+            padding: 3em 1rem 5em;
 
             .title {
               h3 {
@@ -1221,8 +1234,32 @@
             }
 
             .content {
-              .intention {
+              .intention{
                 width: 100%;
+                .desc{
+                  padding: 0;
+                  margin-top: 1rem;
+                  font-size: 1rem;
+                }
+              }
+              .images{
+                ul{
+                  gap: 3rem;
+                  li{
+                    width: 100%;
+
+                    .desc{
+                      font-size: 1rem;
+                      padding: 0 1rem;
+                    }
+
+                    .image-box{
+                      border: 5px solid #222;
+                      border-radius: 20px;
+                      aspect-ratio: 1280 / 900;
+                    }
+                  }
+                }
               }
 
               .images-list {
@@ -1239,35 +1276,6 @@
 
                   &:nth-of-type(2) {
                     margin-left: 0;
-                  }
-                }
-              }
-
-              &.desktop{
-                .intention{
-                  .desc{
-                    padding: 0;
-                    margin-top: 1rem;
-                    font-size: 1rem;
-                  }
-                }
-                .images{
-                  ul{
-                    gap: 3rem;
-                    li{
-                      width: 100%;
-
-                      .desc{
-                        font-size: 1rem;
-                        padding: 0 1rem;
-                      }
-
-                      .image-box{
-                        border: 7px solid #222;
-                        border-radius: 20px;
-                        aspect-ratio: 1280 / 900;
-                      }
-                    }
                   }
                 }
               }
@@ -1303,6 +1311,10 @@
 
                 figure{
                   &.component{
+                    padding: 0;
+                    video{
+                      width: 100%;
+                    }
                     img{
                       width: 100%;
                     }
@@ -1311,6 +1323,33 @@
                 .desc{
                   padding: 0 1rem;
                   font-size: 0.75rem;
+
+                  &.component{
+                    padding: 0;
+                  }
+                }
+
+                &.cookshare{
+                  figure{
+                    display: flex;
+                    justify-content: flex-start;
+                    padding: 0;
+                    img{
+                      width: 80vw;
+                    }
+
+                    &.flex-box{
+                      display: flex;
+                      justify-content: center;
+                      gap: .5em;
+                      img{
+                        width: 45vw;
+                      }
+                    }
+                  }
+                  .desc{
+                    padding: 0;
+                  }
                 }
               }
             }

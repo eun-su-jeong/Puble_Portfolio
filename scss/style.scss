@@ -96,6 +96,43 @@ ul, ol, li {
       }
     }
 
+    .about{
+      padding: 0 3rem;
+      height: auto;
+
+      h4{
+        font-size: 5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+        line-height: 1;
+        color: #222;
+      }
+
+      .about-wrap{
+        .profile{
+          display: flex;
+          gap: 30px;
+          .profile-img{
+            width: 50%;
+            img{
+              width: 100%;
+            }
+          }
+
+          .profile-text{
+            p{
+              padding-bottom: 20px;
+              font-size: 1.5rem;
+              line-height: 1.5;
+              text-align: justify;
+            }
+          }
+
+        }
+      }
+    }
+
     .projectAll {
         //display: block!important;
         margin-top: 10em;

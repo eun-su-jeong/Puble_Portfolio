@@ -484,6 +484,9 @@ button {
   font-weight: bold;
   font-size: 1.25rem;
 }
+.project-main .showing04 {
+  padding-top: 3em;
+}
 .project-main .showing04 article {
   position: relative;
   width: 100%;
@@ -505,6 +508,7 @@ button {
   padding-top: 1em;
 }
 .project-main .showing04 article .content .intention {
+  display: initial;
   width: 60vw;
 }
 .project-main .showing04 article .content .intention .desc {
@@ -563,30 +567,27 @@ button {
   flex-basis: 40vw;
   margin-left: auto;
 }
-.project-main .showing04 article .content.desktop {
-  display: initial;
-}
-.project-main .showing04 article .content.desktop .images {
+.project-main .showing04 article .content .images {
   width: 100%;
   margin-top: 5em;
 }
-.project-main .showing04 article .content.desktop .images ul {
+.project-main .showing04 article .content .images ul {
   align-items: center;
 }
-.project-main .showing04 article .content.desktop .images ul li {
+.project-main .showing04 article .content .images ul li {
   width: 75vw;
 }
-.project-main .showing04 article .content.desktop .images ul li .image-box {
+.project-main .showing04 article .content .images ul li .image-box {
   aspect-ratio: 1280/700;
   border: 7px solid #222;
 }
-.project-main .showing04 article .content.desktop .images ul li .desc {
+.project-main .showing04 article .content .images ul li .desc {
   font-weight: bold;
 }
-.project-main .showing04 article .content.desktop .images ul li:nth-of-type(1) {
+.project-main .showing04 article .content .images ul li:nth-of-type(1) {
   margin-right: auto;
 }
-.project-main .showing04 article .content.desktop .images ul li:nth-of-type(2) {
+.project-main .showing04 article .content .images ul li:nth-of-type(2) {
   margin-left: auto;
 }
 .project-main .showing05 article {
@@ -608,6 +609,9 @@ button {
 }
 .project-main .showing05 article .content .images figure {
   width: 100%;
+}
+.project-main .showing05 article .content .images figure video {
+  width: 80%;
 }
 .project-main .showing05 article .content .images figure img {
   display: block;
@@ -806,10 +810,16 @@ button {
     border: 6px solid #222;
     border-radius: 35px;
   }
-  .wrapper .project-main .showing04 article .content.desktop .images ul li .desc {
+  .wrapper .project-main .showing04 article .title h3 {
+    padding: 0;
+  }
+  .wrapper .project-main .showing04 article .content .intention .desc {
+    padding: 0;
+  }
+  .wrapper .project-main .showing04 article .content .images ul li .desc {
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing04 article .content.desktop .images ul li .image-box {
+  .wrapper .project-main .showing04 article .content .images ul li .image-box {
     aspect-ratio: 1280/900;
     border: 5px solid #222;
     border-radius: 25px;
@@ -818,11 +828,40 @@ button {
     padding: 0 2rem;
   }
   .wrapper .project-main .showing05 article .content .images {
+    display: flex;
+    flex-direction: column;
     padding: 0 2rem;
   }
   .wrapper .project-main .showing05 article .content .images .desc {
     font-size: 0.75rem;
     padding: 0 1rem;
+  }
+  .wrapper .project-main .showing05 article .content .images.cookshare {
+    align-items: center;
+  }
+  .wrapper .project-main .showing05 article .content .images.cookshare figure {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  .wrapper .project-main .showing05 article .content .images.cookshare figure img {
+    width: 70vw;
+  }
+  .wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box {
+    display: flex;
+    gap: 1em;
+  }
+  .wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box img {
+    width: 35vw;
+  }
+  .wrapper .project-main .showing05 article .content .images.cookshare .desc {
+    padding: 0;
+  }
+  .wrapper .project-main .showing05 article .content figure.component {
+    padding: 0;
+  }
+  .wrapper .project-main .showing05 article .content figure.component video {
+    width: 100%;
   }
   .wrapper .project-main .showing05 article .content figure.component img {
     width: 70vw;
@@ -835,6 +874,7 @@ button {
   }
   .wrapper .project-main .showing06 article .content .text-box .desc {
     padding: 0 1rem;
+    font-size: 0.75rem;
   }
   .wrapper .project-main .footer-credit article .credit {
     font-size: 0.75rem;
@@ -899,8 +939,13 @@ button {
     font-size: 1rem;
   }
   .wrapper .project-main .overview article .content .link a figure {
+    position: initial;
+    padding-bottom: 0;
     width: 250px;
     border: 4px solid #222;
+  }
+  .wrapper .project-main .overview article .content .link a figure img {
+    position: initial;
   }
   .wrapper .project-main .overview article .content .link a p {
     font-size: 0.75rem;
@@ -946,23 +991,6 @@ button {
     border: 6px solid #222;
     border-radius: 35px;
   }
-  .wrapper .project-main .showing02 article .content.desktop .images ul {
-    align-items: center;
-  }
-  .wrapper .project-main .showing02 article .content.desktop .images ul li {
-    width: 100%;
-  }
-  .wrapper .project-main .showing02 article .content.desktop .images ul li .image-box {
-    aspect-ratio: 1280/900;
-    border: 6px solid #222;
-    border-radius: 20px;
-  }
-  .wrapper .project-main .showing02 article .content.desktop .images ul li:nth-of-type(1) {
-    margin-right: 0;
-  }
-  .wrapper .project-main .showing02 article .content.desktop .images ul li:nth-of-type(2) {
-    margin-left: 0;
-  }
   .wrapper .project-main .showing03 article {
     padding: 0 1rem 5em;
   }
@@ -988,7 +1016,7 @@ button {
     border-radius: 35px;
   }
   .wrapper .project-main .showing04 article {
-    padding: 3em 0 5em;
+    padding: 3em 1rem 5em;
   }
   .wrapper .project-main .showing04 article .title h3 {
     font-size: 6vw;
@@ -998,6 +1026,26 @@ button {
   }
   .wrapper .project-main .showing04 article .content .intention {
     width: 100%;
+  }
+  .wrapper .project-main .showing04 article .content .intention .desc {
+    padding: 0;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  .wrapper .project-main .showing04 article .content .images ul {
+    gap: 3rem;
+  }
+  .wrapper .project-main .showing04 article .content .images ul li {
+    width: 100%;
+  }
+  .wrapper .project-main .showing04 article .content .images ul li .desc {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .wrapper .project-main .showing04 article .content .images ul li .image-box {
+    border: 5px solid #222;
+    border-radius: 20px;
+    aspect-ratio: 1280/900;
   }
   .wrapper .project-main .showing04 article .content .images-list {
     display: initial;
@@ -1012,26 +1060,6 @@ button {
   }
   .wrapper .project-main .showing04 article .content .images-list .image-item:nth-of-type(2) {
     margin-left: 0;
-  }
-  .wrapper .project-main .showing04 article .content.desktop .intention .desc {
-    padding: 0;
-    margin-top: 1rem;
-    font-size: 1rem;
-  }
-  .wrapper .project-main .showing04 article .content.desktop .images ul {
-    gap: 3rem;
-  }
-  .wrapper .project-main .showing04 article .content.desktop .images ul li {
-    width: 100%;
-  }
-  .wrapper .project-main .showing04 article .content.desktop .images ul li .desc {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-  .wrapper .project-main .showing04 article .content.desktop .images ul li .image-box {
-    border: 7px solid #222;
-    border-radius: 20px;
-    aspect-ratio: 1280/900;
   }
   .wrapper .project-main .showing05 article {
     padding: 3em 0 5em;
@@ -1052,12 +1080,40 @@ button {
   .wrapper .project-main .showing05 .content .images {
     padding: 0 1rem;
   }
+  .wrapper .project-main .showing05 .content .images figure.component {
+    padding: 0;
+  }
+  .wrapper .project-main .showing05 .content .images figure.component video {
+    width: 100%;
+  }
   .wrapper .project-main .showing05 .content .images figure.component img {
     width: 100%;
   }
   .wrapper .project-main .showing05 .content .images .desc {
     padding: 0 1rem;
     font-size: 0.75rem;
+  }
+  .wrapper .project-main .showing05 .content .images .desc.component {
+    padding: 0;
+  }
+  .wrapper .project-main .showing05 .content .images.cookshare figure {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .wrapper .project-main .showing05 .content .images.cookshare figure img {
+    width: 80vw;
+  }
+  .wrapper .project-main .showing05 .content .images.cookshare figure.flex-box {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+  }
+  .wrapper .project-main .showing05 .content .images.cookshare figure.flex-box img {
+    width: 45vw;
+  }
+  .wrapper .project-main .showing05 .content .images.cookshare .desc {
+    padding: 0;
   }
   .wrapper .project-main .showing06 article {
     padding: 3em 0 5em;
@@ -1177,6 +1233,34 @@ ul, ol, li {
   font-weight: 800;
   line-height: 0.9;
   text-transform: uppercase;
+}
+.wrapper main .about {
+  padding: 0 3rem;
+  height: auto;
+}
+.wrapper main .about h4 {
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  line-height: 1;
+  color: #222;
+}
+.wrapper main .about .about-wrap .profile {
+  display: flex;
+  gap: 30px;
+}
+.wrapper main .about .about-wrap .profile .profile-img {
+  width: 50%;
+}
+.wrapper main .about .about-wrap .profile .profile-img img {
+  width: 100%;
+}
+.wrapper main .about .about-wrap .profile .profile-text p {
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: justify;
 }
 .wrapper main .projectAll {
   margin-top: 10em;
