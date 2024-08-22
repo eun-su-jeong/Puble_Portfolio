@@ -590,6 +590,9 @@ button {
 .project-main .showing04 article .content .images ul li:nth-of-type(2) {
   margin-left: auto;
 }
+.project-main .showing04 article .content .images ul li:nth-of-type(4) {
+  margin-left: auto;
+}
 .project-main .showing05 article {
   position: relative;
   width: 100%;
@@ -695,6 +698,7 @@ button {
 .project-main .showing06 article .text-box ul li .cont ul li {
   position: relative;
   margin-left: 0.5em;
+  font-size: 1rem;
 }
 .project-main .showing06 article .text-box ul li .cont ul li::before {
   position: absolute;
@@ -809,6 +813,9 @@ button {
   .wrapper .project-main .showing03 article .content .images ul li .image-box {
     border: 6px solid #222;
     border-radius: 35px;
+  }
+  .wrapper .project-main .showing04 article {
+    padding: 3em 2rem 10em;
   }
   .wrapper .project-main .showing04 article .title h3 {
     padding: 0;
@@ -1236,6 +1243,7 @@ ul, ol, li {
 }
 .wrapper main .about {
   padding: 0 3rem;
+  margin-top: 10em;
   height: auto;
 }
 .wrapper main .about h4 {
@@ -1253,7 +1261,10 @@ ul, ol, li {
 .wrapper main .about .about-wrap .profile .profile-img {
   width: 50%;
 }
-.wrapper main .about .about-wrap .profile .profile-img img {
+.wrapper main .about .about-wrap .profile .profile-img div {
+  min-width: 400px;
+}
+.wrapper main .about .about-wrap .profile .profile-img div img {
   width: 100%;
 }
 .wrapper main .about .about-wrap .profile .profile-text p {
@@ -1261,6 +1272,58 @@ ul, ol, li {
   font-size: 1.5rem;
   line-height: 1.5;
   text-align: justify;
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack h5 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  padding-bottom: 16px;
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 8px;
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(1) {
+  background-color: rgba(227, 79, 38, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(2) {
+  background-color: rgba(21, 114, 182, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(3) {
+  background-color: rgba(204, 102, 153, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(4) {
+  background-color: rgba(0, 164, 239, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(5) {
+  background-color: rgba(97, 218, 251, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(6) {
+  background-color: rgba(51, 153, 51, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(7) {
+  background-color: rgba(68, 121, 161, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(8) {
+  background-color: rgba(109, 179, 63, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(9) {
+  background-color: rgba(247, 223, 30, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(10) {
+  background-color: rgba(7, 105, 173, 0.6);
+}
+.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(11) {
+  background-color: rgba(240, 80, 50, 0.6);
 }
 .wrapper main .projectAll {
   margin-top: 10em;
@@ -1283,7 +1346,6 @@ ul, ol, li {
 }
 .wrapper main .projectAll .project-wrap .project-view {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   position: relative;
   gap: 2rem;
@@ -1566,8 +1628,23 @@ ul, ol, li {
 }
 
 @media (min-width: 751px) and (max-width: 1200px) {
+  .wrapper main .hero h2 {
+    font-size: 12vw;
+  }
+  .wrapper main .about {
+    padding: 0 2rem;
+  }
+  .wrapper main .about h4 {
+    font-size: 4rem;
+  }
+  .wrapper main .about .about-wrap .profile {
+    flex-direction: column;
+  }
   .wrapper main .projectAll {
-    padding: 0 3rem;
+    padding: 0 2rem;
+  }
+  .wrapper main .projectAll h4 {
+    font-size: 4rem;
   }
   .wrapper main .projectAll .project-wrap .project-view {
     flex-direction: column;
@@ -1625,7 +1702,35 @@ ul, ol, li {
     padding: 10em 1.2rem;
   }
   .wrapper main .hero h2 {
-    font-size: 12vw;
+    font-size: 14vw;
+  }
+  .wrapper main .about {
+    padding: 0 1rem;
+  }
+  .wrapper main .about h4 {
+    font-size: 2.5rem;
+  }
+  .wrapper main .about .about-wrap .profile {
+    flex-direction: column;
+  }
+  .wrapper main .about .about-wrap .profile .profile-img {
+    width: 100%;
+  }
+  .wrapper main .about .about-wrap .profile .profile-img div {
+    min-width: 200px;
+  }
+  .wrapper main .about .about-wrap .profile .profile-img div img {
+    width: 100%;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text p {
+    font-size: 1.125rem;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text .profile-stack h5 {
+    font-size: 1.25rem;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li {
+    padding: 4px 8px;
+    font-size: 1rem;
   }
   .wrapper main .projectAll {
     padding: 0 1rem;
@@ -1636,9 +1741,6 @@ ul, ol, li {
   .wrapper main .projectAll .project-wrap .project-view {
     flex-direction: column;
     align-items: normal;
-  }
-  .wrapper main .projectAll .project-wrap .project-view .project-item {
-    margin-top: 5em;
   }
   .wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li {
     font-size: 1.125rem;
@@ -1657,6 +1759,7 @@ ul, ol, li {
   }
   .wrapper main .project .project-wrap .project-list {
     display: initial;
+    padding-top: 0;
   }
   .wrapper main .project .project-wrap .project-list .project-item {
     margin-left: 0;

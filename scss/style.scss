@@ -2,6 +2,20 @@
 @import "fonts.scss";
 @import "project.scss";
 
+$colors: (
+        rgba(#E34F26, 0.6),  // HTML5
+        rgba(#1572B6, 0.6),  // CSS3
+        rgba(#CC6699, 0.6),  // SCSS
+        rgba(#00A4EF, 0.6),  // Responsive Web Design
+        rgba(#61DAFB, 0.6),  // React
+        rgba(#339933, 0.6),  // Node.js
+        rgba(#4479A1, 0.6),  // MySQL
+        rgba(#6DB33F, 0.6),  // Spring Boot
+        rgba(#F7DF1E, 0.6),  // JavaScript
+        rgba(#0769AD, 0.6),  // jQuery
+        rgba(#F05032, 0.6)   // Git
+);
+
 body {
   overflow-x: hidden;
   background-color: #F9F5EF;
@@ -98,6 +112,7 @@ ul, ol, li {
 
     .about{
       padding: 0 3rem;
+      margin-top: 10em;
       height: auto;
 
       h4{
@@ -115,8 +130,12 @@ ul, ol, li {
           gap: 30px;
           .profile-img{
             width: 50%;
-            img{
-              width: 100%;
+            div{
+              min-width: 400px;
+
+              img{
+                width: 100%;
+              }
             }
           }
 
@@ -127,7 +146,43 @@ ul, ol, li {
               line-height: 1.5;
               text-align: justify;
             }
+            .profile-stack {
+              h5 {
+                font-size: 1.875rem;
+                font-weight: 600;
+                line-height: 1.5;
+                padding-bottom: 16px;
+              }
+
+              .stack-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                li {
+                  display: inline-block;
+                  padding: 4px 8px;
+                  font-size: 1.5rem;
+                  font-weight: 400;
+                  line-height: 1.5;
+                  border-radius: 8px;
+
+                  // nth-child()와 @each를 결합하여 각 요소에 색상 적용
+                  @for $i from 1 through length($colors) {
+                    &:nth-child(#{$i}) {
+                      background-color: nth($colors, $i);
+
+                      //// 밝은 색상인 경우 글자 색상 검정으로 설정
+                      //@if (lightness(nth($colors, $i)) > 70) {
+                      //  color: #000;
+                      //}
+                    }
+                  }
+                }
+              }
+            }
           }
+
 
         }
       }
@@ -156,7 +211,7 @@ ul, ol, li {
 
         .project-view {
           display: flex;
-          justify-content: center;
+          //justify-content: center;
           align-items: flex-start;
           //flex-wrap: wrap;
           position: relative;
@@ -549,8 +604,29 @@ ul, ol, li {
 @media (min-width: 751px) and (max-width: 1200px){
   .wrapper{
     main{
+      .hero{
+        h2{
+          font-size: 12vw;
+        }
+      }
+      .about{
+        padding: 0 2rem;
+        h4{
+          font-size: 4rem;
+        }
+        .about-wrap{
+          .profile{
+            flex-direction: column;
+          }
+        }
+      }
+
       .projectAll{
-        padding: 0 3rem;
+        padding: 0 2rem;
+
+        h4{
+          font-size: 4rem;
+        }
         .project-wrap{
           .project-view{
             flex-direction: column;
@@ -634,7 +710,50 @@ ul, ol, li {
         padding: 10em 1.2rem;
 
         h2{
-          font-size: 12vw;
+          font-size: 14vw;
+        }
+      }
+
+      .about{
+        padding: 0 1rem;
+        h4{
+          font-size: 2.5rem;
+        }
+        .about-wrap{
+          .profile{
+            flex-direction: column;
+
+            .profile-img{
+              width: 100%;
+              div{
+                min-width: 200px;
+
+                img{
+                  width: 100%;
+                }
+              }
+            }
+
+            .profile-text{
+              p{
+                font-size: 1.125rem;
+              }
+              .profile-stack {
+                h5 {
+                  font-size: 1.25rem;
+                }
+
+                .stack-list {
+                  li {
+                    padding: 4px 8px;
+                    font-size: 1rem;
+                  }
+                }
+              }
+            }
+
+
+          }
         }
       }
 
@@ -650,7 +769,6 @@ ul, ol, li {
             align-items: normal;
 
             .project-item{
-              margin-top: 5em;
               .project1{
                 ul{
                   li{
@@ -686,6 +804,7 @@ ul, ol, li {
         .project-wrap {
           .project-list {
             display: initial;
+            padding-top: 0;
 
             .project-item {
               margin-left: 0;
