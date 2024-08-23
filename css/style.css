@@ -205,7 +205,11 @@ button {
   gap: 2em;
   padding-top: 3em;
 }
-.project-main .overview article .content .intention {
+.project-main .overview article .content .intention-wrap {
+  display: flex;
+  gap: 2em;
+}
+.project-main .overview article .content .intention-wrap .intention {
   width: 45%;
 }
 .project-main .overview article .content .link a figure {
@@ -751,13 +755,19 @@ button {
     font-size: 5vw;
   }
   .wrapper .project-main .overview article .content {
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
   }
-  .wrapper .project-main .overview article .content .intention {
-    width: 50vw;
+  .wrapper .project-main .overview article .content .intention-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
-  .wrapper .project-main .overview article .content .intention .desc {
+  .wrapper .project-main .overview article .content .intention-wrap .intention {
+    width: 100%;
+  }
+  .wrapper .project-main .overview article .content .intention-wrap .intention .desc {
     font-size: 1.25rem;
   }
   .wrapper .project-main .overview article .content .link a figure {
@@ -939,10 +949,13 @@ button {
     align-items: normal;
     padding-top: 2em;
   }
-  .wrapper .project-main .overview article .content .intention {
+  .wrapper .project-main .overview article .content .intention-wrap {
+    flex-direction: column;
+  }
+  .wrapper .project-main .overview article .content .intention-wrap .intention {
     width: 100%;
   }
-  .wrapper .project-main .overview article .content .intention .desc {
+  .wrapper .project-main .overview article .content .intention-wrap .intention .desc {
     font-size: 1rem;
   }
   .wrapper .project-main .overview article .content .link a figure {

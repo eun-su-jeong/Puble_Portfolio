@@ -101,8 +101,13 @@
         gap: 2em;
         padding-top: 3em;
 
-        .intention {
-          width: 45%;
+        .intention-wrap {
+          display: flex;
+          gap: 2em;
+
+          .intention {
+            width: 45%;
+          }
         }
 
         .link {
@@ -809,14 +814,22 @@
               }
             }
             .content {
+              flex-direction: column;
               justify-content: flex-start;
-              align-items: flex-end;
-              .intention {
-                width: 50vw;
+              align-items: flex-start;
+
+              .intention-wrap{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .intention {
+                width: 100%;
 
                 .desc{
                   font-size: 1.25rem;
                 }
+              }
               }
               .link{
                 a{
@@ -1106,12 +1119,16 @@
               align-items: normal;
               padding-top: 2em;
 
-              .intention{
-                width: 100%;
-                .desc{
-                  font-size: 1rem;
+              .intention-wrap{
+                flex-direction: column;
+                .intention{
+                  width: 100%;
+                  .desc{
+                    font-size: 1rem;
+                  }
                 }
               }
+
 
               .link {
                 a {
