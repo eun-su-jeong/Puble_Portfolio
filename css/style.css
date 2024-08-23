@@ -152,28 +152,28 @@ button {
   text-transform: uppercase;
 }
 .project-main .intro.cubank article {
-  background: url("../images/mockup_cu7.png") no-repeat center;
+  background: url("../images/mockup_cu7.webp") no-repeat center;
   background-size: cover;
 }
 .project-main .intro.sb article {
-  background: url("../images/mockup_sb2.png") no-repeat center;
+  background: url("../images/mockup_sb2.webp") no-repeat center;
   background-size: cover;
   color: #fff;
 }
 .project-main .intro.piino article {
-  background: url("../images/mockup_pn2.png") no-repeat center;
+  background: url("../images/mockup_pn2.webp") no-repeat center;
   background-size: cover;
 }
 .project-main .intro.cookshare article {
-  background: url("../images/mockup_cs1.png") no-repeat center;
+  background: url("../images/mockup_cs1.webp") no-repeat center;
   background-size: cover;
 }
 .project-main .intro.farm article {
-  background: url("../images/mockup_wf1.png") no-repeat center;
+  background: url("../images/mockup_wf1.webp") no-repeat center;
   background-size: cover;
 }
 .project-main .intro.keybank article {
-  background: url("../images/mockup_kb3.png") no-repeat center;
+  background: url("../images/mockup_kb3.webp") no-repeat center;
   background-size: cover;
 }
 .project-main .overview {
