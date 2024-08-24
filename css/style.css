@@ -132,12 +132,12 @@ button {
 .project-main {
   padding-top: 60px;
 }
-.project-main .intro {
-  height: 550px;
-}
 .project-main .intro article {
   position: relative;
   height: 100%;
+}
+.project-main .intro article .intro-img img {
+  width: 100%;
 }
 .project-main .intro article .title {
   position: absolute;
@@ -150,31 +150,6 @@ button {
   font-size: 6vw;
   font-weight: 800;
   text-transform: uppercase;
-}
-.project-main .intro.cubank article {
-  background: url("../images/mockup_cu7.webp") no-repeat center;
-  background-size: cover;
-}
-.project-main .intro.sb article {
-  background: url("../images/mockup_sb2.webp") no-repeat center;
-  background-size: cover;
-  color: #fff;
-}
-.project-main .intro.piino article {
-  background: url("../images/mockup_pn2.webp") no-repeat center;
-  background-size: cover;
-}
-.project-main .intro.cookshare article {
-  background: url("../images/mockup_cs1.webp") no-repeat center;
-  background-size: cover;
-}
-.project-main .intro.farm article {
-  background: url("../images/mockup_wf1.webp") no-repeat center;
-  background-size: cover;
-}
-.project-main .intro.keybank article {
-  background: url("../images/mockup_kb3.webp") no-repeat center;
-  background-size: cover;
 }
 .project-main .overview {
   padding: 1em 4rem 5em 4rem;
@@ -917,12 +892,6 @@ button {
   .wrapper header nav ul li a {
     padding: 2px 10px;
     font-size: 1rem;
-  }
-  .wrapper .project-main .intro {
-    height: 50vh;
-  }
-  .wrapper .project-main .intro article {
-    height: 50vh;
   }
   .wrapper .project-main .intro article .title h2 {
     line-height: initial;

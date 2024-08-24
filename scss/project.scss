@@ -1,14 +1,16 @@
 .project-main {
   padding-top: 60px;
   .intro {
-    height: 550px;
+
     article {
       position: relative;
-      //width: 100%;
-      //height: 1000px;
       height: 100%;
-      //background: url("../images/img.jpg") no-repeat center;
-      //background-size: cover;
+
+      .intro-img {
+        img{
+          width: 100%;
+        }
+      }
 
       .title {
         position: absolute;
@@ -25,48 +27,48 @@
       }
     }
 
-    &.cubank {
-      article {
-        background: url("../images/mockup_cu7.webp") no-repeat center;
-        background-size: cover;
-      }
-    }
-
-    &.sb {
-      article {
-        background: url("../images/mockup_sb2.webp") no-repeat center;
-        background-size: cover;
-        color: #fff;
-      }
-    }
-
-    &.piino {
-      article {
-        background: url("../images/mockup_pn2.webp") no-repeat center;
-        background-size: cover;
-      }
-    }
-
-    &.cookshare {
-      article {
-        background: url("../images/mockup_cs1.webp") no-repeat center;
-        background-size: cover;
-      }
-    }
-
-    &.farm {
-      article {
-        background: url("../images/mockup_wf1.webp") no-repeat center;
-        background-size: cover;
-      }
-    }
-
-    &.keybank {
-      article {
-        background: url("../images/mockup_kb3.webp") no-repeat center;
-        background-size: cover;
-      }
-    }
+    //&.cubank {
+    //  article {
+    //    //background: url("../images/mockup_cu7.webp") no-repeat center;
+    //    //background-size: cover;
+    //  }
+    //}
+    //
+    //&.sb {
+    //  article {
+    //    background: url("../images/mockup_sb2.webp") no-repeat center;
+    //    background-size: cover;
+    //    color: #fff;
+    //  }
+    //}
+    //
+    //&.piino {
+    //  article {
+    //    background: url("../images/mockup_pn2.webp") no-repeat center;
+    //    background-size: cover;
+    //  }
+    //}
+    //
+    //&.cookshare {
+    //  article {
+    //    background: url("../images/mockup_cs1.webp") no-repeat center;
+    //    background-size: cover;
+    //  }
+    //}
+    //
+    //&.farm {
+    //  article {
+    //    background: url("../images/mockup_wf1.webp") no-repeat center;
+    //    background-size: cover;
+    //  }
+    //}
+    //
+    //&.keybank {
+    //  article {
+    //    background: url("../images/mockup_kb3.webp") no-repeat center;
+    //    background-size: cover;
+    //  }
+    //}
   }
 
   .overview {
@@ -1082,10 +1084,7 @@
 
       .project-main {
         .intro {
-          height: 50vh;
           article {
-            height: 50vh;
-
             .title {
               h2 {
                 line-height: initial;
