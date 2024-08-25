@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript" src="./js/common.js"></script>
     <title>Portfolio</title>
 </head>
@@ -17,9 +18,9 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="https://github.com/eun-su-jeong" target="_blank">github</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +32,7 @@
                 portfolio
             </h2>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <h4>about me</h4>
             <div class="about-wrap">
               <div class="profile">
@@ -67,7 +68,7 @@
               </div>
             </div>
         </section>
-        <section class="projectAll">
+        <section class="projectAll" id="project">
             <h4>projects</h4>
             <div class="project-wrap">
                 <div class="project-view">
@@ -231,14 +232,40 @@
                 </div>
             </div>
         </section>
+        <section class="contact" id="contact">
+            <div class="contact-wrap">
+                <div class="sub-title">
+                    <h5>Thank you for looking at my portfolio</h5>
+                </div>
+                <div class="title">
+                    <h3>CONTACT</h3>
+                </div>
+                <div class="contact-info">
+                    <p>
+                        <a class="fill-up" href="https://mail.naver.com/write/popup?srvid=note&to=dmswid0@naver.com" target="_blank">
+                        <span>email</span>
+                        <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a class="fill-up" href="tel:010-1234-5678">
+                            <span>phone</span>
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a class="fill-up" href="https://github.com/eun-su-jeong" target="_blank">
+                            <span>GitHub</span>
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 EUNSUJEONG. All Rights Reserved.</p>
-            <p>Contact: <a href="mailto:dmswid0@naver.com">dmswid0@naver.com</a></p>
-            <div class="social-media">
-                <a href="https://github.com/eun-su-jeong" target="_blank">GitHub</a>
-            </div>
         </div>
     </footer>
 </div>

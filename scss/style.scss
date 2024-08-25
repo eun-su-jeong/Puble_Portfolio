@@ -16,6 +16,10 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   background-color: #F9F5EF;
@@ -167,15 +171,9 @@ ul, ol, li {
                   line-height: 1.5;
                   border-radius: 8px;
 
-                  // nth-child()와 @each를 결합하여 각 요소에 색상 적용
                   @for $i from 1 through length($colors) {
                     &:nth-child(#{$i}) {
                       background-color: nth($colors, $i);
-
-                      //// 밝은 색상인 경우 글자 색상 검정으로 설정
-                      //@if (lightness(nth($colors, $i)) > 70) {
-                      //  color: #000;
-                      //}
                     }
                   }
                 }
@@ -563,6 +561,86 @@ ul, ol, li {
       }
     }
 
+    .contact{
+        padding: 0 4rem;
+        margin-top: 10em;
+      .contact-wrap{
+        padding-top: 5em;
+        border-top: 1px solid #222;
+
+        .sub-title{
+          h5{
+            font-size: 2em;
+            text-transform: uppercase;
+          }
+        }
+
+        .title{
+          padding-top :5em;
+
+          h3{
+            font-size: 17vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: right;
+            margin-bottom: .5em;
+            line-height: 1;
+            color: #222;
+          }
+        }
+
+        .contact-info{
+          display: flex;
+          gap: 1em;
+          padding-bottom: 2em;
+          p{
+            position: relative;
+            overflow: hidden;
+            a{
+              display: block;
+              position: relative;
+              z-index: 1;
+              padding: .5em 1em;
+              font-size: 1.5em;
+              font-weight: 500;
+              text-transform: uppercase;
+              border: 1px solid #222;
+              border-radius: 30px;
+              transition: all 0.3s ease;
+              overflow: hidden;
+
+              i{
+                font-size: 0;
+              }
+
+              &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 0;
+                width: 100%;
+                background: #222;
+                z-index: -1;
+                transition: height 0.3s ease-out;
+              }
+
+              &.fill-up:hover::before {
+                height: 100%;
+              }
+
+              &:hover{
+                color: #f9f5ef;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+
   }
 
   footer {
@@ -576,27 +654,6 @@ ul, ol, li {
     .footer-content {
       max-width: 1920px;
       margin: 0 auto;
-
-      p,
-      a {
-        margin: 0.5rem 0;
-      }
-
-      a {
-        color: #fff;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    .social-media {
-      margin: 1rem 0;
-
-      a {
-        margin: 0 0.5rem;
-      }
     }
   }
 
@@ -604,67 +661,89 @@ ul, ol, li {
 @media (min-width: 751px) and (max-width: 1200px){
   .wrapper{
     main{
-      .hero{
-        h2{
-          font-size: 12vw;
-        }
-      }
-      .about{
-        padding: 0 2rem;
-        h4{
-          font-size: 4rem;
-        }
-        .about-wrap{
-          .profile{
-            flex-direction: column;
+        .hero{
+          h2{
+            font-size: 12vw;
           }
         }
-      }
 
-      .projectAll{
-        padding: 0 2rem;
-
-        h4{
-          font-size: 4rem;
+        .about{
+          padding: 0 2rem;
+          h4{
+            font-size: 4rem;
+          }
+          .about-wrap{
+            .profile{
+              flex-direction: column;
+            }
+          }
         }
-        .project-wrap{
-          .project-view{
-            flex-direction: column;
-            align-items: normal;
 
-            .project-item{
-              &:nth-of-type(1){
-                padding-bottom: 5em;
+        .projectAll{
+          padding: 0 2rem;
+
+          h4{
+            font-size: 4rem;
+          }
+          .project-wrap{
+            .project-view{
+              flex-direction: column;
+              align-items: normal;
+
+              .project-item{
+                &:nth-of-type(1){
+                  padding-bottom: 5em;
+                }
               }
             }
           }
         }
-      }
 
-      .project{
-        padding: 0 2rem;
-        .project-wrap{
-            .project-list{
-              display: flex;
-              flex-wrap: wrap;
-              //justify-content: flex-start;
-               position: relative;
-               gap:4%;
-               row-gap: 5rem;
-               padding-top: 0;
-               width: 100%;
+        .project{
+          padding: 0 2rem;
+          .project-wrap{
+              .project-list{
+                display: flex;
+                flex-wrap: wrap;
+                //justify-content: flex-start;
+                 position: relative;
+                 gap:4%;
+                 row-gap: 5rem;
+                 padding-top: 0;
+                 width: 100%;
 
-              .project-item{
-                flex-basis: 48%!important;
-                height: 100%;
+                .project-item{
+                  flex-basis: 48%!important;
+                  height: 100%;
+                  a{
+                    height: auto;
+                  }
+                  &:nth-of-type(4){
+                      margin-left: 0;
+                  }
+                  &:nth-of-type(6){
+                      margin-left: 0;
+                  }
+                }
+              }
+            }
+          }
+
+        .contact{
+          padding: 0 2rem;
+          .contact-wrap{
+            .sub-title{
+              h5{
+                font-size: 1.5em;
+              }
+            }
+
+            .contact-info{
+              p{
                 a{
-                  height: auto;
-                }
-                &:nth-of-type(4){
-                    margin-left: 0;
-                }
-                &:nth-of-type(6){
-                    margin-left: 0;
+                  i{
+                    font-size: 0;
+                  }
                 }
               }
             }
@@ -835,6 +914,81 @@ ul, ol, li {
           }
         }
       }
+
+      .contact{
+        padding: 0 1rem;
+        margin-top: 10em;
+        .contact-wrap{
+          padding-top: 3em;
+
+          .sub-title{
+            h5{
+              font-size: .8em;
+              text-align: center;
+            }
+          }
+          .title{
+            padding-top :3em;
+            h3{
+              text-align: center;
+            }
+          }
+
+          .contact-info{
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            padding-bottom: 2em;
+            p{
+              position: relative;
+              overflow: hidden;
+              a{
+                display: block;
+                position: relative;
+                z-index: 1;
+                padding: .5em 1em;
+                font-size: 0;
+                font-weight: 500;
+                text-transform: uppercase;
+                border: 1px solid #222;
+                border-radius: 30px;
+                transition: all 0.3s ease;
+                overflow: hidden;
+
+                i{
+                  font-size: 1.5rem;
+                  padding: 1rem;
+                }
+
+                &::before{
+                  content: '';
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  height: 0;
+                  width: 100%;
+                  background: #222;
+                  z-index: -1;
+                  transition: height 0.3s ease-out;
+                }
+
+                &.fill-up:hover::before {
+                  height: 100%;
+                }
+
+                &:hover{
+                  color: #f9f5ef;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer{
+      margin-top: 2em!important;
     }
   }
 }
