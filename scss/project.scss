@@ -103,13 +103,8 @@
         gap: 2em;
         padding-top: 3em;
 
-        .intention-wrap {
-          display: flex;
-          gap: 2em;
-
-          .intention {
-            width: 45%;
-          }
+        .intention {
+          width: 45%;
         }
 
         .link {
@@ -490,6 +485,10 @@
             font-size: 1.5rem;
             padding: 1rem 0 0;
             margin: 0;
+
+            p{
+              padding-bottom: 10px;
+            }
           }
         }
 
@@ -627,6 +626,10 @@
           .desc {
             //font-size: 2rem;
             padding: 0 4rem;
+
+            p{
+              padding-bottom: 10px;
+            }
           }
         }
 
@@ -820,19 +823,14 @@
               justify-content: flex-start;
               align-items: flex-start;
 
-              .intention-wrap{
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-
-                .intention {
+              .intention {
                 width: 100%;
 
                 .desc{
                   font-size: 1.25rem;
                 }
               }
-              }
+
               .link{
                 a{
                   figure{
@@ -1118,16 +1116,12 @@
               align-items: normal;
               padding-top: 2em;
 
-              .intention-wrap{
-                flex-direction: column;
-                .intention{
-                  width: 100%;
-                  .desc{
-                    font-size: 1rem;
-                  }
+              .intention{
+                width: 100%;
+                .desc{
+                  font-size: 1rem;
                 }
               }
-
 
               .link {
                 a {

@@ -180,11 +180,7 @@ button {
   gap: 2em;
   padding-top: 3em;
 }
-.project-main .overview article .content .intention-wrap {
-  display: flex;
-  gap: 2em;
-}
-.project-main .overview article .content .intention-wrap .intention {
+.project-main .overview article .content .intention {
   width: 45%;
 }
 .project-main .overview article .content .link a figure {
@@ -495,6 +491,9 @@ button {
   padding: 1rem 0 0;
   margin: 0;
 }
+.project-main .showing04 article .content .intention .desc p {
+  padding-bottom: 10px;
+}
 .project-main .showing04 article .content .images-list {
   display: flex;
   flex-wrap: wrap;
@@ -585,6 +584,9 @@ button {
 }
 .project-main .showing05 article .content .intention .desc {
   padding: 0 4rem;
+}
+.project-main .showing05 article .content .intention .desc p {
+  padding-bottom: 10px;
 }
 .project-main .showing05 article .content .images {
   margin-top: 5em;
@@ -734,15 +736,10 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .wrapper .project-main .overview article .content .intention-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  .wrapper .project-main .overview article .content .intention-wrap .intention {
+  .wrapper .project-main .overview article .content .intention {
     width: 100%;
   }
-  .wrapper .project-main .overview article .content .intention-wrap .intention .desc {
+  .wrapper .project-main .overview article .content .intention .desc {
     font-size: 1.25rem;
   }
   .wrapper .project-main .overview article .content .link a figure {
@@ -918,13 +915,10 @@ button {
     align-items: normal;
     padding-top: 2em;
   }
-  .wrapper .project-main .overview article .content .intention-wrap {
-    flex-direction: column;
-  }
-  .wrapper .project-main .overview article .content .intention-wrap .intention {
+  .wrapper .project-main .overview article .content .intention {
     width: 100%;
   }
-  .wrapper .project-main .overview article .content .intention-wrap .intention .desc {
+  .wrapper .project-main .overview article .content .intention .desc {
     font-size: 1rem;
   }
   .wrapper .project-main .overview article .content .link a figure {
