@@ -16,6 +16,18 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
+img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 html{
   scroll-behavior: smooth;
 }

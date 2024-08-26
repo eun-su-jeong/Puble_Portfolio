@@ -1,3 +1,4 @@
+/* header scroll */
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
@@ -80,6 +81,33 @@ document.addEventListener('DOMContentLoaded', function () {
     if (projectList.length > 0) {
         projectList[0].click();
     }
+});
+
+/* lazy load */
+document.addEventListener("DOMContentLoaded", function() {
+   let lazyImgs = document.querySelectorAll("img");
+
+   if("intersectionObserver" in window) {
+       let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+           entries.forEach(function(entry) {
+               if(entry.isIntersecting) {
+                   let lazyImage = entry.target;
+                   lazyImage.src = lazyImage.dataset.src;
+                   lazyImage.classList.add("loaded");
+                   observer.unobserve(lazyImage);
+               }
+           });
+       });
+
+       lazyImgs.forEach(function(lazyImage) {
+           observer.observe(lazyImage);
+       });
+   }else{
+       lazyImgs.forEach(function(lazyImage) {
+           lazyImage.src = lazyImage.dataset.src;
+           lazyImage.classList.add("loaded");
+       });
+   }
 });
 
 
