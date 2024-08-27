@@ -484,7 +484,7 @@ button {
 }
 .project-main .showing04 article .content .intention {
   display: initial;
-  width: 60vw;
+  width: 80vw;
 }
 .project-main .showing04 article .content .intention .desc {
   font-size: 1.5rem;
@@ -1137,9 +1137,9 @@ button {
     margin-top: 5rem !important;
   }
 }
-img {
+img, .title-name, .contents {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 

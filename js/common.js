@@ -110,6 +110,57 @@ document.addEventListener("DOMContentLoaded", function() {
    }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const titleName = document.querySelectorAll('.title-name');
+    const contents = document.querySelectorAll('.contents');
+
+    const options = {
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+            }
+            // else{
+            //     entry.target.classList.remove('loaded');
+            // }
+        });
+    }, options);
+
+    contents.forEach((content) => {
+        observer.observe(content);
+    });
+
+    titleName.forEach((title) => {
+        observer.observe(title);
+        splitText(title,0.05, 'span');
+    });
+    /* text split */
+    function splitText(el, interval, tagName = 'span') {
+        let text = el.innerText;
+        el.innerHTML = '';
+        let tags = '';
+        let count = 0;
+
+        for(let letter of text){
+            tags += `<${tagName} style="display: inline-block; transition-delay: ${interval *count}s">${letter}</${tagName}>`;
+            count++;
+        }
+        el.innerHTML = tags;
+    }
+
+});
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     const hero = document.querySelector('.hero-text h2');
+//     hero.classList.add('loaded');
+//
+// });
+
+
+
 
 
 

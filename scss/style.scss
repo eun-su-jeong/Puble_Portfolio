@@ -16,9 +16,9 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
-img {
+img, .title-name, .contents {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
@@ -26,6 +26,7 @@ img {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 html{
