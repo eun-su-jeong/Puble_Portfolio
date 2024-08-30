@@ -1,6 +1,8 @@
-@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
@@ -8,7 +10,7 @@
 html, body,
 h1, h2, h3, h4, h5, h6,
 input, select, textarea, button, option {
-  font-family: "SpoqaHanSansNeo", "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 * {
@@ -371,6 +373,7 @@ button {
   font-size: 1.5rem;
 }
 .project-main .showing02 article .content .intention .desc .tit {
+  font-family: var(--font-title);
   font-weight: 600;
   padding-bottom: 10px;
   font-size: 1.625rem;
@@ -412,6 +415,7 @@ button {
 }
 .project-main .showing02 article .content .images ul li .desc {
   margin-top: 1rem;
+  font-family: var(--font-title);
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -460,6 +464,7 @@ button {
   text-transform: uppercase;
 }
 .project-main .showing03 article .content .images ul li .desc .tit {
+  font-family: var(--font-title);
   font-weight: bold;
   font-size: 1.25rem;
 }
@@ -721,6 +726,7 @@ button {
   text-transform: uppercase;
 }
 .project-main .footer-credit article .credit .name {
+  font-family: var(--font-title);
   font-size: 1.25rem;
 }
 
@@ -1141,14 +1147,53 @@ button {
     margin-top: 5rem !important;
   }
 }
-img, .title-name, .contents {
+:root {
+  --font-text: "Open Sans","Noto Sans KR", sans-serif; /*"Lato", sans-serif;*/
+  --font-title: "Montserrat", sans-serif;
+  --font-sub: "Playfair Display", serif;
+  --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
+}
+
+/* scroll 애니메이션 */
+img,
+.title-name,
+.title-name span,
+.contents {
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
-.loaded {
+img.loaded,
+.title-name.loaded,
+.title-name span.loaded,
+.contents.loaded {
   opacity: 1;
+  transform: translateY(0);
+}
+
+/* hero 애니메이션 */
+.cont-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 공통 애니메이션 효과 설정 */
+.cont {
+  transition: transform 0.5s ease-out;
+}
+
+/* 초기 transform 설정 */
+img.cont,
+.sub-tit.cont {
+  transform: translateY(100%);
+}
+
+.tit.cont {
+  transform: translateY(-100%);
+}
+
+/* 페이지 로드 후 애니메이션 효과 */
+.cont.page-loaded {
   transform: translateY(0);
 }
 
@@ -1160,7 +1205,7 @@ body {
   overflow-x: hidden;
   background-color: #F9F5EF;
   color: #222;
-  font-family: "Montserrat", "Noto Sans KR", "sans-serif";
+  font-family: "Noto Sans KR", "sans-serif";
 }
 
 a {
@@ -1192,7 +1237,7 @@ ul, ol, li {
   background-color: #F9F5EF;
 }
 .wrapper header h1 {
-  font-family: "Montserrat", "Noto Sans KR", "sans-serif";
+  font-family: var(--font-logo);
   font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1214,6 +1259,7 @@ ul, ol, li {
 .wrapper header nav ul li a {
   display: inline-block;
   padding: 2px 5px;
+  font-family: var(--font-text);
   font-size: 1.5rem;
   text-transform: uppercase;
 }
@@ -1223,31 +1269,77 @@ ul, ol, li {
 }
 .wrapper main .hero {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0 4rem;
+  justify-content: center;
+  align-items: flex-end;
   height: 100vh;
   color: #222;
+  transition: opacity 0.5s ease-out;
 }
-.wrapper main .hero h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 9vw;
-  font-weight: 800;
+.wrapper main .hero .hero-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+.wrapper main .hero .hero-wrap .hero-img {
+  width: 30vw;
+}
+.wrapper main .hero .hero-wrap .hero-img img {
+  width: 100%;
+}
+.wrapper main .hero .hero-wrap .hero-img img.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+.wrapper main .hero .hero-wrap .hero-tit {
   line-height: 0.9;
+}
+.wrapper main .hero .hero-wrap .hero-tit .tit {
+  font-family: var(--font-title);
+  font-size: 12vw;
+  font-weight: 800;
   text-transform: uppercase;
+}
+.wrapper main .hero .hero-wrap .hero-tit .sub-tit {
+  display: block;
+  font-family: var(--font-sub);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 4vw;
+  text-align: right;
+  line-height: 1.2;
+}
+.wrapper main .hero.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
 .wrapper main .about {
   padding: 0 3rem;
-  margin-top: 10em;
+  margin-top: 20em;
   height: auto;
 }
 .wrapper main .about h4 {
+  font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   line-height: 1;
   color: #222;
+  padding-top: 1rem;
+}
+.wrapper main .about h4 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.wrapper main .about h4 span.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 .wrapper main .about .about-wrap .profile {
   display: flex;
@@ -1321,17 +1413,28 @@ ul, ol, li {
   background-color: rgba(240, 80, 50, 0.6);
 }
 .wrapper main .projectAll {
-  margin-top: 10em;
+  margin-top: 20em;
   padding: 0 3rem;
   height: auto;
 }
 .wrapper main .projectAll h4 {
+  font-family: var(--font-title);
   font-size: 5rem;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   line-height: 1;
   color: #222;
+}
+.wrapper main .projectAll h4 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.wrapper main .projectAll h4 span.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 .wrapper main .projectAll .project-wrap {
   display: flex;
@@ -1497,9 +1600,11 @@ ul, ol, li {
   margin-left: 2em;
 }
 .wrapper main .project {
+  position: relative;
   padding: 0 3rem;
   height: auto;
   margin-top: 10em;
+  transition: all 0.5s ease;
 }
 .wrapper main .project .project-wrap {
   display: flex;
@@ -1593,6 +1698,21 @@ ul, ol, li {
   flex-basis: 40vw;
   margin-left: 2em;
 }
+.wrapper main .project::before {
+  content: "project";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: 18vw;
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.02);
+  z-index: -1;
+}
 .wrapper main .contact {
   padding: 0 4rem;
   margin-top: 10em;
@@ -1602,6 +1722,7 @@ ul, ol, li {
   border-top: 1px solid #222;
 }
 .wrapper main .contact .contact-wrap .sub-title h5 {
+  font-family: var(--font-sub);
   font-size: 2em;
   text-transform: uppercase;
 }
@@ -1609,13 +1730,24 @@ ul, ol, li {
   padding-top: 5em;
 }
 .wrapper main .contact .contact-wrap .title h3 {
-  font-size: 17vw;
-  font-weight: 900;
+  font-family: var(--font-title);
+  font-size: 14vw;
+  font-weight: 800;
   text-transform: uppercase;
   text-align: right;
   margin-bottom: 0.5em;
   line-height: 1;
   color: #222;
+}
+.wrapper main .contact .contact-wrap .title h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.wrapper main .contact .contact-wrap .title h3 span.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 .wrapper main .contact .contact-wrap .contact-info {
   display: flex;
@@ -1627,7 +1759,7 @@ ul, ol, li {
   overflow: hidden;
 }
 .wrapper main .contact .contact-wrap .contact-info p a {
-  display: block;
+  display: flex;
   position: relative;
   z-index: 1;
   padding: 0.5em 1em;

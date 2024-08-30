@@ -322,6 +322,7 @@
             font-size: 1.5rem;
 
             .tit {
+              font-family: var(--font-title);
               font-weight: 600;
               padding-bottom: 10px;
               font-size: 1.625rem;
@@ -370,6 +371,7 @@
 
               .desc {
                 margin-top: 1rem;
+                font-family: var(--font-title);
                 font-size: 1.25rem;
                 font-weight: bold;
                 text-transform: uppercase;
@@ -434,6 +436,7 @@
                 text-transform: uppercase;
 
                 .tit {
+                  font-family: var(--font-title);
                   font-weight: bold;
                   font-size: 1.25rem;
                 }
@@ -795,6 +798,7 @@
         text-transform: uppercase;
 
         .name {
+          font-family: var(--font-title);
           font-size: 1.25rem;
         }
       }

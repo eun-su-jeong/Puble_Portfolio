@@ -2,6 +2,13 @@
 @import "fonts.scss";
 @import "project.scss";
 
+:root{
+    --font-text: "Open Sans",'Noto Sans KR', sans-serif; /*"Lato", sans-serif;*/
+    --font-title: 'Montserrat', sans-serif; // main, section
+    --font-sub: "Playfair Display", serif;
+    --font-logo: 'Lora', serif; /*"Raleway", sans-serif;*/
+}
+
 $colors: (
         rgba(#E34F26, 0.6),  // HTML5
         rgba(#1572B6, 0.6),  // CSS3
@@ -16,15 +23,45 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
-img, .title-name, .contents {
+/* scroll 애니메이션 */
+img,
+.title-name,
+.title-name span,
+.contents {
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+  &.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.loaded {
-  opacity: 1;
-  transform: translateY(0);
+/* hero 애니메이션 */
+.cont-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 공통 애니메이션 효과 설정 */
+.cont {
+  transition: transform .5s ease-out;
+}
+
+/* 초기 transform 설정 */
+img.cont,
+.sub-tit.cont{
+  transform: translateY(100%);
+}
+
+.tit.cont {
+  transform: translateY(-100%);
+}
+
+/* 페이지 로드 후 애니메이션 효과 */
+.cont.page-loaded {
+  transform: translateY(0); // 원래 위치로 이동
 }
 
 
@@ -37,8 +74,7 @@ body {
   overflow-x: hidden;
   background-color: #F9F5EF;
   color: #222;
-  font-family: "Montserrat", "Noto Sans KR", "sans-serif";
-
+  font-family: "Noto Sans KR", "sans-serif";
 }
 
 a {
@@ -71,7 +107,8 @@ ul, ol, li {
     background-color: #F9F5EF;
 
     h1 {
-      font-family: "Montserrat", "Noto Sans KR", "sans-serif";
+      font-family: var(--font-logo);
+      //font-family: "Raleway", sans-serif;
       font-size: 2.5rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -98,6 +135,8 @@ ul, ol, li {
           a {
             display: inline-block;
             padding: 2px 5px;
+            font-family: var(--font-text);
+            //font-family: "Lato", sans-serif;
             font-size: 1.5rem;
             text-transform: uppercase;
           }
@@ -112,33 +151,89 @@ ul, ol, li {
 
     .hero {
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 0 4rem;
+      justify-content: center;
+      align-items: flex-end;
       height: 100vh;
       color: #222;
+      transition: opacity 0.5s ease-out;
 
-      h2 {
-        font-family: "Montserrat", sans-serif;
-        font-size: 9vw;
-        font-weight: 800;
-        line-height: .9;
-        text-transform: uppercase;
+      .hero-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 1.5rem;
+        width: 100%;
+        height: 100%;
+
+        .hero-img{
+          width: 30vw;
+          img{
+            width: 100%;
+
+            &.loaded {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+        .hero-tit {
+          line-height: .9;
+
+          .tit {
+            font-family: var(--font-title);
+            font-size: 12vw;
+            font-weight: 800;
+            text-transform: uppercase;
+
+          }
+
+          .sub-tit {
+            display: block;
+            font-family: var(--font-sub);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 4vw;
+            text-align: right;
+            line-height: 1.2;
+          }
+        }
+      }
+      &.fade-out {
+        opacity: 0;
+        pointer-events: none;
       }
     }
 
     .about{
       padding: 0 3rem;
-      margin-top: 10em;
+      margin-top: 20em;
       height: auto;
 
       h4{
+        font-family: var(--font-title);
         font-size: 5rem;
-        font-weight: 900;
+        font-weight: 700;
         text-transform: uppercase;
-        margin-bottom: 1em;
+        margin-bottom: .5em;
         line-height: 1;
         color: #222;
+        padding-top: 1rem;
+        //background-image: url(../images/obj.png);
+        //background-repeat: no-repeat;
+        //background-position: top 0px left 28rem;
+
+        span{
+          display: inline-block;
+          opacity: 0;
+          transform: translateY(100px);
+          transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+          &.loaded {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       }
 
       .about-wrap{
@@ -193,25 +288,35 @@ ul, ol, li {
               }
             }
           }
-
-
         }
       }
     }
 
     .projectAll {
-        //display: block!important;
-        margin-top: 10em;
+        margin-top: 20em;
         padding: 0 3rem;
         height: auto;
 
       h4 {
+        font-family: var(--font-title);
         font-size: 5rem;
-        font-weight: 900;
+        font-weight: 700;
         text-transform: uppercase;
-        margin-bottom: 1em;
+        margin-bottom: .5em;
         line-height: 1;
         color: #222;
+
+        span{
+          display: inline-block;
+          opacity: 0;
+          transform: translateY(100px);
+          transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+          &.loaded {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       }
 
       .project-wrap{
@@ -451,9 +556,11 @@ ul, ol, li {
     }
 
     .project {
+      position: relative;
       padding: 0 3rem;
       height: auto;
       margin-top: 10em;
+      transition: all .5s ease;
 
       .project-wrap {
         display: flex;
@@ -572,6 +679,21 @@ ul, ol, li {
           }
         }
       }
+      &::before{
+        content: 'project';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        font-size: 18vw;
+        font-family: var(--font-title);
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.02);
+        z-index: -1;
+      }
     }
 
     .contact{
@@ -583,6 +705,7 @@ ul, ol, li {
 
         .sub-title{
           h5{
+            font-family: var(--font-sub);
             font-size: 2em;
             text-transform: uppercase;
           }
@@ -592,13 +715,26 @@ ul, ol, li {
           padding-top :5em;
 
           h3{
-            font-size: 17vw;
-            font-weight: 900;
+            font-family: var(--font-title);
+            font-size: 14vw;
+            font-weight: 800;
             text-transform: uppercase;
             text-align: right;
             margin-bottom: .5em;
             line-height: 1;
             color: #222;
+
+            span{
+              display: inline-block;
+              opacity: 0;
+              transform: translateY(100px);
+              transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+              &.loaded {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
           }
         }
 
@@ -610,7 +746,7 @@ ul, ol, li {
             position: relative;
             overflow: hidden;
             a{
-              display: block;
+              display: flex;
               position: relative;
               z-index: 1;
               padding: .5em 1em;

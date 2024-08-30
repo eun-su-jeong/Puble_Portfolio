@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
    }
 });
 
+/* scroll animation */
 document.addEventListener("DOMContentLoaded", function() {
     const titleName = document.querySelectorAll('.title-name');
     const contents = document.querySelectorAll('.contents');
@@ -121,12 +122,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('loaded');
-            }
-            // else{
-            //     entry.target.classList.remove('loaded');
-            // }
-        });
+                if(entry.target.classList.contains('title-name')){
+                    entry.target.classList.add('loaded');
+                    const spans = entry.target.querySelectorAll('span');
+                    spans.forEach((span, index) => {
+                        span.style.transitionDelay = `${index * 0.05}s`;
+                        span.classList.add('loaded');
+                    });
+                }else{
+                    entry.target.classList.add('loaded');
+                }
+                observer.unobserve(entry.target);
+               }
+            });
     }, options);
 
     contents.forEach((content) => {
@@ -134,8 +142,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     titleName.forEach((title) => {
-        observer.observe(title);
-        splitText(title,0.05, 'span');
+           observer.observe(title);
+           splitText(title, 0.05, 'span');
     });
     /* text split */
     function splitText(el, interval, tagName = 'span') {
@@ -144,8 +152,8 @@ document.addEventListener("DOMContentLoaded", function() {
         let tags = '';
         let count = 0;
 
-        for(let letter of text){
-            tags += `<${tagName} style="display: inline-block; transition-delay: ${interval *count}s">${letter}</${tagName}>`;
+        for (let letter of text) {
+            tags += `<${tagName}>${letter}</${tagName}>`;
             count++;
         }
         el.innerHTML = tags;
@@ -153,11 +161,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const hero = document.querySelector('.hero-text h2');
-//     hero.classList.add('loaded');
-//
-// });
+/* page load */
+document.addEventListener("DOMContentLoaded", function() {
+   const heroImage = document.querySelector('img.cont');
+   const mainTitle = document.querySelector('.tit.cont');
+   const subTitle = document.querySelector('.sub-tit.cont');
+
+    setTimeout(() => {
+        heroImage.classList.add('page-loaded');
+    }, 500);
+
+    setTimeout(() => {
+        mainTitle.classList.add('page-loaded');
+    }, 1000);
+
+    setTimeout(() => {
+        subTitle.classList.add('page-loaded');
+    }, 1500);
+});
+
+/* hero fade out */
+document.addEventListener("DOMContentLoaded", function () {
+    const heroSection = document.querySelector('.hero');
+    const windowHeight = window.innerHeight;
+
+    window.addEventListener('scroll', function () {
+        const scrollPosition = window.scrollY;
+
+        let opacity = 1 - (scrollPosition / (windowHeight * 0.8));
+        if (opacity < 0) opacity = 0;
+
+        heroSection.style.opacity = opacity;
+    });
+});
+
+
+
+
+
+
+
 
 
 
