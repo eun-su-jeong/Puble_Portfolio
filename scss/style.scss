@@ -36,7 +36,7 @@ $colors: (
   color: #222;
   border: none;
   border-radius: 50%;
-  background-color: #ece9e3;
+  background-color: #F9F5EF;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-out;
   cursor: none;
@@ -51,12 +51,10 @@ $colors: (
 
 
 .noise {
-  position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 1001;
   background-image: url('https://i.ibb.co/x3TCktM/645cbb8ec449398255b76326-noise.gif');
   background-position: 0 0;
   background-size: auto;

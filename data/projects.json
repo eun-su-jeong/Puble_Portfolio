@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "신협리온브랜치",
+    "description": "22.11 ~ 23.07",
+    "link": "./pages/cubank.html",
+    "image": "images/mockup_cu7.webp",
+    "overlay": {
+      "content": "Mobile Web",
+      "stack": "Vue, Quasar,Javascript"
+    }
+  },
+  {
+    "id": 2,
+    "title": "저축은행중앙회 50주년 e역사관",
+    "description": "22.10 ~ 22.11",
+    "link": "./pages/sb50th.html",
+    "image": "images/mockup_sb2.webp",
+    "overlay": {
+      "content": "Adaptive Web",
+      "stack": "HTML, CSS, Javascript"
+    }
+  },
+  {
+    "id": 3,
+    "title": "피노유엑스디 홈페이지 리뉴얼",
+    "description": "22.08 ~ 22.10",
+    "link": "./pages/piinouxd.html",
+    "image": "images/mockup_pn5.webp",
+    "overlay": {
+      "content": "Responsive Web",
+      "stack": "HTML, CSS, Javascript, Swiper"
+    }
+  },
+  {
+    "id": 4,
+    "title": "한국투자저축은행 통합모바일앱/ODS",
+    "description": "21.06 ~ 22.02",
+    "link": "./pages/keybank.html",
+    "image": "images/mockup_kb5.webp",
+    "overlay": {
+      "content": "Mobile App, ODS",
+      "stack": "Websquare, HTML, CSS, Javascript"
+    }
+  },
+  {
+    "id": 5,
+    "title": "CookShare",
+    "description": "24.04 ~ 24.05",
+    "link": "./pages/cookshare.html",
+    "image": "images/mockup_cs1.webp",
+    "overlay": {
+      "content": "Mobile Web",
+      "stack": "React, Redux, SCSS"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Weekend Farm",
+    "description": "24.02 ~ 24.03",
+    "link": "./pages/weekendFarm.html",
+    "image": "images/mockup_wf1.webp",
+    "overlay": {
+      "content": "Web site",
+      "stack": "JSP, Spring Boot, Ajax"
+    }
+  }
+]
