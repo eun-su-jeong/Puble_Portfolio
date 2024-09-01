@@ -23,6 +23,33 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
+.top-button {
+  //display: none;
+  opacity: 0;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: var(--font-text);
+  font-weight: 600;
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  background-color: #ece9e3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+  cursor: none;
+  z-index: 100;
+
+  &:hover {
+    background-color: #222;
+    color:#fff;
+    transform: scale(1.1);
+  }
+}
+
+
 .noise {
   position: fixed;
   left: 0;
@@ -128,6 +155,7 @@ body {
 a {
   text-decoration: none;
   color: #222;
+  cursor: none;
 }
 
 ul, ol, li {
@@ -321,11 +349,12 @@ ul, ol, li {
 
                 li {
                   display: inline-block;
-                  padding: 4px 8px;
+                  padding: 4px 10px;
                   font-size: 1.5rem;
                   font-weight: 400;
                   line-height: 1.5;
                   border-radius: 8px;
+                  color: #F9F5EF;
 
                   @for $i from 1 through length($colors) {
                     &:nth-child(#{$i}) {

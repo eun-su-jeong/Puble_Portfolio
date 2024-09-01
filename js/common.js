@@ -307,6 +307,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+/*top 버튼*/
+document.addEventListener('DOMContentLoaded', function () {
+    // Top 버튼 생성
+    const topButton = document.createElement('button');
+    topButton.textContent = 'Top'; // 버튼 텍스트
+    topButton.classList.add('top-button');
+
+    // 버튼을 body에 추가
+    document.body.appendChild(topButton);
+
+    // 스크롤 이벤트 추가
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) { // 스크롤이 300px 이상일 때 버튼 표시
+            topButton.style.opacity = '1';
+        } else {
+            topButton.style.opacity = '0';
+        }
+    });
+
+    // 버튼 클릭 시 페이지 상단으로 부드럽게 이동
+    topButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
 
 
 
