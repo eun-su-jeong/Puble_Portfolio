@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectedProjectContainer = document.getElementById('selected-project');
     const projectLink = document.getElementById('project-link');
     const viewFigure = selectedProjectContainer.querySelector('.thumbnail .view');
+    const descTitle = selectedProjectContainer.querySelector('.desc strong');
+    const descText = selectedProjectContainer.querySelector('.desc span');
 
     projectList.forEach(item => {
         item.addEventListener('click', function(event) {
@@ -59,21 +61,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 const description = selectedContent.querySelector('.desc span').textContent;
                 const link = selectedContent.querySelector('.project-link').href;
 
-                // #selected-project 영역 업데이트
-                viewFigure.innerHTML = ''; // 기존 콘텐츠 삭제
+                // 전환 중임을 나타내기 위해 클래스 추가 (트랜지션 효과 시작)
+                viewFigure.style.opacity = '0';
 
-                if (video) {
-                    const videoClone = video.cloneNode(true);
-                    viewFigure.appendChild(videoClone);
-                } else if (img) {
-                    const imgClone = img.cloneNode(true);
-                    viewFigure.appendChild(imgClone);
-                }
+                // 트랜지션이 적용될 시간을 준 후 콘텐츠를 업데이트
+                setTimeout(() => {
+                    viewFigure.innerHTML = ''; // 기존 콘텐츠 삭제
+
+                    if (video) {
+                        const videoClone = video.cloneNode(true);
+                        viewFigure.appendChild(videoClone);
+                    } else if (img) {
+                        const imgClone = img.cloneNode(true);
+                        viewFigure.appendChild(imgClone);
+                    }
+
+                    // 콘텐츠 업데이트
+                    descTitle.textContent = title;
+                    descText.textContent = description;
+                    projectLink.href = link;
+
+                    setTimeout(() =>{
+                        viewFigure.style.opacity = '1';
+                    }, 50);
+                }, 300);
 
                 // #selected-project 영역 업데이트
-                selectedProjectContainer.querySelector('.desc strong').textContent = title;
-                selectedProjectContainer.querySelector('.desc span').textContent = description;
-                projectLink.href = link;
+                // selectedProjectContainer.querySelector('.desc strong').textContent = title;
+                // selectedProjectContainer.querySelector('.desc span').textContent = description;
+                // projectLink.href = link;
             }
         });
     });
@@ -194,6 +210,68 @@ document.addEventListener("DOMContentLoaded", function () {
         heroSection.style.opacity = opacity;
     });
 });
+
+/* mouse effect */
+document.addEventListener('DOMContentLoaded', function () {
+    const cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
+
+    // 마우스 이동 이벤트
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`; // 마우스 X 좌표로 이동
+        cursor.style.top = `${e.pageY}px`;  // 마우스 Y 좌표로 이동
+    });
+
+    // li 요소에 hover 시 커서 크기 변경
+    const listItems = document.querySelectorAll('li');
+    listItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+            cursor.textContent = ''; // 텍스트 제거
+        });
+        item.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+    });
+
+    const contactItems = document.querySelectorAll('.fill-up');
+    contactItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+            cursor.textContent = ''; // 텍스트 제거
+        });
+        item.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+    });
+
+    // a 요소에 hover 시 커서 크기 변경 및 "View More" 텍스트 추가
+    const links = document.querySelectorAll('.project-link');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(5)';
+            cursor.textContent = 'View More';
+            cursor.classList.add('active');
+        });
+        link.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursor.textContent = '';
+            cursor.classList.remove('active');
+        });
+    });
+
+    // 마우스 클릭 시 커서 효과
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.3)';
+    });
+
+    // 마우스 클릭 해제 시 커서 효과 복원
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+});
+
 
 
 

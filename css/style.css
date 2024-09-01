@@ -1154,6 +1154,38 @@ button {
   --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
 }
 
+.cursor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  mix-blend-mode: difference;
+  background-color: forestgreen;
+  line-height: 1;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cursor.active {
+  font-size: 0.2rem;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: normal;
+  background-color: #fff;
+  color: #222222;
+  padding: 0.8rem;
+}
+
 /* scroll 애니메이션 */
 img,
 .title-name,
@@ -1206,6 +1238,7 @@ body {
   background-color: #F9F5EF;
   color: #222;
   font-family: "Noto Sans KR", "sans-serif";
+  cursor: none;
 }
 
 a {
@@ -1545,6 +1578,7 @@ ul, ol, li {
   height: 100%;
   position: absolute;
   top: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 .wrapper main .projectAll .project-wrap .project-view .project-item a .thumbnail figure img {
   width: 100%;
@@ -1561,12 +1595,14 @@ ul, ol, li {
   justify-content: space-between;
   align-items: center;
   margin-top: 0.5rem;
+  transition: opacity 0.5s ease-in-out;
 }
 .wrapper main .projectAll .project-wrap .project-view .project-item a .desc strong {
   display: block;
   font-size: 1.375rem;
   font-weight: 400;
   text-transform: uppercase;
+  transition: opacity 0.5s ease-in-out;
 }
 .wrapper main .projectAll .project-wrap .project-view .project-item a .desc span {
   font-size: 1.375rem;
@@ -1638,12 +1674,14 @@ ul, ol, li {
 .wrapper main .project .project-wrap .project-list .project-item a {
   display: inline-block;
   width: 100%;
+  transition: transform 1s ease-out;
 }
 .wrapper main .project .project-wrap .project-list .project-item a .thumbnail {
   width: 100%;
   overflow: hidden;
   z-index: 1;
   position: relative;
+  transition: transform 0.5s ease-out;
 }
 .wrapper main .project .project-wrap .project-list .project-item a .thumbnail figure img {
   width: 100%;
@@ -1669,6 +1707,12 @@ ul, ol, li {
 }
 .wrapper main .project .project-wrap .project-list .project-item a .desc span {
   font-size: 1.375rem;
+}
+.wrapper main .project .project-wrap .project-list .project-item a:hover .thumbnail {
+  transform: scale(0.95);
+}
+.wrapper main .project .project-wrap .project-list .project-item a:hover .thumbnail figure img {
+  transform: scale(1.2);
 }
 .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(1) {
   flex-basis: 30vw;

@@ -23,6 +23,39 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
+
+.cursor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  mix-blend-mode: difference;
+  background-color: forestgreen;
+  line-height: 1;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cursor.active {
+  font-size: 0.2rem;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: normal;
+  background-color: #fff;
+  color: #222222;
+  padding: 0.8rem;
+}
+
 /* scroll 애니메이션 */
 img,
 .title-name,
@@ -65,7 +98,6 @@ img.cont,
 }
 
 
-
 html{
   scroll-behavior: smooth;
 }
@@ -75,6 +107,7 @@ body {
   background-color: #F9F5EF;
   color: #222;
   font-family: "Noto Sans KR", "sans-serif";
+  cursor: none;
 }
 
 a {
@@ -327,19 +360,12 @@ ul, ol, li {
 
         .project-view {
           display: flex;
-          //justify-content: center;
           align-items: flex-start;
-          //flex-wrap: wrap;
           position: relative;
           gap: 2rem;
           width: 100%;
 
           .project-item {
-            //flex-shrink: 0;
-            //flex-grow: 0;
-            //max-width: 100%;
-            //margin-top: 10em;
-
             .project1 {
               h5 {
                 font-size: 1rem;
@@ -456,7 +482,6 @@ ul, ol, li {
                 width: 100%;
                 min-height: 400px;
                 height: 100%;
-                //height: 380px;
                 overflow: hidden;
                 z-index: 1;
                 position: relative;
@@ -467,6 +492,7 @@ ul, ol, li {
                   height: 100%;
                   position: absolute;
                   top: 0;
+                  transition: opacity .5s ease-in-out;
 
                   img {
                     width: 100%;
@@ -487,12 +513,15 @@ ul, ol, li {
                 justify-content: space-between;
                 align-items: center;
                 margin-top: .5rem;
+                transition: opacity .5s ease-in-out;
 
                 strong {
                   display: block;
                   font-size: 1.375rem;
                   font-weight: 400;
                   text-transform: uppercase;
+                  transition: opacity .5s ease-in-out;
+
                 }
 
                 span {
@@ -596,13 +625,14 @@ ul, ol, li {
             a {
               display: inline-block;
               width: 100%;
-              //height: 100%;
+              transition: transform 1s ease-out;
 
               .thumbnail {
                 width: 100%;
                 overflow: hidden;
                 z-index: 1;
                 position: relative;
+                transition: transform 0.5s ease-out;
 
                 figure {
                   img {
@@ -634,6 +664,17 @@ ul, ol, li {
 
                 span {
                   font-size: 1.375rem;
+                }
+              }
+              &:hover{
+                .thumbnail{
+                  transform: scale(0.95);
+
+                  figure{
+                    img{
+                      transform: scale(1.2);
+                    }
+                  }
                 }
               }
             }
