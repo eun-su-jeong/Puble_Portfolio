@@ -1154,6 +1154,22 @@ button {
   --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
 }
 
+.noise {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  background-image: url("https://i.ibb.co/x3TCktM/645cbb8ec449398255b76326-noise.gif");
+  background-position: 0 0;
+  background-size: auto;
+  pointer-events: none;
+  opacity: 0.05;
+  transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  visibility: visible;
+}
+
 .cursor {
   display: flex;
   justify-content: center;

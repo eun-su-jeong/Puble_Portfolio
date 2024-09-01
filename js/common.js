@@ -272,6 +272,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+/* noise 효과 */
+document.addEventListener('DOMContentLoaded', function () {
+    function createNoiseEffect(isForHeader = false) {
+        const noiseEffect = document.createElement('div');
+        noiseEffect.classList.add('noise');
+
+        // noise 효과의 스타일 추가
+        noiseEffect.style.position =isForHeader? 'absolute' : 'fixed';
+        noiseEffect.style.left = '0';
+        noiseEffect.style.top = '0';
+        noiseEffect.style.right = '0';
+        noiseEffect.style.bottom = '0';
+        noiseEffect.style.zIndex = isForHeader? '1000' : '-1';
+        noiseEffect.style.backgroundImage = "url('https://i.ibb.co/x3TCktM/645cbb8ec449398255b76326-noise.gif')";
+        noiseEffect.style.backgroundPosition = '0 0';
+        noiseEffect.style.backgroundSize = 'auto';
+        noiseEffect.style.pointerEvents = 'none';
+        noiseEffect.style.opacity = '0.05';
+        noiseEffect.style.transition = 'opacity .2s cubic-bezier(.445, .05, .55, .95)';
+        noiseEffect.style.visibility = 'visible';
+        return noiseEffect;
+    }
+
+    // body에 noise 효과 추가
+    const bodyNoiseEffect = createNoiseEffect(false); // 기본값이 false, body용 noise 효과 생성
+    document.body.appendChild(bodyNoiseEffect);
+
+    // header에 noise 효과 추가
+    const header = document.querySelector('header');
+    if (header) {
+        const headerNoiseEffect = createNoiseEffect(true); // header용 noise 효과 생성
+        header.appendChild(headerNoiseEffect); // header 내부에 noise 효과 추가
+    }
+    // document.body.appendChild(noiseEffect);
+
+});
+
 
 
 
