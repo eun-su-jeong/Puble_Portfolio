@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
 
 /* project list select */
 document.addEventListener('DOMContentLoaded', () => {
-   const projectList = document.querySelectorAll('.project-list ul li');
+   const projectList = document.querySelectorAll('.proj-list ul li');
 
     if (projectList.length > 0) {
         projectList[0].classList.add('active');
@@ -87,9 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 300);
 
                 // #selected-project 영역 업데이트
-                // selectedProjectContainer.querySelector('.desc strong').textContent = title;
-                // selectedProjectContainer.querySelector('.desc span').textContent = description;
-                // projectLink.href = link;
+                selectedProjectContainer.querySelector('.desc strong').textContent = title;
+                selectedProjectContainer.querySelector('.desc span').textContent = description;
+                projectLink.href = link;
             }
         });
     });
@@ -305,8 +305,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const headerNoiseEffect = createNoiseEffect(true); // header용 noise 효과 생성
         header.appendChild(headerNoiseEffect); // header 내부에 noise 효과 추가
     }
-    // document.body.appendChild(noiseEffect);
-
 });
 
 
