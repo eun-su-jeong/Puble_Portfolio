@@ -1225,7 +1225,6 @@ button {
 }
 
 /* scroll 애니메이션 */
-img,
 .title-name,
 .title-name span,
 .contents {
@@ -1233,10 +1232,22 @@ img,
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-img.loaded,
+.title-name img,
+.title-name span img,
+.contents img {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
 .title-name.loaded,
 .title-name span.loaded,
 .contents.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+.title-name.loaded img,
+.title-name span.loaded img,
+.contents.loaded img {
   opacity: 1;
   transform: translateY(0);
 }

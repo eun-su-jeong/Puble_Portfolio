@@ -99,85 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-/* lazy load */
-document.addEventListener("DOMContentLoaded", function() {
-   let lazyImgs = document.querySelectorAll("img");
-
-   if("intersectionObserver" in window) {
-       let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-           entries.forEach(function(entry) {
-               if(entry.isIntersecting) {
-                   let lazyImage = entry.target;
-                   lazyImage.src = lazyImage.dataset.src;
-                   lazyImage.classList.add("loaded");
-                   observer.unobserve(lazyImage);
-               }
-           });
-       });
-
-       lazyImgs.forEach(function(lazyImage) {
-           observer.observe(lazyImage);
-       });
-   }else{
-       lazyImgs.forEach(function(lazyImage) {
-           lazyImage.src = lazyImage.dataset.src;
-           lazyImage.classList.add("loaded");
-       });
-   }
-});
-
-/* scroll animation */
-document.addEventListener("DOMContentLoaded", function() {
-    const titleName = document.querySelectorAll('.title-name');
-    const contents = document.querySelectorAll('.contents');
-
-    const options = {
-        threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                if(entry.target.classList.contains('title-name')){
-                    entry.target.classList.add('loaded');
-                    const spans = entry.target.querySelectorAll('span');
-                    spans.forEach((span, index) => {
-                        span.style.transitionDelay = `${index * 0.05}s`;
-                        span.classList.add('loaded');
-                    });
-                }else{
-                    entry.target.classList.add('loaded');
-                }
-                observer.unobserve(entry.target);
-               }
-            });
-    }, options);
-
-    contents.forEach((content) => {
-        observer.observe(content);
-    });
-
-    titleName.forEach((title) => {
-           observer.observe(title);
-           splitText(title, 0.05, 'span');
-    });
-    /* text split */
-    function splitText(el, interval, tagName = 'span') {
-        let text = el.innerText;
-        el.innerHTML = '';
-        let tags = '';
-        let count = 0;
-
-        for (let letter of text) {
-            tags += `<${tagName}>${letter}</${tagName}>`;
-            count++;
-        }
-        el.innerHTML = tags;
-    }
-
-});
-
-/* page load */
+/* hero page load */
 document.addEventListener("DOMContentLoaded", function() {
    const heroImage = document.querySelector('img.cont');
    const mainTitle = document.querySelector('.tit.cont');
@@ -324,12 +246,123 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const titleNameElements = document.querySelectorAll('.title-name');
+    const contentElements = document.querySelectorAll('.contents');
 
+    // 옵저버 설정 옵션
+    const scrollObserverOptions = {
+        threshold: 0.1
+    };
 
+    const lazyObserverOptions = {
+        // rootMargin: '0px 0px 500px 0px',
+        threshold: 0.01
+    };
 
+    // Scroll Animation과 Lazy Loading을 위한 IntersectionObserver 생성
+    const scrollObserver = new IntersectionObserver(handleScrollAnimation, scrollObserverOptions);
+    const lazyImageObserver = new IntersectionObserver(handleLazyLoading, lazyObserverOptions);
 
+    // 초기 요소들에 대해 옵저버 등록
+    contentElements.forEach(el => scrollObserver.observe(el));
 
+    titleNameElements.forEach(title => {
+        splitText(title, 0.05, 'span');
+        scrollObserver.observe(title);
+    });
 
+    // 초기 이미지들에 대해 Lazy Loading 옵저버 등록
+    document.querySelectorAll("img[data-src]").forEach(img => lazyImageObserver.observe(img));
+
+    // 스크롤 애니메이션을 처리하는 함수
+    function handleScrollAnimation(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+
+                // title-name 텍스트 애니메이션 처리
+                if (entry.target.classList.contains('title-name')) {
+                    entry.target.querySelectorAll('span').forEach((span, index) => {
+                        span.style.transitionDelay = `${index * 0.05}s`;
+                        span.classList.add('loaded');
+                    });
+                }
+
+                // .contents 요소에 포함된 이미지 로딩
+                entry.target.querySelectorAll("img[data-src]").forEach(img => {
+                    img.src = img.dataset.src;
+                    lazyImageObserver.unobserve(img); // 이미 로드된 이미지는 옵저버에서 제거
+                });
+
+                observer.unobserve(entry.target); // 애니메이션 완료 후 요소 관찰 해제
+            }
+        });
+    }
+
+    // Lazy Loading을 처리하는 함수
+    function handleLazyLoading(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.add("loaded");
+                observer.unobserve(lazyImage); // 요소 관찰 해제
+            }
+        });
+    }
+
+    // 텍스트를 분할하여 애니메이션을 적용하는 함수
+    function splitText(element, interval, tagName = 'span') {
+        const text = element.textContent;
+        element.innerHTML = '';
+
+        text.split('').forEach((char, index) => {
+            const span = document.createElement(tagName);
+            span.textContent = char;
+            span.style.transitionDelay = `${index * interval}s`;
+            element.appendChild(span);
+        });
+    }
+
+    // 비동기로 프로젝트 리스트를 로드
+    fetch('data/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            const projectListContainer = document.querySelector('.project-list');
+
+            if (!projectListContainer) {
+                console.error('프로젝트 리스트 컨테이너를 찾을 수 없습니다.');
+                return;
+            }
+
+            // 프로젝트 항목 생성 및 삽입
+            data.forEach(project => {
+                const projectHTML = `
+                    <div class="project-item contents" data-project="${project.id}">
+                        <a href="${project.link}" class="project-link">
+                            <div class="thumbnail">
+                                <figure>
+                                    <img data-src="${project.image}" alt="${project.alt}">
+                                </figure>
+                            </div>
+                            <div class="desc">
+                                <strong>${project.title}</strong>
+                                <span>${project.period}</span>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                projectListContainer.insertAdjacentHTML('beforeend', projectHTML);
+            });
+
+            // 새로 생성된 이미지와 콘텐츠에 대해 옵저버 등록
+            projectListContainer.querySelectorAll("img[data-src]").forEach(img => lazyImageObserver.observe(img));
+            projectListContainer.querySelectorAll('.contents').forEach(content => scrollObserver.observe(content));
+
+        })
+        .catch(error => console.error('JSON 데이터를 불러오는 중 오류 발생:', error));
+});
 
 
 

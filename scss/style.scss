@@ -97,7 +97,6 @@ $colors: (
 }
 
 /* scroll 애니메이션 */
-img,
 .title-name,
 .title-name span,
 .contents {
@@ -105,9 +104,20 @@ img,
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
+  img{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
   &.loaded {
     opacity: 1;
     transform: translateY(0);
+
+    img{
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
