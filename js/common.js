@@ -65,17 +65,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.addEventListener('mouseenter', (event) => {
         const target = event.target;
 
-        // li 요소에 hover 시 커서 크기 변경
+        // li
         if (target.matches('li')) {
             cursor.style.transform = 'translate(-50%, -50%) scale(2)';
             cursor.textContent = ''; // 텍스트 제거
         }
-        // .fill-up 클래스가 있는 요소에 hover 시 커서 크기 변경
+        // .fill-up
         else if (target.matches('.fill-up')) {
             cursor.style.transform = 'translate(-50%, -50%) scale(2)';
             cursor.textContent = ''; // 텍스트 제거
         }
-        // .project-link 클래스가 있는 a 요소에 hover 시 커서 크기 변경 및 "View More" 텍스트 추가
+        // .project-link
         else if (target.matches('.project-link')) {
             cursor.style.transition = 'transform 0.1s ease'; // 클릭 시 부드러운 전환
             cursor.style.transform = 'translate(-50%, -50%) scale(5)';
@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.addEventListener('mouseleave', (event) => {
         const target = event.target;
 
-        // 모든 요소에서 mouseout 시 커서 효과 복원
         if (target.matches('li') || target.matches('.fill-up') || target.matches('.project-link')) {
             cursor.style.transform = 'translate(-50%, -50%) scale(1)';
             cursor.textContent = '';
@@ -105,70 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     });
 });
-
-
-
-
-/* mouse effect */
-/*document.addEventListener('DOMContentLoaded', function () {
-    const cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    document.body.appendChild(cursor);
-
-    // 마우스 이동 이벤트
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.pageX}px`; // 마우스 X 좌표로 이동
-        cursor.style.top = `${e.pageY}px`;  // 마우스 Y 좌표로 이동
-    });
-
-    // li 요소에 hover 시 커서 크기 변경
-    const listItems = document.querySelectorAll('li');
-    listItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-            cursor.textContent = ''; // 텍스트 제거
-        });
-        item.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        });
-    });
-
-    const contactItems = document.querySelectorAll('.fill-up');
-    contactItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-            cursor.textContent = ''; // 텍스트 제거
-        });
-        item.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        });
-    });
-
-    // a 요소에 hover 시 커서 크기 변경 및 "View More" 텍스트 추가
-    const links = document.querySelectorAll('.project-link');
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(5)';
-            cursor.textContent = 'View More';
-            cursor.classList.add('active');
-        });
-        link.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursor.textContent = '';
-            cursor.classList.remove('active');
-        });
-    });
-
-    // 마우스 클릭 시 커서 효과
-    document.addEventListener('mousedown', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.3)';
-    });
-
-    // 마우스 클릭 해제 시 커서 효과 복원
-    document.addEventListener('mouseup', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    });
-});*/
 
 /* noise 효과 */
 document.addEventListener('DOMContentLoaded', function () {
