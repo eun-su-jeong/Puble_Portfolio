@@ -386,6 +386,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/*background color change*/
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+    const sections = document.querySelectorAll('section');
+    const header = document.querySelector('header');
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', () => {
+        let isInProjectSection = false;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+            if (inView && (section.classList.contains('projectAll') || section.classList.contains('project'))) {
+                isInProjectSection = true;
+            }
+        });
+
+        if (isInProjectSection) {
+            document.body.style.backgroundColor = '#fff';
+            header.style.backgroundColor = '#fff';
+        } else {
+            document.body.style.backgroundColor = '';
+            header.style.backgroundColor = '';
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
 
 
 

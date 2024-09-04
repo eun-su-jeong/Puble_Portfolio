@@ -1154,6 +1154,11 @@ button {
   --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
 }
 
+.light-mode {
+  background-color: #fff !important;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 .top-button {
   opacity: 0;
   position: fixed;

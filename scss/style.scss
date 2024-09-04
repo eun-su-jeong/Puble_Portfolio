@@ -23,6 +23,11 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
+.light-mode {
+  background-color: #fff !important;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 .top-button {
   //display: none;
   opacity: 0;
