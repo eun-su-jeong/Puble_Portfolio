@@ -415,6 +415,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/* background scroll parallax */
+document.addEventListener('DOMContentLoaded', () => {
+    const parallaxSection = document.querySelector('main'); // 'main' 요소 선택
+    const parallaxText = document.createElement('div');
+    parallaxText.classList.add('parallax-text');
+    parallaxText.textContent = "project";
+
+    parallaxSection.appendChild(parallaxText);
+
+    // 초기 스타일 설정
+    parallaxText.style.opacity = '0';
+    parallaxText.style.transition = 'opacity 0.5s ease-out';
+
+    const projectSection = document.querySelector('.project');
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY; // 현재 스크롤 위치
+        const parallaxSpeed = 0.7; // 패럴랙스 속도
+        const projectRect = projectSection.getBoundingClientRect();
+
+        // .project가 화면에서 벗어나지 않을 때까지 텍스트를 보이도록 설정
+        const projectStillVisible = projectRect.bottom > window.innerHeight * 0.1;
+
+        parallaxText.style.opacity = projectStillVisible ? '1' : '0'; // 조건에 따라 투명도 설정
+
+        const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
+        parallaxText.style.transform = `translate(-50%, calc(0% + ${offset}px))`;
+    });
+});
+
+
+
+
+
+
+
 
 
 

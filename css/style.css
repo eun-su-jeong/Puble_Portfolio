@@ -1352,8 +1352,24 @@ ul, ol, li {
   text-transform: uppercase;
 }
 .wrapper main {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
+}
+.wrapper main .parallax-text {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+  font-size: 18vw;
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  pointer-events: none;
 }
 .wrapper main .hero {
   display: flex;
@@ -1798,21 +1814,6 @@ ul, ol, li {
   flex-basis: 40vw;
   margin-left: 2em;
 }
-.wrapper main .project::before {
-  content: "project";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  font-size: 18vw;
-  font-family: var(--font-title);
-  font-weight: 900;
-  text-align: center;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.02);
-  z-index: -1;
-}
 .wrapper main .contact {
   padding: 0 4rem;
   margin-top: 10em;
@@ -1985,6 +1986,7 @@ ul, ol, li {
     font-size: 1rem;
   }
   .wrapper main .hero {
+    position: relative;
     height: initial;
     padding: 10em 1.2rem;
   }
