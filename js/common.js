@@ -415,8 +415,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* background scroll parallax */
-document.addEventListener('DOMContentLoaded', () => {
+/* background scroll parallax 1 */
+/*document.addEventListener('DOMContentLoaded', () => {
     const parallaxSection = document.querySelector('main'); // 'main' 요소 선택
     const parallaxText = document.createElement('div');
     parallaxText.classList.add('parallax-text');
@@ -442,10 +442,79 @@ document.addEventListener('DOMContentLoaded', () => {
         parallaxText.style.opacity = projectStillVisible ? '1' : '0'; // 조건에 따라 투명도 설정
 
         const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
+        parallaxText.style.transform = `translate(-50%, calc(-50% + ${offset}px))`;
+    });
+});*/
+
+/* background scroll parallax 2 */
+document.addEventListener('DOMContentLoaded', () => {
+    const parallaxSection = document.querySelector('main');
+    const parallaxText = document.createElement('div');
+    parallaxText.classList.add('parallax-text');
+    parallaxText.textContent = "project";
+
+    parallaxSection.appendChild(parallaxText);
+
+    // 초기 스타일 설정
+    parallaxText.style.opacity = '0';
+    parallaxText.style.transition = 'transform 2s ease-out, opacity 0.5s ease-out';
+
+    const projectSection = document.querySelector('.project');
+    const parallaxSpeed = 0.7; // 패럴랙스 속도
+    let isScrolling; // 스크롤 상태 확인용 변수
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', () => {
+        clearTimeout(isScrolling); // 이전 타임아웃 지우기
+
+        const scrollPosition = window.scrollY; // 현재 스크롤 위치
+        const projectRect = projectSection.getBoundingClientRect();
+
+        // .project 섹션이 화면에 나타날 때 텍스트를 보이도록 설정
+        const projectEnterVisible = projectRect.top < window.innerHeight && projectRect.bottom > 0;
+
+        parallaxText.style.opacity = projectEnterVisible ? '1' : '0'; // 조건에 따라 투명도 설정
+
+        const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
         parallaxText.style.transform = `translate(-50%, calc(0% + ${offset}px))`;
+
+        // 스크롤이 멈춘 후에 추가적인 이동 효과를 적용하기 위해 setTimeout 사용
+        isScrolling = setTimeout(() => {
+            // 스크롤 멈춘 후 0.5초 동안 텍스트가 부드럽게 이동
+            parallaxText.style.transform = `translate(-50%, calc(-50% + ${(scrollPosition + 50) * parallaxSpeed}px))`;
+        }, 100);
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const content = document.querySelector('main'); // 전환 효과를 적용할 요소 선택
+
+    // 현재 페이지 경로 확인 (예: '/index.html' 또는 '/')
+    const currentPath = window.location.pathname;
+
+    // 만약 현재 경로가 메인 페이지가 아니라면 슬라이드 인 효과 적용
+    if (currentPath !== '/' && currentPath !== '/index.html') {
+        content.classList.add('slide-in');
+    }
+
+    // 특정 클래스가 있는 링크 클릭 시 슬라이드 아웃 효과 적용
+    document.querySelectorAll('a.transition-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // 기본 동작 방지
+            const href = event.currentTarget.getAttribute('href');
+
+            // 슬라이드 아웃 효과 적용
+            content.classList.remove('slide-in');
+            content.classList.add('slide-out');
+
+            // 애니메이션이 끝난 후 페이지 전환
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); // 슬라이드 아웃 시간 (CSS에서 설정한 시간과 일치해야 함)
+        });
+    });
+});
 
 
 
