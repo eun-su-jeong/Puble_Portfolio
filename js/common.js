@@ -187,8 +187,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/* page transition */
+document.addEventListener('DOMContentLoaded', function () {
+    const main = document.querySelector('main'); // 메인 콘텐츠 영역
 
+    if (!main) {
+        console.error('main 요소를 찾을 수 없습니다.');
+        return;
+    } else {
+        console.log('main 요소 발견:', main);
+    }
 
+    // 현재 페이지 상태 저장 (초기 로드 시)
+    // history.replaceState({ page: window.location.href }, '', window.location.href);
+    history.replaceState('','', window.location.href);
+
+    // 페이지 슬라이딩 처리
+    function handlePageTransition(targetUrl) {
+        console.log('슬라이드 아웃 적용 시도');
+        main.classList.add('slide-out');
+
+        setTimeout(() => {
+            console.log('페이지 전환 중...');
+            window.location.href = targetUrl; // 실제 페이지 이동
+        }, 300);
+    }
+
+    // 이벤트 위임을 통해 모든 링크에 대해 이벤트 리스너 추가
+    document.body.addEventListener('click', function (event) {
+        const target = event.target.closest('.project-link'); // 클릭된 요소가 .project-link인지 확인
+        if (target) {
+            event.preventDefault();
+            const targetUrl = target.getAttribute('href');
+            console.log('클릭 감지:', targetUrl);
+
+            // 페이지 슬라이딩 처리
+            handlePageTransition(targetUrl);
+        }
+    });
+
+    window.addEventListener('popstate', function (event) {
+        console.log('뒤로 가기 감지됨');
+
+        // popstate 발생 시 slide-out 클래스 제거
+        main.classList.remove('slide-out'); // 메인 화면으로 돌아올 때 슬라이딩 초기화
+    });
+});
 
 
 

@@ -23,17 +23,8 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
-.fade-out {
-  animation: fadeOut 0.5s forwards;
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+.slide-out {
+  transform: translateX(-100%);
 }
 
 .top-button {
@@ -166,6 +157,7 @@ html{
 }
 
 body {
+  position: relative;
   overflow-x: hidden;
   background-color: #F9F5EF;
   color: #222;
@@ -246,6 +238,9 @@ ul, ol, li {
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    height: 100%;
+    transition : transform 0.5s ease;
 
     .parallax-text {
       position: absolute;

@@ -1154,18 +1154,10 @@ button {
   --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
 }
 
-.fade-out {
-  animation: fadeOut 0.5s forwards;
+.slide-out {
+  transform: translateX(-100%);
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 .top-button {
   opacity: 0;
   position: fixed;
@@ -1295,6 +1287,7 @@ html {
 }
 
 body {
+  position: relative;
   overflow-x: hidden;
   background-color: #F9F5EF;
   color: #222;
@@ -1362,6 +1355,9 @@ ul, ol, li {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
 }
 .wrapper main .parallax-text {
   position: absolute;
