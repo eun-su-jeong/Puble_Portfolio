@@ -23,18 +23,17 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
-.slide-out {
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-out;
+.fade-out {
+  animation: fadeOut 0.5s forwards;
 }
 
-.slide-in {
-  transform: translateX(0);
-  transition: transform 0.5s ease-in;
-}
-
-.hidden {
-  display: none;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .top-button {
