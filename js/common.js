@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* page transition */
 document.addEventListener('DOMContentLoaded', function () {
-    const main = document.querySelector('main'); // 메인 콘텐츠 영역
+    const main = document.querySelector('main');
 
     if (!main) {
         console.error('main 요소를 찾을 수 없습니다.');
@@ -198,18 +198,28 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('main 요소 발견:', main);
     }
 
-    // 현재 페이지 상태 저장 (초기 로드 시)
-    // history.replaceState({ page: window.location.href }, '', window.location.href);
-    history.replaceState('','', window.location.href);
+    // 초기 url를 변경하지 않고 상태 저장
+    const initialUrl = window.location.href;
+    history.replaceState({page: initialUrl}, '', initialUrl);
 
+    function getAbsoluteUrl(url) {
+        const link = document.createElement('a');
+        link.href = url;
+        return link.href;
+    }
     // 페이지 슬라이딩 처리
     function handlePageTransition(targetUrl) {
         console.log('슬라이드 아웃 적용 시도');
         main.classList.add('slide-out');
 
+        // 페이지 이동 전 스크롤을 맨 위로 설정
+        window.scrollTo(0, 0);
+
         setTimeout(() => {
+            const absoluteUrl = getAbsoluteUrl(targetUrl);
             console.log('페이지 전환 중...');
-            window.location.href = targetUrl; // 실제 페이지 이동
+            history.pushState('', '', absoluteUrl);// 히스토리 상태 추가
+            window.location.href = absoluteUrl; // 실제 페이지 이동
         }, 300);
     }
 
@@ -231,8 +241,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // popstate 발생 시 slide-out 클래스 제거
         main.classList.remove('slide-out'); // 메인 화면으로 돌아올 때 슬라이딩 초기화
+
+        // 페이지가 정상적으로 표시되도록 리로드
+        if (event.state && event.state.page) {
+            window.location.href = event.state.page;
+        } else {
+            window.location.href = initialUrl;
+        }
+
+        window.scrollTo(0,0);
+    });
+    // 페이지 로드 시에도 slide-out 클래스를 제거하여 초기화
+    window.addEventListener('load', function() {
+        main.classList.remove('slide-out');
     });
 });
+
+
+
+
 
 
 
