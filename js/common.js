@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // li
         if (target.matches('li')) {
-            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+            cursor.style.transform = 'translate(-50%, -50%) scale(3)';
             cursor.textContent = ''; // 텍스트 제거
         }
         // .fill-up
         else if (target.matches('.fill-up')) {
-            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+            cursor.style.transform = 'translate(-50%, -50%) scale(3)';
             cursor.textContent = ''; // 텍스트 제거
         }
         // .project-link
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function getAbsoluteUrl(url) {
         if(url.startsWith('#')){
             return url;
-         }
+        }
         const link = document.createElement('a');
         link.href = url;
         return link.href;
@@ -274,25 +274,3 @@ document.addEventListener('DOMContentLoaded', function () {
         main.classList.remove('slide-out');
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
