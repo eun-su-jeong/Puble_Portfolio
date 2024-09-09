@@ -202,7 +202,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const initialUrl = window.location.href;
     history.replaceState({page: initialUrl}, '', initialUrl);
 
+    // url을 절대 경로로 변환하는 함수
     function getAbsoluteUrl(url) {
+        if(url.startsWith('#')){
+            return url;
+         }
         const link = document.createElement('a');
         link.href = url;
         return link.href;
@@ -217,23 +221,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setTimeout(() => {
             const absoluteUrl = getAbsoluteUrl(targetUrl);
-            console.log('페이지 전환 중...');
-            history.pushState('', '', absoluteUrl);// 히스토리 상태 추가
+            console.log('페이지 전환 중...', absoluteUrl);
+            history.pushState({page: absoluteUrl}, '', absoluteUrl);// 히스토리 상태 추가
             window.location.href = absoluteUrl; // 실제 페이지 이동
         }, 300);
     }
 
     // 이벤트 위임을 통해 모든 링크에 대해 이벤트 리스너 추가
     document.body.addEventListener('click', function (event) {
-        const target = event.target.closest('.project-link'); // 클릭된 요소가 .project-link인지 확인
-        if (target) {
-            event.preventDefault();
-            const targetUrl = target.getAttribute('href');
-            console.log('클릭 감지:', targetUrl);
+        const target = event.target.closest('a');
 
-            // 페이지 슬라이딩 처리
-            handlePageTransition(targetUrl);
+        if (target) {
+            const targetUrl = target.getAttribute('href');
+
+            if(targetUrl && targetUrl.startsWith('#')){
+                console.log('내부 섹션으로 이동:', targetUrl);
+                event.preventDefault();
+
+                document.querySelector(targetUrl).scrollIntoView({behavior:'smooth'});
+                return;
+            }
+
+            if(target.classList.contains('project-link')){
+                event.preventDefault();
+                console.log('클릭감지 , targetUrl');
+
+                // 페이지 슬라이딩 처리
+                handlePageTransition(targetUrl);
+            }
+
         }
+
     });
 
     window.addEventListener('popstate', function (event) {
@@ -245,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 페이지가 정상적으로 표시되도록 리로드
         if (event.state && event.state.page) {
             window.location.href = event.state.page;
-        } else {
+        } else  {
             window.location.href = initialUrl;
         }
 
