@@ -216,9 +216,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('슬라이드 아웃 적용 시도');
         main.classList.add('slide-out');
 
-        // 페이지 이동 전 스크롤을 맨 위로 설정
-        window.scrollTo(0, 0);
-
         setTimeout(() => {
             const absoluteUrl = getAbsoluteUrl(targetUrl);
             console.log('페이지 전환 중...', absoluteUrl);
@@ -266,9 +263,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else  {
             window.location.href = initialUrl;
         }
-
-        window.scrollTo(0,0);
     });
+
     // 페이지 로드 시에도 slide-out 클래스를 제거하여 초기화
     window.addEventListener('load', function() {
         main.classList.remove('slide-out');
