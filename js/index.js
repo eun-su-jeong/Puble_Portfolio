@@ -1,20 +1,38 @@
-/* hero page load */
-document.addEventListener("DOMContentLoaded", function() {
-   const heroImage = document.querySelector('img.cont');
-   const mainTitle = document.querySelector('.tit.cont');
-   const subTitle = document.querySelector('.sub-tit.cont');
+/* intro page load & hero page load*/
+document.addEventListener('DOMContentLoaded', function () {
+    const introSplash = document.getElementById('introSplash');
+    const heroImage = document.querySelector('img.cont');
+    const mainTitle = document.querySelector('.tit.cont');
+    const subTitle = document.querySelector('.sub-tit.cont');
 
-    setTimeout(() => {
-        heroImage.classList.add('page-loaded');
-    }, 500);
+    // 인트로 화면 보이기
+    introSplash.classList.add('show');
 
+    // 3초 후에 인트로 화면을 위로 슬라이드하며 숨기기
     setTimeout(() => {
-        mainTitle.classList.add('page-loaded');
-    }, 1000);
+        introSplash.classList.remove('show');
+        introSplash.classList.add('hide'); // 위로 슬라이드하며 숨기기
 
-    setTimeout(() => {
-        subTitle.classList.add('page-loaded');
-    }, 1500);
+        // 인트로가 사라진 후 hero page load 스크립트 실행
+        setTimeout(() => {
+            loadHeroPage(); // Hero 페이지 로드 함수 호출
+        }, 500); // 인트로 숨기기 애니메이션이 끝난 후 실행
+    }, 3000); // 3초 동안 인트로 화면 표시
+
+    // Hero 페이지 로드 함수
+    function loadHeroPage() {
+        setTimeout(() => {
+            heroImage.classList.add('page-loaded');
+        }, 500);
+
+        setTimeout(() => {
+            mainTitle.classList.add('page-loaded');
+        }, 1000);
+
+        setTimeout(() => {
+            subTitle.classList.add('page-loaded');
+        }, 1500);
+    }
 });
 
 /* hero fade out */
@@ -295,7 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 });
-
 
 
 

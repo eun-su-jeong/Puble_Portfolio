@@ -1154,6 +1154,7 @@ button {
   --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
 }
 
+/* 페이지 전환 */
 .slide-out {
   transform: translateX(-100%);
 }
@@ -1282,6 +1283,67 @@ img.cont,
   transform: translateY(0);
 }
 
+/* 인트로 스플래쉬 */
+.intro-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F9F5EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 1s ease;
+  overflow: hidden;
+}
+
+/* 인트로 스플래쉬 애니메이션 */
+.intro-splash.show {
+  transform: translateY(0);
+}
+
+.intro-splash.hide {
+  transform: translateY(-100%);
+}
+
+.intro-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/noise.webp");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.intro-message, .intro-emoji {
+  font-family: var(--font-text);
+  font-size: 2rem;
+  text-align: center;
+  color: #222;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.intro-emoji {
+  font-size: 3rem;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 html {
   scroll-behavior: smooth;
 }
