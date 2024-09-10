@@ -1295,21 +1295,36 @@ img.cont,
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
   z-index: 1000;
   transition: transform 1s ease;
   overflow: hidden;
 }
-
-/* 인트로 스플래쉬 애니메이션 */
-.intro-splash.show {
-  transform: translateY(0);
+.intro-splash .intro-message,
+.intro-splash .intro-emoji {
+  font-family: var(--font-text);
+  font-size: 2rem;
+  text-align: center;
+  color: #222;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
 }
-
-.intro-splash.hide {
-  transform: translateY(-100%);
+.intro-splash .intro-emoji {
+  font-size: 3rem;
+  animation-delay: 1s;
 }
-
-.intro-noise {
+.intro-splash .intro-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: var(--font-sub);
+  font-weight: 600;
+  color: #222;
+}
+.intro-splash .intro-noise {
   position: absolute;
   top: 0;
   left: 0;
@@ -1319,19 +1334,11 @@ img.cont,
   opacity: 0.05;
   pointer-events: none;
 }
-
-.intro-message, .intro-emoji {
-  font-family: var(--font-text);
-  font-size: 2rem;
-  text-align: center;
-  color: #222;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
+.intro-splash.show {
+  transform: translateY(0);
 }
-
-.intro-emoji {
-  font-size: 3rem;
-  animation-delay: 1s;
+.intro-splash.hide {
+  transform: translateY(-100%);
 }
 
 @keyframes fadeIn {

@@ -29,7 +29,6 @@ $colors: (
 }
 
 .top-button {
-  //display: none;
   opacity: 0;
   position: fixed;
   bottom: 10px;
@@ -164,43 +163,56 @@ img.cont,
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
   z-index: 1000;
   transition: transform 1s ease;
   overflow: hidden;
-}
 
-/* 인트로 스플래쉬 애니메이션 */
-.intro-splash.show {
-  transform: translateY(0);
-}
+  .intro-message,
+  .intro-emoji {
+    font-family: var(--font-text);
+    font-size: 2rem;
+    text-align: center;
+    color: #222;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
 
-.intro-splash.hide {
-  transform: translateY(-100%);
-}
+  .intro-emoji {
+    font-size: 3rem;
+    animation-delay: 1s;
+  }
 
-.intro-noise {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('../images/noise.webp');
-  opacity: 0.05;
-  pointer-events: none;
-}
+  .intro-bottom{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    font-size: 1.2rem;
+    font-family: var(--font-sub);
+    font-weight: 600;
+    color: #222;
+  }
 
-.intro-message, .intro-emoji {
-  font-family: var(--font-text);
-  font-size: 2rem;
-  text-align: center;
-  color: #222;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-}
+  .intro-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/noise.webp');
+    opacity: 0.05;
+    pointer-events: none;
+  }
 
-.intro-emoji {
-  font-size: 3rem;
-  animation-delay: 1s;
+  &.show {
+    transform: translateY(0);
+  }
+
+  &.hide {
+    transform: translateY(-100%);
+  }
 }
 
 @keyframes fadeIn {
