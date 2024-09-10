@@ -82,21 +82,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 프로젝트 항목 생성 및 삽입
             data.forEach(project => {
+                const technologies = project.overlay.stack.split(','); // 쉼표(,)를 기준으로 기술을 나눔
+
+                // 각 기술을 뱃지로 감싸는 HTML 생성
+                const techBadges = technologies.map(tech => `<span class="tech-badge">${tech.trim()}</span>`).join('');
+
                 const projectHTML = `
-                    <div class="project-item contents" data-project="${project.id}">
-                        <a href="${project.link}" class="project-link">
-                            <div class="thumbnail">
-                                <figure>
-                                    <img data-src="${project.image}" alt="${project.alt}">
-                                </figure>
-                            </div>
-                            <div class="desc">
-                                <strong>${project.title}</strong>
-                                <span>${project.period}</span>
-                            </div>
-                        </a>
+        <div class="project-item contents" data-project="${project.id}">
+            <a href="${project.link}" class="project-link">
+                <div class="thumbnail">
+                    <figure>
+                        <img data-src="${project.image}" alt="${project.alt}">
+                    </figure>
+                    <div class="hover-info">
+                        <p>${project.overlay.content}</p>
+                        <div class="tech-stack">${techBadges}</div>
                     </div>
-                `;
+                </div>
+                <div class="desc">
+                    <strong>${project.title}</strong>
+                    <span>${project.period}</span>
+                </div>
+            </a>
+        </div>
+    `;
                 projectListContainer.insertAdjacentHTML('beforeend', projectHTML);
             });
 
@@ -313,15 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 });
-
-
-
-
-
-
-
-
-
 
 
 

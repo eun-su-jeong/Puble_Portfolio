@@ -752,7 +752,7 @@ ul, ol, li {
           justify-content: flex-start;
           position: relative;
           gap: 6rem;
-          row-gap: 10rem;
+          row-gap: 15rem;
           padding-top: 10em;
           width: 100%;
 
@@ -796,6 +796,39 @@ ul, ol, li {
                     object-fit: cover;
                   }
                 }
+
+                .hover-info {
+                  position: absolute;
+                  bottom: 10px;
+                  left: 10px;
+                  opacity: 0;
+                  transition: opacity 0.3s;
+                  pointer-events: none;
+                  border-radius: 10px;
+
+                  p{
+                    color: #222;
+                    padding: 10px;
+                    font-family: var(--font-text);
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                  }
+                  .tech-badge {
+                    display: inline-block;
+                    padding: 4px 8px;
+                    margin: 4px;
+                    background-color: #fff;
+                    color: #333;
+                    border-radius: 10px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                  }
+                }
+
+                &:hover .hover-info {
+                  opacity: 1;
+                }
+
               }
 
               .desc {
