@@ -163,7 +163,7 @@ img.cont,
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   z-index: 1000;
   transition: transform 1s ease;
   overflow: hidden;
@@ -348,7 +348,7 @@ ul, ol, li {
         height: 100%;
 
         .hero-img{
-          width: 30vw;
+          width: 40vw;
           img{
             width: 100%;
 
@@ -1016,6 +1016,16 @@ ul, ol, li {
 
 }
 @media (min-width: 751px) and (max-width: 1200px){
+  .intro-splash {
+    .intro-message,
+    .intro-emoji {
+      font-size: 2rem;
+    }
+
+    .intro-emoji {
+      font-size: 3rem;
+    }
+  }
   .wrapper{
     main{
         .hero{
@@ -1112,6 +1122,17 @@ ul, ol, li {
 
 
 @media screen and (max-width: 750px) {
+  .intro-splash {
+    .intro-message,
+    .intro-emoji {
+      font-size: 1.25rem;
+    }
+
+    .intro-emoji {
+      font-size: 3rem;
+    }
+  }
+
   .wrapper {
     width: 100%;
 
