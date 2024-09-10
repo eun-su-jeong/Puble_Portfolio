@@ -270,3 +270,38 @@ document.addEventListener('DOMContentLoaded', function () {
         main.classList.remove('slide-out');
     });
 });
+
+/* sub header scroll effect*/
+document.addEventListener('DOMContentLoaded', function () {
+    const bodyNoiseEffect = document.querySelector('.noise');
+    const subHeader = document.querySelector('.project-header');
+    const projectMain = document.querySelector('.project-main');
+    const introSection = document.querySelector('.intro');
+
+    // 초기값 설정 함수
+    function setInitialStyles() {
+        if (introSection) {
+            const introBottom = introSection.getBoundingClientRect().bottom;
+
+            // 페이지 로드 시 .intro 섹션의 위치에 따라 초기 상태 설정
+            if (introBottom <= 0) {
+                bodyNoiseEffect.style.display = 'block';
+                subHeader.style.backgroundColor = '#F9F5EF';
+                projectMain.style.paddingTop = '60px';
+            } else {
+                bodyNoiseEffect.style.display = 'none';
+                subHeader.style.backgroundColor = 'transparent';
+                projectMain.style.paddingTop = '0px';
+            }
+        }
+    }
+
+    // 초기값 설정 실행
+    setInitialStyles();
+
+    // 스크롤 이벤트 추가
+    window.addEventListener('scroll', function () {
+        setInitialStyles(); // 스크롤할 때마다 초기 스타일 업데이트
+    });
+});
+
