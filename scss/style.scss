@@ -348,7 +348,7 @@ ul, ol, li {
         height: 100%;
 
         .hero-img{
-          width: 40vw;
+          width: 30vw;
           img{
             width: 100%;
 
@@ -1028,94 +1028,99 @@ ul, ol, li {
   }
   .wrapper{
     main{
-        .hero{
-          h2{
-            font-size: 12vw;
-          }
-        }
-
-        .about{
-          padding: 0 2rem;
-          h4{
-            font-size: 4rem;
-          }
-          .about-wrap{
-            .profile{
-              flex-direction: column;
+      .hero {
+        .hero-wrap{
+          justify-content: center;
+          .hero-img{
+            width: 40vw;
+            img{
+              width: 100%;
             }
           }
         }
+      }
 
-        .projectAll{
-          padding: 0 2rem;
-
-          h4{
-            font-size: 4rem;
+      .about{
+        padding: 0 2rem;
+        h4{
+          font-size: 4rem;
+        }
+        .about-wrap{
+          .profile{
+            flex-direction: column;
           }
-          .project-wrap{
-            .project-view{
-              flex-direction: column;
-              align-items: normal;
+        }
+      }
+
+      .projectAll{
+        padding: 0 2rem;
+
+        h4{
+          font-size: 4rem;
+        }
+        .project-wrap{
+          .project-view{
+            flex-direction: column;
+            align-items: normal;
+
+            .project-item{
+              &:nth-of-type(1){
+                padding-bottom: 5em;
+              }
+            }
+          }
+        }
+      }
+
+      .project{
+        padding: 0 2rem;
+        .project-wrap{
+            .project-list{
+              display: flex;
+              flex-wrap: wrap;
+               position: relative;
+               gap:4%;
+               row-gap: 10rem;
+               padding-top: 0;
+               width: 100%;
 
               .project-item{
-                &:nth-of-type(1){
-                  padding-bottom: 5em;
-                }
-              }
-            }
-          }
-        }
-
-        .project{
-          padding: 0 2rem;
-          .project-wrap{
-              .project-list{
-                display: flex;
-                flex-wrap: wrap;
-                //justify-content: flex-start;
-                 position: relative;
-                 gap:4%;
-                 row-gap: 5rem;
-                 padding-top: 0;
-                 width: 100%;
-
-                .project-item{
-                  flex-basis: 48%!important;
-                  height: 100%;
-                  a{
-                    height: auto;
-                  }
-                  &:nth-of-type(4){
-                      margin-left: 0;
-                  }
-                  &:nth-of-type(6){
-                      margin-left: 0;
-                  }
-                }
-              }
-            }
-          }
-
-        .contact{
-          padding: 0 2rem;
-          .contact-wrap{
-            .sub-title{
-              h5{
-                font-size: 1.5em;
-              }
-            }
-
-            .contact-info{
-              p{
+                flex-basis: 48%!important;
+                height: 100%;
                 a{
-                  i{
-                    font-size: 0;
-                  }
+                  height: auto;
+                }
+                &:nth-of-type(4){
+                    margin-left: 0;
+                }
+                &:nth-of-type(6){
+                    margin-left: 0;
                 }
               }
             }
           }
         }
+
+      .contact{
+        padding: 0 2rem;
+        .contact-wrap{
+          .sub-title{
+            h5{
+              font-size: 1.5em;
+            }
+          }
+
+          .contact-info{
+            p{
+              a{
+                i{
+                  font-size: 0;
+                }
+              }
+            }
+          }
+        }
+      }
       }
     }
   }
@@ -1163,12 +1168,14 @@ ul, ol, li {
 
     main {
       .hero {
-        position: relative;
-        height: initial;
-        padding: 10em 1.2rem;
-
-        h2{
-          font-size: 14vw;
+        .hero-wrap{
+          justify-content: center;
+          .hero-img{
+            width: 70vw;
+            img{
+              width: 100%;
+            }
+          }
         }
       }
 
@@ -1261,20 +1268,21 @@ ul, ol, li {
         padding: 0 1rem;
         .project-wrap {
           .project-list {
-            display: initial;
             padding-top: 0;
+            row-gap: 5rem;
 
             .project-item {
               margin-left: 0;
 
               a {
                 .desc {
+                  letter-spacing: -1px;
                   strong {
-                    font-size: 1.125rem;
+                    font-size: 1rem;
                   }
 
                   span {
-                    font-size: 1.125rem;
+                    font-size: 1rem;
                   }
                 }
               }

@@ -1461,7 +1461,7 @@ ul, ol, li {
   height: 100%;
 }
 .wrapper main .hero .hero-wrap .hero-img {
-  width: 40vw;
+  width: 30vw;
 }
 .wrapper main .hero .hero-wrap .hero-img img {
   width: 100%;
@@ -2015,8 +2015,14 @@ ul, ol, li {
   .intro-splash .intro-emoji {
     font-size: 3rem;
   }
-  .wrapper main .hero h2 {
-    font-size: 12vw;
+  .wrapper main .hero .hero-wrap {
+    justify-content: center;
+  }
+  .wrapper main .hero .hero-wrap .hero-img {
+    width: 40vw;
+  }
+  .wrapper main .hero .hero-wrap .hero-img img {
+    width: 100%;
   }
   .wrapper main .about {
     padding: 0 2rem;
@@ -2048,7 +2054,7 @@ ul, ol, li {
     flex-wrap: wrap;
     position: relative;
     gap: 4%;
-    row-gap: 5rem;
+    row-gap: 10rem;
     padding-top: 0;
     width: 100%;
   }
@@ -2100,13 +2106,14 @@ ul, ol, li {
     padding: 2px 10px;
     font-size: 1rem;
   }
-  .wrapper main .hero {
-    position: relative;
-    height: initial;
-    padding: 10em 1.2rem;
+  .wrapper main .hero .hero-wrap {
+    justify-content: center;
   }
-  .wrapper main .hero h2 {
-    font-size: 14vw;
+  .wrapper main .hero .hero-wrap .hero-img {
+    width: 70vw;
+  }
+  .wrapper main .hero .hero-wrap .hero-img img {
+    width: 100%;
   }
   .wrapper main .about {
     padding: 0 1rem;
@@ -2162,17 +2169,20 @@ ul, ol, li {
     padding: 0 1rem;
   }
   .wrapper main .project .project-wrap .project-list {
-    display: initial;
     padding-top: 0;
+    row-gap: 5rem;
   }
   .wrapper main .project .project-wrap .project-list .project-item {
     margin-left: 0;
   }
+  .wrapper main .project .project-wrap .project-list .project-item a .desc {
+    letter-spacing: -1px;
+  }
   .wrapper main .project .project-wrap .project-list .project-item a .desc strong {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   .wrapper main .project .project-wrap .project-list .project-item a .desc span {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(n) {
     flex-basis: 100%;
