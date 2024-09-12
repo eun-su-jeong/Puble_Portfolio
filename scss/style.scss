@@ -61,7 +61,7 @@ $colors: (
   bottom: 0;
   background-image: url('../images/noise.webp');
   background-position: 0 0;
-  background-size: auto;
+  background-size: cover;
   pointer-events: none;
   opacity: 0.05;
   transition: opacity .2s cubic-bezier(.445, .05, .55, .95);
