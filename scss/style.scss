@@ -61,7 +61,7 @@ $colors: (
   bottom: 0;
   background-image: url('../images/noise.webp');
   background-position: 0 0;
-  background-size: cover;
+  background-size: auto;
   pointer-events: none;
   opacity: 0.05;
   transition: opacity .2s cubic-bezier(.445, .05, .55, .95);
@@ -269,14 +269,9 @@ ul, ol, li {
 
     h1 {
       font-family: var(--font-logo);
-      //font-family: "Raleway", sans-serif;
       font-size: 2.5rem;
       font-weight: 700;
       text-transform: uppercase;
-
-      a:after {
-        content: 'eunsujeong';
-      }
     }
     nav {
       ul {
@@ -1145,10 +1140,6 @@ ul, ol, li {
       h1 {
         font-size: 1.5rem;
         white-space: nowrap;
-
-        a:after {
-          content: 'eun';
-        }
       }
 
       nav {

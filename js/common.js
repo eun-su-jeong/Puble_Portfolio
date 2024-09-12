@@ -304,3 +304,22 @@ document.addEventListener('DOMContentLoaded', function () {
         setInitialStyles(); // 스크롤할 때마다 초기 스타일 업데이트
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const link = document.getElementById("dynamic-text");
+
+    function updateLinkText() {
+        const width = window.innerWidth;
+
+        if (width <= 750) {
+            link.textContent = "EUN";
+        } else {
+            link.textContent = "EUNSUJEONG";
+        }
+    }
+
+    updateLinkText();
+
+    window.addEventListener("resize", updateLinkText);
+});
+
