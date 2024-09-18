@@ -1148,6 +1148,29 @@ button {
   --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
 }
 
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
 /* 페이지 전환 */
 .slide-out {
   transform: translateX(-100%);
@@ -1237,6 +1260,7 @@ button {
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  z-index: 2;
 }
 .title-name.loaded,
 .title-name span.loaded,

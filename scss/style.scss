@@ -23,6 +23,39 @@ $colors: (
         rgba(#F05032, 0.6)   // Git
 );
 
+$animation-duration: 1.5s;
+$animation-color-start: #e0e0e0;
+$animation-color-end: #f0f0f0;
+
+// 스켈레톤 애니메이션 믹스인 정의
+@mixin skeleton-animation($duration, $color-start, $color-end) {
+  animation: pulse $duration infinite;
+
+  @keyframes pulse {
+    0% {
+      background-color: $color-start;
+    }
+    50% {
+      background-color: $color-end;
+    }
+    100% {
+      background-color: $color-start;
+    }
+  }
+}
+
+.skeleton {
+  background-color: $animation-color-start;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  @include skeleton-animation($animation-duration, $animation-color-start, $animation-color-end);
+}
+
 /* 페이지 전환 */
 .slide-out {
   transform: translateX(-100%);
@@ -112,6 +145,7 @@ $colors: (
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    z-index: 2;
   }
 
   &.loaded {

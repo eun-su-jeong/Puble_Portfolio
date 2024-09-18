@@ -126,6 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded 이벤트 발생 (common.js)');
 
+    const isIndexPage = window.location.pathname.includes('index.html');
+
     // IntersectionObserver 옵션 설정
     const scrollObserverOptions = { threshold: 0.1 };
     const lazyObserverOptions = { threshold: 0.01 };
@@ -136,7 +138,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 옵저버 초기화
     document.querySelectorAll('.contents').forEach(el => scrollObserver.observe(el));
-    document.querySelectorAll("img[data-src]").forEach(img => lazyImageObserver.observe(img));
+    document.querySelectorAll("img[data-src]").forEach((img,index) => {
+
+        if(!isIndexPage){
+            const skeleton = document.createElement("div");
+            skeleton.className = "skeleton";
+
+            const uniqueId = `skeleton-${index}`;
+            skeleton.setAttribute('data-skeleton-id', uniqueId);
+            img.setAttribute('data-skeleton-id', uniqueId);
+
+            img.parentNode.insertBefore(skeleton, img);
+        }
+
+        lazyImageObserver.observe(img);
+
+        if(img.complete){
+            hideSkeleton(img);
+        }
+
+    });
 
     // 스크롤 애니메이션 처리 함수
     function handleScrollAnimation(entries, observer) {
@@ -167,23 +188,33 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 const lazyImage = entry.target;
                 lazyImage.src = lazyImage.dataset.src;
-                lazyImage.classList.add("loaded");
+
+                // 이미지 로드 후 스켈레톤 숨기기 (딜레이 추가)
+                lazyImage.onload = () => {
+                    setTimeout(() => hideSkeleton(lazyImage), 100);
+                };
+
+                // 이미지가 이미 로드된 경우에도 스켈레톤 숨기기
+                if (lazyImage.complete) {
+                    setTimeout(() => hideSkeleton(lazyImage), 100);
+                }
+
                 observer.unobserve(lazyImage);
             }
         });
     }
 
-    // 텍스트를 분할하여 애니메이션을 적용하는 함수
-    function splitText(element, interval, tagName = 'span') {
-        const text = element.textContent;
-        element.innerHTML = '';
+    function hideSkeleton(image){
+        image.classList.add("loaded");
 
-        text.split('').forEach((char, index) => {
-            const span = document.createElement(tagName);
-            span.textContent = char;
-            span.style.transitionDelay = `${index * interval}s`;
-            element.appendChild(span);
-        });
+        const skeletonId = image.getAttribute('data-skeleton-id');
+        const skeleton = document.querySelector(`.skeleton[data-skeleton-id="${skeletonId}"]`);
+
+        if(skeleton){
+            skeleton.style.display = "none";
+        }else{
+            console.error(`Skeleton element not found for image with id: ${skeletonId}`);
+        }
     }
 });
 
@@ -305,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+/* header dynamic text */
 document.addEventListener("DOMContentLoaded", function() {
     const link = document.getElementById("dynamic-text");
 
