@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-/* scroll animation & lazy loading & IntersectionObserver */
+/* scroll animation & lazy loading & IntersectionObserver & skeleton */
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded 이벤트 발생 (common.js)');
 
