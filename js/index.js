@@ -5,19 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainTitle = document.querySelector('.tit.cont');
     const subTitle = document.querySelector('.sub-tit.cont');
 
-    // 인트로 화면 보이기
     introSplash.classList.add('show');
 
-    // 3초 후에 인트로 화면을 위로 슬라이드하며 숨기기
     setTimeout(() => {
         introSplash.classList.remove('show');
-        introSplash.classList.add('hide'); // 위로 슬라이드하며 숨기기
+        introSplash.classList.add('hide');
 
         // 인트로가 사라진 후 hero page load 스크립트 실행
         setTimeout(() => {
-            loadHeroPage(); // Hero 페이지 로드 함수 호출
-        }, 500); // 인트로 숨기기 애니메이션이 끝난 후 실행
-    }, 3000); // 3초 동안 인트로 화면 표시
+            loadHeroPage();
+        }, 500);
+    }, 3000);
 
     // Hero 페이지 로드 함수
     function loadHeroPage() {
@@ -54,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded 이벤트 발생');
 
-    // 요소 초기화
     const projectListContainer = document.querySelector('.project-list');
     const selectedProjectContainer = document.getElementById('selected-project');
     const projectLink = document.getElementById('project-link');
@@ -121,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 첫 번째 프로젝트로 초기값 설정
         if (projectList.length > 0) {
             projectList[0].classList.add('active');
-            loadProjectContent(projectList[0]); // 첫 번째 항목의 콘텐츠 로드
+            loadProjectContent(projectList[0]);
         }
 
         // 프로젝트 리스트 클릭 이벤트 설정
@@ -229,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const header = document.querySelector('header');
 
-    // 스크롤 이벤트 리스너 추가
     window.addEventListener('scroll', () => {
         let isInProjectSection = false;
 
@@ -252,37 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* background scroll parallax 1 */
-/*document.addEventListener('DOMContentLoaded', () => {
-    const parallaxSection = document.querySelector('main'); // 'main' 요소 선택
-    const parallaxText = document.createElement('div');
-    parallaxText.classList.add('parallax-text');
-    parallaxText.textContent = "project";
-
-    parallaxSection.appendChild(parallaxText);
-
-    // 초기 스타일 설정
-    parallaxText.style.opacity = '0';
-    parallaxText.style.transition = 'opacity 0.5s ease-out';
-
-    const projectSection = document.querySelector('.project');
-
-    // 스크롤 이벤트 리스너 추가
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY; // 현재 스크롤 위치
-        const parallaxSpeed = 0.7; // 패럴랙스 속도
-        const projectRect = projectSection.getBoundingClientRect();
-
-        // .project가 화면에서 벗어나지 않을 때까지 텍스트를 보이도록 설정
-        const projectStillVisible = projectRect.bottom > window.innerHeight * 0.1;
-
-        parallaxText.style.opacity = projectStillVisible ? '1' : '0'; // 조건에 따라 투명도 설정
-
-        const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
-        parallaxText.style.transform = `translate(-50%, calc(-50% + ${offset}px))`;
-    });
-});*/
-
 /* background scroll parallax 2 */
 document.addEventListener('DOMContentLoaded', () => {
     const parallaxSection = document.querySelector('main');
@@ -292,15 +257,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     parallaxSection.appendChild(parallaxText);
 
-    // 초기 스타일 설정
     parallaxText.style.opacity = '0';
     parallaxText.style.transition = 'transform 2s ease-out, opacity 0.5s ease-out';
 
     const projectSection = document.querySelector('.project');
-    const parallaxSpeed = 0.7; // 패럴랙스 속도
+    const parallaxSpeed = 0.7;
     let isScrolling; // 스크롤 상태 확인용 변수
 
-    // 스크롤 이벤트 리스너 추가
     window.addEventListener('scroll', () => {
         clearTimeout(isScrolling); // 이전 타임아웃 지우기
 
@@ -310,14 +273,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // .project 섹션이 화면에 나타날 때 텍스트를 보이도록 설정
         const projectEnterVisible = projectRect.top < window.innerHeight && projectRect.bottom > 0;
 
-        parallaxText.style.opacity = projectEnterVisible ? '1' : '0'; // 조건에 따라 투명도 설정
+        parallaxText.style.opacity = projectEnterVisible ? '1' : '0';
 
         const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
         parallaxText.style.transform = `translate(-50%, calc(0% + ${offset}px))`;
 
         // 스크롤이 멈춘 후에 추가적인 이동 효과를 적용하기 위해 setTimeout 사용
         isScrolling = setTimeout(() => {
-            // 스크롤 멈춘 후 0.5초 동안 텍스트가 부드럽게 이동
             parallaxText.style.transform = `translate(-50%, calc(-50% + ${(scrollPosition + 50) * parallaxSpeed}px))`;
         }, 100);
     });

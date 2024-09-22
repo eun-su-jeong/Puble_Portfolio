@@ -83,37 +83,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // body에 noise 효과 추가
-    const bodyNoiseEffect = createNoiseEffect(false); // 기본값이 false, body용 noise 효과 생성
+    const bodyNoiseEffect = createNoiseEffect(false);
     document.body.appendChild(bodyNoiseEffect);
 
     // header에 noise 효과 추가
     const header = document.querySelector('header');
     if (header) {
-        const headerNoiseEffect = createNoiseEffect(true); // header용 noise 효과 생성
-        header.appendChild(headerNoiseEffect); // header 내부에 noise 효과 추가
+        const headerNoiseEffect = createNoiseEffect(true);
+        header.appendChild(headerNoiseEffect);
     }
 });
 
 /*top 버튼*/
 document.addEventListener('DOMContentLoaded', function () {
-    // Top 버튼 생성
     const topButton = document.createElement('button');
-    topButton.textContent = 'Top'; // 버튼 텍스트
+    topButton.textContent = 'Top';
     topButton.classList.add('top-button');
 
-    // 버튼을 body에 추가
     document.body.appendChild(topButton);
 
-    // 스크롤 이벤트 추가
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) { // 스크롤이 300px 이상일 때 버튼 표시
+        if (window.scrollY > 300) {
             topButton.style.opacity = '1';
         } else {
             topButton.style.opacity = '0';
         }
     });
 
-    // 버튼 클릭 시 페이지 상단으로 부드럽게 이동
     topButton.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
