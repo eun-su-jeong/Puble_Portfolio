@@ -1142,12 +1142,13 @@ button {
   }
 }
 :root {
-  --font-text: "Open Sans","Noto Sans KR", sans-serif; /*"Lato", sans-serif;*/
+  --font-text: "Open Sans","Noto Sans KR", sans-serif;
   --font-title: "Montserrat", sans-serif;
   --font-sub: "Playfair Display", serif;
-  --font-logo: "Lora", serif; /*"Raleway", sans-serif;*/
+  --font-logo: "Lora", serif;
 }
 
+/*스켈레톤 애니메이션 */
 .skeleton {
   background-color: #e0e0e0;
   border-radius: 4px;
@@ -1176,6 +1177,7 @@ button {
   transform: translateX(-100%);
 }
 
+/* top button */
 .top-button {
   opacity: 0;
   position: fixed;
@@ -1200,6 +1202,7 @@ button {
   transform: scale(1.1);
 }
 
+/* noise background*/
 .noise {
   left: 0;
   top: 0;
@@ -1214,6 +1217,7 @@ button {
   visibility: visible;
 }
 
+/* cursor */
 .cursor {
   display: flex;
   justify-content: center;
@@ -2246,6 +2250,10 @@ ul, ol, li {
     overflow: hidden;
   }
   .wrapper main .contact .contact-wrap .contact-info p a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
     font-size: 1.5rem;
     padding: 1rem;
   }
