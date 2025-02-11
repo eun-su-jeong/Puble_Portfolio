@@ -49,7 +49,7 @@
   font-family: 'Faktum';
   src: url('./fonts/Faktum-Bold.woff2') format('woff2'),
        url('./fonts/Faktum-Bold.woff') format('woff');
-  font-weight: 700;
+  font-weight: bold;
   font-style: normal;
 }
 

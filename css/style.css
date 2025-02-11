@@ -1,13 +1,10 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 html, body,
 h1, h2, h3, h4, h5, h6,
 input, select, textarea, button, option {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Pretendard Variable", "Pretendard", -apple-system, "Open Sans", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 * {
@@ -132,6 +129,42 @@ button {
   background: none;
 }
 
+@font-face {
+  font-family: "Faktum";
+  src: url("./fonts/Faktum-Thin.woff2") format("woff2"), url("./fonts/Faktum-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Faktum";
+  src: url("./fonts/Faktum-Light.woff2") format("woff2"), url("./fonts/Faktum-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Faktum";
+  src: url("./fonts/Faktum-Regular.woff2") format("woff2"), url("./fonts/Faktum-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Faktum";
+  src: url("./fonts/Faktum-Medium.woff2") format("woff2"), url("./fonts/Faktum-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Faktum";
+  src: url("./fonts/Faktum-SemiBold.woff2") format("woff2"), url("./fonts/Faktum-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Faktum";
+  src: url("./fonts/Faktum-Bold.woff2") format("woff2"), url("./fonts/Faktum-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
 .project-main {
   padding-top: 60px;
 }
@@ -1142,10 +1175,16 @@ button {
   }
 }
 :root {
+  --font: "Pretendard Variable", "Pretendard", -apple-system, "Open Sans", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   --font-text: "Open Sans","Noto Sans KR", sans-serif;
-  --font-title: "Montserrat", sans-serif;
-  --font-sub: "Playfair Display", serif;
-  --font-logo: "Lora", serif;
+  --font-title: "Faktum";
+  --background: #F9F5EF;
+  --point-color: #D87C5A;
+  --point-color2: #8DAA91;
+  --point-color3: #C99A2E;
+  --point-color4: #1E3A8A;
+  --point-color5: #E34F26;
+  --w1600: 1600px;
 }
 
 /*스켈레톤 애니메이션 */
@@ -1212,7 +1251,7 @@ button {
   background-position: 0 0;
   background-size: auto;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.03;
   transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   visibility: visible;
 }
@@ -1353,7 +1392,7 @@ img.cont,
   width: 100%;
   height: 100%;
   background: url("../images/noise.webp");
-  opacity: 0.05;
+  opacity: 0.03;
   pointer-events: none;
 }
 .intro-splash.show {
@@ -1382,7 +1421,7 @@ body {
   overflow-x: hidden;
   background-color: #F9F5EF;
   color: #222;
-  font-family: "Noto Sans KR", "sans-serif";
+  font-family: var(--font);
   cursor: none;
 }
 
@@ -1399,6 +1438,7 @@ ul, ol, li {
 .wrapper {
   width: 100%;
   max-width: 1920px;
+  min-width: var(--con-min-width);
   margin: 0 auto;
 }
 .wrapper header {
@@ -1416,10 +1456,9 @@ ul, ol, li {
   background-color: #F9F5EF;
 }
 .wrapper header h1 {
-  font-family: var(--font-logo);
-  font-size: 2.5rem;
+  font-family: var(--font);
+  font-size: 1.5rem;
   font-weight: 700;
-  text-transform: uppercase;
 }
 .wrapper header nav ul {
   display: flex;
@@ -1435,7 +1474,7 @@ ul, ol, li {
 .wrapper header nav ul li a {
   display: inline-block;
   padding: 2px 5px;
-  font-family: var(--font-text);
+  font-family: var(--font-text) !important;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
@@ -1444,6 +1483,7 @@ ul, ol, li {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  min-width: var(--w1600);
   height: 100%;
   transition: transform 0.5s ease;
 }
@@ -1492,18 +1532,21 @@ ul, ol, li {
 .wrapper main .hero .hero-wrap .hero-tit {
   line-height: 0.9;
 }
+.wrapper main .hero .hero-wrap .hero-tit .cont-wrap {
+  padding: 0 36px;
+}
 .wrapper main .hero .hero-wrap .hero-tit .tit {
   font-family: var(--font-title);
   font-size: 12vw;
-  font-weight: 800;
+  font-weight: 400;
   text-transform: uppercase;
 }
 .wrapper main .hero .hero-wrap .hero-tit .sub-tit {
   display: block;
-  font-family: var(--font-sub);
-  font-style: italic;
+  font-family: var(--font-title);
   font-weight: 400;
-  font-size: 4vw;
+  font-size: 10vw;
+  text-transform: uppercase;
   text-align: right;
   line-height: 1.2;
 }
