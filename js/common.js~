@@ -333,21 +333,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* header dynamic text */
-document.addEventListener("DOMContentLoaded", function() {
-    const link = document.getElementById("dynamic-text");
-
-    function updateLinkText() {
-        const width = window.innerWidth;
-
-        if (width <= 750) {
-            link.textContent = "EUN";
-        } else {
-            link.textContent = "EUNSUJEONG";
-        }
-    }
-
-    updateLinkText();
-
-    window.addEventListener("resize", updateLinkText);
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     const link = document.getElementById("dynamic-text");
+//
+//     function updateLinkText() {
+//         const width = window.innerWidth;
+//
+//         if (width <= 750) {
+//             link.textContent = "EUN";
+//         } else {
+//             link.textContent = "EUNSUJEONG";
+//         }
+//     }
+//
+//     updateLinkText();
+//
+//     window.addEventListener("resize", updateLinkText);
+// });
 

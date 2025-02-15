@@ -173,6 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     lazyImageObserver.unobserve(img);
                 });
 
+                entry.target.querySelectorAll("video.cont").forEach(video => {
+                    video.classList.add('page-loaded');
+                });
+
                 observer.unobserve(entry.target);
             }
         });

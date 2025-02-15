@@ -1176,7 +1176,7 @@ button {
 }
 :root {
   --font: "Pretendard Variable", "Pretendard", -apple-system, "Open Sans", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  --font-text: "Open Sans","Noto Sans KR", sans-serif;
+  --font-text: "Open Sans", "Noto Sans KR", sans-serif;
   --font-title: "Faktum";
   --background: #F9F5EF;
   --point-color: #D87C5A;
@@ -1185,6 +1185,18 @@ button {
   --point-color4: #1E3A8A;
   --point-color5: #E34F26;
   --w1600: 1600px;
+}
+
+/* 기본적으로 숨김 처리 */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* 화면에 보이면 나타나게 */
+}
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*스켈레톤 애니메이션 */
@@ -1290,34 +1302,37 @@ button {
 }
 
 /* scroll 애니메이션 */
-.title-name,
+/*.title-name,
 .title-name span,
-.contents {
+.contents{
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-.title-name img,
-.title-name span img,
-.contents img {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  z-index: 2;
-}
-.title-name.loaded,
-.title-name span.loaded,
-.contents.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
-.title-name.loaded img,
-.title-name span.loaded img,
-.contents.loaded img {
-  opacity: 1;
-  transform: translateY(0);
-}
 
+  img{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    z-index: 2;
+  }
+
+  video{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    z-index: 2;
+  }
+
+  &.loaded {
+    opacity: 1;
+    transform: translateY(0);
+
+    img,video{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}*/
 /* hero 애니메이션 */
 .cont-wrap {
   position: relative;
@@ -1330,22 +1345,13 @@ button {
 }
 
 /* 초기 transform 설정 */
-img.cont,
-.sub-tit.cont {
-  transform: translateY(100%);
-}
-
-.tit.cont {
-  transform: translateY(-100%);
-}
-
 /* 페이지 로드 후 애니메이션 효과 */
 .cont.page-loaded {
   transform: translateY(0);
 }
 
 /* 인트로 스플래쉬 */
-.intro-splash {
+/*.intro-splash {
   position: fixed;
   top: 0;
   left: 0;
@@ -1360,48 +1366,54 @@ img.cont,
   z-index: 1000;
   transition: transform 1s ease;
   overflow: hidden;
-}
-.intro-splash .intro-message,
-.intro-splash .intro-emoji {
-  font-family: var(--font-text);
-  font-size: 2rem;
-  text-align: center;
-  color: #222;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-}
-.intro-splash .intro-emoji {
-  font-size: 3rem;
-  animation-delay: 1s;
-}
-.intro-splash .intro-bottom {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 20px;
-  font-size: 1.2rem;
-  font-family: var(--font-sub);
-  font-weight: 600;
-  color: #222;
-}
-.intro-splash .intro-noise {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../images/noise.webp");
-  opacity: 0.03;
-  pointer-events: none;
-}
-.intro-splash.show {
-  transform: translateY(0);
-}
-.intro-splash.hide {
-  transform: translateY(-100%);
-}
 
+  .intro-message,
+  .intro-emoji {
+    font-family: var(--font-text);
+    font-size: 2rem;
+    text-align: center;
+    color: #222;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
+
+  .intro-emoji {
+    font-size: 3rem;
+    animation-delay: 1s;
+  }
+
+  .intro-bottom{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    font-size: 1.2rem;
+    font-family: var(--font-sub);
+    font-weight: 600;
+    color: #222;
+  }
+
+  .intro-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/noise.webp');
+    opacity: 0.03;
+    pointer-events: none;
+
+  }
+
+  &.show {
+    transform: translateY(0);
+  }
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+}*/
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -1422,13 +1434,11 @@ body {
   background-color: #F9F5EF;
   color: #222;
   font-family: var(--font);
-  cursor: none;
 }
 
 a {
   text-decoration: none;
   color: #222;
-  cursor: none;
 }
 
 ul, ol, li {
@@ -1457,8 +1467,20 @@ ul, ol, li {
 }
 .wrapper header h1 {
   font-family: var(--font);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.wrapper header h1 a {
+  display: flex;
+  color: #fff;
+}
+.wrapper header h1 a span {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  background-color: #000;
 }
 .wrapper header nav ul {
   display: flex;
@@ -1467,7 +1489,7 @@ ul, ol, li {
   margin-left: 1rem;
 }
 .wrapper header nav ul li:hover a {
-  color: #f9f5ef;
+  color: #f9f5ef !important;
   background-color: #282828;
   border-radius: 5px;
 }
@@ -1486,6 +1508,8 @@ ul, ol, li {
   min-width: var(--w1600);
   height: 100%;
   transition: transform 0.5s ease;
+  padding-top: 160px;
+  /* hero */
 }
 .wrapper main .parallax-text {
   position: absolute;
@@ -1506,7 +1530,6 @@ ul, ol, li {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 100vh;
   color: #222;
   transition: opacity 0.5s ease-out;
 }
@@ -1515,31 +1538,56 @@ ul, ol, li {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-bottom: 1.5rem;
+  position: relative;
+  padding: 0 36px;
   width: 100%;
   height: 100%;
 }
-.wrapper main .hero .hero-wrap .hero-img {
-  width: 30vw;
-}
-.wrapper main .hero .hero-wrap .hero-img img {
-  width: 100%;
-}
-.wrapper main .hero .hero-wrap .hero-img img.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
 .wrapper main .hero .hero-wrap .hero-tit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
   line-height: 0.9;
 }
-.wrapper main .hero .hero-wrap .hero-tit .cont-wrap {
-  padding: 0 36px;
+.wrapper main .hero .hero-wrap .hero-tit .title-wrap {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
 }
 .wrapper main .hero .hero-wrap .hero-tit .tit {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-title);
-  font-size: 12vw;
   font-weight: 400;
   text-transform: uppercase;
+}
+.wrapper main .hero .hero-wrap .hero-tit .tit .greeting-msg {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: -48px;
+  text-transform: uppercase;
+  width: 18vw;
+  font-size: 1rem;
+  gap: 24%;
+}
+.wrapper main .hero .hero-wrap .hero-tit .tit .greeting-msg span {
+  font-size: 2vw;
+}
+.wrapper main .hero .hero-wrap .hero-tit .tit span {
+  display: inline-block;
+  font-size: 12vw;
+}
+.wrapper main .hero .hero-wrap .hero-tit .hero-img {
+  padding: 0 24px;
+  width: 32vw;
+}
+.wrapper main .hero .hero-wrap .hero-tit .hero-img video {
+  width: 100%;
+  height: auto;
 }
 .wrapper main .hero .hero-wrap .hero-tit .sub-tit {
   display: block;
@@ -1549,67 +1597,102 @@ ul, ol, li {
   text-transform: uppercase;
   text-align: right;
   line-height: 1.2;
+  transition: transform 0.3s linear;
 }
-.wrapper main .hero.fade-out {
+.wrapper main .hero .hero-wrap .hero-tit .sub-tit .iam {
+  transition: opacity 0.8s ease-out;
+}
+.wrapper main .hero .hero-wrap .hero-tit .sub-tit .ready {
+  display: inline-block;
+  transition: transform 1s ease-out;
+}
+.wrapper main.fade-out {
   opacity: 0;
   pointer-events: none;
 }
-.wrapper main .about {
+
+.about {
+  display: flex;
+  position: relative;
   padding: 0 3rem;
-  margin-top: 20em;
-  height: auto;
+  margin-top: 50em;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.wrapper main .about h4 {
+.about.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about .title-wrap {
+  position: relative;
+  left: 35vw;
+  top: 50vh;
+  overflow: hidden;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.about .title-wrap.active .title-name {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about .title-wrap h4 {
   font-family: var(--font-title);
   font-size: 5rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 0.5em;
   line-height: 1;
-  color: #222;
+  color: #fff;
   padding-top: 1rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 1s, opacity 1s ease-in-out;
 }
-.wrapper main .about h4 span {
+.about .title-wrap h4 span {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-.wrapper main .about h4 span.loaded {
+.about .title-wrap h4 span.loaded {
   opacity: 1;
   transform: translateY(0);
 }
-.wrapper main .about .about-wrap .profile {
+.about .about-wrap .profile {
   display: flex;
   gap: 30px;
+  transform: translateY(500px);
+  transition: opacity 0.3s ease, transform 1s ease;
 }
-.wrapper main .about .about-wrap .profile .profile-img {
+.about .about-wrap .profile .profile-img {
   width: 50%;
 }
-.wrapper main .about .about-wrap .profile .profile-img div {
+.about .about-wrap .profile .profile-img div {
   min-width: 400px;
 }
-.wrapper main .about .about-wrap .profile .profile-img div img {
+.about .about-wrap .profile .profile-img div img {
   width: 100%;
 }
-.wrapper main .about .about-wrap .profile .profile-text p {
+.about .about-wrap .profile .profile-text p {
   padding-bottom: 20px;
   font-size: 1.5rem;
   line-height: 1.5;
   text-align: justify;
+  color: #fff;
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack h5 {
+.about .about-wrap .profile .profile-text .profile-stack h5 {
   font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.5;
   padding-bottom: 16px;
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li {
   display: inline-block;
   padding: 4px 10px;
   font-size: 1.5rem;
@@ -1618,45 +1701,46 @@ ul, ol, li {
   border-radius: 8px;
   color: #F9F5EF;
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(1) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(1) {
   background-color: rgba(227, 79, 38, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(2) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(2) {
   background-color: rgba(21, 114, 182, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(3) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(3) {
   background-color: rgba(204, 102, 153, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(4) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(4) {
   background-color: rgba(0, 164, 239, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(5) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(5) {
   background-color: rgba(97, 218, 251, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(6) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(6) {
   background-color: rgba(51, 153, 51, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(7) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(7) {
   background-color: rgba(68, 121, 161, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(8) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(8) {
   background-color: rgba(109, 179, 63, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(9) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(9) {
   background-color: rgba(247, 223, 30, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(10) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(10) {
   background-color: rgba(7, 105, 173, 0.6);
 }
-.wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(11) {
+.about .about-wrap .profile .profile-text .profile-stack .stack-list li:nth-child(11) {
   background-color: rgba(240, 80, 50, 0.6);
 }
-.wrapper main .projectAll {
+
+.projectAll {
   margin-top: 20em;
   padding: 0 3rem;
   height: auto;
 }
-.wrapper main .projectAll h4 {
+.projectAll h4 {
   font-family: var(--font-title);
   font-size: 5rem;
   font-weight: 700;
@@ -1665,41 +1749,41 @@ ul, ol, li {
   line-height: 1;
   color: #222;
 }
-.wrapper main .projectAll h4 span {
+.projectAll h4 span {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-.wrapper main .projectAll h4 span.loaded {
+.projectAll h4 span.loaded {
   opacity: 1;
   transform: translateY(0);
 }
-.wrapper main .projectAll .project-wrap {
+.projectAll .project-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.wrapper main .projectAll .project-wrap .project-view {
+.projectAll .project-wrap .project-view {
   display: flex;
   align-items: flex-start;
   position: relative;
   gap: 2rem;
   width: 100%;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project1 h5 {
+.projectAll .project-wrap .project-view .project-item .project1 h5 {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1em;
   color: #222;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li {
+.projectAll .project-wrap .project-view .project-item .project1 ul li {
   font-size: 1.5rem;
   margin-bottom: 0.5em;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li a .check {
+.projectAll .project-wrap .project-view .project-item .project1 ul li a .check {
   display: inline-block;
   position: relative;
   width: 1rem;
@@ -1708,7 +1792,7 @@ ul, ol, li {
   border-radius: 50%;
   transition: all 0.5s ease;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li a .check:after {
+.projectAll .project-wrap .project-view .project-item .project1 ul li a .check:after {
   display: block;
   position: absolute;
   left: 50%;
@@ -1722,24 +1806,24 @@ ul, ol, li {
   border-radius: 50%;
   transition: all 0.2s ease;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li:hover .check:after, .wrapper main .projectAll .project-wrap .project-view .project-item .project1 ul li.active .check:after {
+.projectAll .project-wrap .project-view .project-item .project1 ul li:hover .check:after, .projectAll .project-wrap .project-view .project-item .project1 ul li.active .check:after {
   transform: translate(-50%, -50%) scale(2);
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project2 {
+.projectAll .project-wrap .project-view .project-item .project2 {
   margin-top: 2em;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project2 h5 {
+.projectAll .project-wrap .project-view .project-item .project2 h5 {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1em;
   color: #222;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li {
+.projectAll .project-wrap .project-view .project-item .project2 ul li {
   font-size: 1.5rem;
   margin-bottom: 0.5em;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li a .check {
+.projectAll .project-wrap .project-view .project-item .project2 ul li a .check {
   display: inline-block;
   position: relative;
   width: 1rem;
@@ -1748,7 +1832,7 @@ ul, ol, li {
   border-radius: 50%;
   transition: all 0.5s ease;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li a .check:after {
+.projectAll .project-wrap .project-view .project-item .project2 ul li a .check:after {
   display: block;
   position: absolute;
   left: 50%;
@@ -1762,15 +1846,15 @@ ul, ol, li {
   border-radius: 50%;
   transition: all 0.2s ease;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li:hover .check:after, .wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li.active .check:after {
+.projectAll .project-wrap .project-view .project-item .project2 ul li:hover .check:after, .projectAll .project-wrap .project-view .project-item .project2 ul li.active .check:after {
   transform: translate(-50%, -50%) scale(2);
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a {
+.projectAll .project-wrap .project-view .project-item a {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a .thumbnail {
+.projectAll .project-wrap .project-view .project-item a .thumbnail {
   width: 100%;
   min-height: 400px;
   height: 100%;
@@ -1779,82 +1863,82 @@ ul, ol, li {
   position: relative;
   padding-top: 50%;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a .thumbnail figure {
+.projectAll .project-wrap .project-view .project-item a .thumbnail figure {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a .thumbnail figure img {
+.projectAll .project-wrap .project-view .project-item a .thumbnail figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a .thumbnail figure video {
+.projectAll .project-wrap .project-view .project-item a .thumbnail figure video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a .desc {
+.projectAll .project-wrap .project-view .project-item a .desc {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.5rem;
   transition: opacity 0.5s ease-in-out;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a .desc strong {
+.projectAll .project-wrap .project-view .project-item a .desc strong {
   display: block;
   font-size: 1.375rem;
   font-weight: 400;
   text-transform: uppercase;
   transition: opacity 0.5s ease-in-out;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item a .desc span {
+.projectAll .project-wrap .project-view .project-item a .desc span {
   font-size: 1.375rem;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(1) {
+.projectAll .project-wrap .project-view .project-item:nth-of-type(1) {
   flex-basis: 30vw;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(2) {
+.projectAll .project-wrap .project-view .project-item:nth-of-type(2) {
   flex-basis: 60%;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(3) {
+.projectAll .project-wrap .project-view .project-item:nth-of-type(3) {
   flex-basis: 40vw;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(4) {
+.projectAll .project-wrap .project-view .project-item:nth-of-type(4) {
   flex-basis: 30vw;
   margin-left: 2em;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(5) {
+.projectAll .project-wrap .project-view .project-item:nth-of-type(5) {
   flex-basis: 40vw;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(6) {
-  flex-basis: 40vw;
-  margin-left: auto;
-}
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(7) {
+.projectAll .project-wrap .project-view .project-item:nth-of-type(6) {
   flex-basis: 40vw;
   margin-left: auto;
 }
-.wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(8) {
+.projectAll .project-wrap .project-view .project-item:nth-of-type(7) {
+  flex-basis: 40vw;
+  margin-left: auto;
+}
+.projectAll .project-wrap .project-view .project-item:nth-of-type(8) {
   flex-basis: 40vw;
   margin-left: 2em;
 }
-.wrapper main .project {
+.project {
   position: relative;
   padding: 0 3rem;
   height: auto;
   margin-top: 10em;
   transition: all 0.5s ease;
 }
-.wrapper main .project .project-wrap {
+.project .project-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.wrapper main .project .project-wrap .project-list {
+.project .project-wrap .project-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -1864,12 +1948,12 @@ ul, ol, li {
   padding-top: 10em;
   width: 100%;
 }
-.wrapper main .project .project-wrap .project-list .project-item {
+.project .project-wrap .project-list .project-item {
   flex-shrink: 0;
   flex-grow: 0;
   max-width: 100%;
 }
-.wrapper main .project .project-wrap .project-list .project-item h4 {
+.project .project-wrap .project-list .project-item h4 {
   font-size: 5rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -1877,29 +1961,29 @@ ul, ol, li {
   line-height: 1;
   color: #222;
 }
-.wrapper main .project .project-wrap .project-list .project-item a {
+.project .project-wrap .project-list .project-item a {
   display: inline-block;
   width: 100%;
   transition: transform 1s ease-out;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .thumbnail {
+.project .project-wrap .project-list .project-item a .thumbnail {
   width: 100%;
   overflow: hidden;
   z-index: 1;
   position: relative;
   transition: transform 0.5s ease-out;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .thumbnail figure img {
+.project .project-wrap .project-list .project-item a .thumbnail figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .thumbnail figure video {
+.project .project-wrap .project-list .project-item a .thumbnail figure video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .thumbnail .hover-info {
+.project .project-wrap .project-list .project-item a .thumbnail .hover-info {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -1908,14 +1992,14 @@ ul, ol, li {
   pointer-events: none;
   border-radius: 10px;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .thumbnail .hover-info p {
+.project .project-wrap .project-list .project-item a .thumbnail .hover-info p {
   color: #222;
   padding: 10px;
   font-family: var(--font-text);
   font-size: 1.125rem;
   font-weight: 600;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .thumbnail .hover-info .tech-badge {
+.project .project-wrap .project-list .project-item a .thumbnail .hover-info .tech-badge {
   display: inline-block;
   padding: 4px 8px;
   margin: 4px;
@@ -1925,75 +2009,76 @@ ul, ol, li {
   font-size: 1rem;
   font-weight: bold;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .thumbnail:hover .hover-info {
+.project .project-wrap .project-list .project-item a .thumbnail:hover .hover-info {
   opacity: 1;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .desc {
+.project .project-wrap .project-list .project-item a .desc {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.5rem;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .desc strong {
+.project .project-wrap .project-list .project-item a .desc strong {
   display: block;
   font-size: 1.375rem;
   font-weight: 400;
   text-transform: uppercase;
 }
-.wrapper main .project .project-wrap .project-list .project-item a .desc span {
+.project .project-wrap .project-list .project-item a .desc span {
   font-size: 1.375rem;
 }
-.wrapper main .project .project-wrap .project-list .project-item a:hover .thumbnail {
+.project .project-wrap .project-list .project-item a:hover .thumbnail {
   transform: scale(0.95);
 }
-.wrapper main .project .project-wrap .project-list .project-item a:hover .thumbnail figure img {
+.project .project-wrap .project-list .project-item a:hover .thumbnail figure img {
   transform: scale(1.2);
 }
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(1) {
+.project .project-wrap .project-list .project-item:nth-of-type(1) {
   flex-basis: 30vw;
 }
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(2) {
+.project .project-wrap .project-list .project-item:nth-of-type(2) {
   flex-basis: 50vw;
 }
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(3) {
+.project .project-wrap .project-list .project-item:nth-of-type(3) {
   flex-basis: 40vw;
 }
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(4) {
+.project .project-wrap .project-list .project-item:nth-of-type(4) {
   flex-basis: 30vw;
   margin-left: 2em;
 }
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(5) {
+.project .project-wrap .project-list .project-item:nth-of-type(5) {
   flex-basis: 40vw;
 }
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(6) {
-  flex-basis: 40vw;
-  margin-left: auto;
-}
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(7) {
+.project .project-wrap .project-list .project-item:nth-of-type(6) {
   flex-basis: 40vw;
   margin-left: auto;
 }
-.wrapper main .project .project-wrap .project-list .project-item:nth-of-type(8) {
+.project .project-wrap .project-list .project-item:nth-of-type(7) {
+  flex-basis: 40vw;
+  margin-left: auto;
+}
+.project .project-wrap .project-list .project-item:nth-of-type(8) {
   flex-basis: 40vw;
   margin-left: 2em;
 }
-.wrapper main .contact {
+
+.contact {
   padding: 0 4rem;
   margin-top: 10em;
 }
-.wrapper main .contact .contact-wrap {
+.contact .contact-wrap {
   padding-top: 5em;
   border-top: 1px solid #222;
 }
-.wrapper main .contact .contact-wrap .sub-title h5 {
+.contact .contact-wrap .sub-title h5 {
   font-family: var(--font-sub);
   font-size: 2em;
   text-transform: uppercase;
 }
-.wrapper main .contact .contact-wrap .title {
+.contact .contact-wrap .title {
   padding-top: 5em;
 }
-.wrapper main .contact .contact-wrap .title h3 {
+.contact .contact-wrap .title h3 {
   font-family: var(--font-title);
   font-size: 14vw;
   font-weight: 800;
@@ -2003,26 +2088,26 @@ ul, ol, li {
   line-height: 1;
   color: #222;
 }
-.wrapper main .contact .contact-wrap .title h3 span {
+.contact .contact-wrap .title h3 span {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-.wrapper main .contact .contact-wrap .title h3 span.loaded {
+.contact .contact-wrap .title h3 span.loaded {
   opacity: 1;
   transform: translateY(0);
 }
-.wrapper main .contact .contact-wrap .contact-info {
+.contact .contact-wrap .contact-info {
   display: flex;
   gap: 1em;
   padding-bottom: 2em;
 }
-.wrapper main .contact .contact-wrap .contact-info p {
+.contact .contact-wrap .contact-info p {
   position: relative;
   overflow: hidden;
 }
-.wrapper main .contact .contact-wrap .contact-info p a {
+.contact .contact-wrap .contact-info p a {
   display: flex;
   position: relative;
   z-index: 1;
@@ -2035,10 +2120,10 @@ ul, ol, li {
   transition: all 0.3s ease;
   overflow: hidden;
 }
-.wrapper main .contact .contact-wrap .contact-info p a i {
+.contact .contact-wrap .contact-info p a i {
   font-size: 0;
 }
-.wrapper main .contact .contact-wrap .contact-info p a::before {
+.contact .contact-wrap .contact-info p a::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -2050,13 +2135,14 @@ ul, ol, li {
   z-index: -1;
   transition: height 0.3s ease-out;
 }
-.wrapper main .contact .contact-wrap .contact-info p a.fill-up:hover::before {
+.contact .contact-wrap .contact-info p a.fill-up:hover::before {
   height: 100%;
 }
-.wrapper main .contact .contact-wrap .contact-info p a:hover {
+.contact .contact-wrap .contact-info p a:hover {
   color: #f9f5ef;
 }
-.wrapper footer {
+
+footer {
   background-color: #222;
   color: #fff;
   padding: 2rem 0;
@@ -2064,7 +2150,7 @@ ul, ol, li {
   text-align: center;
   font-size: 0.9rem;
 }
-.wrapper footer .footer-content {
+footer .footer-content {
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -2157,6 +2243,7 @@ ul, ol, li {
   .wrapper header h1 {
     font-size: 1.5rem;
     white-space: nowrap;
+    text-transform: uppercase;
   }
   .wrapper header nav ul li {
     margin-left: 0;

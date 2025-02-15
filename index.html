@@ -11,31 +11,34 @@
     <link rel="preload" href="../images/noise.webp" as="image" type="image/webp">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'">
 <!--    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"></noscript>-->
-    <script type="text/javascript" src="./js/index.js" defer></script>
-    <script type="text/javascript" src="./js/common.js" defer></script>
+<!--    <script type="text/javascript" src="./js/index.js" defer></script>-->
+<!--    <script type="text/javascript" src="./js/common.js" defer></script>-->
+    <script type="text/javascript" src="./js/main.js" defer></script>
     <title>Sujeong's Portfolio</title>
 </head>
 <body>
 
-<div class="intro-splash" id="introSplash">
-    <div class="intro-message">
-        <p>안녕하세요, 은수정입니다</p>
-        <p>잘 부탁드립니다</p>
-    </div>
-    <div class="intro-emoji">
-        <img src="./images/obj.png" alt="네잎클로버">
-    </div>
-    <div class="intro-bottom">
-        <p>&copy;2024 portfolio </p>
-    </div>
-    <div class="intro-noise"></div>
-</div>
+<!--<div class="intro-splash" id="introSplash">-->
+<!--    <div class="intro-message">-->
+<!--        <p>안녕하세요, 은수정입니다</p>-->
+<!--        <p>잘 부탁드립니다</p>-->
+<!--    </div>-->
+<!--    <div class="intro-emoji">-->
+<!--        <img src="./images/obj.png" alt="네잎클로버">-->
+<!--    </div>-->
+<!--    <div class="intro-bottom">-->
+<!--        <p>&copy;2024 portfolio </p>-->
+<!--    </div>-->
+<!--    <div class="intro-noise"></div>-->
+<!--</div>-->
 
 <div class="wrapper">
     <header id="header">
         <h1>
             <a href="./index.html" id="dynamic-text" data-desktop="EUNSUJEONG" data-mobile="EUN">
-                Eun
+                <span>e</span>
+                <span>u</span>
+                <span>n</span>
             </a>
         </h1>
         <nav>
@@ -50,28 +53,35 @@
         <section class="hero">
             <div class="hero-wrap">
                 <div class="hero-tit">
-                    <div class="cont-wrap">
-                        <h2 class="tit cont">
-                            sujeong's
-                            portfolio
-                        </h2>
+                    <div class="title-wrap">
+                        <div class="cont-wrap">
+                            <h2 class="tit cont">
+                                <div class="greeting-msg">hi! we are <span>' '</span> </div>
+                                <span>sujeong's</span>
+                                <span>portfolio</span>
+                            </h2>
+                        </div>
+                        <div class="hero-img">
+                            <video class="cont" src="./video/ready.mp4" autoplay muted loop></video>
+                        </div>
                     </div>
-                    <!--<div class="hero-img cont-wrap">
-                        <img class="cont" data-src="./images/me.webp" alt="나의 캐릭터"/>
-                    </div>-->
-                    <div class="cont-wrap">
-                        <h3 class="sub-tit cont">i am <span class="ready">ready</span></h3>
-                    </div>
+                    <h3 class="sub-tit cont">
+                        <span class="iam">i am</span>
+                        <span class="ready">ready</span>
+                    </h3>
                 </div>
             </div>
         </section>
         <section class="about" id="about">
-            <h4 class="title-name">About me</h4>
+            <div class="title-wrap">
+                <h4 class="title-name">about</h4>
+            </div>
             <div class="about-wrap">
-              <div class="profile">
+              <div class="profile active-on-visible">
                   <div class="profile-img">
                       <div>
-                        <img data-src="./images/sujeong.webp" alt="프로필사진"/>
+                        <img src="./images/sujeong.webp" alt="프로필사진"/>
+<!--                        <img src="./images/profile.jpg" alt="프로필사진"/>-->
                       </div>
                   </div>
                   <div class="profile-text contents">

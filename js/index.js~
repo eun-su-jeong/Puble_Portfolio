@@ -41,13 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', function () {
         const scrollPosition = window.scrollY;
 
-        let scaleValue = 1 - (scrollPosition / (windowHeight * 0.8));
-        if (scaleValue < 0.5) scaleValue = 0.5;
+        let opacity = 1 - (scrollPosition / (windowHeight * 0.8));
+        if (opacity < 0) opacity = 0;
 
-        heroSection.style.trasform = `scale(${scaleValue})`;
+        heroSection.style.opacity = opacity;
     });
 });
-
 
 /* scroll animation & lazy loading & IntersectionObserver selected project */
 document.addEventListener('DOMContentLoaded', () => {
@@ -189,6 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     img.src = img.dataset.src;
                     lazyImageObserver.unobserve(img);
                 });
+
+                entry.target.querySelectorAll("video.cont").forEach(video => {
+                    video.classList.add('page-loaded');
+                });
+
 
                 observer.unobserve(entry.target);
             }
