@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     introPageLoad();
     projectAnimation();
     pageTransition();
-    backgroundScroll();
+    backgroundChange();
 });
 /* scrollEffect */
 const scrollEffect = () => {
@@ -565,8 +565,7 @@ const pageTransition = () => {
 }
 
 /* background scroll parallax 2 */
-
-const backgroundScroll = () => {
+document.addEventListener('DOMContentLoaded', () => {
     const parallaxSection = document.querySelector('main');
     const parallaxText = document.createElement('div');
     parallaxText.classList.add('parallax-text');
@@ -600,8 +599,7 @@ const backgroundScroll = () => {
             parallaxText.style.transform = `translate(-50%, calc(-50% + ${(scrollPosition + 50) * parallaxSpeed}px))`;
         }, 100);
     });
-
-}
+});
 
 
 

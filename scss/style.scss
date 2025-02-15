@@ -157,7 +157,7 @@ $animation-color-end: #f0f0f0;
 }
 
 /* scroll 애니메이션 */
-/*.title-name,
+.title-name,
 .title-name span,
 .contents{
   opacity: 0;
@@ -187,7 +187,7 @@ $animation-color-end: #f0f0f0;
       transform: translateY(0);
     }
   }
-}*/
+}
 
 /* hero 애니메이션 */
 .cont-wrap {
@@ -204,11 +204,11 @@ $animation-color-end: #f0f0f0;
 img.cont,
 video.cont,
 .sub-tit.cont {
-  //transform: translateY(100%);
+  transform: translateY(100%);
 }
 
 .tit.cont {
-  //transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 /* 페이지 로드 후 애니메이션 효과 */
@@ -217,7 +217,7 @@ video.cont,
 }
 
 /* 인트로 스플래쉬 */
-/*.intro-splash {
+.intro-splash {
   position: fixed;
   top: 0;
   left: 0;
@@ -279,7 +279,7 @@ video.cont,
   &.hide {
     transform: translateY(-100%);
   }
-}*/
+}
 
 @keyframes fadeIn {
   0% {
@@ -303,13 +303,14 @@ body {
   background-color: #F9F5EF;
   color: #222;
   font-family: var(--font);
-  //cursor: none;
+  cursor: none;
+  transition: background .3s linear;
 }
 
 a {
   text-decoration: none;
   color: #222;
-  //cursor: none;
+  cursor: none;
 }
 
 ul, ol, li {
@@ -333,7 +334,7 @@ ul, ol, li {
     width: 100%;
     height: 60px;
     z-index: 10;
-    transition: all .5s ease;
+    transition: all .3s ease;
     background-color: #F9F5EF;
 
     h1 {
@@ -474,6 +475,8 @@ ul, ol, li {
           }
 
           .hero-img {
+            position: relative;
+            overflow: hidden;
             padding: 0 24px;
             width: 32vw;
 
@@ -482,24 +485,28 @@ ul, ol, li {
               height: auto;
             }
           }
+          .sub-tit-wrap{
+            position: relative;
+            overflow: hidden;
 
-          .sub-tit {
-            display: block;
-            font-family: var(--font-title);
-            font-weight: 400;
-            font-size: 10vw;
-            text-transform: uppercase;
-            text-align: right;
-            line-height: 1.2;
-            transition: transform 0.3s linear;
+            .sub-tit {
+              display: block;
+              font-family: var(--font-title);
+              font-weight: 400;
+              font-size: 10vw;
+              text-transform: uppercase;
+              text-align: right;
+              line-height: 1.2;
+              transition: transform 0.3s linear;
 
-            .iam {
-              transition: opacity 0.8s ease-out;
-            }
+              .iam {
+                transition: opacity 0.8s ease-out;
+              }
 
-            .ready {
-              display: inline-block;
-              transition: transform 1s ease-out;
+              .ready {
+                display: inline-block;
+                transition: transform 1s ease-out;
+              }
             }
           }
         }
@@ -523,6 +530,7 @@ ul, ol, li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 
   &.active {
     opacity: 1;
@@ -572,13 +580,20 @@ ul, ol, li {
   .about-wrap {
     .profile {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 30px;
       //opacity: 0;
       transform: translateY(500px);
-      transition: opacity .3s ease, transform 1s ease;
+      transition: opacity 1s ease, transform 1s ease;
+
+      &.active{
+        opacity: 1;
+        transform: translateY(0);
+      }
 
       .profile-img {
-        width: 50%;
+        width: 20vw;
 
         div {
           min-width: 400px;
@@ -589,21 +604,25 @@ ul, ol, li {
         }
       }
 
-      .profile-text {
-        p {
-          padding-bottom: 20px;
-          font-size: 1.5rem;
-          line-height: 1.5;
-          text-align: justify;
-          color: #fff;
+      .profile-text-wrap{
+        width: 50%;
+        .profile-text {
+          width: 100%;
+          p {
+            padding-bottom: 20px;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            text-align: justify;
+            color: #fff;
+          }
         }
-
         .profile-stack {
           h5 {
             font-size: 1.875rem;
             font-weight: 600;
             line-height: 1.5;
             padding-bottom: 16px;
+            color: #fff;
           }
 
           .stack-list {
@@ -634,7 +653,7 @@ ul, ol, li {
 }
 
 .projectAll {
-  margin-top: 20em;
+  margin-top: 80em;
   padding: 0 3rem;
   height: auto;
 
@@ -669,6 +688,7 @@ ul, ol, li {
     .project-view {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
       position: relative;
       gap: 2rem;
       width: 100%;
