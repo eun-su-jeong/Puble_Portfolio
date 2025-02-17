@@ -410,7 +410,7 @@ ul, ol, li {
       pointer-events: none;
     }
 
-    /* hero */
+/* hero */
     .hero {
       display: flex;
       justify-content: center;
@@ -519,17 +519,18 @@ ul, ol, li {
     }
   }
 }
-
+/* about */
 .about {
-  display: flex;
+  //display: flex;
   position: relative;
   padding: 0 3rem;
   margin-top: 50em;
-  height: 100vh;
+  //height: 100vh;
   width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  //flex-direction: column;
+  //align-items: center;
+  //justify-content: center;
 
 
   &.active {
@@ -584,7 +585,8 @@ ul, ol, li {
       align-items: center;
       gap: 30px;
       //opacity: 0;
-      transform: translateY(500px);
+      //transform: translateY(500px);
+      padding-top: 30em;
       transition: opacity 1s ease, transform 1s ease;
 
       &.active{
@@ -605,15 +607,104 @@ ul, ol, li {
       }
 
       .profile-text-wrap{
-        width: 50%;
+        //width: 50%;
         .profile-text {
-          width: 100%;
-          p {
-            padding-bottom: 20px;
-            font-size: 1.5rem;
-            line-height: 1.5;
-            text-align: justify;
-            color: #fff;
+          //width: 100%;
+
+          .english{
+            line-height: 2rem;
+            p {
+              font-family: var(--font-title);
+              font-size: 2rem;
+              color: #fff;
+              //text-align: center;
+
+              &:first-child{
+                padding-left: 21vw;
+              }
+            }
+          }
+
+          .korean{
+            margin-top: 2rem;
+
+            p {
+              font-size: 1rem;
+              color: #fff;
+              text-align: right;
+
+              &:first-child {
+              }
+            }
+          }
+
+        }
+        .profile-info-wrap{
+          display: flex;
+          justify-content: space-between;
+          gap: 5vw;
+          border-top: 1px solid rgba(255, 255, 255, 0.5);
+          margin-top: 5em;
+          padding-top: 5em;
+          .wrap{
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+          }
+          .profile-info{
+            h4{
+              font-size: 1.875rem;
+              font-weight: 600;
+              line-height: 1.5;
+              padding-bottom: 16px;
+            }
+            ul{
+              display: flex;
+              flex-direction: column;
+              gap: .5rem;
+              li{
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                .tit{
+                  font-weight: 600;
+                  width: 7em;
+                  text-align: left;
+                }
+                span{
+                  &:last-child{
+                    flex: 1;
+                    text-align: left;
+                  }
+                }
+              }
+            }
+            .skill-list{
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+
+              .skill-group{
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+
+                .skill-category{
+                  font-size: 1rem;
+                  font-weight: 600;
+                  text-align: left;
+                  width: 12rem;
+                  white-space: nowrap;
+                }
+                ul{
+                  li{
+                    flex: 1 1 auto;
+                    min-width: 120px;
+                    text-align: left;
+                  }
+                }
+              }
+            }
           }
         }
         .profile-stack {
@@ -652,8 +743,35 @@ ul, ol, li {
   }
 }
 
+.skills{
+  margin-top: 30em;
+  padding: 0 3rem;
+  height: auto;
+
+  .swiper-container{
+    .swiper-wrapper{
+      display: flex;
+
+      .swiper -slide{
+        width: 100%;
+      }
+    }
+  }
+
+  h4{
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 700;
+    //text-transform: uppercase;
+    margin-bottom: 0.5em;
+    line-height: 1;
+    color: #222;
+  }
+}
+
+/* project */
 .projectAll {
-  margin-top: 80em;
+  margin-top: 30em;
   padding: 0 3rem;
   height: auto;
 
@@ -1207,6 +1325,7 @@ footer {
     }
   }
   .wrapper {
+    min-height: 100vh;
     main {
       .hero {
         .hero-wrap {

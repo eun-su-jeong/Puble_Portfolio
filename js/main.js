@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     noiseEffect();
     mouseEffect();
     topButton();
-    introPageLoad();
+    // introPageLoad();
     projectAnimation();
     pageTransition();
     backgroundScroll();
@@ -16,17 +16,18 @@ const scrollEffect = () => {
     const readyText = document.querySelector('.ready');
     const titleWrap = document.querySelector('.about .title-wrap');
     const profileImg = document.querySelector('.profile-img');
-    const stack = document.querySelector('.profile-stack h5');
     const body = document.body;
     const header = document.querySelector('header');
     const headerNav = document.querySelectorAll('header > nav > ul > li > a');
     const aboutText = document.querySelectorAll('.profile-text p');
-    const scrollStart = 100;
-    const scrollMiddle = 400;
-    const scrollExpand = 700;
-    const scrollEnd = 1000;
-    const releasePoint = 1200;
-    const restorePoint = 2000;
+    const profileInfo = document.querySelector('.profile-info-wrap');
+
+    const scrollStart = window.innerHeight * 0.1;
+    const scrollMiddle = window.innerHeight * 0.4;
+    const scrollExpand = window.innerHeight * 0.7;
+    const scrollEnd = window.innerHeight;
+    const releasePoint = window.innerHeight * 1.2;
+    const restorePoint = window.innerHeight * 2;
 
     let isFixed = false;
     let isTitleFixed = false;
@@ -95,7 +96,7 @@ const scrollEffect = () => {
             aboutText.forEach(text =>{
                 text.style.color = '#fff';
             });
-            stack.style.color ='#fff';
+            profileInfo.style.borderColor = 'rgba(255, 255, 255, 0.5)';
 
         } else {
             readyText.style.color = '#222';
@@ -120,6 +121,12 @@ const scrollEffect = () => {
 
         }
 
+        if(iamText.style.opacity == "0" && readyText.style.opacity == "0"){
+            subText.style.display = 'none';
+        }else{
+            subText.style.display = 'block';
+        }
+
         // profile-img
         let profileImgRect = profileImg.getBoundingClientRect();
 
@@ -127,7 +134,10 @@ const scrollEffect = () => {
         let titleWrapRect = titleWrap.getBoundingClientRect();
         if (profileImgRect.top <= titleWrapRect.bottom) {
             titleWrap.style.position = "relative";
+            titleWrap.style.left = "33vw";
             isTitleFixed = false;
+        }else {
+            titleWrap.style.left = "35vw";
         }
 
 
@@ -139,13 +149,12 @@ const scrollEffect = () => {
             headerNav.forEach(nav => {
                 nav.style.color = '#222';
             });
-            aboutText.forEach(text =>{
+            aboutText.forEach(text => {
                 text.style.color = '#222';
             });
-            stack.style.color = '#222';
+            profileInfo.style.borderColor = 'rgba(34, 34, 34, 0.5)';
         }
     });
-
 }
 
 /* header scroll */
@@ -565,7 +574,6 @@ const pageTransition = () => {
 }
 
 /* background scroll parallax 2 */
-
 const backgroundScroll = () => {
     const parallaxSection = document.querySelector('main');
     const parallaxText = document.createElement('div');
