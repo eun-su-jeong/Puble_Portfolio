@@ -1178,13 +1178,93 @@ button {
   --font: "Pretendard Variable", "Pretendard", -apple-system, "Open Sans", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   --font-text: "Open Sans", "Noto Sans KR", sans-serif;
   --font-title: "Faktum";
+  --font-color1: #222;
+  --font-color2: #fff;
   --background: #F9F5EF;
   --point-color: #D87C5A;
-  --point-color2: #8DAA91;
-  --point-color3: #C99A2E;
-  --point-color4: #1E3A8A;
-  --point-color5: #E34F26;
   --w1600: 1600px;
+}
+
+/* 인트로 스플래쉬 */
+.intro-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F9F5EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+  transition: transform 1s ease;
+  overflow: hidden;
+}
+.intro-splash.show {
+  transform: translateY(0);
+}
+.intro-splash.hide {
+  transform: translateY(-100%);
+}
+.intro-splash .intro-message,
+.intro-splash .intro-emoji {
+  font-family: var(--font-text);
+  font-size: 2rem;
+  text-align: center;
+  color: #222;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+.intro-splash .intro-emoji {
+  font-size: 3rem;
+  animation-delay: 1s;
+}
+.intro-splash .intro-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: var(--font-sub);
+  font-weight: 600;
+  color: #222;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* hero 애니메이션 */
+.cont-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.cont {
+  transition: transform 0.5s ease-out;
+}
+
+img.cont,
+video.cont,
+.sub-tit.cont {
+  transform: translateY(100%);
+}
+
+.tit.cont {
+  transform: translateY(-100%);
+}
+
+.cont.page-loaded {
+  transform: translateY(0);
 }
 
 /* 기본적으로 숨김 처리 */
@@ -1340,101 +1420,7 @@ button {
   transform: translateY(0);
 }
 
-/* hero 애니메이션 */
-.cont-wrap {
-  position: relative;
-  overflow: hidden;
-}
-
-/* 공통 애니메이션 효과 설정 */
-.cont {
-  transition: transform 0.5s ease-out;
-}
-
-/* 초기 transform 설정 */
-img.cont,
-video.cont,
-.sub-tit.cont {
-  transform: translateY(100%);
-}
-
-.tit.cont {
-  transform: translateY(-100%);
-}
-
-/* 페이지 로드 후 애니메이션 효과 */
-.cont.page-loaded {
-  transform: translateY(0);
-}
-
-/* 인트로 스플래쉬 */
-.intro-splash {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #F9F5EF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 1000;
-  transition: transform 1s ease;
-  overflow: hidden;
-}
-.intro-splash .intro-message,
-.intro-splash .intro-emoji {
-  font-family: var(--font-text);
-  font-size: 2rem;
-  text-align: center;
-  color: #222;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-}
-.intro-splash .intro-emoji {
-  font-size: 3rem;
-  animation-delay: 1s;
-}
-.intro-splash .intro-bottom {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 20px;
-  font-size: 1.2rem;
-  font-family: var(--font-sub);
-  font-weight: 600;
-  color: #222;
-}
-.intro-splash .intro-noise {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../images/noise.webp");
-  opacity: 0.03;
-  pointer-events: none;
-}
-.intro-splash.show {
-  transform: translateY(0);
-}
-.intro-splash.hide {
-  transform: translateY(-100%);
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* 공통 */
 html {
   scroll-behavior: smooth;
 }
@@ -1525,21 +1511,6 @@ ul, ol, li {
   padding-top: 160px;
   /* hero */
 }
-.wrapper main .parallax-text {
-  position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  font-size: 18vw;
-  font-family: var(--font-title);
-  font-weight: 900;
-  text-align: center;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.05);
-  z-index: -1;
-  pointer-events: none;
-}
 .wrapper main .hero {
   display: flex;
   justify-content: center;
@@ -1596,18 +1567,12 @@ ul, ol, li {
   font-size: 12vw;
 }
 .wrapper main .hero .hero-wrap .hero-tit .hero-img {
-  position: relative;
-  overflow: hidden;
   padding: 0 24px;
   width: 32vw;
 }
 .wrapper main .hero .hero-wrap .hero-tit .hero-img video {
   width: 100%;
   height: auto;
-}
-.wrapper main .hero .hero-wrap .hero-tit .sub-tit-wrap {
-  position: relative;
-  overflow: hidden;
 }
 .wrapper main .hero .hero-wrap .hero-tit .sub-tit-wrap .sub-tit {
   display: block;
@@ -1776,61 +1741,8 @@ ul, ol, li {
   min-width: 120px;
   text-align: left;
 }
-.about .about-wrap .profile .profile-text-wrap .profile-stack h5 {
-  font-size: 1.875rem;
-  font-weight: 600;
-  line-height: 1.5;
-  padding-bottom: 16px;
-  color: #fff;
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.5;
-  border-radius: 8px;
-  color: #F9F5EF;
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(1) {
-  background-color: rgba(227, 79, 38, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(2) {
-  background-color: rgba(21, 114, 182, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(3) {
-  background-color: rgba(204, 102, 153, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(4) {
-  background-color: rgba(0, 164, 239, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(5) {
-  background-color: rgba(97, 218, 251, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(6) {
-  background-color: rgba(51, 153, 51, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(7) {
-  background-color: rgba(68, 121, 161, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(8) {
-  background-color: rgba(109, 179, 63, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(9) {
-  background-color: rgba(247, 223, 30, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(10) {
-  background-color: rgba(7, 105, 173, 0.6);
-}
-.about .about-wrap .profile .profile-text-wrap .profile-stack .stack-list li:nth-child(11) {
-  background-color: rgba(240, 80, 50, 0.6);
-}
 
+/* skills */
 .skills {
   position: relative;
   margin-top: 20em;
@@ -1964,22 +1876,52 @@ ul, ol, li {
   padding: 0 3rem;
   height: auto;
 }
-.projectAll h4 {
+.projectAll .projects-title {
+  position: relative;
+  height: 100vh;
   font-family: var(--font-title);
-  font-size: 5rem;
-  font-weight: 700;
+  font-size: 10vw;
+  font-weight: 400;
+  letter-spacing: -0.5rem;
   text-transform: uppercase;
   margin-bottom: 0.5em;
   line-height: 1;
   color: #222;
+  z-index: -1;
 }
-.projectAll h4 span {
+.projectAll .projects-title p {
+  white-space: nowrap;
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.8s ease-out;
+}
+.projectAll .projects-title p.active {
+  opacity: 1;
+}
+.projectAll .projects-title p.active.left {
+  transform: translateX(-50%);
+}
+.projectAll .projects-title p.active.right {
+  transform: translateX(-36%);
+}
+.projectAll .projects-title p.left {
+  position: absolute;
+  left: 36%;
+  transform: translateX(-100%);
+}
+.projectAll .projects-title p.right {
+  position: absolute;
+  left: 50%;
+  top: 10vw;
+  transform: translateX(0);
+  font-size: 5vw;
+}
+.projectAll .projects-title span {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-.projectAll h4 span.loaded {
+.projectAll .projects-title span.loaded {
   opacity: 1;
   transform: translateY(0);
 }

@@ -1,17 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // introPageLoad();
+
     scrollEffect();
     headerEffect();
     noiseEffect();
     mouseEffect();
     topButton();
-    // introPageLoad();
     projectAnimation();
     pageTransition();
-    backgroundScroll();
+    // backgroundScroll();
     skillSwiper();
 });
 
+/* intro page load & hero page load*/
+const introPageLoad = () => {
+    const introSplash = document.getElementById('introSplash');
+    const heroImage = document.querySelector('video.cont');
+    const mainTitle = document.querySelector('.tit.cont');
+    const subTitle = document.querySelector('.sub-tit.cont');
 
+    introSplash.classList.add('show');
+
+    setTimeout(() => {
+        introSplash.classList.remove('show');
+        introSplash.classList.add('hide');
+
+        // 인트로가 사라진 후 hero page load 스크립트 실행
+        setTimeout(() => {
+            loadHeroPage();
+        }, 500);
+    }, 3000);
+
+    // Hero 페이지 로드 함수
+    function loadHeroPage() {
+        setTimeout(() => {
+            heroImage.classList.add('page-loaded');
+        }, 500);
+
+        setTimeout(() => {
+            mainTitle.classList.add('page-loaded');
+        }, 1000);
+
+        setTimeout(() => {
+            subTitle.classList.add('page-loaded');
+        }, 1500);
+    }
+}
 
 /* swiper */
 const skillSwiper = () =>{
@@ -46,6 +80,9 @@ const scrollEffect = () => {
     const aboutText = document.querySelectorAll('.profile-text p');
     const profileInfo = document.querySelector('.profile-info-wrap');
     const skillSection = document.querySelector('.skills');
+    const projectAllSection = document.querySelector('.projectAll');
+    const projectSection = document.querySelector('.project');
+    const projectTitle = document.querySelector('.projects-title');
 
     const scrollStart = window.innerHeight * 0.1;
     const scrollMiddle = window.innerHeight * 0.4;
@@ -57,24 +94,85 @@ const scrollEffect = () => {
     let isFixed = false;
     let isTitleFixed = false;
     let isSkillVisible = false;
+    let isProjectVisible = false;
+    let isProjectAllVisible = false;
 
     // `Intersection Observer`로 Skill 섹션 감지
     const observer = new IntersectionObserver(
-        ([entry]) => {
-            isSkillVisible = entry.isIntersecting;
-            if (isSkillVisible) {
+        (entries) => {
+            entries.forEach(entry => {
+                if(entry.target === skillSection){
+                    isSkillVisible = entry.isIntersecting;
+                }else if(entry.target === projectSection){
+                    isProjectVisible = entry.isIntersecting;
+                }else if(entry.target === projectAllSection){
+                isProjectAllVisible = entry.isIntersecting;
+            }
+            });
+
+            if(isProjectVisible){
+                body.style.backgroundColor = "#fff";
+                header.style.backgroundColor = "#fff";
+            }else if (isSkillVisible) {
                 body.style.backgroundColor = "#F6E8CA";
                 header.style.backgroundColor = "#F6E8CA";
+
+            }else {
+                body.style.backgroundColor = "#F9F5EF";
+                header.style.backgroundColor = "#F9F5EF";
             }
         },
         { threshold: 0.5 }
     );
 
     if (skillSection) observer.observe(skillSection);
+    if (projectSection) observer.observe(projectSection);
+    if (projectAllSection) observer.observe(projectAllSection);
+
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                projectTitle.classList.add('active');
+                // projectTitle.style.position = "fixed";  // 🔥 `fixed` 적용
+                // projectTitle.style.top = "0";
+                // projectTitle.style.left = "0";
+                // projectTitle.style.width = "100%";
+
+                document.querySelectorAll('.projects-title p').forEach(p => {
+                    p.classList.add('active');
+                });
+            }else{
+                projectTitle.classList.remove('active');
+                // projectTitle.style.position = "relative"; // 💡 원래대로 복구
+
+                document.querySelectorAll('.projects-title p').forEach(p => {
+                    p.classList.remove('active');
+                });
+            }
+        });
+    }, { threshold: 0.1 });
+
+    if (projectAllSection) projectObserver.observe(projectAllSection);
 
 
     window.addEventListener('scroll', () => {
         let currentScroll = window.scrollY;
+
+        if (isProjectAllVisible || isProjectVisible) {
+            body.style.backgroundColor = "#fff";
+            header.style.backgroundColor = "#fff";
+            console.log("🔥 프로젝트 섹션 → 빨간색 유지됨!");
+            return;
+        }
+
+        if (isSkillVisible) {
+            body.style.backgroundColor = "#F6E8CA";
+            header.style.backgroundColor = "#F6E8CA";
+            return;
+        }
+
+        body.style.backgroundColor = "#F9F5EF";
+        header.style.backgroundColor = "#F9F5EF";
 
         let moveProgress = Math.min((currentScroll - scrollStart) / (scrollMiddle - scrollStart), 1);
         moveProgress = Math.max(moveProgress, 0);
@@ -324,40 +422,7 @@ const topButton = () => {
     });
 }
 
-/* intro page load & hero page load*/
-const introPageLoad = () => {
-    const introSplash = document.getElementById('introSplash');
-    const heroImage = document.querySelector('video.cont');
-    const mainTitle = document.querySelector('.tit.cont');
-    const subTitle = document.querySelector('.sub-tit.cont');
 
-    introSplash.classList.add('show');
-
-    setTimeout(() => {
-        introSplash.classList.remove('show');
-        introSplash.classList.add('hide');
-
-        // 인트로가 사라진 후 hero page load 스크립트 실행
-        setTimeout(() => {
-            loadHeroPage();
-        }, 500);
-    }, 3000);
-
-    // Hero 페이지 로드 함수
-    function loadHeroPage() {
-        setTimeout(() => {
-            heroImage.classList.add('page-loaded');
-        }, 500);
-
-        setTimeout(() => {
-            mainTitle.classList.add('page-loaded');
-        }, 1000);
-
-        setTimeout(() => {
-            subTitle.classList.add('page-loaded');
-        }, 1500);
-    }
-}
 
 /* scroll animation & lazy loading & IntersectionObserver selected project */
 const projectAnimation = () => {
@@ -618,205 +683,205 @@ const pageTransition = () => {
 }
 
 /* background scroll parallax 2 */
-const backgroundScroll = () => {
-    const parallaxSection = document.querySelector('main');
-    const parallaxText = document.createElement('div');
-    parallaxText.classList.add('parallax-text');
-    parallaxText.textContent = "project";
+// const backgroundScroll = () => {
+//     const parallaxSection = document.querySelector('main');
+//     const parallaxText = document.createElement('div');
+//     parallaxText.classList.add('parallax-text');
+//     parallaxText.textContent = "project";
+//
+//     parallaxSection.appendChild(parallaxText);
+//
+//     parallaxText.style.opacity = '0';
+//     parallaxText.style.transition = 'transform 2s ease-out, opacity 0.5s ease-out';
+//
+//     const projectSection = document.querySelector('.project');
+//     const parallaxSpeed = 0.7;
+//     let isScrolling; // 스크롤 상태 확인용 변수
+//
+//     window.addEventListener('scroll', () => {
+//         clearTimeout(isScrolling); // 이전 타임아웃 지우기
+//
+//         const scrollPosition = window.scrollY; // 현재 스크롤 위치
+//         const projectRect = projectSection.getBoundingClientRect();
+//
+//         // .project 섹션이 화면에 나타날 때 텍스트를 보이도록 설정
+//         const projectEnterVisible = projectRect.top < window.innerHeight && projectRect.bottom > 0;
+//
+//         parallaxText.style.opacity = projectEnterVisible ? '1' : '0';
+//
+//         const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
+//         parallaxText.style.transform = `translate(-50%, calc(0% + ${offset}px))`;
+//
+//         // 스크롤이 멈춘 후에 추가적인 이동 효과를 적용하기 위해 setTimeout 사용
+//         isScrolling = setTimeout(() => {
+//             parallaxText.style.transform = `translate(-50%, calc(-50% + ${(scrollPosition + 50) * parallaxSpeed}px))`;
+//         }, 100);
+//     });
+//
+// }
 
-    parallaxSection.appendChild(parallaxText);
 
-    parallaxText.style.opacity = '0';
-    parallaxText.style.transition = 'transform 2s ease-out, opacity 0.5s ease-out';
 
-    const projectSection = document.querySelector('.project');
-    const parallaxSpeed = 0.7;
-    let isScrolling; // 스크롤 상태 확인용 변수
 
-    window.addEventListener('scroll', () => {
-        clearTimeout(isScrolling); // 이전 타임아웃 지우기
 
-        const scrollPosition = window.scrollY; // 현재 스크롤 위치
-        const projectRect = projectSection.getBoundingClientRect();
 
-        // .project 섹션이 화면에 나타날 때 텍스트를 보이도록 설정
-        const projectEnterVisible = projectRect.top < window.innerHeight && projectRect.bottom > 0;
 
-        parallaxText.style.opacity = projectEnterVisible ? '1' : '0';
 
-        const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
-        parallaxText.style.transform = `translate(-50%, calc(0% + ${offset}px))`;
 
-        // 스크롤이 멈춘 후에 추가적인 이동 효과를 적용하기 위해 setTimeout 사용
-        isScrolling = setTimeout(() => {
-            parallaxText.style.transform = `translate(-50%, calc(-50% + ${(scrollPosition + 50) * parallaxSpeed}px))`;
-        }, 100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* scroll animation & lazy loading & IntersectionObserver & skeleton */
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded 이벤트 발생 (common.js)');
+
+    const isIndexPage = window.location.pathname.includes('index.html');
+
+    // IntersectionObserver 옵션 설정
+    const scrollObserverOptions = { threshold: 0.1 };
+    const lazyObserverOptions = { threshold: 0.01 };
+
+    // IntersectionObserver 생성
+    const scrollObserver = new IntersectionObserver(handleScrollAnimation, scrollObserverOptions);
+    const lazyImageObserver = new IntersectionObserver(handleLazyLoading, lazyObserverOptions);
+
+    // 옵저버 초기화
+    document.querySelectorAll('.contents').forEach(el => scrollObserver.observe(el));
+    document.querySelectorAll("img[data-src]").forEach((img,index) => {
+
+        if(!isIndexPage){
+            const skeleton = document.createElement("div");
+            skeleton.className = "skeleton";
+
+            const uniqueId = `skeleton-${index}`;
+            skeleton.setAttribute('data-skeleton-id', uniqueId);
+            img.setAttribute('data-skeleton-id', uniqueId);
+
+            img.parentNode.insertBefore(skeleton, img);
+        }
+
+        lazyImageObserver.observe(img);
+
+        if(img.complete){
+            hideSkeleton(img);
+        }
+
     });
 
-}
+    // 스크롤 애니메이션 처리 함수
+    function handleScrollAnimation(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+
+                if (entry.target.classList.contains('title-name')) {
+                    entry.target.querySelectorAll('span').forEach((span, index) => {
+                        span.style.transitionDelay = `${index * 0.05}s`;
+                        span.classList.add('loaded');
+                    });
+                }
+
+                entry.target.querySelectorAll("img[data-src]").forEach(img => {
+                    img.src = img.dataset.src;
+                    lazyImageObserver.unobserve(img);
+                });
+
+                entry.target.querySelectorAll("video.cont").forEach(video => {
+                    video.classList.add('page-loaded');
+                });
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+
+
+    // Lazy Loading 처리 함수
+    function handleLazyLoading(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+
+                // 이미지 로드 후 스켈레톤 숨기기 (딜레이 추가)
+                lazyImage.onload = () => {
+                    setTimeout(() => hideSkeleton(lazyImage), 100);
+                };
+
+                // 이미지가 이미 로드된 경우에도 스켈레톤 숨기기
+                if (lazyImage.complete) {
+                    setTimeout(() => hideSkeleton(lazyImage), 100);
+                }
+
+                observer.unobserve(lazyImage);
+            }
+        });
+    }
+
+    function hideSkeleton(image){
+        image.classList.add("loaded");
+
+        const skeletonId = image.getAttribute('data-skeleton-id');
+        const skeleton = document.querySelector(`.skeleton[data-skeleton-id="${skeletonId}"]`);
+
+        if(skeleton){
+            skeleton.style.display = "none";
+        }else{
+            console.error(`Skeleton element not found for image with id: ${skeletonId}`);
+        }
+    }
+});
 
 
 
 
+/* sub header scroll effect*/
+document.addEventListener('DOMContentLoaded', function () {
+    const bodyNoiseEffect = document.querySelector('.noise');
+    const subHeader = document.querySelector('.project-header');
+    const projectMain = document.querySelector('.project-main');
+    const introSection = document.querySelector('.intro');
 
+    // 초기값 설정 함수
+    function setInitialStyles() {
+        if (introSection) {
+            const introBottom = introSection.getBoundingClientRect().bottom;
 
+            // 페이지 로드 시 .intro 섹션의 위치에 따라 초기 상태 설정
+            if (introBottom <= 0) {
+                bodyNoiseEffect.style.display = 'block';
+                subHeader.style.backgroundColor = '#F9F5EF';
+                projectMain.style.paddingTop = '60px';
+            } else {
+                bodyNoiseEffect.style.display = 'none';
+                subHeader.style.backgroundColor = 'transparent';
+                projectMain.style.paddingTop = '0px';
+            }
+        }
+    }
 
+    // 초기값 설정 실행
+    setInitialStyles();
 
+    // 스크롤 이벤트 추가
+    window.addEventListener('scroll', function () {
+        setInitialStyles(); // 스크롤할 때마다 초기 스타일 업데이트
+    });
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// /* scroll animation & lazy loading & IntersectionObserver & skeleton */
-// document.addEventListener('DOMContentLoaded', () => {
-//     console.log('DOMContentLoaded 이벤트 발생 (common.js)');
-//
-//     const isIndexPage = window.location.pathname.includes('index.html');
-//
-//     // IntersectionObserver 옵션 설정
-//     const scrollObserverOptions = { threshold: 0.1 };
-//     const lazyObserverOptions = { threshold: 0.01 };
-//
-//     // IntersectionObserver 생성
-//     const scrollObserver = new IntersectionObserver(handleScrollAnimation, scrollObserverOptions);
-//     const lazyImageObserver = new IntersectionObserver(handleLazyLoading, lazyObserverOptions);
-//
-//     // 옵저버 초기화
-//     document.querySelectorAll('.contents').forEach(el => scrollObserver.observe(el));
-//     document.querySelectorAll("img[data-src]").forEach((img,index) => {
-//
-//         if(!isIndexPage){
-//             const skeleton = document.createElement("div");
-//             skeleton.className = "skeleton";
-//
-//             const uniqueId = `skeleton-${index}`;
-//             skeleton.setAttribute('data-skeleton-id', uniqueId);
-//             img.setAttribute('data-skeleton-id', uniqueId);
-//
-//             img.parentNode.insertBefore(skeleton, img);
-//         }
-//
-//         lazyImageObserver.observe(img);
-//
-//         if(img.complete){
-//             hideSkeleton(img);
-//         }
-//
-//     });
-//
-//     // 스크롤 애니메이션 처리 함수
-//     function handleScrollAnimation(entries, observer) {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add('loaded');
-//
-//                 if (entry.target.classList.contains('title-name')) {
-//                     entry.target.querySelectorAll('span').forEach((span, index) => {
-//                         span.style.transitionDelay = `${index * 0.05}s`;
-//                         span.classList.add('loaded');
-//                     });
-//                 }
-//
-//                 entry.target.querySelectorAll("img[data-src]").forEach(img => {
-//                     img.src = img.dataset.src;
-//                     lazyImageObserver.unobserve(img);
-//                 });
-//
-//                 entry.target.querySelectorAll("video.cont").forEach(video => {
-//                     video.classList.add('page-loaded');
-//                 });
-//
-//                 observer.unobserve(entry.target);
-//             }
-//         });
-//     }
-
-
-//
-//     // Lazy Loading 처리 함수
-//     function handleLazyLoading(entries, observer) {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 const lazyImage = entry.target;
-//                 lazyImage.src = lazyImage.dataset.src;
-//
-//                 // 이미지 로드 후 스켈레톤 숨기기 (딜레이 추가)
-//                 lazyImage.onload = () => {
-//                     setTimeout(() => hideSkeleton(lazyImage), 100);
-//                 };
-//
-//                 // 이미지가 이미 로드된 경우에도 스켈레톤 숨기기
-//                 if (lazyImage.complete) {
-//                     setTimeout(() => hideSkeleton(lazyImage), 100);
-//                 }
-//
-//                 observer.unobserve(lazyImage);
-//             }
-//         });
-//     }
-//
-//     function hideSkeleton(image){
-//         image.classList.add("loaded");
-//
-//         const skeletonId = image.getAttribute('data-skeleton-id');
-//         const skeleton = document.querySelector(`.skeleton[data-skeleton-id="${skeletonId}"]`);
-//
-//         if(skeleton){
-//             skeleton.style.display = "none";
-//         }else{
-//             console.error(`Skeleton element not found for image with id: ${skeletonId}`);
-//         }
-//     }
-// });
-//
-
-
-
-// /* sub header scroll effect*/
-// document.addEventListener('DOMContentLoaded', function () {
-//     const bodyNoiseEffect = document.querySelector('.noise');
-//     const subHeader = document.querySelector('.project-header');
-//     const projectMain = document.querySelector('.project-main');
-//     const introSection = document.querySelector('.intro');
-//
-//     // 초기값 설정 함수
-//     function setInitialStyles() {
-//         if (introSection) {
-//             const introBottom = introSection.getBoundingClientRect().bottom;
-//
-//             // 페이지 로드 시 .intro 섹션의 위치에 따라 초기 상태 설정
-//             if (introBottom <= 0) {
-//                 bodyNoiseEffect.style.display = 'block';
-//                 subHeader.style.backgroundColor = '#F9F5EF';
-//                 projectMain.style.paddingTop = '60px';
-//             } else {
-//                 bodyNoiseEffect.style.display = 'none';
-//                 subHeader.style.backgroundColor = 'transparent';
-//                 projectMain.style.paddingTop = '0px';
-//             }
-//         }
-//     }
-//
-//     // 초기값 설정 실행
-//     setInitialStyles();
-//
-//     // 스크롤 이벤트 추가
-//     window.addEventListener('scroll', function () {
-//         setInitialStyles(); // 스크롤할 때마다 초기 스타일 업데이트
-//     });
-// });
-//
