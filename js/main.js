@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // introPageLoad();
-
-    scrollEffect();
-    headerEffect();
+    introPageLoad();
     noiseEffect();
+
+    headerEffect();
     mouseEffect();
     topButton();
     projectAnimation();
     pageTransition();
     // backgroundScroll();
     skillSwiper();
+    setTimeout(() => {
+        scrollEffect();
+    }, 100);
 });
 
 /* intro page load & hero page load*/
@@ -32,7 +34,7 @@ const introPageLoad = () => {
     }, 3000);
 
     // Hero 페이지 로드 함수
-    function loadHeroPage() {
+    const loadHeroPage = () => {
         setTimeout(() => {
             heroImage.classList.add('page-loaded');
         }, 500);

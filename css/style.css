@@ -1253,7 +1253,6 @@ button {
   transition: transform 0.5s ease-out;
 }
 
-img.cont,
 video.cont,
 .sub-tit.cont {
   transform: translateY(100%);
