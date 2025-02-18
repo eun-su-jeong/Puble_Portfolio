@@ -8,7 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
     projectAnimation();
     pageTransition();
     backgroundScroll();
+    skillSwiper();
 });
+
+
+
+/* swiper */
+const skillSwiper = () =>{
+    new Swiper('.swiper-container', {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        loop: false,
+        freeMode: true,
+        mousewheel: {
+            enabled: true,
+            sensitivity: 1,
+            releaseOnEdges: true
+        },
+        breakpoints: {
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 },
+        }
+    });
+}
+
 /* scrollEffect */
 const scrollEffect = () => {
     const subText = document.querySelector('.sub-tit');
@@ -21,6 +45,7 @@ const scrollEffect = () => {
     const headerNav = document.querySelectorAll('header > nav > ul > li > a');
     const aboutText = document.querySelectorAll('.profile-text p');
     const profileInfo = document.querySelector('.profile-info-wrap');
+    const skillSection = document.querySelector('.skills');
 
     const scrollStart = window.innerHeight * 0.1;
     const scrollMiddle = window.innerHeight * 0.4;
@@ -31,6 +56,22 @@ const scrollEffect = () => {
 
     let isFixed = false;
     let isTitleFixed = false;
+    let isSkillVisible = false;
+
+    // `Intersection Observer`로 Skill 섹션 감지
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            isSkillVisible = entry.isIntersecting;
+            if (isSkillVisible) {
+                body.style.backgroundColor = "#F6E8CA";
+                header.style.backgroundColor = "#F6E8CA";
+            }
+        },
+        { threshold: 0.5 }
+    );
+
+    if (skillSection) observer.observe(skillSection);
+
 
     window.addEventListener('scroll', () => {
         let currentScroll = window.scrollY;
@@ -85,26 +126,29 @@ const scrollEffect = () => {
 
 
         // "READY" 글자, body색상 변경
-        if (currentScroll >= scrollMiddle) {
-            readyText.style.color = '#F9F5EF';
-            body.style.backgroundColor ='#000';
-            header.style.backgroundColor ='#000';
-            // 모든 네비게이션 링크 색상 변경
-            headerNav.forEach(nav => {
-                nav.style.color = '#F9F5EF';
-            });
-            aboutText.forEach(text =>{
-                text.style.color = '#fff';
-            });
-            profileInfo.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+        if (!isSkillVisible) {
 
-        } else {
-            readyText.style.color = '#222';
-            body.style.backgroundColor ='#F9F5EF';
-            header.style.backgroundColor ='#F9F5EF';
-            headerNav.forEach(nav => {
-                nav.style.color = '#222';
-            });
+            if (currentScroll >= scrollMiddle) {
+                readyText.style.color = '#F9F5EF';
+                body.style.backgroundColor ='#000';
+                header.style.backgroundColor ='#000';
+                // 모든 네비게이션 링크 색상 변경
+                headerNav.forEach(nav => {
+                    nav.style.color = '#F9F5EF';
+                });
+                aboutText.forEach(text =>{
+                    text.style.color = '#fff';
+                });
+                profileInfo.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+
+            } else {
+                readyText.style.color = '#222';
+                body.style.backgroundColor ='#F9F5EF';
+                header.style.backgroundColor ='#F9F5EF';
+                headerNav.forEach(nav => {
+                    nav.style.color = '#222';
+                });
+            }
         }
 
         // `READY`가 완전히 커진 후 서서히 사라짐
@@ -142,7 +186,7 @@ const scrollEffect = () => {
 
 
         // `about` 섹션이 끝나면 원래대로 복구
-        if (currentScroll >= restorePoint) {
+        if (currentScroll >= restorePoint && !isSkillVisible) {
             readyText.style.color = '#222';
             body.style.backgroundColor = '#F9F5EF';
             header.style.backgroundColor = '#F9F5EF';

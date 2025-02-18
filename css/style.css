@@ -1832,23 +1832,130 @@ ul, ol, li {
 }
 
 .skills {
-  margin-top: 30em;
-  padding: 0 3rem;
-  height: auto;
+  position: relative;
+  margin-top: 20em;
+  padding: 0 3rem 5em;
+  height: 100%;
+  max-height: 100vh;
+}
+.skills h4 {
+  font-family: var(--font-title);
+  font-size: 5vw;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  line-height: 1;
+  color: #222;
+}
+.skills .swiper-container {
+  margin-top: 10em;
 }
 .skills .swiper-container .swiper-wrapper {
   display: flex;
 }
-.skills .swiper-container .swiper-wrapper .swiper -slide {
+.skills .swiper-container .swiper-wrapper .swiper-slide {
+  position: relative;
+  width: 100%;
+  background-color: #FFF;
+  padding: 1.2rem;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide:hover .tooltip {
+  opacity: 1;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide:hover .skill-wrap .skill-name {
+  position: relative;
+  z-index: 3;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide:hover .skill-wrap .skill-name span {
+  color: #fff;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .name-wrap {
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
 }
-.skills h4 {
-  font-family: var(--font-title);
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  line-height: 1;
-  color: #222;
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .name-wrap .arrow::before {
+  content: "\f25a";
+  display: inline-block;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #ddd;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 150px;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-icon i {
+  font-size: 10rem;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-name {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-name::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 1rem;
+  margin-right: 4px;
+  background-color: #fff;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-name span {
+  font-weight: 600;
+  color: #ddd;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background: #D87C5A;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .tooltip p {
+  padding-top: 0.5rem;
+  font-size: 1.2rem;
+}
+.skills .swiper-container .swiper-wrapper .swiper-slide .tooltip p::before {
+  content: "＊";
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.skills .background-image {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg01.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* project */
