@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    introPageLoad();
+    // introPageLoad();
     noiseEffect();
 
     headerEffect();
@@ -48,6 +48,48 @@ const introPageLoad = () => {
         }, 1500);
     }
 }
+
+/* noise 효과 */
+const noiseEffect = () => {
+    function createNoiseEffect(isForHeader = false) {
+        const noiseEffect = document.createElement('div');
+        noiseEffect.classList.add('noise');
+
+        // noise header or body
+        noiseEffect.style.position =isForHeader? 'absolute' : 'fixed';
+        noiseEffect.style.zIndex = isForHeader? '1000' : '-1';
+        return noiseEffect;
+    }
+
+    // body에 noise 효과 추가
+    const bodyNoiseEffect = createNoiseEffect(false);
+    document.body.appendChild(bodyNoiseEffect);
+
+    // header에 noise 효과 추가
+    const header = document.querySelector('header');
+    if (header) {
+        const headerNoiseEffect = createNoiseEffect(true);
+        header.appendChild(headerNoiseEffect);
+    }
+
+}
+
+/* header scroll */
+const headerEffect = () => {
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        if (window.scrollY > lastScrollY) {
+            header.style.top = '-60px';
+            header.style.transform = 'translateY(-60px)';
+        } else {
+            header.style.top = '0';
+            header.style.transform = 'translateY(0)';
+        }
+        lastScrollY = window.scrollY;
+    });
+}
+
 
 /* swiper */
 const skillSwiper = () =>{
@@ -301,48 +343,8 @@ const scrollEffect = () => {
     });
 }
 
-/* header scroll */
-const headerEffect = () => {
-    let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        if (window.scrollY > lastScrollY) {
-            // 스크롤을 내릴 때
-            header.style.top = '-60px';
-            header.style.transform = 'translateY(-60px)';
-        } else {
-            // 스크롤을 올릴 때
-            header.style.top = '0';
-            header.style.transform = 'translateY(0)';
-        }
-        lastScrollY = window.scrollY;
-    });
-}
 
-/* noise 효과 */
-const noiseEffect = () => {
-    function createNoiseEffect(isForHeader = false) {
-        const noiseEffect = document.createElement('div');
-        noiseEffect.classList.add('noise');
 
-        // noise header or body
-        noiseEffect.style.position =isForHeader? 'absolute' : 'fixed';
-        noiseEffect.style.zIndex = isForHeader? '1000' : '-1';
-        return noiseEffect;
-    }
-
-    // body에 noise 효과 추가
-    const bodyNoiseEffect = createNoiseEffect(false);
-    document.body.appendChild(bodyNoiseEffect);
-
-    // header에 noise 효과 추가
-    const header = document.querySelector('header');
-    if (header) {
-        const headerNoiseEffect = createNoiseEffect(true);
-        header.appendChild(headerNoiseEffect);
-    }
-
-}
 
 /* mouse effect */
 const mouseEffect = () => {

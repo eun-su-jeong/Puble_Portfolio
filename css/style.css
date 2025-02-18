@@ -1266,6 +1266,21 @@ video.cont,
   transform: translateY(0);
 }
 
+/* noise background*/
+.noise {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/noise.webp");
+  background-position: 0 0;
+  background-size: auto;
+  pointer-events: none;
+  opacity: 0.03;
+  transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  visibility: visible;
+}
+
 /* 기본적으로 숨김 처리 */
 .fade-up {
   opacity: 0;
@@ -1330,21 +1345,6 @@ video.cont,
   background-color: #222;
   color: #fff;
   transform: scale(1.1);
-}
-
-/* noise background*/
-.noise {
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../images/noise.webp");
-  background-position: 0 0;
-  background-size: auto;
-  pointer-events: none;
-  opacity: 0.03;
-  transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  visibility: visible;
 }
 
 /* cursor */
@@ -1447,8 +1447,9 @@ ul, ol, li {
 .wrapper {
   width: 100%;
   max-width: 1920px;
-  min-width: var(--con-min-width);
+  min-width: var(--w1600);
   margin: 0 auto;
+  overflow-x: hidden;
 }
 .wrapper header {
   display: flex;
