@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // introPageLoad();
+    introPageLoad();
     noiseEffect();
-
     headerEffect();
+
     mouseEffect();
     topButton();
     projectAnimation();
