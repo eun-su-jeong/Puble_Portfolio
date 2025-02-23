@@ -488,6 +488,7 @@
                 </div>
             </div>
         </section>
+        <!--  contact  -->
         <section class="contact" id="contact">
             <div class="contact-wrap">
                 <div class="sub-title">
@@ -525,10 +526,10 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footser>
         <div class="footer-content">
             <p>&copy; 2024 EUNSUJEONG. All Rights Reserved.</p>
         </div>
-    </footer>
+    </footser>
 </div>
 </body>

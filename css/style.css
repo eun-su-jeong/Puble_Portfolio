@@ -1294,29 +1294,6 @@ video.cont,
 }
 
 /*스켈레톤 애니메이션 */
-.skeleton {
-  background-color: #e0e0e0;
-  border-radius: 4px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  animation: pulse 1.5s infinite;
-}
-@keyframes pulse {
-  0% {
-    background-color: #e0e0e0;
-  }
-  50% {
-    background-color: #f0f0f0;
-  }
-  100% {
-    background-color: #e0e0e0;
-  }
-}
-
 /* 페이지 전환 */
 .slide-out {
   transform: translateX(-100%);
@@ -1358,7 +1335,7 @@ video.cont,
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 100;
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: all 0.3s ease;
@@ -1449,7 +1426,6 @@ ul, ol, li {
   max-width: 100vw;
   min-width: 80vw;
   margin: 0 auto;
-  overflow-x: hidden;
   /* header */
 }
 .wrapper header {
@@ -2200,6 +2176,9 @@ ul, ol, li {
   width: 100%;
   height: 100%;
   transition: transform 1s ease-out;
+}
+.project .project-wrap .project-list .project-item a .date {
+  margin-bottom: 0.5rem;
 }
 .project .project-wrap .project-list .project-item a .thumbnail {
   width: 100%;

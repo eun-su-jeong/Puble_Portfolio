@@ -2,12 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     introPageLoad();
     noiseEffect();
     headerEffect();
-    mouseEffect();
-    topButton();
-
     projectAnimation();
     pageTransition();
-    // backgroundScroll();
+    topButton();
+    mouseEffect();
     skillSwiper();
     setTimeout(() => {
         scrollEffect();
@@ -113,6 +111,7 @@ const scrollEffect = () => {
     const projectAllSection = document.querySelector('.projectAll');
     const projectSection = document.querySelector('.project');
     const contactSection = document.querySelector('.contact');
+    const aboutSection = document.querySelector('.about');
 
     // project
     const projectTitle = document.querySelector('.projects-title');
@@ -211,10 +210,12 @@ const scrollEffect = () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 projectTitle.style.opacity = "0";
+                projectTitle.style.display = "none";
                 projectTitle.style.pointerEvents = "none";
 
             } else {
                 projectTitle.style.opacity = "1";
+                projectTitle.style.display = "block";
                 projectTitle.style.pointerEvents = "auto";
             }
         });
@@ -322,7 +323,7 @@ const scrollEffect = () => {
         // `READY`가 완전히 커진 후 서서히 사라짐
         if (currentScroll >= scrollEnd) {
             readyText.style.opacity = 1 - disappearProgress;
-            titleWrap.style.position = "fixed";
+            // titleWrap.style.position = "fixed";
             titleWrap.classList.add('active');
             isTitleFixed = true;
 
@@ -352,6 +353,20 @@ const scrollEffect = () => {
             titleWrap.style.left = "35vw";
         }
 
+        const titleWrapObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    titleWrap.style.display = "none";
+                } else {
+                    titleWrap.style.display = "block";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        if (aboutSection) {
+            titleWrapObserver.observe(aboutSection);
+        }
+
 
         // `about` 섹션이 끝나면 원래대로 복구
         if (currentScroll >= restorePoint && !isSkillVisible) {
@@ -367,6 +382,7 @@ const scrollEffect = () => {
             profileInfo.style.borderColor = 'rgba(34, 34, 34, 0.5)';
         }
     });
+
 }
 
 /* swiper */

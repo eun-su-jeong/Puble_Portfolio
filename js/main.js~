@@ -2,12 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     introPageLoad();
     noiseEffect();
     headerEffect();
-    mouseEffect();
-    topButton();
-
     projectAnimation();
     pageTransition();
-    // backgroundScroll();
+    topButton();
+    mouseEffect();
     skillSwiper();
     setTimeout(() => {
         scrollEffect();
@@ -211,10 +209,12 @@ const scrollEffect = () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 projectTitle.style.opacity = "0";
+                projectTitle.style.display = "none";
                 projectTitle.style.pointerEvents = "none";
 
             } else {
                 projectTitle.style.opacity = "1";
+                projectTitle.style.display = "block";
                 projectTitle.style.pointerEvents = "auto";
             }
         });
@@ -322,7 +322,7 @@ const scrollEffect = () => {
         // `READY`가 완전히 커진 후 서서히 사라짐
         if (currentScroll >= scrollEnd) {
             readyText.style.opacity = 1 - disappearProgress;
-            titleWrap.style.position = "fixed";
+            // titleWrap.style.position = "fixed";
             titleWrap.classList.add('active');
             isTitleFixed = true;
 
@@ -367,6 +367,7 @@ const scrollEffect = () => {
             profileInfo.style.borderColor = 'rgba(34, 34, 34, 0.5)';
         }
     });
+
 }
 
 /* swiper */
@@ -477,7 +478,7 @@ const projectAnimation = () => {
     const viewFigure = selectedProjectContainer.querySelector('.thumbnail .view');
     const dateText = selectedProjectContainer.querySelector('.date span');
     const descTitle = selectedProjectContainer.querySelector('.desc strong');
-    const descText = selectedProjectContainer.querySelector('.desc .tech-stack');
+    const descText = selectedProjectContainer.querySelector('.desc div');
     const titleNameElements = document.querySelectorAll('.title-name');
 
     // IntersectionObserver 옵션 설정
