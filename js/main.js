@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     introPageLoad();
     noiseEffect();
     headerEffect();
-
     mouseEffect();
     topButton();
+
     projectAnimation();
     pageTransition();
     // backgroundScroll();
@@ -475,8 +475,9 @@ const projectAnimation = () => {
     const selectedProjectContainer = document.getElementById('selected-project');
     const projectLink = document.getElementById('project-link');
     const viewFigure = selectedProjectContainer.querySelector('.thumbnail .view');
+    const dateText = selectedProjectContainer.querySelector('.date span');
     const descTitle = selectedProjectContainer.querySelector('.desc strong');
-    const descText = selectedProjectContainer.querySelector('.desc span');
+    const descText = selectedProjectContainer.querySelector('.desc div');
     const titleNameElements = document.querySelectorAll('.title-name');
 
     // IntersectionObserver 옵션 설정
@@ -498,7 +499,7 @@ const projectAnimation = () => {
 
             // 프로젝트 항목 생성 및 삽입
             data.forEach(project => {
-                const technologies = project.overlay.stack.split(','); // 쉼표(,)를 기준으로 기술을 나눔
+                const technologies = project.stack.split(','); // 쉼표(,)를 기준으로 기술을 나눔
 
                 // 각 기술을 뱃지로 감싸는 HTML 생성
                 const techBadges = technologies.map(tech => `<span class="tech-badge">${tech.trim()}</span>`).join('');
@@ -506,18 +507,20 @@ const projectAnimation = () => {
                 const projectHTML = `
         <div class="project-item contents" data-project="${project.id}">
             <a href="${project.link}" class="project-link">
+                <div class="date">
+                    <span>${project.period}</span>
+                </div>
                 <div class="thumbnail">
                     <figure>
                         <img data-src="${project.image}" alt="${project.alt}">
                     </figure>
                     <div class="hover-info">
                         <p>${project.overlay.content}</p>
-                        <div class="tech-stack">${techBadges}</div>
                     </div>
                 </div>
                 <div class="desc">
                     <strong>${project.title}</strong>
-                    <span>${project.period}</span>
+                    <div class="tech-stack">${techBadges}</div>
                 </div>
             </a>
         </div>
@@ -567,8 +570,14 @@ const projectAnimation = () => {
             const img = selectedContent.querySelector('.thumbnail img');
             const video = selectedContent.querySelector('.thumbnail video');
             const title = selectedContent.querySelector('.desc strong').textContent;
-            const description = selectedContent.querySelector('.desc span').textContent;
+            const date = selectedContent.querySelector('.date span').textContent;
+            const description = selectedContent.querySelector('.desc div').textContent;
+            const techStackElements = selectedContent.querySelectorAll('.tech-badge');
             const link = selectedContent.querySelector('.project-link').href;
+
+            const techStackHTML = Array.from(techStackElements)
+                .map(tech => `<span class="tech-badge">${tech.textContent}</span>`)
+                .join('');
 
             viewFigure.style.opacity = '0';
 
@@ -577,8 +586,9 @@ const projectAnimation = () => {
                 if (video) viewFigure.appendChild(video.cloneNode(true));
                 else if (img) viewFigure.appendChild(img.cloneNode(true));
 
+                dateText.textContent = date;
                 descTitle.textContent = title;
-                descText.textContent = description;
+                descText.innerHTML = techStackHTML;
                 projectLink.href = link;
 
                 setTimeout(() => {
@@ -726,44 +736,6 @@ const pageTransition = () => {
         main.classList.remove('slide-out');
     });
 }
-
-/* background scroll parallax 2 */
-// const backgroundScroll = () => {
-//     const parallaxSection = document.querySelector('main');
-//     const parallaxText = document.createElement('div');
-//     parallaxText.classList.add('parallax-text');
-//     parallaxText.textContent = "project";
-//
-//     parallaxSection.appendChild(parallaxText);
-//
-//     parallaxText.style.opacity = '0';
-//     parallaxText.style.transition = 'transform 2s ease-out, opacity 0.5s ease-out';
-//
-//     const projectSection = document.querySelector('.project');
-//     const parallaxSpeed = 0.7;
-//     let isScrolling; // 스크롤 상태 확인용 변수
-//
-//     window.addEventListener('scroll', () => {
-//         clearTimeout(isScrolling); // 이전 타임아웃 지우기
-//
-//         const scrollPosition = window.scrollY; // 현재 스크롤 위치
-//         const projectRect = projectSection.getBoundingClientRect();
-//
-//         // .project 섹션이 화면에 나타날 때 텍스트를 보이도록 설정
-//         const projectEnterVisible = projectRect.top < window.innerHeight && projectRect.bottom > 0;
-//
-//         parallaxText.style.opacity = projectEnterVisible ? '1' : '0';
-//
-//         const offset = scrollPosition * parallaxSpeed; // 스크롤에 따른 offset 계산
-//         parallaxText.style.transform = `translate(-50%, calc(0% + ${offset}px))`;
-//
-//         // 스크롤이 멈춘 후에 추가적인 이동 효과를 적용하기 위해 setTimeout 사용
-//         isScrolling = setTimeout(() => {
-//             parallaxText.style.transform = `translate(-50%, calc(-50% + ${(scrollPosition + 50) * parallaxSpeed}px))`;
-//         }, 100);
-//     });
-//
-// }
 
 
 

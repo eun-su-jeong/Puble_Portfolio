@@ -2107,6 +2107,15 @@ ul, ol, li {
   text-transform: uppercase;
   transition: opacity 0.5s ease-in-out;
 }
+.projectAll .project-wrap .project-view .project-item a .desc .tech-stack .tech-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 4px;
+  color: #333;
+  border: 1px solid #222;
+  border-radius: 20px;
+  font-size: 1rem;
+}
 .projectAll .project-wrap .project-view .project-item a .desc span {
   font-size: 1.375rem;
 }
@@ -2153,8 +2162,10 @@ ul, ol, li {
 }
 .project .project-wrap .project-list {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
   position: relative;
   gap: 6rem;
   row-gap: 15rem;
@@ -2164,7 +2175,7 @@ ul, ol, li {
 .project .project-wrap .project-list .project-item {
   flex-shrink: 0;
   flex-grow: 0;
-  max-width: 100%;
+  max-width: 50%;
 }
 .project .project-wrap .project-list .project-item h4 {
   font-size: 5rem;
@@ -2177,6 +2188,7 @@ ul, ol, li {
 .project .project-wrap .project-list .project-item a {
   display: inline-block;
   width: 100%;
+  height: 100%;
   transition: transform 1s ease-out;
 }
 .project .project-wrap .project-list .project-item a .thumbnail {
@@ -2212,16 +2224,6 @@ ul, ol, li {
   font-size: 1.125rem;
   font-weight: 600;
 }
-.project .project-wrap .project-list .project-item a .thumbnail .hover-info .tech-badge {
-  display: inline-block;
-  padding: 4px 8px;
-  margin: 4px;
-  background-color: #fff;
-  color: #333;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-}
 .project .project-wrap .project-list .project-item a .thumbnail:hover .hover-info {
   opacity: 1;
 }
@@ -2240,39 +2242,26 @@ ul, ol, li {
 .project .project-wrap .project-list .project-item a .desc span {
   font-size: 1.375rem;
 }
+.project .project-wrap .project-list .project-item a .desc .tech-stack .tech-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 4px;
+  color: #333;
+  border: 1px solid #222;
+  border-radius: 20px;
+  font-size: 1rem;
+}
 .project .project-wrap .project-list .project-item a:hover .thumbnail {
   transform: scale(0.95);
 }
 .project .project-wrap .project-list .project-item a:hover .thumbnail figure img {
   transform: scale(1.2);
 }
-.project .project-wrap .project-list .project-item:nth-of-type(1) {
-  flex-basis: 30vw;
-}
-.project .project-wrap .project-list .project-item:nth-of-type(2) {
-  flex-basis: 50vw;
-}
-.project .project-wrap .project-list .project-item:nth-of-type(3) {
-  flex-basis: 40vw;
-}
-.project .project-wrap .project-list .project-item:nth-of-type(4) {
-  flex-basis: 30vw;
-  margin-left: 2em;
-}
-.project .project-wrap .project-list .project-item:nth-of-type(5) {
-  flex-basis: 40vw;
-}
-.project .project-wrap .project-list .project-item:nth-of-type(6) {
-  flex-basis: 40vw;
+.project .project-wrap .project-list .project-item:nth-of-type(3n + 2) {
   margin-left: auto;
 }
-.project .project-wrap .project-list .project-item:nth-of-type(7) {
-  flex-basis: 40vw;
-  margin-left: auto;
-}
-.project .project-wrap .project-list .project-item:nth-of-type(8) {
-  flex-basis: 40vw;
-  margin-left: 2em;
+.project .project-wrap .project-list .project-item:nth-of-type(3n + 3) {
+  margin-right: auto;
 }
 
 .contact {

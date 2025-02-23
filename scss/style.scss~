@@ -1136,7 +1136,7 @@ ul, ol, li {
               transition: opacity .5s ease-in-out;
 
             }
-
+            
             .tech-stack {
               .tech-badge {
                 display: inline-block;

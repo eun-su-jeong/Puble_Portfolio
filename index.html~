@@ -461,7 +461,7 @@
                                 </div>
                                 <div class="desc">
                                     <strong>프로젝트 이름1</strong>
-                                    <div class="tech-stack">기술스택</div>
+                                    <div>기술스택</div>
                                 </div>
                             </a>
                         </div>
