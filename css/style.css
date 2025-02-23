@@ -1787,7 +1787,9 @@ ul, ol, li {
   font-size: 1.25rem;
 }
 .skills .swiper-container {
-  margin-top: 20vh;
+  position: relative;
+  top: 15vh;
+  padding-top: 5em;
 }
 .skills .swiper-container .swiper-wrapper {
   display: flex;
@@ -1887,11 +1889,25 @@ ul, ol, li {
 }
 .skills .background-image {
   position: absolute;
-  top: 35vh;
+  top: 25vh;
   left: 0;
   z-index: -1;
   width: 100vw;
   height: 80%;
+  aspect-ratio: 1/1;
+  background-image: url("../images/bg01.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.skills .background-image {
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
   aspect-ratio: 1/1;
   background-image: url("../images/bg01.svg");
   background-size: contain;
@@ -1921,7 +1937,6 @@ ul, ol, li {
 }
 .projectAll .projects-title.active p {
   opacity: 1;
-  color: #ddd;
 }
 .projectAll .projects-title.active p.left {
   transform: translateX(-50%);
@@ -1933,7 +1948,6 @@ ul, ol, li {
   white-space: nowrap;
   opacity: 0;
   transition: transform 0.3s ease-out, opacity 0.8s ease-out, color 1s 1s ease-out;
-  color: #222;
 }
 .projectAll .projects-title p.left {
   position: absolute;

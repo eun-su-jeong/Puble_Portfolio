@@ -139,13 +139,24 @@ const scrollEffect = () => {
             entries.forEach(entry => {
                 if(entry.target === skillSection){
                     isSkillVisible = entry.isIntersecting;
+                    console.log("🔥 isSkillVisible:", isSkillVisible);
                 }else if(entry.target === projects){
                     isProjectsVisible = entry.isIntersecting;
+                    console.log("🔥 isProjectsVisible:", isProjectsVisible);
                 }
             });
         },
         { threshold: 0.1 }
     );
+
+    console.log("projects 요소 확인:", projects); // ✅ `projects`가 `null`인지 확인
+
+    if (projects) {
+        console.log("✅ projects 감지 시작!"); // ✅ `observe` 실행 확인
+        observer.observe(projects);
+    } else {
+        console.error("❌ projects 요소가 존재하지 않음! 확인 필요!");
+    }
 
     if (skillSection) observer.observe(skillSection);
     if (projects) observer.observe(projects);
@@ -229,16 +240,19 @@ const scrollEffect = () => {
         let currentScroll = window.scrollY;
 
         if (isProjectsVisible) {
-            body.style.backgroundColor = "#fff";
-            header.style.backgroundColor = "#fff";
+            console.log("🎯 projects 섹션 감지됨 → 배경 변경");
+            body.style.backgroundColor = "#ff0";
+            header.style.backgroundColor = "#ff0";
             return;
         }
 
         if (isSkillVisible) {
+            console.log("🎯 skills 섹션 감지됨 → 배경 변경");
             body.style.backgroundColor = "#F6E8CA";
             header.style.backgroundColor = "#F6E8CA";
             return;
         }
+        console.log("🎯 기본 배경색 유지");
         body.style.backgroundColor = "#F9F5EF";
         header.style.backgroundColor = "#F9F5EF";
 
