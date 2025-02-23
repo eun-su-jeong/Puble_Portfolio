@@ -81,10 +81,8 @@
                 </div>
                 <div class="profile">
                     <div class="profile-img">
-                        <div>
 <!--                            <img src="./images/sujeong.webp" alt="프로필사진"/>-->
-                            <img src="./images/profile.jpg" alt="프로필사진"/>
-                        </div>
+                        <img src="./images/profile.jpg" alt="프로필사진"/>
                     </div>
                     <div class="profile-text-wrap">
                         <div class="profile-text contents">
@@ -180,6 +178,10 @@
         </section>
         <section class="skills">
             <h4 class="title-name">Skills</h4>
+            <div class="desc-wrap">
+                <p>Hover over the card to check your skill level.</p>
+                <p>카드에 마우스를 올리면 숙련도를 확인할 수 있습니다.</p>
+            </div>
             <div class="swiper-container contents">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -393,79 +395,81 @@
             </div>
             <div class="background-image"></div>
         </section>
-        <section class="projectAll" id="project">
-            <h4 class="projects-title">
-                <p class="left">projects</p>
-                <p class="right">(publishing && front-end)</p>
-            </h4>
-            <div class="project-wrap contents">
-                <div class="project-view">
-                    <div class="project-item">
-                        <div class="project1 proj-list">
-                            <h5>(publishing)</h5>
-                            <ul>
-                                <li data-project="1">
-                                    <a href="javascript:void(0)">
-                                        <span class="check"></span>
-                                        <span class="tit">신협리온브랜치</span>
-                                    </a>
-                                </li>
-                                <li data-project="2">
-                                    <a href="javascript:void(0)">
-                                        <span class="check"></span>
-                                        <span class="tit">저축은행중앙회 50주년 e역사관</span>
-                                    </a>
-                                </li>
-                                <li data-project="3">
-                                    <a href="javascript:void(0)">
-                                        <span class="check"></span>
-                                        <span class="tit">피노유엑스디 홈페이지 리뉴얼</span>
-                                    </a>
-                                </li>
-                                <li data-project="4">
-                                    <a href="javascript:void(0)">
-                                        <span class="check"></span>
-                                        <span class="tit">한국투자저축은행 통합모바일앱/ODS</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="project2 proj-list">
-                            <h5>(front-end)</h5>
-                            <ul>
-                                <li data-project="5">
-                                    <a href="javascript:void(0)">
-                                        <span class="check"></span>
-                                        <span class="tit">CookShare</span>
-                                    </a>
-                                </li>
-                                <li data-project="6">
-                                    <a href="javascript:void(0)">
-                                        <span class="check"></span>
-                                        <span class="tit">Weekend Farm</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="selected-project" class="project-item">
-                        <a id="project-link" class="project-link" href="#">
-                            <div class="thumbnail">
-                                <figure class="view"></figure>
+        <section class="projects">
+            <div class="projectAll" id="project">
+                <h4 class="projects-title">
+                    <p class="left">projects</p>
+                    <p class="right">( publishing && front-end )</p>
+                </h4>
+                <div class="project-wrap contents">
+                    <div class="project-view">
+                        <div class="project-item">
+                            <div class="project1 proj-list">
+                                <h5>(publishing)</h5>
+                                <ul>
+                                    <li data-project="1">
+                                        <a href="javascript:void(0)">
+                                            <span class="check"></span>
+                                            <span class="tit">신협리온브랜치</span>
+                                        </a>
+                                    </li>
+                                    <li data-project="2">
+                                        <a href="javascript:void(0)">
+                                            <span class="check"></span>
+                                            <span class="tit">저축은행중앙회 50주년 e역사관</span>
+                                        </a>
+                                    </li>
+                                    <li data-project="3">
+                                        <a href="javascript:void(0)">
+                                            <span class="check"></span>
+                                            <span class="tit">피노유엑스디 홈페이지 리뉴얼</span>
+                                        </a>
+                                    </li>
+                                    <li data-project="4">
+                                        <a href="javascript:void(0)">
+                                            <span class="check"></span>
+                                            <span class="tit">한국투자저축은행 통합모바일앱/ODS</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="desc">
-                                <strong>프로젝트 이름1</strong>
-                                <span>text</span>
+                            <div class="project2 proj-list">
+                                <h5>(front-end)</h5>
+                                <ul>
+                                    <li data-project="5">
+                                        <a href="javascript:void(0)">
+                                            <span class="check"></span>
+                                            <span class="tit">CookShare</span>
+                                        </a>
+                                    </li>
+                                    <li data-project="6">
+                                        <a href="javascript:void(0)">
+                                            <span class="check"></span>
+                                            <span class="tit">Weekend Farm</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                        </a>
+                        </div>
+                        <div id="selected-project" class="project-item">
+                            <a id="project-link" class="project-link" href="#">
+                                <div class="thumbnail">
+                                    <figure class="view"></figure>
+                                </div>
+                                <div class="desc">
+                                    <strong>프로젝트 이름1</strong>
+                                    <span>text</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="project">
-            <div class="project-wrap">
-                <div class="project-list">
-                    <!-- JavaScript가 여기에 동적으로 프로젝트를 추가합니다 -->
+            <div class="project">
+                <div class="project-wrap">
+                    <div class="project-list">
+                        <!-- JavaScript가 여기에 동적으로 프로젝트를 추가합니다 -->
+                    </div>
                 </div>
             </div>
         </section>

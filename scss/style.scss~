@@ -903,7 +903,6 @@ ul, ol, li {
     &.active{
       p{
         opacity: 1;
-        color: #ddd;
           &.left{
             transform: translateX(-50%);
           }

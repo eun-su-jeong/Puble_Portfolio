@@ -1604,16 +1604,12 @@ ul, ol, li {
   display: inline-block;
   transition: transform 1s ease-out;
 }
-.wrapper main.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
 
 /* about */
 .about {
   position: relative;
+  top: 80vh;
   padding: 0 3rem;
-  margin-top: 50em;
   width: 100%;
   height: 100%;
 }
@@ -1638,7 +1634,6 @@ ul, ol, li {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
-  color: #fff;
   padding-top: 1rem;
   opacity: 0;
   transform: translateY(100%);
@@ -1657,9 +1652,10 @@ ul, ol, li {
 .about .about-wrap .profile {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 30px;
-  padding-top: 30em;
+  padding-top: 52vh;
   transition: opacity 1s ease, transform 1s ease;
 }
 .about .about-wrap .profile.active {
@@ -1667,12 +1663,9 @@ ul, ol, li {
   transform: translateY(0);
 }
 .about .about-wrap .profile .profile-img {
-  width: 20vw;
+  width: 30vw;
 }
-.about .about-wrap .profile .profile-img div {
-  min-width: 400px;
-}
-.about .about-wrap .profile .profile-img div img {
+.about .about-wrap .profile .profile-img img {
   width: 100%;
 }
 .about .about-wrap .profile .profile-text-wrap .profile-text .english {
@@ -1682,6 +1675,7 @@ ul, ol, li {
   font-family: var(--font-title);
   font-size: 2rem;
   color: #fff;
+  white-space: nowrap;
 }
 .about .about-wrap .profile .profile-text-wrap .profile-text .english p:first-child {
   padding-left: 21vw;
@@ -1705,7 +1699,10 @@ ul, ol, li {
 .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .wrap {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 3em;
+  padding: 1rem;
+  border: 1px solid #ddd;
 }
 .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info h4 {
   font-size: 1.875rem;
@@ -1731,23 +1728,26 @@ ul, ol, li {
 .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info ul li span:last-child {
   flex: 1;
   text-align: left;
+  word-break: keep-all;
 }
 .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info .skill-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info .skill-list .skill-group {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 2rem;
 }
 .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info .skill-list .skill-group .skill-category {
+  width: 12rem;
+  padding: 2px;
   font-size: 1rem;
   font-weight: 600;
   text-align: left;
-  width: 12rem;
   white-space: nowrap;
+  background-color: #fff;
 }
 .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info .skill-list .skill-group ul li {
   flex: 1 1 auto;
@@ -1758,22 +1758,36 @@ ul, ol, li {
 /* skills */
 .skills {
   position: relative;
-  margin-top: 20em;
+  margin-top: 60em;
   padding: 0 3rem 5em;
   height: 100%;
   max-height: 100vh;
 }
 .skills h4 {
   font-family: var(--font-title);
-  font-size: 5vw;
+  font-size: 6em;
   font-weight: 400;
   text-transform: uppercase;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
   line-height: 1;
   color: #222;
 }
+.skills .desc-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.skills .desc-wrap p {
+  word-break: keep-all;
+}
+.skills .desc-wrap p:first-child {
+  font-size: 1.5rem;
+}
+.skills .desc-wrap p:last-child {
+  font-size: 1.25rem;
+}
 .skills .swiper-container {
-  margin-top: 10em;
+  margin-top: 20vh;
 }
 .skills .swiper-container .swiper-wrapper {
   display: flex;
@@ -1821,11 +1835,11 @@ ul, ol, li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 65%;
   height: 150px;
 }
 .skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-icon i {
-  font-size: 10rem;
+  font-size: 8em;
 }
 .skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-icon img {
   width: 100%;
@@ -1856,7 +1870,7 @@ ul, ol, li {
   z-index: 2;
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: 1rem;
   background: #D87C5A;
   color: #fff;
   opacity: 0;
@@ -1864,7 +1878,7 @@ ul, ol, li {
 }
 .skills .swiper-container .swiper-wrapper .swiper-slide .tooltip p {
   padding-top: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .skills .swiper-container .swiper-wrapper .swiper-slide .tooltip p::before {
   content: "＊";
@@ -1873,24 +1887,27 @@ ul, ol, li {
 }
 .skills .background-image {
   position: absolute;
-  top: 10%;
+  top: 35vh;
   left: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 80%;
+  aspect-ratio: 1/1;
   background-image: url("../images/bg01.svg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* project */
 .projectAll {
-  margin-top: 30em;
-  padding: 0 3rem;
+  margin-top: 50em;
+  padding: 50em 3rem 0;
   height: auto;
 }
 .projectAll .projects-title {
   position: relative;
+  width: 100%;
   height: 100vh;
   font-family: var(--font-title);
   font-size: 10vw;
@@ -1902,19 +1919,21 @@ ul, ol, li {
   color: #222;
   z-index: -1;
 }
+.projectAll .projects-title.active p {
+  opacity: 1;
+  color: #ddd;
+}
+.projectAll .projects-title.active p.left {
+  transform: translateX(-50%);
+}
+.projectAll .projects-title.active p.right {
+  transform: translateX(-36%);
+}
 .projectAll .projects-title p {
   white-space: nowrap;
   opacity: 0;
-  transition: transform 0.3s ease-out, opacity 0.8s ease-out;
-}
-.projectAll .projects-title p.active {
-  opacity: 1;
-}
-.projectAll .projects-title p.active.left {
-  transform: translateX(-50%);
-}
-.projectAll .projects-title p.active.right {
-  transform: translateX(-36%);
+  transition: transform 0.3s ease-out, opacity 0.8s ease-out, color 1s 1s ease-out;
+  color: #222;
 }
 .projectAll .projects-title p.left {
   position: absolute;
@@ -2351,6 +2370,7 @@ footer .footer-content {
   }
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg {
     margin-left: -3.6vw;
+    margin-bottom: -2vh;
   }
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .main-title span {
     font-size: 11vw;
@@ -2358,17 +2378,63 @@ footer .footer-content {
   .wrapper main .about {
     padding: 0 2rem;
   }
+  .wrapper main .about .title-wrap {
+    top: 40vh;
+  }
   .wrapper main .about h4 {
     font-size: 4rem;
   }
   .wrapper main .about .about-wrap .profile {
+    padding-top: 42vh;
+  }
+  .wrapper main .about .about-wrap .profile .profile-img {
+    width: 40vw;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text-wrap {
+    width: 100%;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-text .english p {
+    white-space: initial;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-info-wrap {
     flex-direction: column;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info .skill-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-info-wrap .profile-info .skill-list .skill-group .skill-category {
+    display: inline-block;
+  }
+  .wrapper main .skills .desc-wrap {
+    flex-direction: row;
+    width: 80%;
+  }
+  .wrapper main .skills .desc-wrap p:first-child {
+    font-size: 1.5rem;
+  }
+  .wrapper main .skills .desc-wrap p:last-child {
+    font-size: 1.25rem;
+  }
+  .wrapper main .skills .swiper-container .swiper-wrapper .swiper-slide .tooltip {
+    padding: 1.2rem;
+  }
+  .wrapper main .skills .swiper-container .swiper-wrapper .swiper-slide .tooltip p {
+    font-size: 1rem;
+  }
+  .wrapper main .skills .swiper-container .swiper-wrapper .swiper-slide .skill-wrap .skill-icon i {
+    font-size: 7rem;
   }
   .wrapper main .projectAll {
     padding: 0 2rem;
   }
   .wrapper main .projectAll h4 {
-    font-size: 4rem;
+    font-size: 14vw;
+    letter-spacing: -0.3rem;
+  }
+  .wrapper main .projectAll h4 p:last-child {
+    top: 15vw;
+    font-size: 6vw;
   }
   .wrapper main .projectAll .project-wrap .project-view {
     flex-direction: column;
@@ -2456,14 +2522,11 @@ footer .footer-content {
   .wrapper main .about {
     padding: 0 1rem;
   }
-  .wrapper main .about h4 {
-    font-size: 2.5rem;
-  }
   .wrapper main .about .about-wrap .profile {
     flex-direction: column;
   }
   .wrapper main .about .about-wrap .profile .profile-img {
-    width: 100%;
+    width: 60vw;
   }
   .wrapper main .about .about-wrap .profile .profile-img div {
     min-width: 200px;
@@ -2471,21 +2534,41 @@ footer .footer-content {
   .wrapper main .about .about-wrap .profile .profile-img div img {
     width: 100%;
   }
-  .wrapper main .about .about-wrap .profile .profile-text p {
-    font-size: 1.125rem;
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-text .english p {
+    font-size: 1.875rem;
   }
-  .wrapper main .about .about-wrap .profile .profile-text .profile-stack h5 {
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-text .english p:first-child {
+    padding-left: 18vw;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-text .korean p {
+    letter-spacing: -2px;
+    word-break: keep-all;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-text .profile-stack h5 {
     font-size: 1.25rem;
   }
-  .wrapper main .about .about-wrap .profile .profile-text .profile-stack .stack-list li {
+  .wrapper main .about .about-wrap .profile .profile-text-wrap .profile-text .profile-stack .stack-list li {
     padding: 4px 8px;
+    font-size: 1rem;
+  }
+  .wrapper main .skills .desc-wrap {
+    width: 100%;
+  }
+  .wrapper main .skills .desc-wrap p:first-child {
+    font-size: 1.2rem;
+  }
+  .wrapper main .skills .desc-wrap p:last-child {
     font-size: 1rem;
   }
   .wrapper main .projectAll {
     padding: 0 1rem;
   }
-  .wrapper main .projectAll h4 {
-    font-size: 2.5rem;
+  .wrapper main .projectAll h4 p {
+    letter-spacing: -0.2rem;
+  }
+  .wrapper main .projectAll h4 p:last-child {
+    top: 17vw;
+    font-size: 6vw;
   }
   .wrapper main .projectAll .project-wrap .project-view {
     flex-direction: column;
@@ -2640,7 +2723,7 @@ footer .footer-content {
     bottom: 6vh;
   }
   .wrapper main .about {
-    padding: 0 2rem;
+    padding: 0 1.25rem;
   }
   .wrapper main .about h4 {
     font-size: 4rem;
@@ -2648,11 +2731,32 @@ footer .footer-content {
   .wrapper main .about .about-wrap .profile {
     flex-direction: column;
   }
+  .wrapper main .about .about-wrap .profile .profile-text .english p {
+    font-size: 1.875rem;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text .english p:first-child {
+    padding-left: 2vw;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text .english p:first-child {
+    padding-left: 18vw;
+  }
+  .wrapper main .about .about-wrap .profile .profile-text .korean p {
+    font-size: 1.2rem;
+    letter-spacing: -2px;
+    word-break: keep-all;
+  }
+  .wrapper main .skills {
+    padding: 0 2rem 5em;
+  }
   .wrapper main .projectAll {
     padding: 0 2rem;
   }
   .wrapper main .projectAll h4 {
-    font-size: 4rem;
+    font-size: 17vw;
+  }
+  .wrapper main .projectAll h4 p:last-child {
+    top: 20vw;
+    font-size: 6vw;
   }
   .wrapper main .projectAll .project-wrap .project-view {
     flex-direction: column;

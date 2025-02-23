@@ -90,44 +90,34 @@ const headerEffect = () => {
     });
 }
 
-
-/* swiper */
-const skillSwiper = () =>{
-    new Swiper('.swiper-container', {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        loop: false,
-        freeMode: true,
-        mousewheel: {
-            enabled: true,
-            sensitivity: 1,
-            releaseOnEdges: true
-        },
-        breakpoints: {
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 5 },
-        }
-    });
-}
-
 /* scrollEffect */
 const scrollEffect = () => {
+    // title
     const subText = document.querySelector('.sub-tit');
     const iamText = document.querySelector('.iam');
     const readyText = document.querySelector('.ready');
+
+    // about
     const titleWrap = document.querySelector('.about .title-wrap');
+    const titleName = document.querySelector('.about .title-wrap .title-name');
+    const aboutText = document.querySelectorAll('.profile-text p');
     const profileImg = document.querySelector('.profile-img');
+    const profileInfo = document.querySelector('.profile-info-wrap');
+
+    // background & color
     const body = document.body;
     const header = document.querySelector('header');
     const headerNav = document.querySelectorAll('header > nav > ul > li > a');
-    const aboutText = document.querySelectorAll('.profile-text p');
-    const profileInfo = document.querySelector('.profile-info-wrap');
     const skillSection = document.querySelector('.skills');
+    const projects = document.querySelector('.projects');
     const projectAllSection = document.querySelector('.projectAll');
     const projectSection = document.querySelector('.project');
+    const contactSection = document.querySelector('.contact');
+
+    // project
     const projectTitle = document.querySelector('.projects-title');
 
+    // scroll location
     const scrollStart = window.innerHeight * 0.1;
     const scrollMiddle = window.innerHeight * 0.4;
     const scrollExpand = window.innerHeight * 0.7;
@@ -135,6 +125,7 @@ const scrollEffect = () => {
     const releasePoint = window.innerHeight * 1.2;
     const restorePoint = window.innerHeight * 2;
 
+    // boolean
     let isFixed = false;
     let isTitleFixed = false;
     let isSkillVisible = false;
@@ -150,8 +141,8 @@ const scrollEffect = () => {
                 }else if(entry.target === projectSection){
                     isProjectVisible = entry.isIntersecting;
                 }else if(entry.target === projectAllSection){
-                isProjectAllVisible = entry.isIntersecting;
-            }
+                    isProjectAllVisible = entry.isIntersecting;
+                }
             });
 
             if(isProjectVisible){
@@ -173,30 +164,63 @@ const scrollEffect = () => {
     if (projectSection) observer.observe(projectSection);
     if (projectAllSection) observer.observe(projectAllSection);
 
-    const projectObserver = new IntersectionObserver((entries) => {
+    const projectsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 projectTitle.classList.add('active');
-                // projectTitle.style.position = "fixed";  // 🔥 `fixed` 적용
-                // projectTitle.style.top = "0";
-                // projectTitle.style.left = "0";
-                // projectTitle.style.width = "100%";
+                projectTitle.style.position = "fixed";
+                projectTitle.style.top = "20vh";
+                projectTitle.style.left = "50%";
+                projectTitle.style.transform = "translateX(-50%)";
+                projectTitle.style.width = "100%";
+                projectTitle.style.height = "auto";
+                projectTitle.style.opacity = "1";
 
                 document.querySelectorAll('.projects-title p').forEach(p => {
                     p.classList.add('active');
+                    p.style.transition = 'transform 0.3s ease-out, opacity 0.8s ease-out ,color 1s 1s ease-out';
                 });
-            }else{
+            }else {
                 projectTitle.classList.remove('active');
-                // projectTitle.style.position = "relative"; // 💡 원래대로 복구
-
                 document.querySelectorAll('.projects-title p').forEach(p => {
                     p.classList.remove('active');
+                    p.style.transition = 'transform 0.3s ease-out, opacity 0.8s ease-out';
                 });
+            }
+        });
+    }, { threshold: 0.05 , rootMargin: "-5% 0px -5% 0px"});
+
+    let lastScrollY = window.scrollY; // 🔥 이전 스크롤 위치 저장
+
+    const projectEndObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            let currentScrollY = window.scrollY;
+
+            if (entry.isIntersecting) {
+                projectTitle.style.opacity = "0";
+                projectTitle.style.pointerEvents = "none";
+
+            } else {
+                projectTitle.style.opacity = "1";
+                projectTitle.style.pointerEvents = "auto";
             }
         });
     }, { threshold: 0.1 });
 
-    if (projectAllSection) projectObserver.observe(projectAllSection);
+    window.addEventListener("scroll", () => {
+        let currentScrollY = window.scrollY;
+
+        if (currentScrollY === 0) {
+            console.log("🔝 스크롤이 맨 위에 도달 → 색상 `#222`로 변경");
+            projectTitle.style.transition = "color 0.8s ease-in-out";
+            projectTitle.style.color = "#222";
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
+    if (projects) projectsObserver.observe(projects);
+    if (contactSection) projectEndObserver.observe(contactSection);
 
 
     window.addEventListener('scroll', () => {
@@ -282,6 +306,7 @@ const scrollEffect = () => {
                     text.style.color = '#fff';
                 });
                 profileInfo.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                titleName.style.color = '#fff';
 
             } else {
                 readyText.style.color = '#222';
@@ -290,6 +315,7 @@ const scrollEffect = () => {
                 headerNav.forEach(nav => {
                     nav.style.color = '#222';
                 });
+                titleName.style.color = '#222';
             }
         }
 
@@ -343,8 +369,25 @@ const scrollEffect = () => {
     });
 }
 
-
-
+/* swiper */
+const skillSwiper = () =>{
+    new Swiper('.swiper-container', {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        loop: false,
+        freeMode: true,
+        mousewheel: {
+            enabled: true,
+            sensitivity: 1,
+            releaseOnEdges: true
+        },
+        breakpoints: {
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+        }
+    });
+}
 
 /* mouse effect */
 const mouseEffect = () => {
@@ -425,8 +468,6 @@ const topButton = () => {
         });
     });
 }
-
-
 
 /* scroll animation & lazy loading & IntersectionObserver selected project */
 const projectAnimation = () => {
