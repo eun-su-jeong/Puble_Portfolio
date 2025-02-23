@@ -979,7 +979,13 @@ ul, ol, li {
       width: 100%;
 
       .project-item {
-        .project1 {
+        h4{
+          margin-bottom: 1em;
+          font-family: var(--font-title);
+          font-size: 2rem;
+          text-transform: uppercase;
+        }
+        .project-list01 {
           h5 {
             font-size: 1rem;
             font-weight: 400;
@@ -1031,7 +1037,7 @@ ul, ol, li {
           }
         }
 
-        .project2 {
+        .project-list02 {
           margin-top: 2em;
 
           h5 {
@@ -1091,6 +1097,10 @@ ul, ol, li {
           width: 100%;
           height: 100%;
 
+          .date{
+            margin-bottom: .5rem;
+          }
+
           .thumbnail {
             width: 100%;
             min-height: 400px;
@@ -1136,7 +1146,7 @@ ul, ol, li {
               transition: opacity .5s ease-in-out;
 
             }
-            
+
             .tech-stack {
               .tech-badge {
                 display: inline-block;
@@ -1841,7 +1851,7 @@ footer {
             align-items: normal;
 
             .project-item {
-              .project1 {
+              .project-list01 {
                 ul {
                   li {
                     font-size: 1.125rem;
@@ -1849,7 +1859,7 @@ footer {
                 }
               }
 
-              .project2 {
+              .project-list02 {
                 ul {
                   li {
                     font-size: 1.125rem;

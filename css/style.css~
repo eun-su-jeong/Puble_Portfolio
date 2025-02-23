@@ -1985,13 +1985,6 @@ ul, ol, li {
   gap: 2rem;
   width: 100%;
 }
-.projectAll .project-wrap .project-view .project-item h4 {
-  margin-bottom: 1em;
-  font-family: var(--font-title);
-  font-size: 2rem;
-  color: #222;
-  text-transform: uppercase;
-}
 .projectAll .project-wrap .project-view .project-item .project-list01 h5 {
   font-size: 1rem;
   font-weight: 400;
@@ -2029,21 +2022,21 @@ ul, ol, li {
 .projectAll .project-wrap .project-view .project-item .project-list01 ul li:hover .check:after, .projectAll .project-wrap .project-view .project-item .project-list01 ul li.active .check:after {
   transform: translate(-50%, -50%) scale(2);
 }
-.projectAll .project-wrap .project-view .project-item .project-list02 {
+.projectAll .project-wrap .project-view .project-item .project2 {
   margin-top: 2em;
 }
-.projectAll .project-wrap .project-view .project-item .project-list02 h5 {
+.projectAll .project-wrap .project-view .project-item .project2 h5 {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1em;
   color: #222;
 }
-.projectAll .project-wrap .project-view .project-item .project-list02 ul li {
+.projectAll .project-wrap .project-view .project-item .project2 ul li {
   font-size: 1.5rem;
   margin-bottom: 0.5em;
 }
-.projectAll .project-wrap .project-view .project-item .project-list02 ul li a .check {
+.projectAll .project-wrap .project-view .project-item .project2 ul li a .check {
   display: inline-block;
   position: relative;
   width: 1rem;
@@ -2052,7 +2045,7 @@ ul, ol, li {
   border-radius: 50%;
   transition: all 0.5s ease;
 }
-.projectAll .project-wrap .project-view .project-item .project-list02 ul li a .check:after {
+.projectAll .project-wrap .project-view .project-item .project2 ul li a .check:after {
   display: block;
   position: absolute;
   left: 50%;
@@ -2066,7 +2059,7 @@ ul, ol, li {
   border-radius: 50%;
   transition: all 0.2s ease;
 }
-.projectAll .project-wrap .project-view .project-item .project-list02 ul li:hover .check:after, .projectAll .project-wrap .project-view .project-item .project-list02 ul li.active .check:after {
+.projectAll .project-wrap .project-view .project-item .project2 ul li:hover .check:after, .projectAll .project-wrap .project-view .project-item .project2 ul li.active .check:after {
   transform: translate(-50%, -50%) scale(2);
 }
 .projectAll .project-wrap .project-view .project-item a {
@@ -2590,7 +2583,7 @@ footer .footer-content {
   .wrapper main .projectAll .project-wrap .project-view .project-item .project-list01 ul li {
     font-size: 1.125rem;
   }
-  .wrapper main .projectAll .project-wrap .project-view .project-item .project-list02 ul li {
+  .wrapper main .projectAll .project-wrap .project-view .project-item .project2 ul li {
     font-size: 1.125rem;
   }
   .wrapper main .projectAll .project-wrap .project-view .project-item a .desc strong {

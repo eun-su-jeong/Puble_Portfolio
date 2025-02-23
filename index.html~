@@ -31,6 +31,7 @@
 </div>
 
 <div class="wrapper">
+    <!-- header -->
     <header id="header">
         <h1>
             <a href="./index.html" id="dynamic-text" data-desktop="EUNSUJEONG" data-mobile="EUN">
@@ -48,6 +49,7 @@
         </nav>
     </header>
     <main>
+        <!-- 메인타이틀 -->
         <section class="hero">
             <div class="hero-wrap">
                 <div class="hero-tit">
@@ -74,6 +76,7 @@
                 </div>
             </div>
         </section>
+        <!-- about -->
         <section class="about" id="about">
             <div class="about-wrap">
                 <div class="title-wrap">
@@ -176,6 +179,7 @@
                 </div>
             </div>
         </section>
+        <!-- skills -->
         <section class="skills">
             <h4 class="title-name">Skills</h4>
             <div class="desc-wrap">
@@ -395,16 +399,21 @@
             </div>
             <div class="background-image"></div>
         </section>
+        <!-- 프로젝트 -->
         <section class="projects">
+            <!-- 프로젝트 뷰 -->
             <div class="projectAll" id="project">
+                <!-- 프로젝트 타이틀 -->
                 <h4 class="projects-title">
                     <p class="left">projects</p>
                     <p class="right">( publishing && front-end )</p>
                 </h4>
                 <div class="project-wrap contents">
                     <div class="project-view">
+                        <!-- 프로젝트 리스트 -->
                         <div class="project-item">
-                            <div class="project1 proj-list">
+                            <h4>showing</h4>
+                            <div class="project-list01 proj-list">
                                 <h5>(publishing)</h5>
                                 <ul>
                                     <li data-project="1">
@@ -433,7 +442,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="project2 proj-list">
+                            <div class="project-list02 proj-list">
                                 <h5>(front-end)</h5>
                                 <ul>
                                     <li data-project="5">
@@ -451,7 +460,9 @@
                                 </ul>
                             </div>
                         </div>
+                        <!-- 프로젝트 뷰어 -->
                         <div id="selected-project" class="project-item">
+                            <h4>all projects</h4>
                             <a id="project-link" class="project-link" href="#">
                                 <div class="date">
                                     <span>text</span>
@@ -461,13 +472,14 @@
                                 </div>
                                 <div class="desc">
                                     <strong>프로젝트 이름1</strong>
-                                    <div>기술스택</div>
+                                    <div class="tech-stack">기술스택</div>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- 프로젝트 -->
             <div class="project">
                 <div class="project-wrap">
                     <div class="project-list">

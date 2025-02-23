@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "신협리온브랜치",
-    "period": "22.11 ~ 23.07",
+    "period": "( 22.11 ~ 23.07 )",
     "link": "./pages/cubank.html",
     "image": "images/mockup_cu7.webp",
     "alt": "신협리온브랜치 프로젝트",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "title": "저축은행중앙회 50주년 e역사관",
-    "period": "22.10 ~ 22.11",
+    "period": "( 22.10 ~ 22.11 )",
     "link": "./pages/sb50th.html",
     "image": "images/mockup_sb2.webp",
     "alt": "저축은행중앙회 50주년 e역사관 프로젝트",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "title": "피노유엑스디 홈페이지 리뉴얼",
-    "period": "22.08 ~ 22.10",
+    "period": "( 22.08 ~ 22.10 )",
     "link": "./pages/piinouxd.html",
     "image": "images/mockup_pn5.webp",
     "alt": "피노유엑스디 홈페이지 리뉴얼 프로젝트",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "title": "한국투자저축은행 통합모바일앱/ODS",
-    "period": "21.06 ~ 22.02",
+    "period": "( 21.06 ~ 22.02 )",
     "link": "./pages/keybank.html",
     "image": "images/mockup_kb5.webp",
     "alt": "한국투자저축은행 통합모바일앱/ODS",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "title": "CookShare",
-    "period": "24.04 ~ 24.05",
+    "period": "( 24.04 ~ 24.05 )",
     "link": "./pages/cookshare.html",
     "image": "images/mockup_cs1.webp",
     "alt": "쿡쉐어 음식공유플랫폼 프로젝트",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "title": "Weekend Farm",
-    "period": "24.02 ~ 24.03",
+    "period": "( 24.02 ~ 24.03 )",
     "link": "./pages/weekendFarm.html",
     "image": "images/mockup_wf1.webp",
     "alt": "주말농장 예약플랫폼 프로젝트",
