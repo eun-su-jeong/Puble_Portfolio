@@ -15,10 +15,8 @@
 <div class="wrapper">
     <header id="header" class="project-header">
         <h1>
-            <a href="../index.html" id="dynamic-text">
-                <span>e</span>
-                <span>u</span>
-                <span>n</span>
+            <a id="dynamic-text" href="../index.html">
+                eunsujeong
             </a>
         </h1>
         <nav>
