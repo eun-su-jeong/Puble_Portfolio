@@ -165,79 +165,82 @@ button {
   font-weight: 700;
   font-style: normal;
 }
-.project-main {
+.wrapper .project-header h1 {
+  font-size: 1rem;
+}
+.wrapper .project-main {
   padding-top: 60px;
 }
-.project-main .intro article {
+.wrapper .project-main .intro article {
   position: relative;
   height: 100%;
 }
-.project-main .intro article .intro-img img {
+.wrapper .project-main .intro article .intro-img img {
   width: 100%;
 }
-.project-main .intro article .title {
+.wrapper .project-main .intro article .title {
   position: absolute;
   left: 0;
   bottom: 2rem;
   padding: 0 1.2rem;
 }
-.project-main .intro article .title h2 {
+.wrapper .project-main .intro article .title h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 6vw;
   font-weight: 800;
   text-transform: uppercase;
 }
-.project-main .overview {
+.wrapper .project-main .overview {
   padding: 1em 4rem 5em 4rem;
 }
-.project-main .overview article {
+.wrapper .project-main .overview article {
   position: relative;
   width: 100%;
   padding-bottom: 5em;
 }
-.project-main .overview article .credit {
+.wrapper .project-main .overview article .credit {
   display: flex;
   justify-content: space-between;
   width: 35vw;
   padding-bottom: 5em;
   font-size: 0.875rem;
 }
-.project-main .overview article .title {
+.wrapper .project-main .overview article .title {
   line-height: 1;
 }
-.project-main .overview article .title h3 {
+.wrapper .project-main .overview article .title h3 {
   line-height: 1.2;
   font-size: 4vw;
   font-weight: 600;
 }
-.project-main .overview article .content {
+.wrapper .project-main .overview article .content {
   display: flex;
   justify-content: flex-end;
   gap: 2em;
   padding-top: 3em;
 }
-.project-main .overview article .content .intention {
+.wrapper .project-main .overview article .content .intention {
   width: 45%;
 }
-.project-main .overview article .content .link a figure {
+.wrapper .project-main .overview article .content .link a figure {
   position: relative;
   padding-bottom: 52%;
   width: 350px;
   border: 8px solid #222;
   border-radius: 4px;
 }
-.project-main .overview article .content .link a figure img {
+.wrapper .project-main .overview article .content .link a figure img {
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-main .overview article .content .link a .piino {
+.wrapper .project-main .overview article .content .link a .piino {
   display: flex;
   flex-direction: column;
 }
-.project-main .overview article .content .link a p {
+.wrapper .project-main .overview article .content .link a p {
   display: inline-flex;
   margin-top: 4px;
   font-size: 1rem;
@@ -245,19 +248,19 @@ button {
   overflow: hidden;
   color: #222;
 }
-.project-main .overview article .content .link a p .arrows {
+.wrapper .project-main .overview article .content .link a p .arrows {
   position: relative;
   display: inline-block;
   width: 0.8rem;
   height: 1.2rem;
 }
-.project-main .overview article .content .link a p .arrows .arrow {
+.wrapper .project-main .overview article .content .link a p .arrows .arrow {
   display: inline-block;
   position: absolute;
   font-size: 0.8rem;
   transition: all 0.4s ease;
 }
-.project-main .overview article .content .link a:hover .arrows .arrow {
+.wrapper .project-main .overview article .content .link a:hover .arrows .arrow {
   animation: moveUp 1s linear infinite 0.5s;
 }
 @keyframes moveUp {
@@ -278,54 +281,54 @@ button {
     left: 0;
   }
 }
-.project-main .overview article .content .intention .desc {
+.wrapper .project-main .overview article .content .intention .desc {
   font-size: 1.5rem;
 }
-.project-main .showing article .title {
+.wrapper .project-main .showing article .title {
   margin-top: 1rem;
   line-height: 1;
 }
-.project-main .showing article .title h3 {
+.wrapper .project-main .showing article .title h3 {
   font-size: 4vw;
   font-weight: 600;
   line-height: 1.3;
   padding: 0 4rem;
 }
-.project-main .showing article .content .desc {
+.wrapper .project-main .showing article .content .desc {
   display: block;
   margin-top: 0.5rem;
   padding: 0 1rem;
   font-size: 1.25rem;
   text-transform: uppercase;
 }
-.project-main .showing article .content figure {
+.wrapper .project-main .showing article .content figure {
   width: 100%;
 }
-.project-main .showing article .content figure img {
+.wrapper .project-main .showing article .content figure img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-main .showing article .content .images ul,
-.project-main .showing article .content .images-list {
+.wrapper .project-main .showing article .content .images ul,
+.wrapper .project-main .showing article .content .images-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 4rem;
 }
-.project-main .showing article .content .images ul li,
-.project-main .showing article .content .images ul .imges-item,
-.project-main .showing article .content .images-list li,
-.project-main .showing article .content .images-list .imges-item {
+.wrapper .project-main .showing article .content .images ul li,
+.wrapper .project-main .showing article .content .images ul .imges-item,
+.wrapper .project-main .showing article .content .images-list li,
+.wrapper .project-main .showing article .content .images-list .imges-item {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.project-main .showing article .content .images ul li .image-box,
-.project-main .showing article .content .images ul .imges-item .image-box,
-.project-main .showing article .content .images-list li .image-box,
-.project-main .showing article .content .images-list .imges-item .image-box {
+.wrapper .project-main .showing article .content .images ul li .image-box,
+.wrapper .project-main .showing article .content .images ul .imges-item .image-box,
+.wrapper .project-main .showing article .content .images-list li .image-box,
+.wrapper .project-main .showing article .content .images-list .imges-item .image-box {
   position: relative;
   width: 100%;
   aspect-ratio: 375/667;
@@ -333,28 +336,28 @@ button {
   border: 10px solid #222;
   overflow: hidden;
 }
-.project-main .showing article .content .images ul li .image-box .image,
-.project-main .showing article .content .images ul li .image-box figure,
-.project-main .showing article .content .images ul .imges-item .image-box .image,
-.project-main .showing article .content .images ul .imges-item .image-box figure,
-.project-main .showing article .content .images-list li .image-box .image,
-.project-main .showing article .content .images-list li .image-box figure,
-.project-main .showing article .content .images-list .imges-item .image-box .image,
-.project-main .showing article .content .images-list .imges-item .image-box figure {
+.wrapper .project-main .showing article .content .images ul li .image-box .image,
+.wrapper .project-main .showing article .content .images ul li .image-box figure,
+.wrapper .project-main .showing article .content .images ul .imges-item .image-box .image,
+.wrapper .project-main .showing article .content .images ul .imges-item .image-box figure,
+.wrapper .project-main .showing article .content .images-list li .image-box .image,
+.wrapper .project-main .showing article .content .images-list li .image-box figure,
+.wrapper .project-main .showing article .content .images-list .imges-item .image-box .image,
+.wrapper .project-main .showing article .content .images-list .imges-item .image-box figure {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.project-main .showing article .content .images ul li .image-box .image img,
-.project-main .showing article .content .images ul li .image-box figure img,
-.project-main .showing article .content .images ul .imges-item .image-box .image img,
-.project-main .showing article .content .images ul .imges-item .image-box figure img,
-.project-main .showing article .content .images-list li .image-box .image img,
-.project-main .showing article .content .images-list li .image-box figure img,
-.project-main .showing article .content .images-list .imges-item .image-box .image img,
-.project-main .showing article .content .images-list .imges-item .image-box figure img {
+.wrapper .project-main .showing article .content .images ul li .image-box .image img,
+.wrapper .project-main .showing article .content .images ul li .image-box figure img,
+.wrapper .project-main .showing article .content .images ul .imges-item .image-box .image img,
+.wrapper .project-main .showing article .content .images ul .imges-item .image-box figure img,
+.wrapper .project-main .showing article .content .images-list li .image-box .image img,
+.wrapper .project-main .showing article .content .images-list li .image-box figure img,
+.wrapper .project-main .showing article .content .images-list .imges-item .image-box .image img,
+.wrapper .project-main .showing article .content .images-list .imges-item .image-box figure img {
   display: block;
   position: absolute;
   top: 0;
@@ -363,37 +366,37 @@ button {
   height: auto;
   object-fit: cover;
 }
-.project-main .showing01 article .content figure {
+.wrapper .project-main .showing01 article .content figure {
   width: 100%;
 }
-.project-main .showing01 article .content figure img {
+.wrapper .project-main .showing01 article .content figure img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-main .showing01 article .content .desc {
+.wrapper .project-main .showing01 article .content .desc {
   display: block;
   margin-top: 1rem;
   padding: 0 1rem;
   font-size: 0.875rem;
   text-transform: uppercase;
 }
-.project-main .showing02 {
+.wrapper .project-main .showing02 {
   padding: 3em 0;
 }
-.project-main .showing02 article {
+.wrapper .project-main .showing02 article {
   padding: 0 4rem;
 }
-.project-main .showing02 article .content {
+.wrapper .project-main .showing02 article .content {
   display: flex;
   justify-content: flex-start;
   gap: 8rem;
 }
-.project-main .showing02 article .content .intention {
+.wrapper .project-main .showing02 article .content .intention {
   width: 50vw;
 }
-.project-main .showing02 article .content .intention .desc {
+.wrapper .project-main .showing02 article .content .intention .desc {
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -402,24 +405,24 @@ button {
   padding: 2em 0;
   font-size: 1.5rem;
 }
-.project-main .showing02 article .content .intention .desc .tit {
+.wrapper .project-main .showing02 article .content .intention .desc .tit {
   font-family: var(--font-title);
   font-weight: 600;
   padding-bottom: 10px;
   font-size: 1.625rem;
 }
-.project-main .showing02 article .content .images {
+.wrapper .project-main .showing02 article .content .images {
   width: 30vw;
 }
-.project-main .showing02 article .content .images ul {
+.wrapper .project-main .showing02 article .content .images ul {
   display: flex;
   flex-direction: column;
 }
-.project-main .showing02 article .content .images ul li {
+.wrapper .project-main .showing02 article .content .images ul li {
   width: 100%;
   padding: 1rem 0;
 }
-.project-main .showing02 article .content .images ul li .image-box {
+.wrapper .project-main .showing02 article .content .images ul li .image-box {
   position: relative;
   width: 100%;
   aspect-ratio: 375/667;
@@ -427,14 +430,14 @@ button {
   border: 8px solid #222;
   overflow: hidden;
 }
-.project-main .showing02 article .content .images ul li .image-box .image {
+.wrapper .project-main .showing02 article .content .images ul li .image-box .image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.project-main .showing02 article .content .images ul li .image-box .image img {
+.wrapper .project-main .showing02 article .content .images ul li .image-box .image img {
   display: block;
   position: absolute;
   top: 0;
@@ -443,28 +446,28 @@ button {
   height: auto;
   object-fit: cover;
 }
-.project-main .showing02 article .content .images ul li .desc {
+.wrapper .project-main .showing02 article .content .images ul li .desc {
   margin-top: 1rem;
   font-family: var(--font-title);
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
 }
-.project-main .showing03 article {
+.wrapper .project-main .showing03 article {
   padding: 3em 4rem 10em;
 }
-.project-main .showing03 article .content .images ul {
+.wrapper .project-main .showing03 article .content .images ul {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
   gap: 10em;
 }
-.project-main .showing03 article .content .images ul li {
+.wrapper .project-main .showing03 article .content .images ul li {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.project-main .showing03 article .content .images ul li .image-box {
+.wrapper .project-main .showing03 article .content .images ul li .image-box {
   position: relative;
   width: 100%;
   aspect-ratio: 375/667;
@@ -472,14 +475,14 @@ button {
   border: 8px solid #222;
   overflow: hidden;
 }
-.project-main .showing03 article .content .images ul li .image-box .image {
+.wrapper .project-main .showing03 article .content .images ul li .image-box .image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.project-main .showing03 article .content .images ul li .image-box .image img {
+.wrapper .project-main .showing03 article .content .images ul li .image-box .image img {
   display: block;
   position: absolute;
   top: 0;
@@ -488,65 +491,65 @@ button {
   height: auto;
   object-fit: cover;
 }
-.project-main .showing03 article .content .images ul li .desc {
+.wrapper .project-main .showing03 article .content .images ul li .desc {
   margin-top: 2rem;
   font-size: 1.125rem;
   text-transform: uppercase;
 }
-.project-main .showing03 article .content .images ul li .desc .tit {
+.wrapper .project-main .showing03 article .content .images ul li .desc .tit {
   font-family: var(--font-title);
   font-weight: bold;
   font-size: 1.25rem;
 }
-.project-main .showing04 {
+.wrapper .project-main .showing04 {
   padding-top: 3em;
 }
-.project-main .showing04 article {
+.wrapper .project-main .showing04 article {
   position: relative;
   width: 100%;
   padding: 3em 4rem 10em;
   border-top: 1px solid #222;
 }
-.project-main .showing04 article .title {
+.wrapper .project-main .showing04 article .title {
   margin-top: 1rem;
   line-height: 1;
 }
-.project-main .showing04 article .title h3 {
+.wrapper .project-main .showing04 article .title h3 {
   font-size: 4vw;
   line-height: 1.3;
   padding: 0;
 }
-.project-main .showing04 article .content {
+.wrapper .project-main .showing04 article .content {
   display: flex;
   flex-direction: column;
   padding-top: 1em;
 }
-.project-main .showing04 article .content .intention {
+.wrapper .project-main .showing04 article .content .intention {
   display: initial;
   width: 80vw;
 }
-.project-main .showing04 article .content .intention .desc {
+.wrapper .project-main .showing04 article .content .intention .desc {
   font-size: 1.5rem;
   padding: 1rem 0 0;
   margin: 0;
 }
-.project-main .showing04 article .content .intention .desc p {
+.wrapper .project-main .showing04 article .content .intention .desc p {
   padding-bottom: 10px;
 }
-.project-main .showing04 article .content .images-list {
+.wrapper .project-main .showing04 article .content .images-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   position: relative;
   width: 100%;
 }
-.project-main .showing04 article .content .images-list .image-item {
+.wrapper .project-main .showing04 article .content .images-list .image-item {
   flex-shrink: 0;
   flex-grow: 0;
   margin-top: 10em;
   max-width: 100%;
 }
-.project-main .showing04 article .content .images-list .image-item .image-box {
+.wrapper .project-main .showing04 article .content .images-list .image-item .image-box {
   position: relative;
   width: 100%;
   aspect-ratio: 1280/700;
@@ -554,151 +557,151 @@ button {
   border: 10px solid #222;
   overflow: hidden;
 }
-.project-main .showing04 article .content .images-list .image-item .image-box figure {
+.wrapper .project-main .showing04 article .content .images-list .image-item .image-box figure {
   width: 100%;
   height: 100%;
   min-height: 100%;
 }
-.project-main .showing04 article .content .images-list .image-item .image-box figure img {
+.wrapper .project-main .showing04 article .content .images-list .image-item .image-box figure img {
   width: 100%;
   min-height: 100%;
   object-fit: cover;
   height: auto;
 }
-.project-main .showing04 article .content .images-list .image-item .desc {
+.wrapper .project-main .showing04 article .content .images-list .image-item .desc {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.project-main .showing04 article .content .images-list .image-item:nth-of-type(1) {
+.wrapper .project-main .showing04 article .content .images-list .image-item:nth-of-type(1) {
   flex-basis: 40vw;
 }
-.project-main .showing04 article .content .images-list .image-item:nth-of-type(2) {
+.wrapper .project-main .showing04 article .content .images-list .image-item:nth-of-type(2) {
   flex-basis: 40vw;
   margin-left: 2em;
 }
-.project-main .showing04 article .content .images-list .image-item:nth-of-type(3) {
+.wrapper .project-main .showing04 article .content .images-list .image-item:nth-of-type(3) {
   flex-basis: 40vw;
 }
-.project-main .showing04 article .content .images-list .image-item:nth-of-type(4) {
+.wrapper .project-main .showing04 article .content .images-list .image-item:nth-of-type(4) {
   flex-basis: 40vw;
   margin-left: auto;
 }
-.project-main .showing04 article .content .images {
+.wrapper .project-main .showing04 article .content .images {
   width: 100%;
   margin-top: 5em;
 }
-.project-main .showing04 article .content .images ul {
+.wrapper .project-main .showing04 article .content .images ul {
   align-items: center;
 }
-.project-main .showing04 article .content .images ul li {
+.wrapper .project-main .showing04 article .content .images ul li {
   width: 75vw;
 }
-.project-main .showing04 article .content .images ul li .image-box {
+.wrapper .project-main .showing04 article .content .images ul li .image-box {
   aspect-ratio: 1280/700;
   border: 7px solid #222;
 }
-.project-main .showing04 article .content .images ul li .desc {
+.wrapper .project-main .showing04 article .content .images ul li .desc {
   font-weight: bold;
 }
-.project-main .showing04 article .content .images ul li:nth-of-type(1) {
+.wrapper .project-main .showing04 article .content .images ul li:nth-of-type(1) {
   margin-right: auto;
 }
-.project-main .showing04 article .content .images ul li:nth-of-type(2) {
+.wrapper .project-main .showing04 article .content .images ul li:nth-of-type(2) {
   margin-left: auto;
 }
-.project-main .showing04 article .content .images ul li:nth-of-type(4) {
+.wrapper .project-main .showing04 article .content .images ul li:nth-of-type(4) {
   margin-left: auto;
 }
-.project-main .showing05 article {
+.wrapper .project-main .showing05 article {
   position: relative;
   width: 100%;
   padding: 3em 0 10em;
   border-top: 1px solid #222;
 }
-.project-main .showing05 article .content {
+.wrapper .project-main .showing05 article .content {
   display: flex;
   flex-direction: column;
   padding-top: 1em;
 }
-.project-main .showing05 article .content .intention .desc {
+.wrapper .project-main .showing05 article .content .intention .desc {
   padding: 0 4rem;
 }
-.project-main .showing05 article .content .intention .desc p {
+.wrapper .project-main .showing05 article .content .intention .desc p {
   padding-bottom: 10px;
 }
-.project-main .showing05 article .content .images {
+.wrapper .project-main .showing05 article .content .images {
   margin-top: 5em;
 }
-.project-main .showing05 article .content .images figure {
+.wrapper .project-main .showing05 article .content .images figure {
   width: 100%;
 }
-.project-main .showing05 article .content .images figure video {
+.wrapper .project-main .showing05 article .content .images figure video {
   width: 80%;
 }
-.project-main .showing05 article .content .images figure img {
+.wrapper .project-main .showing05 article .content .images figure img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-main .showing05 article .content .images figure.component {
+.wrapper .project-main .showing05 article .content .images figure.component {
   padding: 0 4rem;
 }
-.project-main .showing05 article .content .images figure.component img {
+.wrapper .project-main .showing05 article .content .images figure.component img {
   width: 50vw;
 }
-.project-main .showing05 article .content .images .desc {
+.wrapper .project-main .showing05 article .content .images .desc {
   margin-top: 1rem;
   font-size: 0.875rem;
   text-transform: uppercase;
 }
-.project-main .showing05 article .content .images .desc.component {
+.wrapper .project-main .showing05 article .content .images .desc.component {
   padding: 0 4rem;
 }
-.project-main .showing05 article .content .images.cookshare figure {
+.wrapper .project-main .showing05 article .content .images.cookshare figure {
   padding: 0 4rem;
 }
-.project-main .showing05 article .content .images.cookshare figure img {
+.wrapper .project-main .showing05 article .content .images.cookshare figure img {
   width: 50vw;
 }
-.project-main .showing05 article .content .images.cookshare figure.flex-box {
+.wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box {
   display: flex;
   gap: 1em;
 }
-.project-main .showing05 article .content .images.cookshare figure.flex-box img {
+.wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box img {
   width: 20vw;
 }
-.project-main .showing05 article .content .images.cookshare .desc {
+.wrapper .project-main .showing05 article .content .images.cookshare .desc {
   padding: 0 4rem;
 }
-.project-main .showing06 article {
+.wrapper .project-main .showing06 article {
   position: relative;
   width: 100%;
   padding: 3em 0 10em;
   border-top: 1px solid #222;
 }
-.project-main .showing06 article .content {
+.wrapper .project-main .showing06 article .content {
   display: flex;
   flex-direction: column;
   padding-top: 1em;
 }
-.project-main .showing06 article .content .intention .desc {
+.wrapper .project-main .showing06 article .content .intention .desc {
   padding: 0 4rem;
 }
-.project-main .showing06 article .text-box {
+.wrapper .project-main .showing06 article .text-box {
   margin-top: 5em;
   padding: 0 4rem;
   font-size: 1.25rem;
   line-height: 1.5;
   text-align: justify;
 }
-.project-main .showing06 article .text-box ul {
+.wrapper .project-main .showing06 article .text-box ul {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
 }
-.project-main .showing06 article .text-box ul li .cont {
+.wrapper .project-main .showing06 article .text-box ul li .cont {
   max-width: 300px;
   height: 350px;
   padding: 1em;
@@ -706,21 +709,21 @@ button {
   border: 2px solid #222;
   border-radius: 20px;
 }
-.project-main .showing06 article .text-box ul li .cont .tit {
+.wrapper .project-main .showing06 article .text-box ul li .cont .tit {
   margin-bottom: 0.5em;
   font-size: 1.2rem;
   font-weight: 700;
 }
-.project-main .showing06 article .text-box ul li .cont ul {
+.wrapper .project-main .showing06 article .text-box ul li .cont ul {
   display: flex;
   flex-direction: column;
 }
-.project-main .showing06 article .text-box ul li .cont ul li {
+.wrapper .project-main .showing06 article .text-box ul li .cont ul li {
   position: relative;
   margin-left: 0.5em;
   font-size: 1rem;
 }
-.project-main .showing06 article .text-box ul li .cont ul li::before {
+.wrapper .project-main .showing06 article .text-box ul li .cont ul li::before {
   position: absolute;
   top: 1rem;
   left: -1rem;
@@ -733,20 +736,20 @@ button {
   border-radius: 50%;
   content: "";
 }
-.project-main .showing06 article .text-box .desc {
+.wrapper .project-main .showing06 article .text-box .desc {
   font-size: 0.875rem;
   margin-top: 1rem;
   line-height: 1.5;
 }
-.project-main .footer-credit {
+.wrapper .project-main .footer-credit {
   padding: 1em 1.2rem;
 }
-.project-main .footer-credit article {
+.wrapper .project-main .footer-credit article {
   display: flex;
   border-top: 1px solid #222;
   padding-top: 2em;
 }
-.project-main .footer-credit article .credit {
+.wrapper .project-main .footer-credit article .credit {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -755,12 +758,15 @@ button {
   font-size: 0.875rem;
   text-transform: uppercase;
 }
-.project-main .footer-credit article .credit .name {
+.wrapper .project-main .footer-credit article .credit .name {
   font-family: var(--font-title);
   font-size: 1.25rem;
 }
 
-@media (min-width: 751px) and (max-width: 1200px) {
+@media screen and (max-width: 1023px) {
+  .project-header h1 {
+    font-size: 1rem;
+  }
   .wrapper .project-main .overview {
     padding: 1em 2rem 5em 2rem;
   }
@@ -912,7 +918,10 @@ button {
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 767px) {
+  .project-header h1 {
+    font-size: 1rem;
+  }
   .wrapper header h1 {
     font-size: 1.5rem;
     white-space: nowrap;
