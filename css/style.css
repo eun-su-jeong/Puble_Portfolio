@@ -911,9 +911,6 @@ button {
   .wrapper .project-main .footer-credit article .credit .name {
     font-size: 1rem;
   }
-  .wrapper footer {
-    margin-top: 5rem !important;
-  }
 }
 @media screen and (max-width: 750px) {
   .wrapper header h1 {
@@ -1170,9 +1167,6 @@ button {
   .wrapper .footer-credit article .credit .name {
     font-size: 1rem;
   }
-  .wrapper footer {
-    margin-top: 5rem !important;
-  }
 }
 :root {
   --font: "Pretendard Variable", "Pretendard", -apple-system, "Open Sans", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -1303,8 +1297,8 @@ video.cont,
 .top-button {
   opacity: 0;
   position: fixed;
-  bottom: 10px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
   padding: 20px;
   font-size: 1.2rem;
   font-family: var(--font-text);
@@ -1350,7 +1344,7 @@ video.cont,
 
 .cursor.active {
   font-size: 0.2rem;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   mix-blend-mode: normal;
   background-color: #fff;
   color: #222222;
@@ -1426,6 +1420,7 @@ ul, ol, li {
   max-width: 100vw;
   min-width: 80vw;
   margin: 0 auto;
+  overflow: hidden;
   /* header */
 }
 .wrapper header {
@@ -1593,18 +1588,23 @@ ul, ol, li {
   opacity: 1;
   transform: translateY(0);
 }
-.about .title-wrap {
+.about .about-wrap {
   position: relative;
-  left: 35vw;
+}
+.about .about-wrap .title-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
   top: 50vh;
   overflow: hidden;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
-.about .title-wrap.active .title-name {
+.about .about-wrap .title-wrap.active .title-name {
   opacity: 1;
   transform: translateY(0);
 }
-.about .title-wrap h4 {
+.about .about-wrap .title-wrap h4 {
   font-family: var(--font-title);
   font-size: 5rem;
   font-weight: 700;
@@ -1615,13 +1615,13 @@ ul, ol, li {
   transform: translateY(100%);
   transition: transform 1s, opacity 1s ease-in-out;
 }
-.about .title-wrap h4 span {
+.about .about-wrap .title-wrap h4 span {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-.about .title-wrap h4 span.loaded {
+.about .about-wrap .title-wrap h4 span.loaded {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2083,6 +2083,7 @@ ul, ol, li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 0.5rem;
   transition: opacity 0.5s ease-in-out;
 }
@@ -2207,7 +2208,7 @@ ul, ol, li {
   border-radius: 10px;
 }
 .project .project-wrap .project-list .project-item a .thumbnail .hover-info p {
-  color: #222;
+  color: #fff;
   padding: 10px;
   font-family: var(--font-text);
   font-size: 1.125rem;
@@ -2218,6 +2219,7 @@ ul, ol, li {
 }
 .project .project-wrap .project-list .project-item a .desc {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.5rem;
@@ -2254,30 +2256,44 @@ ul, ol, li {
 }
 
 .contact {
-  padding: 0 4rem;
-  margin-top: 10em;
+  padding: 0 4rem 1rem;
+  margin-top: 30em;
+  background-color: #222;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  opacity: 1 !important;
 }
 .contact .contact-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3em;
   padding-top: 5em;
-  border-top: 1px solid #222;
 }
-.contact .contact-wrap .sub-title h5 {
-  font-family: var(--font-sub);
-  font-size: 2em;
-  text-transform: uppercase;
+.contact .contact-wrap .sub-title {
+  display: flex;
+  justify-content: space-between;
 }
-.contact .contact-wrap .title {
-  padding-top: 5em;
+.contact .contact-wrap .sub-title p {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 2.5vw;
+  color: #fff;
+}
+.contact .contact-wrap .sub-title p.korean {
+  font-size: 1rem;
+  text-align: right;
 }
 .contact .contact-wrap .title h3 {
   font-family: var(--font-title);
-  font-size: 14vw;
+  font-size: 1.5rem;
   font-weight: 800;
   text-transform: uppercase;
-  text-align: right;
   margin-bottom: 0.5em;
   line-height: 1;
-  color: #222;
+  color: #fff;
 }
 .contact .contact-wrap .title h3 span {
   display: inline-block;
@@ -2292,7 +2308,6 @@ ul, ol, li {
 .contact .contact-wrap .contact-info {
   display: flex;
   gap: 1em;
-  padding-bottom: 2em;
 }
 .contact .contact-wrap .contact-info p {
   position: relative;
@@ -2306,10 +2321,11 @@ ul, ol, li {
   font-size: 1.5em;
   font-weight: 500;
   text-transform: uppercase;
-  border: 1px solid #222;
+  border: 1px solid #f9f5ef;
   border-radius: 30px;
   transition: all 0.3s ease;
   overflow: hidden;
+  color: #fff;
 }
 .contact .contact-wrap .contact-info p a i {
   font-size: 0;
@@ -2322,7 +2338,7 @@ ul, ol, li {
   right: 0;
   height: 0;
   width: 100%;
-  background: #222;
+  background: #f9f5ef;
   z-index: -1;
   transition: height 0.3s ease-out;
 }
@@ -2330,16 +2346,16 @@ ul, ol, li {
   height: 100%;
 }
 .contact .contact-wrap .contact-info p a:hover {
-  color: #f9f5ef;
+  color: #222;
 }
 
 footer {
   background-color: #222;
   color: #fff;
   padding: 2rem 0;
-  margin-top: 10rem;
   text-align: center;
   font-size: 0.9rem;
+  margin-top: -1px;
 }
 footer .footer-content {
   max-width: 1920px;
@@ -2418,13 +2434,13 @@ footer .footer-content {
     font-size: 7rem;
   }
   .wrapper main .projectAll {
-    padding: 0 2rem;
+    padding: 30em 2rem 0;
   }
-  .wrapper main .projectAll h4 {
+  .wrapper main .projectAll .projects-title {
     font-size: 14vw;
     letter-spacing: -0.3rem;
   }
-  .wrapper main .projectAll h4 p:last-child {
+  .wrapper main .projectAll .projects-title p:last-child {
     top: 15vw;
     font-size: 6vw;
   }
@@ -2437,19 +2453,15 @@ footer .footer-content {
   }
   .wrapper main .project {
     padding: 0 2rem;
+    margin-top: 20em;
   }
   .wrapper main .project .project-wrap .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
     gap: 4%;
     row-gap: 10rem;
     padding-top: 0;
-    width: 100%;
   }
   .wrapper main .project .project-wrap .project-list .project-item {
-    flex-basis: 48% !important;
-    height: 100%;
+    max-width: 70%;
   }
   .wrapper main .project .project-wrap .project-list .project-item a {
     height: auto;
@@ -2495,21 +2507,41 @@ footer .footer-content {
     font-size: 1rem;
   }
   .wrapper main .hero .hero-wrap {
+    width: 100%;
     justify-content: center;
+    padding: 0 24px;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit {
+    align-items: flex-end;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: normal;
+    gap: 1rem;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit {
+    width: 100%;
   }
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg {
+    width: 28vw;
     margin-bottom: -1vh;
-    margin-left: 11vw;
-    justify-content: center;
+    margin-left: 18vw;
   }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg span {
-    font-size: 2vw;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg span:last-child {
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg span:first-child {
     font-size: 3vw;
   }
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg span:last-child {
+    font-size: 6vw;
+  }
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .main-title span {
-    font-size: 11vw;
+    font-size: 17vw;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .hero-img {
+    max-width: 30vw;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit .sub-tit-wrap {
+    bottom: 6vh;
   }
   .wrapper main .about {
     padding: 0 1rem;
@@ -2552,9 +2584,6 @@ footer .footer-content {
   .wrapper main .skills .desc-wrap p:last-child {
     font-size: 1rem;
   }
-  .wrapper main .projectAll {
-    padding: 0 1rem;
-  }
   .wrapper main .projectAll h4 p {
     letter-spacing: -0.2rem;
   }
@@ -2587,6 +2616,7 @@ footer .footer-content {
   }
   .wrapper main .project .project-wrap .project-list .project-item {
     margin-left: 0;
+    max-width: 100%;
   }
   .wrapper main .project .project-wrap .project-list .project-item a .desc {
     letter-spacing: -1px;
@@ -2611,11 +2641,14 @@ footer .footer-content {
     margin-top: 10em;
   }
   .wrapper main .contact .contact-wrap {
-    padding-top: 3em;
+    padding-top: 0;
   }
-  .wrapper main .contact .contact-wrap .sub-title h5 {
-    font-size: 0.8em;
-    text-align: center;
+  .wrapper main .contact .contact-wrap .sub-title {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .wrapper main .contact .contact-wrap .sub-title p.english {
+    font-size: 1rem;
   }
   .wrapper main .contact .contact-wrap .title {
     padding-top: 3em;
@@ -2641,7 +2674,7 @@ footer .footer-content {
     font-size: 0;
     font-weight: 500;
     text-transform: uppercase;
-    border: 1px solid #222;
+    border: 1px solid #fff;
     border-radius: 30px;
     transition: all 0.3s ease;
     overflow: hidden;
@@ -2671,125 +2704,6 @@ footer .footer-content {
   }
   .wrapper main .contact .contact-wrap .contact-info p a:hover {
     color: #f9f5ef;
-  }
-  .wrapper footer {
-    margin-top: 2em !important;
-  }
-}
-@media screen and (max-width: 479px) {
-  .wrapper main .hero .hero-wrap {
-    width: 100%;
-    justify-content: center;
-    padding: 0 24px;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit {
-    align-items: flex-end;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: normal;
-    gap: 1rem;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit {
-    width: 100%;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg {
-    width: 28vw;
-    margin-bottom: -1vh;
-    margin-left: 18vw;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg span:first-child {
-    font-size: 3vw;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg span:last-child {
-    font-size: 6vw;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .main-title span {
-    font-size: 17vw;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .hero-img {
-    max-width: 30vw;
-  }
-  .wrapper main .hero .hero-wrap .hero-tit .sub-tit-wrap {
-    bottom: 6vh;
-  }
-  .wrapper main .about {
-    padding: 0 1.25rem;
-  }
-  .wrapper main .about h4 {
-    font-size: 4rem;
-  }
-  .wrapper main .about .about-wrap .profile {
-    flex-direction: column;
-  }
-  .wrapper main .about .about-wrap .profile .profile-text .english p {
-    font-size: 1.875rem;
-  }
-  .wrapper main .about .about-wrap .profile .profile-text .english p:first-child {
-    padding-left: 2vw;
-  }
-  .wrapper main .about .about-wrap .profile .profile-text .english p:first-child {
-    padding-left: 18vw;
-  }
-  .wrapper main .about .about-wrap .profile .profile-text .korean p {
-    font-size: 1.2rem;
-    letter-spacing: -2px;
-    word-break: keep-all;
-  }
-  .wrapper main .skills {
-    padding: 0 2rem 5em;
-  }
-  .wrapper main .projectAll {
-    padding: 0 2rem;
-  }
-  .wrapper main .projectAll h4 {
-    font-size: 17vw;
-  }
-  .wrapper main .projectAll h4 p:last-child {
-    top: 20vw;
-    font-size: 6vw;
-  }
-  .wrapper main .projectAll .project-wrap .project-view {
-    flex-direction: column;
-    align-items: normal;
-  }
-  .wrapper main .projectAll .project-wrap .project-view .project-item:nth-of-type(1) {
-    padding-bottom: 5em;
-  }
-  .wrapper main .project {
-    padding: 0 2rem;
-  }
-  .wrapper main .project .project-wrap .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    gap: 4%;
-    row-gap: 10rem;
-    padding-top: 0;
-    width: 100%;
-  }
-  .wrapper main .project .project-wrap .project-list .project-item {
-    flex-basis: 48% !important;
-    height: 100%;
-  }
-  .wrapper main .project .project-wrap .project-list .project-item a {
-    height: auto;
-  }
-  .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(4) {
-    margin-left: 0;
-  }
-  .wrapper main .project .project-wrap .project-list .project-item:nth-of-type(6) {
-    margin-left: 0;
-  }
-  .wrapper main .contact {
-    padding: 0 2rem;
-  }
-  .wrapper main .contact .contact-wrap .sub-title h5 {
-    font-size: 1.5em;
-  }
-  .wrapper main .contact .contact-wrap .contact-info p a i {
-    font-size: 0;
   }
 }
 

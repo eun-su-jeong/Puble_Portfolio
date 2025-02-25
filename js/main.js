@@ -267,6 +267,7 @@ const scrollEffect = () => {
             subText.style.left = "0";
             subText.style.width = "100%";
             subText.style.height = "100vh";
+            subText.style.height = "100vh";
             isFixed = true;
         }
 
@@ -323,7 +324,7 @@ const scrollEffect = () => {
         // `READY`가 완전히 커진 후 서서히 사라짐
         if (currentScroll >= scrollEnd) {
             readyText.style.opacity = 1 - disappearProgress;
-            // titleWrap.style.position = "fixed";
+            titleWrap.style.position = "fixed";
             titleWrap.classList.add('active');
             isTitleFixed = true;
 
@@ -347,18 +348,19 @@ const scrollEffect = () => {
         let titleWrapRect = titleWrap.getBoundingClientRect();
         if (profileImgRect.top <= titleWrapRect.bottom) {
             titleWrap.style.position = "relative";
-            titleWrap.style.left = "33vw";
+            titleWrap.style.right = "initial";
             isTitleFixed = false;
         }else {
-            titleWrap.style.left = "35vw";
+            titleWrap.style.right = "7vw";
         }
 
         const titleWrapObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) {
+
                     titleWrap.style.display = "none";
                 } else {
-                    titleWrap.style.display = "block";
+                    titleWrap.style.display = "flex";
                 }
             });
         }, { threshold: 0.1 });
@@ -380,6 +382,7 @@ const scrollEffect = () => {
                 text.style.color = '#222';
             });
             profileInfo.style.borderColor = 'rgba(34, 34, 34, 0.5)';
+            titleName.style.color ="#222";
         }
     });
 
