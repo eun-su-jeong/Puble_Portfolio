@@ -315,6 +315,13 @@
                   overflow: hidden;
                   //padding: 10px;
 
+                  &.bg1{
+                    background: linear-gradient(to bottom, #003150 54%, #fff 50%);
+                  }
+                  &.bg2{
+                    background: linear-gradient(to bottom, #003150 61%, #fff 50%);
+                  }
+
                   .image {
                     position: absolute;
                     top: 0;

@@ -430,6 +430,12 @@ button {
   border: 8px solid #222;
   overflow: hidden;
 }
+.wrapper .project-main .showing02 article .content .images ul li .image-box.bg1 {
+  background: linear-gradient(to bottom, #003150 54%, #fff 50%);
+}
+.wrapper .project-main .showing02 article .content .images ul li .image-box.bg2 {
+  background: linear-gradient(to bottom, #003150 61%, #fff 50%);
+}
 .wrapper .project-main .showing02 article .content .images ul li .image-box .image {
   position: absolute;
   top: 0;

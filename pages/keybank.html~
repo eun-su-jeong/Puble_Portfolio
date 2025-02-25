@@ -109,7 +109,7 @@
                     <div class="images">
                         <ul>
                             <li>
-                                <div class="image-box bg1">
+                                <div class="image-box bg">
                                     <div class="image">
                                         <img class="keybank" data-src="../images/img_kb1.svg" alt="메인페이지">
                                     </div>
@@ -125,7 +125,7 @@
                                 <p class="desc">2. 상품 페이지</p>
                             </li>
                             <li>
-                                <div class="image-box bg2">
+                                <div class="image-box bg">
                                     <div class="image">
                                         <img class="keybank" data-src="../images/img_kb3.svg" alt="상품상세페이지">
                                     </div>
