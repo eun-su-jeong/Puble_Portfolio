@@ -166,18 +166,18 @@ video.cont,
     }
   }
 }
-
-.skeleton {
-  background-color: $animation-color-start;
-  border-radius: 4px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  @include skeleton-animation($animation-duration, $animation-color-start, $animation-color-end);
-}
+//
+//.skeleton {
+//  background-color: $animation-color-start;
+//  border-radius: 4px;
+//  width: 100%;
+//  height: 100%;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  z-index: 1;
+//  @include skeleton-animation($animation-duration, $animation-color-start, $animation-color-end);
+//}
 
 /* 페이지 전환 */
 .slide-out {
