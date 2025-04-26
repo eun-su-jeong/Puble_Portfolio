@@ -106,16 +106,19 @@ $animation-color-end: #f0f0f0;
   transition: transform .5s ease-out;
 }
 
+
 video.cont,
 .sub-tit.cont {
-  transform: translateY(100%);
+  transform: translateY(200%);
 }
 
-.tit.cont {
+.tit.cont,
+.cont-bottom{
   transform: translateY(-100%);
 }
 
-.cont.page-loaded {
+.cont.page-loaded,
+.cont-bottom.page-loaded {
   transform: translateY(0);
 }
 
@@ -282,13 +285,19 @@ video.cont,
 
 
 /* 공통 */
+.overflow{
+  overflow: visible;
+}
+.overflow-x{
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
 
 body {
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   background-color: #F9F5EF;
   color: #222;
   font-family: var(--font);
@@ -311,7 +320,7 @@ ul, ol, li {
   max-width: 100vw;
   min-width: 80vw;
   margin: 0 auto;
-  overflow: hidden;
+  //overflow: hidden;
 
 
 /* header */
@@ -439,7 +448,7 @@ ul, ol, li {
               margin-bottom: -3vh;
               width: 18vw;
               font-size: 1rem;
-              gap: 24%;
+              gap: 27%;
 
               span {
                 &:first-child{
@@ -454,7 +463,7 @@ ul, ol, li {
               width: 100%;
               span {
                 display: inline-block;
-                font-size: 12vw;
+                font-size: 11.5vw;
                 white-space: nowrap;
               }
             }
@@ -470,6 +479,28 @@ ul, ol, li {
               display: inline-block;
               width: 100%;
               height: auto;
+            }
+          }
+          .cont-bottom{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            font-family: var(--font-title);
+            transition: transform 0.3s linear;
+            text-align: right;
+            text-transform: uppercase;
+            line-height: 1.2;
+            font-weight: 400;
+            p{
+              &:first-child{
+                font-size: 1.5rem;
+
+              }
+              &:last-child{
+                font-size: 1.2rem;
+              }
             }
           }
           .sub-tit-wrap{
@@ -1365,12 +1396,29 @@ footer {
             .title-wrap{
               .tit{
                 .greeting-msg{
-                  margin-left: -3.6vw;
+                  margin-left: -3vw;
                   margin-bottom: -2vh;
                 }
                 .main-title{
                   span{
                     font-size: 11vw;
+                  }
+                }
+              }
+
+              .cont-wrap{
+                .cont-bottom{
+                  font-size: 1rem;
+                  line-height: 1.2;
+                  font-weight: 400;
+                  p{
+                    &:first-child{
+                      font-size: 1.2rem;
+
+                    }
+                    &:last-child{
+                      font-size: 1rem;
+                    }
                   }
                 }
               }
@@ -1586,7 +1634,8 @@ footer {
                 .greeting-msg{
                   width: 28vw;
                   margin-bottom: -1vh;
-                  margin-left: 18vw;
+                  margin-left: 22vw;
+                  gap: 22%;
 
                   span{
                     &:first-child{

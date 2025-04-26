@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const introPageLoad = () => {
     const introSplash = document.getElementById('introSplash');
     const heroImage = document.querySelector('video.cont');
+    const heroDesc = document.querySelector('.hero-img  .cont-bottom');
     const mainTitle = document.querySelector('.tit.cont');
     const subTitle = document.querySelector('.sub-tit.cont');
 
@@ -36,6 +37,10 @@ const introPageLoad = () => {
         setTimeout(() => {
             heroImage.classList.add('page-loaded');
         }, 500);
+
+        setTimeout(() => {
+            heroDesc.classList.add('page-loaded');
+        }, 800);
 
         setTimeout(() => {
             mainTitle.classList.add('page-loaded');
@@ -348,10 +353,10 @@ const scrollEffect = () => {
         let titleWrapRect = titleWrap.getBoundingClientRect();
         if (profileImgRect.top <= titleWrapRect.bottom) {
             titleWrap.style.position = "relative";
-            titleWrap.style.right = "initial";
             isTitleFixed = false;
         }else {
-            titleWrap.style.right = "7vw";
+            titleWrap.style.left = "50%";
+            titleWrap.style.transform = "translateX(-50%)";
         }
 
         const titleWrapObserver = new IntersectionObserver((entries) => {

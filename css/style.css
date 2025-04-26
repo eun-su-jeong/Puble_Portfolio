@@ -402,7 +402,7 @@ button {
   gap: 4rem;
   position: sticky;
   top: 0;
-  padding: 2em 0;
+  padding: 60px 0 2em;
   font-size: 1.5rem;
 }
 .wrapper .project-main .showing02 article .content .intention .desc .tit {
@@ -817,7 +817,7 @@ button {
   }
   .wrapper .project-main .showing02 article .content .intention .desc {
     font-size: 1.25rem;
-    padding: 0;
+    padding: 60px 0 0 0;
   }
   .wrapper .project-main .showing02 article .content .intention .desc .tit {
     font-size: 1.375rem;
@@ -993,7 +993,8 @@ button {
     padding: 0 1rem;
   }
   .wrapper .project-main .showing02 article .content {
-    display: initial;
+    display: flex;
+    flex-direction: column;
   }
   .wrapper .project-main .showing02 article .content .intention {
     width: 100%;
@@ -1264,14 +1265,16 @@ button {
 
 video.cont,
 .sub-tit.cont {
-  transform: translateY(100%);
+  transform: translateY(200%);
 }
 
-.tit.cont {
+.tit.cont,
+.cont-bottom {
   transform: translateY(-100%);
 }
 
-.cont.page-loaded {
+.cont.page-loaded,
+.cont-bottom.page-loaded {
   transform: translateY(0);
 }
 
@@ -1429,13 +1432,20 @@ video.cont,
 }
 
 /* 공통 */
+.overflow {
+  overflow: visible;
+}
+
+.overflow-x {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   position: relative;
-  overflow-x: hidden;
   background-color: #F9F5EF;
   color: #222;
   font-family: var(--font);
@@ -1458,7 +1468,6 @@ ul, ol, li {
   max-width: 100vw;
   min-width: 80vw;
   margin: 0 auto;
-  overflow: hidden;
   /* header */
 }
 .wrapper header {
@@ -1569,7 +1578,7 @@ ul, ol, li {
   margin-bottom: -3vh;
   width: 18vw;
   font-size: 1rem;
-  gap: 24%;
+  gap: 27%;
 }
 .wrapper main .hero .hero-wrap .hero-tit .tit .greeting-msg span:first-child {
   font-size: 0.85vw;
@@ -1582,7 +1591,7 @@ ul, ol, li {
 }
 .wrapper main .hero .hero-wrap .hero-tit .tit .main-title span {
   display: inline-block;
-  font-size: 12vw;
+  font-size: 11.5vw;
   white-space: nowrap;
 }
 .wrapper main .hero .hero-wrap .hero-tit .hero-img {
@@ -1595,6 +1604,25 @@ ul, ol, li {
   display: inline-block;
   width: 100%;
   height: auto;
+}
+.wrapper main .hero .hero-wrap .hero-tit .cont-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-family: var(--font-title);
+  transition: transform 0.3s linear;
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.wrapper main .hero .hero-wrap .hero-tit .cont-bottom p:first-child {
+  font-size: 1.5rem;
+}
+.wrapper main .hero .hero-wrap .hero-tit .cont-bottom p:last-child {
+  font-size: 1.2rem;
 }
 .wrapper main .hero .hero-wrap .hero-tit .sub-tit-wrap .sub-tit {
   display: block;
@@ -2340,11 +2368,22 @@ footer .footer-content {
     justify-content: center;
   }
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg {
-    margin-left: -3.6vw;
+    margin-left: -3vw;
     margin-bottom: -2vh;
   }
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .main-title span {
     font-size: 11vw;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .cont-wrap .cont-bottom {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .cont-wrap .cont-bottom p:first-child {
+    font-size: 1.2rem;
+  }
+  .wrapper main .hero .hero-wrap .hero-tit .title-wrap .cont-wrap .cont-bottom p:last-child {
+    font-size: 1rem;
   }
   .wrapper main .about {
     padding: 0 2rem;
@@ -2480,7 +2519,8 @@ footer .footer-content {
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg {
     width: 28vw;
     margin-bottom: -1vh;
-    margin-left: 18vw;
+    margin-left: 22vw;
+    gap: 22%;
   }
   .wrapper main .hero .hero-wrap .hero-tit .title-wrap .tit .greeting-msg span:first-child {
     font-size: 3vw;
