@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"></noscript>
     <script type="text/javascript" src="../js/common.js"></script>
-    <title>저축은행중앙회 50주년 e역사관</title>
+    <title>Piinouxd 홈페이지 리뉴얼</title>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper" >
     <header id="header" class="project-header">
         <h1>
             <a href="../index.html" id="dynamic-text">
@@ -29,13 +29,13 @@
         </nav>
     </header>
     <main class="project-main">
-        <section class="intro sb">
+        <section class="intro piino">
             <article>
                 <div class="intro-img">
-                    <img data-src="../images/mockup_sb2.webp" alt="sb50th"/>
+                    <img data-src="../images/mockup_pn2.webp" alt="piinouxd" />
                 </div>
                 <div class="title">
-                    <h2>저축은행중앙회</h2>
+                    <h2>홈페이지 리뉴얼</h2>
                 </div>
             </article>
         </section>
@@ -43,8 +43,8 @@
             <article>
                 <div class="credit">
                     <div class="info">
-                        <p class="tit">저축은행중앙회 50주년 E역사관</p>
-                        <p class="client">저축은행중앙회</p>
+                        <p class="tit">PiinoUXD Homepage Renewal</p>
+                        <p class="client">PiinoUXD</p>
                     </div>
                     <div class="browser">
                         <span>(website)</span>
@@ -52,24 +52,26 @@
                 </div>
                 <div class="title">
                     <h3 class="contents">
-                        50주년 E역사관<br/>
+                        피노유엑스디<br/>
                         프로젝트 개요
                     </h3>
                 </div>
                 <div class="content contents">
                     <div class="intention">
                         <p class="desc">
-                            저축은행중앙회 창립 50주년을 기념하는 사이트를 구축했습니다. 기획, 디자인, 개발 전 과정에 참여하여,
-                            50주년을 강조하기 위해 각 페이지에 애니메이션을 적용하고 디자인의 일관성을 유지했습니다.
-                            또한, PC와 모바일 모두에서 최적의 사용자 경험을 제공하기 위해 적응형 웹 디자인을 적용했습니다.
+                            기존에 딱딱했던 회사 홈페이지를 리뉴얼하는 프로젝트에 참여하여, 기획부터 디자인, 개발까지 전 과정을 수행했습니다.
+                            밝고 친화적인 기업 이미지를 반영하기 위해 회사 캐릭터를 제작해 활용하고, 메인 페이지에는 Instagram을 연동하여 회사 분위기를 효과적으로 보여주도록 구성했습니다.
                         </p>
                     </div>
                     <div class="link">
-                        <a href="https://eun-su-jeong.github.io/sb50th/" target="_blank">
+                        <a href="https://eun-su-jeong.github.io/Company-Page/" target="_blank">
                             <figure>
-                                <img data-src="../images/view_sb.webp" alt="저축은행중앙회50주년페이지 이동">
+                                <img data-src="../images/view_pn.webp" alt="피노유엑스디 페이지 이동">
                             </figure>
-                            <p>visit website(<span class="arrows"><span class="arrow">↗</span><span class="arrow">↗</span></span>)</p>
+                            <div class="piino">
+                                <p>visit website(<span class="arrows"><span class="arrow">↗</span><span class="arrow">↗</span></span>)</p>
+                                <p>*현재는 다시 리뉴얼되서 재구성 했습니다*</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -79,9 +81,9 @@
             <article class="contents">
                 <div class="content">
                     <figure>
-                        <img data-src="../images/mockup_sb3.webp" alt="sb50th keyvisual">
+                        <img data-src="../images/mockup_pn3.webp" alt="리뉴얼 전후 사진">
                     </figure>
-                    <p class="desc">50th Anniversary of the Korea Federation of Savings Banks keyvisual</p>
+                    <p class="desc">왼쪽 - before, 오른쪽 - after</p>
                 </div>
             </article>
         </section>
@@ -91,16 +93,16 @@
                     <div class="intention">
                         <div class="desc">
                             <div>
-                                <p class="tit">1. 메인 페이지</p>
-                                <p class="txt">회전하는 애니메이션 비주얼을 적용하여, 50주년의 의미를 강조했습니다.</p>
+                                <p class="tit">1. splash 화면</p>
+                                <p class="txt">페이지 로딩 중에 회사 캐릭터를 활용한 스플래시 화면을 구현해 사용자에게 친근한 인상을 전달했습니다.</p>
                             </div>
                             <div>
-                                <p class="tit">2. 기념사 페이지</p>
-                                <p class="txt">페이지 로드 시 콘텐츠가 자연스럽게 등장하는 애니메이션 효과를 자바스크립트로 구현했습니다.</p>
+                                <p class="tit">2. 메인 페이지</p>
+                                <p class="txt">금융권 IT기업의 디지털 전문성을 표현하기 위해 메인 페이지에 네트워크 콘셉트의 동영상을 삽입하고 구성했습니다.</p>
                             </div>
                             <div>
-                                <p class="tit">3. 엠블럼 페이지</p>
-                                <p class="txt">50주년 기념 로고를 무한대(∞) 형상으로 디자인하고 애니메이션을 통해 이를 표현했습니다.</p>
+                                <p class="tit">3. 메인 페이지 - floating 버튼</p>
+                                <p class="txt">플로팅 버튼에 자주 묻는 질문을 포함하여, 사용자가 언제든지 필요한 정보에 쉽고 빠르게 접근할 수 있도록 구성했습니다.</p>
                             </div>
                         </div>
                     </div>
@@ -109,29 +111,30 @@
                             <li>
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/main_sb.webp" alt="메인페이지">
+                                        <img data-src="../images/img_pn1_m00.webp" alt="스플래쉬 로딩화면">
                                     </div>
                                 </div>
-                                <p class="desc">1. 메인 페이지</p>
-                                <p class="txt">회전하는 애니메이션 비주얼을 적용하여, 50주년의 의미를 강조했습니다.</p>
+                                <p class="desc">1. splash 화면</p>
+                                <p class="txt">페이지 로딩 중에 회사 캐릭터를 활용한 스플래시 화면을 구현해 사용자에게 친근한 인상을 전달했습니다.</p>
                             </li>
                             <li>
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/sub_sb01.webp" alt="기념사페이지">
+                                        <img data-src="../images/img_pn1_m01.webp" alt="메인페이지">
                                     </div>
                                 </div>
-                                <p class="desc">2. 기념사 페이지</p>
-                                <p class="txt">페이지 로드 시 콘텐츠가 자연스럽게 등장하는 애니메이션 효과를 자바스크립트로 구현했습니다.</p>
+                                <p class="desc">2. 메인 페이지</p>
+                                <p class="txt">금융권 IT기업의 디지털 전문성을 표현하기 위해 메인 페이지에 네트워크 콘셉트의 동영상을 삽입하고 구성했습니다.</p>
                             </li>
                             <li>
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/sub_sb02.webp" alt="엠블럼페이지">
+
+                                        <img data-src="../images/img_pn1_m01_1.webp" alt="메인페이지 플로팅버튼">
                                     </div>
                                 </div>
-                                <p class="desc">3. 엠블럼 페이지</p>
-                                <p class="txt">50주년 기념 로고를 무한대(∞) 형상으로 디자인하고 애니메이션을 통해 이를 표현했습니다.</p>
+                                <p class="desc">3. 메인 페이지 - floating 버튼</p>
+                                <p class="txt">플로팅 버튼에 자주 묻는 질문을 포함하여, 사용자가 언제든지 필요한 정보에 쉽고 빠르게 접근할 수 있도록 구성했습니다.</p>
                             </li>
                         </ul>
                     </div>
@@ -146,34 +149,34 @@
                             <li>
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/img_sb4_m01.webp" alt="연혁페이지">
+                                        <img data-src="../images/img_pn1_m03.webp" alt="프로젝트 리스트">
                                     </div>
                                 </div>
                                 <div class="desc">
-                                    <p class="tit">연혁 페이지</p>
-                                    <p class="txt">스크롤 시 각 연도에 sticky 기능을 적용해, 현재 연도가 화면에 고정되도록 구현했습니다.</p>
+                                    <p class="tit">메인 페이지 - project</p>
+                                    <p class="txt">작업물을 직관적으로 탐색할 수 있도록 Swiper를 활용해 슬라이드 구성을 적용했습니다.</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/scroll.webp" alt="숫자로보는50년페이지">
+                                        <img data-src="../images/img_pn5_m.webp" alt="네비게이션">
                                     </div>
                                 </div>
                                 <div class="desc">
-                                    <p class="tit">숫자로 보는 50년 페이지</p>
-                                    <p class="txt">인터랙션 효과를 추가하여 콘텐츠를 효과적으로 보여주고, 정보를 보다 집중적으로 전달했습니다.</p>
+                                    <p class="tit">navigation</p>
+                                    <p class="txt">모바일 환경에 최적화된 네비게이션을 구축하기 위해 햄버거 버튼과 트랜지션 효과를 적용했습니다.</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/img_sb5_m01.webp" alt="50년의이야기페이지">
+                                        <img data-src="../images/img_pn4_m02.webp" alt="회사소식페이지">
                                     </div>
                                 </div>
                                 <div class="desc">
-                                    <p class="tit">50년의 이야기 페이지</p>
-                                    <p class="txt">각 연도를 대표하는 이미지를 Swiper를 활용해 간편하게 탐색할 수 있도록 구현했습니다. </p>
+                                    <p class="tit">Piino News Page</p>
+                                    <p class="txt">Flex를 사용해 반응형으로 작업하여 다양한 기기에서 최적의 화면을 제공합니다.</p>
                                 </div>
                             </li>
                         </ul>
@@ -185,14 +188,16 @@
             <article>
                 <div class="title">
                     <h3 class="contents">
-                        E역사관을 손쉽게 들여다 볼 수 있는<br/>
-                        역사와 연혁
+                        사용자들이 편리하게 쓸 수 있도록<br/>
+                        반응형으로 구현
                     </h3>
                 </div>
-                <div class="content">
+                <div class="content desktop">
                     <div class="intention contents">
                         <p class="desc">
-                            Swiper를 활용해 슬라이더 기능을 추가하여, E역사관의 역사와 연혁을 손쉽게 탐색하고 주요 콘텐츠를 돋보이게 구성했습니다.
+                            사용자들이 편리하게 사이트를 이용할 수 있도록 반응형 디자인을 적용하여,
+                            모바일 환경에서도 쉽게 접근할 수 있도록 구축했습니다.
+                            데스크탑과 모바일 모두에서 최적화된 사용자 경험을 제공합니다.
                         </p>
                     </div>
                     <div class="images">
@@ -200,43 +205,20 @@
                             <li class="contents">
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/img_sb1_1.webp" alt="메인페이지">
+                                        <img data-src="../images/img_pn4.webp" alt="회사소식페이지데스크탑">
                                     </div>
                                 </div>
-                                <p class="desc">메인페이지</p>
+                                <p class="desc">회사소식 페이지</p>
                             </li>
                             <li class="contents">
                                 <div class="image-box">
                                     <div class="image">
-                                        <img data-src="../images/img_sb5.webp" alt="50주년이야기페이지">
+                                        <img data-src="../images/img_pn2.webp" alt="회사소개페이지데스크탑">
                                     </div>
                                 </div>
-                                <p class="desc">50주년 이야기 페이지</p>
+                                <p class="desc">회사 소개 페이지</p>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section class="showing showing05">
-            <article>
-                <div class="title">
-                    <h3 class="contents">
-                        사용자의 편의성을 고려한 인터페이스<br/>
-                        적응형 디자인웹 디자인 적용
-                    </h3>
-                </div>
-                <div class="content">
-                    <div class="intention contents">
-                        <p class="desc">
-                            PC와 모바일 모두를 지원하는 적응형 웹 디자인을 적용하여 일관된 사용자 경험을 제공하는 사용자 친화적인 인터페이스를 구축했습니다.
-                        </p>
-                    </div>
-                    <div class="images contents">
-                        <figure>
-                            <img data-src="../images/mockup_sb.webp" alt="목업이미지">
-                        </figure>
-                        <p class="desc">desktop과 mobile화면 적용 이미지</p>
                     </div>
                 </div>
             </article>
@@ -246,17 +228,17 @@
                 <div class="credit">
                     <div class="info">
                         <p class="tit">(project name)</p>
-                        <p class="name">저축은행중앙회 50주년 E역사관</p>
+                        <p class="name">piinoUXD homepage renewal</p>
                     </div>
                 </div>
                 <div class="credit">
                     <div class="info">
                         <p class="tit">(client)</p>
-                        <p class="name">저축은행중앙회</p>
+                        <p class="name">piinoUXD</p>
                     </div>
                     <div class="info">
                         <p class="tit">(publisher)</p>
-                        <p class="name">EUNSUJEONG</p>
+                        <p class="name">eun sujeong</p>
                     </div>
                 </div>
             </article>

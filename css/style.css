@@ -283,6 +283,7 @@ button {
 }
 .wrapper .project-main .overview article .content .intention .desc {
   font-size: 1.5rem;
+  line-height: 1.5;
 }
 .wrapper .project-main .showing article .title {
   margin-top: 1rem;
@@ -411,6 +412,11 @@ button {
   padding-bottom: 10px;
   font-size: 1.625rem;
 }
+.wrapper .project-main .showing02 article .content .intention .desc .txt {
+  line-height: 1.5;
+  word-break: keep-all;
+  text-transform: initial;
+}
 .wrapper .project-main .showing02 article .content .images {
   width: 30vw;
 }
@@ -434,7 +440,7 @@ button {
   background: linear-gradient(to bottom, #003150 54%, #fff 50%);
 }
 .wrapper .project-main .showing02 article .content .images ul li .image-box.bg2 {
-  background: linear-gradient(to bottom, #003150 61%, #fff 50%);
+  background: linear-gradient(to bottom, #003150 60.5%, #fff 50%);
 }
 .wrapper .project-main .showing02 article .content .images ul li .image-box .image {
   position: absolute;
@@ -459,6 +465,9 @@ button {
   font-weight: bold;
   text-transform: uppercase;
 }
+.wrapper .project-main .showing02 article .content .images ul li .txt {
+  display: none;
+}
 .wrapper .project-main .showing03 article {
   padding: 3em 4rem 10em;
 }
@@ -466,7 +475,7 @@ button {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-  gap: 10em;
+  gap: 5em;
 }
 .wrapper .project-main .showing03 article .content .images ul li {
   display: flex;
@@ -506,6 +515,9 @@ button {
   font-family: var(--font-title);
   font-weight: bold;
   font-size: 1.25rem;
+}
+.wrapper .project-main .showing03 article .content .images ul li .desc .txt {
+  padding-top: 8px;
 }
 .wrapper .project-main .showing04 {
   padding-top: 3em;
@@ -632,6 +644,7 @@ button {
 }
 .wrapper .project-main .showing05 article .content .intention .desc {
   padding: 0 4rem;
+  line-height: 1.5;
 }
 .wrapper .project-main .showing05 article .content .intention .desc p {
   padding-bottom: 10px;
@@ -822,13 +835,13 @@ button {
   .wrapper .project-main .showing02 article .content .intention .desc .tit {
     font-size: 1.375rem;
   }
-  .wrapper .project-main .showing02 article .content .images ul li .desc {
-    font-size: 1.125rem;
-    padding: 0 1rem;
-  }
   .wrapper .project-main .showing02 article .content .images ul li .image-box {
     border: 5px solid #222;
     border-radius: 35px;
+  }
+  .wrapper .project-main .showing02 article .content .images ul li .desc {
+    font-size: 1.125rem;
+    padding: 0 1rem;
   }
   .wrapper .project-main .showing03 article {
     padding: 0 2rem 5em;
@@ -856,6 +869,8 @@ button {
   }
   .wrapper .project-main .showing04 article .content .intention .desc {
     padding: 0;
+    line-height: 1.3;
+    text-transform: initial;
   }
   .wrapper .project-main .showing04 article .content .images ul li .desc {
     padding: 0 1rem;
@@ -868,6 +883,10 @@ button {
   .wrapper .project-main .showing05 article .title h3 {
     padding: 0 2rem;
   }
+  .wrapper .project-main .showing05 article .content .intention .desc {
+    font-size: 1.25rem;
+    padding: 0 2rem;
+  }
   .wrapper .project-main .showing05 article .content .images {
     display: flex;
     flex-direction: column;
@@ -877,8 +896,8 @@ button {
     font-size: 0.75rem;
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing05 article .content .images.cookshare {
-    align-items: center;
+  .wrapper .project-main .showing05 article .content .images .desc.component {
+    padding: 0 1rem;
   }
   .wrapper .project-main .showing05 article .content .images.cookshare figure {
     display: flex;
@@ -890,6 +909,7 @@ button {
   }
   .wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box {
     display: flex;
+    justify-content: flex-start;
     gap: 1em;
   }
   .wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box img {
@@ -898,13 +918,13 @@ button {
   .wrapper .project-main .showing05 article .content .images.cookshare .desc {
     padding: 0;
   }
-  .wrapper .project-main .showing05 article .content figure.component {
+  .wrapper .project-main .showing05 article .content .images figure.component {
     padding: 0;
   }
-  .wrapper .project-main .showing05 article .content figure.component video {
+  .wrapper .project-main .showing05 article .content .images figure.component video {
     width: 100%;
   }
-  .wrapper .project-main .showing05 article .content figure.component img {
+  .wrapper .project-main .showing05 article .content .images figure.component img {
     width: 70vw;
   }
   .wrapper .project-main .showing06 article .title h3 {
@@ -1001,6 +1021,7 @@ button {
   }
   .wrapper .project-main .showing02 article .content .intention .desc {
     font-size: 1rem;
+    display: none;
   }
   .wrapper .project-main .showing02 article .content .intention .desc .tit {
     font-size: 1.125rem;
@@ -1019,6 +1040,11 @@ button {
   .wrapper .project-main .showing02 article .content .images ul li .desc {
     font-size: 0.875rem;
     padding: 0 1rem;
+  }
+  .wrapper .project-main .showing02 article .content .images ul li .txt {
+    display: block;
+    padding: 8px 1rem;
+    font-size: 0.875rem;
   }
   .wrapper .project-main .showing02 article .content .images ul li .image-box {
     border: 6px solid #222;
@@ -1103,49 +1129,49 @@ button {
     word-break: keep-all;
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing05 .content .intention {
+  .wrapper .project-main .showing05 article .content .intention {
     width: 100% !important;
   }
-  .wrapper .project-main .showing05 .content .intention .desc {
+  .wrapper .project-main .showing05 article .content .intention .desc {
     font-size: 1rem;
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing05 .content .images {
+  .wrapper .project-main .showing05 article .content .images {
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing05 .content .images figure.component {
+  .wrapper .project-main .showing05 article .content .images figure.component {
     padding: 0;
   }
-  .wrapper .project-main .showing05 .content .images figure.component video {
+  .wrapper .project-main .showing05 article .content .images figure.component video {
     width: 100%;
   }
-  .wrapper .project-main .showing05 .content .images figure.component img {
+  .wrapper .project-main .showing05 article .content .images figure.component img {
     width: 100%;
   }
-  .wrapper .project-main .showing05 .content .images .desc {
+  .wrapper .project-main .showing05 article .content .images .desc {
     padding: 0 1rem;
     font-size: 0.75rem;
   }
-  .wrapper .project-main .showing05 .content .images .desc.component {
+  .wrapper .project-main .showing05 article .content .images .desc.component {
     padding: 0;
   }
-  .wrapper .project-main .showing05 .content .images.cookshare figure {
+  .wrapper .project-main .showing05 article .content .images.cookshare figure {
     display: flex;
     justify-content: flex-start;
     padding: 0;
   }
-  .wrapper .project-main .showing05 .content .images.cookshare figure img {
+  .wrapper .project-main .showing05 article .content .images.cookshare figure img {
     width: 80vw;
   }
-  .wrapper .project-main .showing05 .content .images.cookshare figure.flex-box {
+  .wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box {
     display: flex;
     justify-content: center;
     gap: 0.5em;
   }
-  .wrapper .project-main .showing05 .content .images.cookshare figure.flex-box img {
+  .wrapper .project-main .showing05 article .content .images.cookshare figure.flex-box img {
     width: 45vw;
   }
-  .wrapper .project-main .showing05 .content .images.cookshare .desc {
+  .wrapper .project-main .showing05 article .content .images.cookshare .desc {
     padding: 0;
   }
   .wrapper .project-main .showing06 article {
@@ -1157,20 +1183,20 @@ button {
     word-break: keep-all;
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing06 .content .intention {
+  .wrapper .project-main .showing06 article .content .intention {
     width: 100% !important;
   }
-  .wrapper .project-main .showing06 .content .intention .desc {
+  .wrapper .project-main .showing06 article .content .intention .desc {
     font-size: 1rem;
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing06 .content .text-box {
+  .wrapper .project-main .showing06 article .content .text-box {
     padding: 0 1rem;
   }
-  .wrapper .project-main .showing06 .content .text-box ul {
+  .wrapper .project-main .showing06 article .content .text-box ul {
     flex-direction: column;
   }
-  .wrapper .project-main .showing06 .content .text-box ul li .cont {
+  .wrapper .project-main .showing06 article .content .text-box ul li .cont {
     max-width: 100%;
     height: auto;
   }
