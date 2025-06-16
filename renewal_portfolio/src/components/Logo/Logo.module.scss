@@ -1,0 +1,29 @@
+/* EUN 로고 */
+.logo {
+  font-weight: bold;
+  animation: logoAppear 0.5s ease forwards;
+  span {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: appearUp 0.4s ease forwards;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+  }
+}
+
+
+
+@keyframes appearUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,115 @@
+.introWrapper {
+  position: fixed;
+  inset: 0;
+  background-color: #f9f5ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.fadeOutUp {
+  animation: fadeOutUp 0.8s ease forwards;
+}
+
+@keyframes fadeOutUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* 원 애니메이션 */
+.circles {
+  display: flex;
+  gap: 2rem;
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #282828;
+    opacity: 0;
+    transform: scale(0);
+    animation: pop 0.4s ease forwards;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+  }
+}
+
+@keyframes pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 인삿말 */
+.greeting {
+  font-size: 2rem;
+  font-weight: 300;
+  animation: fadeInOut 1.5s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* EUN 로고 */
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 5rem;
+  font-weight: bold;
+  animation: logoAppear 0.5s ease forwards;
+
+  span {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: appearUp 0.4s ease forwards;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+  }
+}
+
+@keyframes appearUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

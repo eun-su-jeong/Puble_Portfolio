@@ -1,12 +1,13 @@
+import './styles/global.scss';
+import Header from "@/components/Header/Header.jsx";
+
 function App() {
 
   return (
     <>
-      <header>
-        <h1>포트폴리오</h1>
-      </header>
+     <Header />
       <main>
-        <section class="project">
+        <section>
           <h2>프로젝트</h2>
         </section>
       </main>
