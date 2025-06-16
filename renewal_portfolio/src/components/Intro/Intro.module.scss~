@@ -61,7 +61,6 @@
 .greeting {
   font-size: 2rem;
   font-weight: 300;
-  color: #fff;
   animation: fadeInOut 1.5s ease forwards;
 }
 

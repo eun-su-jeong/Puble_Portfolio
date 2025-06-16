@@ -1,7 +1,9 @@
 import './styles/global.scss';
-import Header from "@/components/Header/Header.jsx";
-import {useState} from "react";
 import Intro from "@/components/Intro/Intro.jsx";
+import Header from "@/components/Header/Header.jsx";
+import Home from "@/pages/Home.jsx";
+import {useState} from "react";
+import Footer from "@/components/Footer/Footer.jsx";
 
 function App() {
     const [showIntro, setShowIntro] = useState(true);
@@ -11,17 +13,11 @@ function App() {
         {showIntro ?(
             <Intro onFinish={() => setShowIntro(false)} />
         ):(
-           <>
+           <div className={'layout'}>
                <Header />
-               <main>
-                   <section>
-                       <h2>프로젝트</h2>
-                   </section>
-               </main>
-               <footer>
-                   <p>&copy; 2025 EUNSUJEONG. All Rights Reserved.</p>
-               </footer>
-           </>
+               <Home/>
+               <Footer/>
+           </div>
         )}
     </>
   )

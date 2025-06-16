@@ -1,19 +1,25 @@
 import './styles/global.scss';
+import Intro from "@/components/Intro/Intro.jsx";
 import Header from "@/components/Header/Header.jsx";
+import Home from "@/pages/Home.jsx";
+import {useState} from "react";
 
 function App() {
+    const [showIntro, setShowIntro] = useState(true);
 
   return (
     <>
-     <Header />
-      <main>
-        <section>
-          <h2>프로젝트</h2>
-        </section>
-      </main>
-      <footer>
-        <p>&copy; 2025 EUNSUJEONG. All Rights Reserved.</p>
-      </footer>
+        {showIntro ?(
+            <Intro onFinish={() => setShowIntro(false)} />
+        ):(
+           <>
+               <Header />
+               <Home/>
+               <footer>
+                   <p>&copy; 2025 EUNSUJEONG. All Rights Reserved.</p>
+               </footer>
+           </>
+        )}
     </>
   )
 }
