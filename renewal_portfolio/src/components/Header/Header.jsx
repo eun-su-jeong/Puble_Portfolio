@@ -1,6 +1,17 @@
 import styles from './Header.module.scss';
 import Logo from "@/components/Logo/Logo.jsx";
+import {useEffect, useState} from "react";
 const Header = () => {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShow(true);
+        }, 1000);
+        return () => clearTimeout(timer);
+
+    }, []);
+
     return (
         <header className={styles.header}>
             <div className={styles.header__inner}>
@@ -10,7 +21,7 @@ const Header = () => {
                     </a>
                 </h1>
                 <nav>
-                    <ul>
+                    <ul className={`${show ? styles.visible : ""}`}>
                         <li><a href="#about">About</a></li>
                         <li><a href="#skill">Skill</a></li>
                         <li><a href="#projects">Projects</a></li>

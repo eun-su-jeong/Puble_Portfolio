@@ -1,0 +1,30 @@
+.aboutSection{
+    position: relative;
+  .aboutContainer{
+    width: 100%;
+    height: 100%;
+
+    .profileWrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.4rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    .imageWrap{
+      width: 20%;
+      img{
+        width: 100%;
+      }
+    }
+    .textWrap{
+      flex: 1;
+      .introduce{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

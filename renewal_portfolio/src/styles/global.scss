@@ -19,6 +19,12 @@ body{
   font-size: 1.6rem; // 1rem = 10px
 }
 
+main{
+  display: flex;
+  flex-direction: column;
+  gap: calc(100vw * 0.10);
+}
+
 .layout{
   display: flex;
   flex-direction: column;
