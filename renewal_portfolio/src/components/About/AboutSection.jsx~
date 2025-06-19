@@ -105,8 +105,8 @@ const AboutSection = () => {
                                     <p className={styles.content}>ELK 빅데이터 분석 및 시각화 개발자 양성과정 수료</p>
 
                                     <ul className={styles.detailList}>
-                                        <li className={styles.detailItem}>Java, Spring Boot 기반 백엔드 개발과 React를 활용한 SPA 프론트엔드 구현</li>
-                                        <li className={styles.detailItem}>주말 농장, 쿡 쉐어 등 실무 프로젝트를 통해 전체 개발 프로세스 경험</li>
+                                        <li className={styles.detailItem}>Java, Spring Boot 기반 백엔드 개발과 React를 활용한 SPA 프론트엔드 구현 역량을 학습</li>
+                                        <li className={styles.detailItem}>주말 농장, 쿡 쉐어 등 실무 프로젝트를 통해 전체 개발 프로세스를 경험</li>
                                     </ul>
                                 </div>
                             </li>
