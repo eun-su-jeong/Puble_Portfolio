@@ -1,0 +1,10 @@
+const Skills = () => {
+    return(
+        <section className={styles.skillsSection}>
+            <div className={`inner ${styles.skillsContainer}`}>
+                <h2 className={styles.title}>김강민 바보 똥꾸멍</h2>
+            </div>
+        </section>
+    )
+}
+export default Skills

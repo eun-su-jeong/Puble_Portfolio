@@ -1,0 +1,145 @@
+@import "@/styles/variables";
+.skillsSection{
+  .skillsContainer{
+    width: 100%;
+
+    .titleWrap{
+      margin-bottom: 3.2rem;
+      .title{
+        font-size: 3.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+     .subtext{
+       display: flex;
+       gap: 1rem;
+       &__box{
+         display: flex;
+         align-items: center;
+         gap: .5rem;
+         cursor: pointer;
+         .colorChip{
+           display: block;
+           width: 14px;
+           height: 14px;
+           border-radius: 50%;
+
+           &[data-level="all"] {
+             background-color: #111;
+           }
+
+           &[data-level="confident"] {
+             background-color: $color-confident;
+           }
+           &[data-level="growing"] {
+             background-color: $color-growing;
+           }
+           &[data-level="learning"] {
+             background-color: $color-learning;
+           }
+         }
+       }
+     }
+    }
+    &__list{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      width: 70%;
+      margin: 0 auto;
+      .skillsCard{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem;
+        border : 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &__info{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 1rem;
+          width: 100%;
+          height: 100%;
+
+          .number{
+            color: #777;
+          }
+
+          .icon{
+            font-size: 10rem;
+            align-self: center;
+          }
+
+          img{
+            width: 10rem;
+            align-self: center;
+
+            &.jsp{
+              width: 50px;
+            }
+            &.jquery{
+              height: 75px;
+            }
+            &.typescript{
+              width:90px;
+            }
+          }
+
+          .name{
+            color: #777;
+          }
+
+        }
+        &__desc {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          padding: 1.6rem;
+          color: #fff;
+          font-size: 1.6rem;
+          opacity: 0;
+          transition: all 0.3s ease;
+
+          ul{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+
+          }
+        }
+
+        &:hover {
+          .skillsCard__desc {
+            opacity: 1;
+          }
+        }
+        &:hover .skillsCard__desc[data-level="confident"] {
+          background-color: $color-confident;
+        }
+        &:hover .skillsCard__desc[data-level="growing"] {
+          background-color: $color-growing;
+        }
+        &:hover .skillsCard__desc[data-level="learning"] {
+          background-color: $color-learning;
+        }
+      }
+    }
+  }
+}
