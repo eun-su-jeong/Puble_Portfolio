@@ -1,19 +1,7 @@
 import styles from './Skills.module.scss'
-import {
-    faCss3Alt,
-    faFigma,
-    faGithub,
-    faHtml5, faJava,
-    faJs,
-    faReact,
-    faSass
-} from "@fortawesome/free-brands-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import jquery from "@/assets/images/jquery.png";
-import springboot from "@/assets/images/springboot.png";
-import jsp from "@/assets/images/jsp.png";
-import mysql from "@/assets/images/mysql.png";
-import typescript from "@/assets/images/typescript.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fontAwesomeIcons } from "@/constants/icons";
+import { techLogos } from "@/constants/techLogos";
 import {useState} from "react";
 const SkillSection = () => {
     const [filter, setFilter] = useState("all")
@@ -21,7 +9,7 @@ const SkillSection = () => {
         {
             id: 1,
             name: "HTML5",
-            icon: <FontAwesomeIcon icon={faHtml5} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.html} className={styles.icon}/>,
             level: "confident",
             description:[
                 "웹 표준과 접근성을 고려한 시맨틱 마크업 작성",
@@ -31,7 +19,7 @@ const SkillSection = () => {
         {
             id: 2,
             name: "CSS3",
-            icon: <FontAwesomeIcon icon={faCss3Alt} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.css} className={styles.icon}/>,
             level: "confident",
             description: [
                 "그리드/Flexbox을 활용한 반응형 레이아웃",
@@ -42,7 +30,7 @@ const SkillSection = () => {
         {
             id: 3,
             name: "SCSS",
-            icon: <FontAwesomeIcon icon={faSass} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.sass} className={styles.icon}/>,
             level: "confident",
             description: [
                 "변수, 믹스인, 중첩 등을 활용한 구조적인 스타일 설계",
@@ -52,7 +40,7 @@ const SkillSection = () => {
         {
             id: 4,
             name: "React",
-            icon: <FontAwesomeIcon icon={faReact} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.react} className={styles.icon}/>,
             level: "confident",
             description: [
                 "컴포넌트 기반 UI 설계 및 재사용 가능한 구조 구성",
@@ -62,7 +50,7 @@ const SkillSection = () => {
         {
             id: 5,
             name: "TypeScript",
-            icon: <img src={typescript} className={styles.typescript} alt="typescript아이콘"/>,
+            icon: <img src={techLogos.typescript} className={styles.typescript} alt="typescript아이콘"/>,
             level: "growing",
             description: [
                 "기초 문법 학습 및 간단한 타입 정의를 통한 안정성 확보",
@@ -72,7 +60,7 @@ const SkillSection = () => {
         {
             id: 6,
             name: "Javascript",
-            icon: <FontAwesomeIcon icon={faJs} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.js} className={styles.icon}/>,
             level: "confident",
             description: [
                 "이벤트 처리 및 DOM 조작, Axios를 활용한 API 통신",
@@ -82,7 +70,7 @@ const SkillSection = () => {
         {
             id: 7,
             name: "Jquery",
-            icon: <img src={jquery} className={styles.jquery} alt="jquery아이콘"/>,
+            icon: <img src={techLogos.jquery} className={styles.jquery} alt="jquery아이콘"/>,
             level: "confident",
             description: [
                 "슬라이더, 탭, 모달 등 다양한 인터랙션 구현",
@@ -92,7 +80,7 @@ const SkillSection = () => {
         {
             id: 8,
             name: "Figma",
-            icon: <FontAwesomeIcon icon={faFigma} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.figma} className={styles.icon}/>,
             level: "growing",
             description: [
                 "와이어프레임 및 프로토타입 기반 개발 협업 경험",
@@ -102,7 +90,7 @@ const SkillSection = () => {
         {
             id: 9,
             name: "GitHub",
-            icon: <FontAwesomeIcon icon={faGithub} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.github} className={styles.icon}/>,
             level: "confident",
             description: [
                 "Git Flow 전략 기반 브랜치 관리 및 PR 경험",
@@ -112,7 +100,7 @@ const SkillSection = () => {
         {
             id: 10,
             name: "JSP",
-            icon: <img src={jsp} className={styles.jsp} alt="jsp아이콘"/>,
+            icon: <img src={techLogos.jsp} className={styles.jsp} alt="jsp아이콘"/>,
             level: "learning",
             description: [
                 "EL, JSTL을 활용한 동적 페이지 구현",
@@ -122,7 +110,7 @@ const SkillSection = () => {
         {
             id: 11,
             name: "Spring Boot",
-            icon: <img src={springboot} alt="springboot아이콘"/>,
+            icon: <img src={techLogos.springboot} alt="springboot아이콘"/>,
             level: "learning",
             description: [
                 "간단한 REST API 구현 및 프론트엔드 연동 실습",
@@ -132,7 +120,7 @@ const SkillSection = () => {
         {
             id: 12,
             name: "MySQL",
-            icon: <img src={mysql} alt="mysql아이콘"/>,
+            icon: <img src={techLogos.mysql} alt="mysql아이콘"/>,
             level: "learning",
             description: [
                 "기본 테이블 설계 및 CRUD 쿼리 작성 경험",
@@ -142,7 +130,7 @@ const SkillSection = () => {
         {
             id: 13,
             name: "Java",
-            icon: <FontAwesomeIcon icon={faJava} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.java} className={styles.icon}/>,
             level: "learning",
             description: [
                 "객체지향 프로그래밍 기초 개념 학습",

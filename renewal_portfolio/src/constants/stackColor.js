@@ -1,0 +1,20 @@
+export const stackColors = {
+    html: "#e34f26",
+    css: "#1572B6",
+    scss: "#cd6799",
+    js: "#f7df1e",
+    javascript: "#f7df1e",
+    react: "#61DBFB",
+    redux: "#764abc",
+    vue: "#42b883",
+    quasar: "#1976D2",
+    jsp: "#007396",
+    springboot: "#6DB33F",
+    ajax: "#f16529",
+    typescript: "#3178C6",
+    figma: "#a259ff",
+    github: "#181717",
+    mysql: "#4479A1",
+    swiper: "#6633cc",
+    websquare: "#4491c0"
+};
