@@ -144,7 +144,11 @@ const ProjectSection = () => {
                 </div>
             </div>
             {selectedProject && (
-                <Modal project={selectedProject} onClose={() => setSelectedProject(null)} />
+                <Modal
+                    project={selectedProject}
+                    selectedId={selectedProject.id}
+                    onClose={() => setSelectedProject(null)}
+                />
             )}
         </section>
     )

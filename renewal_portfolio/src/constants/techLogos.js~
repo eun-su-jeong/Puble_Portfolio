@@ -9,7 +9,6 @@ import vite2 from "@/assets/images/icon_vite.svg";
 import vite_c from "@/assets/images/Vite.svg";
 import css_c from "@/assets/images/CSS3.svg";
 import scss_c from "@/assets/images/Sass.svg";
-import tailwind_c from "@/assets/images/Tailwind CSS.svg";
 import html_c from "@/assets/images/HTML5.svg";
 import java_c from "@/assets/images/Java.svg";
 import js_c from "@/assets/images/JavaScript.svg";
@@ -18,9 +17,6 @@ import node_c from "@/assets/images/Node.js.svg";
 import react_c from "@/assets/images/React.svg";
 import redux_c from "@/assets/images/Redux.svg";
 import ts_c from "@/assets/images/TypeScript.svg";
-import mysql_c from "@/assets/images/MySQL.svg";
-import next_c from "@/assets/images/Next.js.svg";
-import spring_c from "@/assets/images/Spring.svg";
 import figma_c from "@/assets/images/Figma.svg";
 
 export const techLogos = {
@@ -39,11 +35,5 @@ export const techLogos = {
     node_c,
     react_c,
     redux_c,
-    ts_c,
-    mysql_c,
-    next_c,
-    spring_c,
-    tailwind_c,
-    figma_c,
-    jquery_c
+    ts_c
 };

@@ -14,7 +14,7 @@ export const fontAwesomeIcons = {
     css: faCss3Alt,
     js: faJs,
     react: faReact,
-    scss: faSass,
+    sass: faSass,
     figma: faFigma,
     github: faGithub,
     java: faJava,
