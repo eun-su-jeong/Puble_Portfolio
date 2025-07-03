@@ -13,13 +13,13 @@ export const projectDetails = {
         keyImage: projectImages.wip,
         alt: "쿡쉐어 리뉴얼 프로젝트 이미지",
         features: [
-            "회원가입 5단계 스텝 UI 및 인증 흐름 설계",
-            "위치 기반 공유 냉장고 등록 및 검색 기능",
+            "회원가입 5단계 스텝 UI 및 인증",
+            "위치 기반 공유 냉장고 등록 및 검색",
             "냉장고별 나눔 게시글 CRUD 구현",
-            "레시피 공유 및 해시태그 검색 기능",
-            "식자재 공동 구매 및 커머스 기능",
-            "Kakao Map API 연동"
+            "레시피 공유 및 해시태그 검색",
+            "식자재 공동 구매 및 커머스",
         ],
+        percent: "",
         contributions: [
             {
                 title: "UI/UX 설계 및 프론트엔드 전체 개발",
@@ -54,7 +54,7 @@ export const projectDetails = {
     },
     2: {
         title: "CookShare",
-        description: " 1인 가구를 위한 음식 나눔 커뮤니티 플랫폼으로,SPA 구조, 상태관리, 인증, 지도 기반 검색 등 주요 기능을 중심으로 UI/UX 설계에 집중한 프로젝트입니다",
+        description: "1인 가구의 고충을 해결하기 위해 시작된 음식 공유 플랫폼입니다. 사용자들이 음식을 나눔으로써 비용을 절감하고, 환경을 보호하며, 동네 친구를 만날 수 있는 장을 제공합니다. 또한, 게시판과 채팅 기능을 통해 소통하고 교류할 수 있습니다.",
         stack: ["react_c", "redux_c", "scss_c", "figma_c"],
         member: "5명(Frontend, Backend)",
         period: " 2024.03 ~ 2024.05 (6주)",
@@ -66,24 +66,24 @@ export const projectDetails = {
         alt: "쿡쉐어 프로젝트 이미지",
         features: [
             "휴대폰 번호 인증 및 회원가입",
-            "게시글 목록/상세 보기 및 필터링",
-            "위치 기반 게시글 탐색",
-            "1:1 채팅 기능"
+            "음식 공유 게시판 찜하기 및 상세보기",
+            "위치 기반 음식 공유 게시물 등록",
+            "나눔 목적을 위한 1:1 채팅 기능",
+            "서비스 설정 및 활동 내역확인"
         ],
+        percent: "50%",
         contributions: [
             {
                 title: "SPA 구조 기반 UI 구현 및 상태 관리 설계",
                 content: [
-                    "아토믹 디자인 패턴을 적용하여 컴포넌트를 구조화",
-                    "회원가입, 게시판, 지도 등 주요 페이지를 SPA 방식으로 구성",
-                    "컴포넌트 단위 설계를 통해 유지보수성과 재사용성 향상"
+                    "아토믹 디자인 패턴을 적용한 컴포넌트 단위 설계를 통해 유지보수성과 재사용성 향상",
                 ]
 
             },
             {
                 title: "JWT 인증 처리 및 사용자 흐름 설계",
                 content: [
-                    "JWT 인증 방식 기반으로 로그인/회원가입 구현",
+                    "JWT 인증 방식 기반으로 로그인 구현",
                     "Axios Interceptor를 활용한 인증 헤더 자동 처리"
                 ]
             },
@@ -111,9 +111,9 @@ export const projectDetails = {
     },
     3: {
         title: "WeekendFarm",
-        description: "도시 거주자들이 자연에 쉽게 접근할 수 있는 기회를 제공하고자 기획되었습니다. 도시 외각에 조그만 땅을 빌리거나 다양한 농장 체험을 원하는 사람들을 위해 주말 농장 예약 플랫폼을 개발하게 되었습니다.사용자가 편리하게 주말농장을 검색하고, 상세 정보 및 사용자 리뷰를 바탕으로 예약할 수 있도록 사용자 친화적인 인터페이스를 제공합니다.",
-        stack: ["html_c", "css_c", "js_c", "java_c", "spring_c", "figma_c"],
-        member: "3명(Frontend, Backend)각 페이지별 담당",
+        description: "도시 외각에 조그만 땅을 빌리거나 다양한 농장 체험을 원하는 사람들을 위해 주말 농장 예약 플랫폼을 개발하게 되었습니다.사용자가 편리하게 주말농장을 검색하고, 상세 정보 및 사용자 리뷰를 바탕으로 예약할 수 있도록 사용자 친화적인 인터페이스를 제공합니다.",
+        stack: ["html_c", "css_c", "js_c", "java_c", "spring_c"],
+        member: "3명(Frontend, Backend)",
         period: "2024.02 ~ 2024.03 (4주)",
         link: [
             "https://github.com/AddineduFourTeam/WeekendFarm",
@@ -122,48 +122,42 @@ export const projectDetails = {
         keyImage: projectImages.wf1,
         alt: "주말농장 프로젝트 이미지",
         features: [
-            "메인: 농장의 정보를 리스트로 볼 수 있습니다.",
-            "예약서비스 : 상세페이지를 보고 바로 주말 농장을 예약할 수 있습니다",
-            "농작물 공유 스토리(커뮤니티): 자신의 농작물을 자랑하는 공간입니다.",
-            "마이페이지: 본인의 활동을 한번에 볼 수 있습니다.",
-            "회원가입, 로그인"
+            "공공데이터 기반 전국 주말 농장 정보 제공",
+            "주말 농장 체험 활동과 리뷰 확인 및 예약 서비스",
+            "자신의 농작물을 자랑하는 농작물 공유 커뮤니티",
+            "예약 현황 및 활동 관리를 위한 마이페이지",
         ],
+        percent: "50%",
         contributions: [
             {
                 title: "화면 설계 및 퍼블리싱",
                 content: [
-                    "Figma 기획안 기반으로 JSP 구조 설계 및 퍼블리싱",
+                    "기획안 작성 및 JSP 구조 설계 및 퍼블리싱",
                     "헤더, 푸터, 리스트, 상세, 예약 등 화면 분기별 마크업 작업"
                 ]
 
             },
             {
-                title: "농장 리스트/상세/예약 기능 구현",
+                title: "농장 리스트/상세/예약 페이지 개발",
                 content: [
-                    "리스트 페이지에서 지역/테마 필터링, 정렬 기능 구현",
-                    "상세 페이지에서 지도 및 이미지 뷰어, 농장정보 출력 구현",
+                    "리스트 페이지에서 지역/테마 필터링 정렬 기능 구현",
+                    "상세 페이지에서 지도 및 이미지 뷰어 농장 정보 제공",
                     "예약 화면에서 옵션 선택 및 내 예약 확인 기능 개발"
                     ]
             },
             {
-                title: "카카오 지도 API 연동 검색 기능 개발",
+                title: "농장 리스트/상세/예약 페이지 API 개발",
                 content: [
-                    "사용자 위치를 기반으로 키워드 검색 기능 구현",
-                    "주소-좌표 변환 및 지도 렌더링 연동",
-                ]
-            },
-            {
-                title: "JavaScript를 활용한 UX 요소 구현",
-                content: [
-                    "필터 선택 시 자동 submit 처리",
-                    "예약 수량 증감, 총 금액 자동 계산 기능 구현"
+                    "Pageable 인터페이스를 활용하여 복잡한 페이지네이션 로직을 개발",
+                    "Oracle DB에 가공한 주말 농장 주소 데이터를 기반으로 지도에 위치 표시",
+                    "예약 도메인 엔티티 설계 및 JPA 연동 구현"
+
                 ]
             },
             {
                 title: "지도 연동 및 주소 기반 위치 확인 기능",
                 content: [
-                    "Oracle DB에 저장된 주소 데이터를 기반으로 지도에 위치 표시",
-                    "농장 상세 페이지에서 위치 및 경로 확인 기능 제공"
+                    "Kakao 지도 API를 통해 농장 위치 정보를 시각화, 사용자가 쉽게 위치를 확인할 수 있도록 구현",
                 ]
             }
         ],
@@ -194,6 +188,7 @@ export const projectDetails = {
             "회원가입 페이지: 사용자 정보 입력 및 폼 처리 UI 구현",
             "Contact Us: 사용자 문의 입력 폼 및 제출 처리 기능 제공"
         ],
+        percent: "100%",
         contributions: [
             {
                 title: "컴포넌트 설계 및 상태 관리",
@@ -233,8 +228,8 @@ export const projectDetails = {
     },
     5: {
         title: "신협리온브랜치",
-        description: "신협모바일 웹 플랫폼 서비스로 앱설치나 공동인증서 없이 편리하게 이용할 수 있는 서비스 구축",
-        stack: ["vue_c","nuxt_c", "html_c", "css_c", "js_c"],
+        description: "신협모바일 웹 플랫폼 서비스로 앱설치나 공동인증서 없이 편리하게 이용할 수 있는 전체 서비스 구축",
+        stack: ["vue_c","nuxt_c", "css_c", "js_c"],
         member: "기업프로젝트",
         period: "2022.11 ~ 2023.07",
         link: [
@@ -246,6 +241,7 @@ export const projectDetails = {
         features: [
 
         ],
+        percent: "30%",
         contributions: [
             {
                 title: "컴포넌트 기반 UI 개발",
@@ -300,6 +296,7 @@ export const projectDetails = {
         features: [
 
         ],
+        percent: "45%",
         contributions: [
             {
                 title: "적응형 UI 퍼블리싱",
@@ -344,6 +341,7 @@ export const projectDetails = {
         features: [
 
         ],
+        percent: "30%",
         contributions: [
             {
                 title: "UI 퍼블리싱 및 디자인 반영",
@@ -388,6 +386,7 @@ export const projectDetails = {
         features: [
 
         ],
+        percent: "40%",
         contributions: [
             {
                 title: "WebSquare5 기반 UI 퍼블리싱",
@@ -400,7 +399,6 @@ export const projectDetails = {
                 title: "UX 흐름에 따른 레이아웃 설계",
                 content: [
                     "모바일 앱과 ODS 시스템 각각의 사용자 유형에 최적화된 화면 설계",
-                    "화면 흐름에 따라 재사용 가능한 구조로 템플릿 구성"
                 ]
             },
             {

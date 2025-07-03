@@ -88,36 +88,40 @@ const Modal = ({onClose, selectedId}) => {
                             <p className={styles.date__content}>{data.period}</p>
                         </div>
                         <div className={styles.link}>
-                            <h3 className={styles.link__title}>
-                                <span>관련 링크</span>
-                            </h3>
-                            <div className={styles.link__contentWrap}>
-                                {data.link?.map((url, index) => {
-                                    let icon;
-                                    if (url.includes("github.com")) {
-                                        icon = faGithub;
-                                    } else if (url.includes("figma.com")) {
-                                        icon = faFigma;
-                                    }else if(url.includes("youtube.com")) {
-                                        icon = faVideo;
-                                    } else {
-                                        icon = faLink;
-                                    }
+                            {data.link.length > 0 && (
+                                <>
+                                    <h3 className={styles.link__title}>
+                                        <span>관련 링크</span>
+                                    </h3>
+                                    <div className={styles.link__contentWrap}>
+                                        {data.link?.map((url, index) => {
+                                            let icon;
+                                            if (url.includes("github.com")) {
+                                                icon = faGithub;
+                                            } else if (url.includes("figma.com")) {
+                                                icon = faFigma;
+                                            } else if (url.includes("youtube.com")) {
+                                                icon = faVideo;
+                                            } else {
+                                                icon = faLink;
+                                            }
 
-                                    return (
-                                        <a
-                                            key={index}
-                                            href={url}
-                                            className={styles.link__content}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label={`관련 링크 ${index + 1}`}
-                                        >
-                                            <FontAwesomeIcon className={styles.icon} icon={icon} />
-                                        </a>
-                                    );
-                                })}
-                            </div>
+                                            return (
+                                                <a
+                                                    key={index}
+                                                    href={url}
+                                                    className={styles.link__content}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={`관련 링크 ${index + 1}`}
+                                                >
+                                                    <FontAwesomeIcon className={styles.icon} icon={icon}/>
+                                                </a>
+                                            );
+                                        })}
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -136,7 +140,14 @@ const Modal = ({onClose, selectedId}) => {
                         </div>
                     )}
                     <div className={styles.contentWrap__perfomance}>
-                        <h2>✨ 작업 기여도</h2>
+                        <h2>
+                            ✨ 작업 기여도
+                            <span
+                                className={styles.percent}
+                            >
+                                {data.percent}
+                            </span>
+                        </h2>
                         {data.contributions.map((item, i) => (
                             <Accordion
                                 key={i}

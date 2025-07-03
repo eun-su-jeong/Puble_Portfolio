@@ -169,6 +169,15 @@
                 }
             }
 
+            &__perfomance{
+                h2{
+                    .percent{
+                        font-size: 2rem;
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
             &__preveiw{
                 .thumbnailWrap{
                     display: grid;
