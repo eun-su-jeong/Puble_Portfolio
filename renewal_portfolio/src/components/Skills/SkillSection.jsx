@@ -30,7 +30,7 @@ const SkillSection = () => {
         {
             id: 3,
             name: "SCSS",
-            icon: <FontAwesomeIcon icon={fontAwesomeIcons.sass} className={styles.icon}/>,
+            icon: <FontAwesomeIcon icon={fontAwesomeIcons.scss} className={styles.icon}/>,
             level: "confident",
             description: [
                 "변수, 믹스인, 중첩 등을 활용한 구조적인 스타일 설계",

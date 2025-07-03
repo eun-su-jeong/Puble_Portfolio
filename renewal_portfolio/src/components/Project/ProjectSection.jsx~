@@ -1,6 +1,7 @@
 import styles from "./Project.module.scss";
 import Modal from "@/components/Modal/Modal.jsx";
 import {useState} from "react";
+import pri
 import {projectList} from "@/data/projectList.js";
 const ProjectSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);

@@ -420,9 +420,9 @@ export const projectDetails = {
         ],
         previews: [
             {
-                image: projectImages.kb5,
-                caption: "통합 앱 및 ODS 시스템 UI 설계"
-            }
+                image: projectImages.pn5,
+                caption: "리뉴얼된 자사 홈페이지 UI"
+            },
         ]
     },
 

@@ -21,8 +21,10 @@ import ts_c from "@/assets/images/TypeScript.svg";
 import mysql_c from "@/assets/images/MySQL.svg";
 import next_c from "@/assets/images/Next.js.svg";
 import spring_c from "@/assets/images/Spring.svg";
+import vue_c from "@/assets/images/Vue.js.svg";
+import nuxt_c from "@/assets/images/Nuxt.svg";
 import figma_c from "@/assets/images/Figma.svg";
-
+import websquare from "@/assets/images/websquare.png";
 export const techLogos = {
     jquery,
     springboot,
@@ -45,5 +47,8 @@ export const techLogos = {
     spring_c,
     tailwind_c,
     figma_c,
-    jquery_c
+    jquery_c,
+    vue_c,
+    nuxt_c,
+    websquare
 };
