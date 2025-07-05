@@ -3,16 +3,76 @@ import profile from '../../assets/images/profile.webp';
 import star from '../../assets/images/ico_star.svg';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBuilding, faGraduationCap, faLaptopCode} from "@fortawesome/free-solid-svg-icons";
+import ScrollFadeIn from "@/components/common/ScrollFadeIn.jsx";
 const AboutSection = () => {
     const keywords = [
         "세심한 UI설계", "소통의 다리", "사용자경험중심"
+    ];
+
+    const experienceList = [
+        {
+            icon: faLaptopCode,
+            term: "2025.03 ~ 현재",
+            title: "(주)넥스트미션",
+            description: "웹에이전시[프리랜서 퍼블리셔]",
+            details: [
+                "PHP 솔루션 기반의 반응형 웹 페이지 퍼블리싱 담당",
+                "교육 강의 사이트, 컴퓨터 판매몰, 셀러 중개 플랫폼 등 다양한 웹 프로젝트 참여"
+            ]
+        },
+        {
+            icon: faGraduationCap,
+            term: "2023.10 ~ 2024.05",
+            title: "ELK 빅데이터 분석 및 시각화 개발자 양성과정 수료",
+            details: [
+                "Java, Spring Boot 기반 백엔드 개발과 React를 활용한 SPA 프론트엔드 구현",
+                "주말 농장, 쿡 쉐어 등 실무 프로젝트를 통해 전체 개발 프로세스 경험"
+            ]
+        },
+        {
+            icon: faGraduationCap,
+            term: "2023.09 ~ 2023.12",
+            title: "리액트 프론트엔드 개발 실무과정 수료",
+            details: [
+                "React와 Redux를 활용한 SPA 구조의 프론트엔드 개발과 상태 관리",
+                "Sass, Router, 애니메이션등을 적용해 UI/UX 구현 및 프로젝트 완성"
+            ]
+        },
+        {
+            icon: faGraduationCap,
+            term: "2023.09 ~ 2023.12",
+            title: "자바스크립트 객체지향(ES6)과정 수료",
+            details: [
+                "Javascript의 문법 기초와 이벤트 처리 적용",
+                "UI요소를 모듈화하여 컴포넌트 설계"
+            ]
+        },
+        {
+            icon: faBuilding,
+            term: "2021.06 ~ 2023.07",
+            title: "(주)피노유엑스디",
+            description: "웹에이전시[UI개발사업부/UI개발팀/퍼블리셔 2년]",
+            details: [
+                "금융권 UI 개발 프로젝트 다수 참여, 웹 접근성과 반응형 마크업 경험 보유",
+                "Vue3·WebSquare5 기반 퍼블리싱 및 QA 대응을 통해 실무 완성도 강화"
+            ]
+        },
+        {
+            icon: faGraduationCap,
+            term: "2020.04 ~ 2020.09",
+            title: "멀티미디어앱&웹콘텐츠제작과정 수료",
+            details: [
+                "HTML5, CSS3, JavaScript, jQuery 기반 반응형 처리 및 크로스 브라우징",
+                "Photoshop, Illustrator 기반 와이어프레임 프로토타입 제작"
+            ]
+        }
     ];
 
     return(
         <section className={styles.aboutSection}>
             <div className={`inner ${styles.aboutContainer}`}>
                 <div className={styles.introduceWrap}>
-                    <div className={styles.imageWrap}>
+                    <ScrollFadeIn y={-30} className={styles.imageWrap}>
                         <div className={styles.imageWrap__box}>
                             <img src={profile} alt="프로필 이미지"/>
                         </div>
@@ -39,10 +99,13 @@ const AboutSection = () => {
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </ScrollFadeIn>
                     <div className={styles.textWrap}>
-                        <h2>About Me</h2>
-                        <div className={styles.introduce}>
+                        <ScrollFadeIn y={-30} delay={1.2}>
+                            <h2>About Me</h2>
+                        </ScrollFadeIn>
+                        <ScrollFadeIn y={-30}>
+                            <div className={styles.introduce}>
                             <h2>"쓰임이 좋은 UI를 고민하는 웹 개발자 은수정 입니다"</h2>
 
                             <p>퍼블리셔로 커리어를 시작해 실무에서 웹 표준과 접근성을 지키며 마크업 작업을 담당해 왔습니다.<br/>
@@ -66,108 +129,45 @@ const AboutSection = () => {
 
                             {/*<p><strong>‘보기 좋은 화면’</strong>과 <strong>‘쓰임이 좋은 UI’</strong>를 만드는 것을 목표로 하고 있습니다.</p>*/}
                         </div>
-                        <ul className={styles.keywords}>
+                            <ul className={styles.keywords}>
                             {keywords.map((word, i) => (
                                 <li key={i} className={styles.keyword}>#{word}</li>
                             ))}
                         </ul>
+                        </ScrollFadeIn>
                     </div>
                 </div>
                 <div className={styles.experienceWrap}>
-                    <h2>experience</h2>
+                    <ScrollFadeIn y={30}>
+                        <h2>experience</h2>
+                    </ScrollFadeIn>
                     <div className={styles.experienceWrap__list}>
                         <ul>
-                            <li>
-                                <div className={styles.dateWrap}>
-                                    <FontAwesomeIcon icon={faLaptopCode} className={styles.icon} />
-                                    <span className={styles.term}>2025.03 ~ 현재</span>
-                                </div>
-
-                                <div className={styles.info}>
-                                    <p className={styles.content}>
-                                        <span>(주)넥스트미션</span>
-                                        <span className={styles.description}>웹에이전시[프리랜서 퍼블리셔]</span>
-                                    </p>
-
-
-                                    <ul className={styles.detailList}>
-                                        <li className={styles.detailItem}>PHP 솔루션 기반의 반응형 웹 페이지 퍼블리싱 담당</li>
-                                        <li className={styles.detailItem}>교육 강의 사이트, 컴퓨터 판매몰, 셀러 중개 플랫폼 등 다양한 웹 프로젝트 참여</li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div className={styles.dateWrap}>
-                                    <FontAwesomeIcon icon={faGraduationCap} className={styles.icon}/>
-                                    <span className={styles.term}>2023.10 ~ 2024.05</span>
-                                </div>
-                                <div className={styles.info}>
-                                    <p className={styles.content}>ELK 빅데이터 분석 및 시각화 개발자 양성과정 수료</p>
-
-                                    <ul className={styles.detailList}>
-                                        <li className={styles.detailItem}>Java, Spring Boot 기반 백엔드 개발과 React를 활용한 SPA 프론트엔드 구현</li>
-                                        <li className={styles.detailItem}>주말 농장, 쿡 쉐어 등 실무 프로젝트를 통해 전체 개발 프로세스 경험</li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div className={styles.dateWrap}>
-                                    <FontAwesomeIcon icon={faGraduationCap} className={styles.icon}/>
-                                    <span className={styles.term}>2023.09 ~ 2023.12</span>
-                                </div>
-                                <div className={styles.info}>
-                                    <p className={styles.content}>리액트 프론트엔드 개발 실무과정 수료</p>
-
-                                    <ul className={styles.detailList}>
-                                        <li className={styles.detailItem}>React와 Redux를 활용한 SPA 구조의 프론트엔드 개발과 상태 관리</li>
-                                        <li className={styles.detailItem}>Sass, Router, 애니메이션등을 적용해 UI/UX 구현 및 프로젝트 완성</li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div className={styles.dateWrap}>
-                                    <FontAwesomeIcon icon={faGraduationCap} className={styles.icon}/>
-                                    <span className={styles.term}>2023.09 ~ 2023.12</span>
-                                </div>
-                                <div className={styles.info}>
-                                    <p className={styles.content}>자바스크립트 객체지향(ES6)과정 수료</p>
-
-                                    <ul className={styles.detailList}>
-                                        <li className={styles.detailItem}>Javascript의 문법 기초와 이벤트 처리 적용</li>
-                                        <li className={styles.detailItem}>UI요소를 모듈화하여 컴포넌트 설계</li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div className={styles.dateWrap}>
-                                    <FontAwesomeIcon icon={faBuilding} className={styles.icon}/>
-                                    <span className={styles.term}>2021.06 ~ 2023.07</span>
-                                </div>
-                                <div className={styles.info}>
-                                    <p className={styles.content}>
-                                        <span>(주)피노유엑스디</span>
-                                        <span className={styles.description}>웹에이전시[UI개발사업부/UI개발팀/퍼블리셔 2년]</span>
-                                    </p>
-                                    <ul className={styles.detailList}>
-                                        <li className={styles.detailItem}>금융권 UI 개발 프로젝트 다수 참여, 웹 접근성과 반응형 마크업 경험 보유</li>
-                                        <li className={styles.detailItem}>Vue3·WebSquare5 기반 퍼블리싱 및 QA 대응을 통해 실무 완성도 강화</li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div className={styles.dateWrap}>
-                                    <FontAwesomeIcon icon={faGraduationCap} className={styles.icon}/>
-                                    <span className={styles.term}>2020.04 ~ 2020.09</span>
-                                </div>
-                                <div className={styles.info}>
-                                    <p className={styles.content}>멀티미디어앱&웹콘텐츠제작과정 수료</p>
-
-                                    <ul className={styles.detailList}>
-                                        <li className={styles.detailItem}>HTML5, CSS3, JavaScript, jQuery 기반 반응형 처리 및 크로스 브라우징</li>
-                                        <li className={styles.detailItem}>Photoshop, Illustrator 기반 와이어프레임 프로토타입 제작</li>
-                                    </ul>
-                                </div>
-                            </li>
+                            {experienceList.map((item, index) => (
+                                <ScrollFadeIn key={index} delay={index * 0.2} y={30}>
+                                    <li>
+                                        <div className={styles.dateWrap}>
+                                            <FontAwesomeIcon icon={item.icon} className={styles.icon} />
+                                            <span className={styles.term}>{item.term}</span>
+                                        </div>
+                                        <div className={styles.info}>
+                                            <p className={styles.content}>
+                                               <span>{item.content}</span>
+                                                {item.description && (
+                                                    <span className={styles.description}>{item.description}</span>
+                                                )}
+                                            </p>
+                                            <ul className={styles.detailList}>
+                                                {item.details.map((detail, i) => (
+                                                    <li key={i} className={styles.detailItem}>
+                                                        {detail}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ScrollFadeIn>
+                            ))}
                         </ul>
                     </div>
                 </div>
