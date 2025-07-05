@@ -180,7 +180,7 @@ const SkillSection = () => {
                     </div>
                     </ScrollFadeIn>
                 </div>
-                <ScrollFadeIn className={styles.skillsContainer__list} y={30} amount={0}>
+                <ScrollFadeIn className={styles.skillsContainer__list} y={30}>
                     {
                         skillList
                             .filter(skill => filter === "all" || skill.level === filter)
