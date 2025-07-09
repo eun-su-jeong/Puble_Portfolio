@@ -70,7 +70,7 @@ export const projectList = [
         id: 7,
         title: "피노유엑스디 홈페이지 리뉴얼",
         period: "2022.08 ~ 2022.10 (2개월)",
-        image: projectImages.pn2,
+        image: projectImages.pn5,
         alt: "피노유엑스디 홈페이지 리뉴얼 프로젝트",
         stack: ["HTML", "CSS", "Javascript", "Swiper"],
         overlay: {

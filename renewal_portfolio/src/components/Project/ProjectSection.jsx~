@@ -1,9 +1,9 @@
 import styles from "./Project.module.scss";
 import Modal from "@/components/Modal/Modal.jsx";
 import {useState} from "react";
-import pri
 import {projectList} from "@/data/projectList.js";
-const ProjectSection = () => {
+import ScrollFadeIn from "@/components/common/ScrollFadeIn.jsx";
+const ProjectSection = ({..rest}) => {
     const [selectedProject, setSelectedProject] = useState(null);
     const projects = projectList;
 
@@ -11,12 +11,20 @@ const ProjectSection = () => {
         <section className={styles.projectSection}>
             <div className={`inner ${styles.projectContainer}`}>
                 <div className={styles.titleWrap}>
-                    <h2 className={styles.title}>Projects</h2>
+                    <ScrollFadeIn>
+                        <h2 className={styles.title}>Projects</h2>
+                    </ScrollFadeIn>
                 </div>
                 <div className={styles.projectList}>
                     {
-                        projects.map((project) => (
-                            <div
+                        projects.map((project, index) => (
+                            <ScrollFadeIn
+                                duration={0.3}
+                                delay={index * 0.1}
+                                y={100}
+                                amount={0}
+                                {...rest}
+
                                 key={project.id}
                                 className={styles.projectItem}
                                 onClick={() => setSelectedProject(project)}
@@ -42,7 +50,7 @@ const ProjectSection = () => {
                                         }
                                     </div>
                                 </div>
-                            </div>
+                            </ScrollFadeIn>
                         ))}
                 </div>
             </div>

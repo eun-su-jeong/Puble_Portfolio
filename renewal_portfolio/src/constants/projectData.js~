@@ -4,7 +4,7 @@ import imgPn2 from "@/assets/images/mockup_pn2.webp";
 import imgKb5 from "@/assets/images/mockup_kb5.webp";
 import imgCs1 from "@/assets/images/mockup_cs1.webp";
 import imgWf1 from "@/assets/images/mockup_wf1.webp";
-import imgPf1 from "@/assets/images/react_portfolio.webp";
+import imgPf1 from "@/assets/images/react_portfolio.png";
 import wip from "@/assets/images/wip.jpg";
 
 //cu

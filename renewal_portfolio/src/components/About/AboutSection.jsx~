@@ -101,7 +101,7 @@ const AboutSection = () => {
                         </div>
                     </ScrollFadeIn>
                     <div className={styles.textWrap}>
-                        <ScrollFadeIn y={-30} delay={1.2}>
+                        <ScrollFadeIn y={-30}>
                             <h2>About Me</h2>
                         </ScrollFadeIn>
                         <ScrollFadeIn y={-30}>

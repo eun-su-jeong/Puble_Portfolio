@@ -191,7 +191,9 @@ const Modal = ({onClose, selectedId}) => {
             {previewImage && (
                 <div className={styles.imageModal} onClick={() => setPreviewImage(null)}>
                     <div className={styles.imageModal__inner} onClick={(e) => e.stopPropagation()}>
-                        <img src={previewImage.src} alt="확대 이미지" />
+                        <div className={styles.previewImageWrap}>
+                            <img src={previewImage.src} alt="확대 이미지" />
+                        </div>
                         <p>{previewImage.caption}</p>
                         <button onClick={() => setPreviewImage(null)}>닫기</button>
                     </div>

@@ -221,7 +221,6 @@ export const projectDetails = {
             "소개 페이지: 간단한 자기소개 및 경력 요약 구성",
             "YouTube 페이지: API를 통해 연동된 영상 콘텐츠 갤러리 제공",
             "Gallery 페이지: Flickr API 기반 이미지 갤러리 구현",
-            "Community 페이지: 방명록 페이지 제공, 동적으로 메인에 최근 글 노출",
             "회원가입 페이지: 사용자 정보 입력 및 폼 처리 UI 구현",
             "Contact Us: 사용자 문의 입력 폼 및 제출 처리 기능 제공"
         ],
