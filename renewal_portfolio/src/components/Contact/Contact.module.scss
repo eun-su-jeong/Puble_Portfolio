@@ -1,0 +1,56 @@
+.contact{
+    .contactContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        .titleWrap{
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            .title{
+                text-align: center;
+                color: orange;
+            }
+            .subTitle{
+                text-align: center;
+                font-size:2em;
+                font-weight: 600;
+                span{
+                    display: block;
+                }
+            }
+
+        }
+        .contactInfo{
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 0;
+            border-radius: 10px;
+            background-color: #eee;
+            &__list{
+                a{
+                    display: flex;
+                    gap: 1rem;
+                    padding: 1rem 6rem;
+                    color: #333;
+
+                    .infoTitle{
+                        display: flex;
+                        align-items: center;
+                        width: 10rem;
+                        .icon{
+                            margin-right: .5rem;
+                            font-size: 1.8rem;
+                        }
+                    }
+
+                    &:hover{
+                        background-color: #fff;
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}
