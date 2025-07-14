@@ -46,7 +46,7 @@ const Intro = ({onFinish}) => {
 
                 {phase === "greeting" && (
                     <div className={styles.greeting}>
-                        <p>HI! I'M EUN SU JEONG👋 Nice to meet you</p>
+                        <p><span>HI! I'M EUN SU JEONG👋</span><span>Nice to meet you :)</span></p>
                     </div>
                 )}
 

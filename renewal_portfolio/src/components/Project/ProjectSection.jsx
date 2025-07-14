@@ -8,7 +8,7 @@ const ProjectSection = ({...rest}) => {
     const projects = projectList;
 
     return(
-        <section className={styles.projectSection}>
+        <section className={styles.projectSection} id={"projects"}>
             <div className={`inner ${styles.projectContainer}`}>
                 <div className={styles.titleWrap}>
                     <ScrollFadeIn>

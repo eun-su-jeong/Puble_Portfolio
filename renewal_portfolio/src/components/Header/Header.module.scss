@@ -1,3 +1,4 @@
+@import '@/styles/breakpoints';
 .header{
   position: fixed;
   top: 0;
@@ -40,7 +41,7 @@
       }
     }
 
-    nav {
+    .pcNav {
       ul {
         display: flex;
         opacity: 0;
@@ -71,6 +72,59 @@
             color: #111;
             text-transform: uppercase;
           }
+        }
+      }
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+    .menuToggle{
+      display: none;
+      position: relative;
+      cursor: pointer;
+      z-index: 101;
+      font-size: 2.4rem;
+
+      @include respond(mobile) {
+        display: block;
+      }
+    }
+  }
+  .mobileNav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 100;
+
+    &.open{
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      li{
+        margin: 1rem 0;
+        a{
+          display: inline-block;
+          padding: 2px 5px;
+          font-size: 1.8rem;
+          font-weight: 600;
+          color: #fff;
+          text-transform: uppercase;
         }
       }
     }

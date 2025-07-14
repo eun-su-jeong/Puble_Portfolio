@@ -69,35 +69,37 @@ const AboutSection = () => {
     ];
 
     return(
-        <section className={styles.aboutSection}>
+        <section className={styles.aboutSection} id={'about'}>
             <div className={`inner ${styles.aboutContainer}`}>
                 <div className={styles.introduceWrap}>
                     <ScrollFadeIn y={-30} className={styles.imageWrap}>
-                        <div className={styles.imageWrap__box}>
-                            <img src={profile} alt="프로필 이미지"/>
+                        <div className={styles.imageWrap__group}>
+                            <div className={styles.imageBox}>
+                                <img src={profile} alt="프로필 이미지"/>
+                            </div>
+                            <div className={styles.contactInfo}>
+                                <ul>
+                                    <li>
+                                        <a href="https://mail.naver.com/write/popup?srvid=note&to=dmswid0@naver.com"
+                                           target="_blank">
+                                            <span>Email</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/eun-su-jeong" target="_blank">
+                                            <span>Github</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={"#contact"}>
+                                            <span>Contact</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div className={styles.icon}>
                             <img src={star} alt="star"/>
-                        </div>
-                        <div className={styles.contactInfo}>
-                            <ul>
-                                <li>
-                                    <a href="https://mail.naver.com/write/popup?srvid=note&to=dmswid0@naver.com"
-                                       target="_blank">
-                                        <span>Email</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/eun-su-jeong" target="_blank">
-                                        <span>Github</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={"#contact"}>
-                                        <span>Contact</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </ScrollFadeIn>
                     <div className={styles.textWrap}>

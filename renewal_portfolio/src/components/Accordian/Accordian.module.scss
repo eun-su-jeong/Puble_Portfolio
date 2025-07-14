@@ -1,3 +1,4 @@
+@import "@/styles/breakpoints";
 .accordion{
     margin-top: 1rem;
     &__toggle{
@@ -10,6 +11,10 @@
         font-weight: bold;
         background-color: #f8f8f8;
         cursor: pointer;
+
+        @include respond(mobile) {
+            font-size: 1.4rem;
+        }
 
         .icon{
             transition: transform .3s ease-in-out;
@@ -33,15 +38,24 @@
         .accordionInner{
             padding: 2.4rem;
 
+            @include respond(mobile) {
+                padding: 1.6rem;
+            }
+
             p{
                 position: relative;
                 padding-left: 1.2rem;
+                word-break: keep-all;
+
+                @include respond(mobile) {
+                    font-size: 1.4rem;
+                }
+
 
                 &::before{
                     position: absolute;
                     left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    top: 10px;
                     content: '';
                     display: block;
                     width: 6px;

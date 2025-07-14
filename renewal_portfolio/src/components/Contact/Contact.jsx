@@ -6,7 +6,7 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
     return(
-        <section className={styles.contact}>
+        <section className={styles.contact} id={"contact"}>
             <div className={`inner ${styles.contactContainer}`}>
                 <ScrollFadeIn className={styles.titleWrap}>
                     <h2 className={styles.title}>Contact Me</h2>

@@ -3,7 +3,7 @@ import Modal from "@/components/Modal/Modal.jsx";
 import {useState} from "react";
 import {projectList} from "@/data/projectList.js";
 import ScrollFadeIn from "@/components/common/ScrollFadeIn.jsx";
-const ProjectSection = ({..rest}) => {
+const ProjectSection = ({...rest}) => {
     const [selectedProject, setSelectedProject] = useState(null);
     const projects = projectList;
 

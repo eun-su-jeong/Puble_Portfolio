@@ -141,7 +141,7 @@ const SkillSection = () => {
 
     ]
     return (
-        <section className={styles.skillsSection}>
+        <section className={styles.skillsSection} id={'skill'}>
             <div className={`inner ${styles.skillsContainer}`}>
                 <div className={styles.titleWrap}>
                     <ScrollFadeIn y={30}>
@@ -180,7 +180,7 @@ const SkillSection = () => {
                     </div>
                     </ScrollFadeIn>
                 </div>
-                <ScrollFadeIn className={styles.skillsContainer__list} y={30} amount={0}>
+                <ScrollFadeIn className={styles.skillsContainer__list} y={30} amount={0.3}>
                     {
                         skillList
                             .filter(skill => filter === "all" || skill.level === filter)

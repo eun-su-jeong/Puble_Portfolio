@@ -1,12 +1,14 @@
 @import "reset";
 @import "variables";
 @import "common";
+@import "breakpoints";
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 
 html{
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -23,6 +25,10 @@ main{
   display: flex;
   flex-direction: column;
   gap: calc(100vw * 0.10);
+
+  @include respond(tablet) {
+    gap: calc(100vw * 0.20);
+  }
 }
 
 .layout{
@@ -38,16 +44,8 @@ main{
   margin: 0 auto;
   padding: 0 3rem;
 
-  @media (max-width: 1024px) {
+  @include respond(desktop) {
     padding: 0 2.4rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 1.8rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 0 1.2rem;
   }
 }
 
