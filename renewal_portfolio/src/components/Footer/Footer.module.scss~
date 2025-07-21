@@ -1,8 +1,0 @@
-footer{
-  .footerContainer{
-    padding: 2rem 0 1rem;
-    p{
-      text-align: center;
-    }
-  }
-}
