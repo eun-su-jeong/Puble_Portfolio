@@ -757,10 +757,18 @@ ul, ol, li {
     position: relative;
     top: 15vh;
     padding-top: 5em;
+    overflow: hidden;
     .swiper-wrapper{
       display: flex;
 
       .swiper-slide{
+        position: relative;
+        width: 100%;
+        background-color: #FFF;
+        padding: 1.2rem;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        overflow: hidden;
         &:hover{
           .tooltip{
             opacity: 1;
@@ -776,14 +784,6 @@ ul, ol, li {
             }
           }
         }
-        position: relative;
-        width: 100%;
-        background-color: #FFF;
-        padding: 1.2rem;
-        border: 2px solid #eee;
-        border-radius: 10px;
-        overflow: hidden;
-
         .skill-wrap{
           display: flex;
           flex-direction: column;
@@ -903,6 +903,7 @@ ul, ol, li {
   margin-top: 50em;
   padding: 50em 3rem 0;
   height: auto;
+  overflow: hidden;
 
   .projects-title {
     position: relative;

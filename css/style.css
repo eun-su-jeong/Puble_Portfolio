@@ -1858,6 +1858,7 @@ ul, ol, li {
   position: relative;
   top: 15vh;
   padding-top: 5em;
+  overflow: hidden;
 }
 .skills .swiper-container .swiper-wrapper {
   display: flex;
@@ -1988,6 +1989,7 @@ ul, ol, li {
   margin-top: 50em;
   padding: 50em 3rem 0;
   height: auto;
+  overflow: hidden;
 }
 .projectAll .projects-title {
   position: relative;
