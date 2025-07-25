@@ -185,7 +185,7 @@
         </section>
         <!-- skills -->
         <section class="skills">
-            <h4 class="title-name">SkillSection</h4>
+            <h4 class="title-name">Skill</h4>
             <div class="desc-wrap">
                 <p>Hover over the card to check your skill level.</p>
                 <p>카드에 마우스를 올리면 숙련도를 확인할 수 있습니다.</p>
